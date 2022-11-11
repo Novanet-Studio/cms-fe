@@ -1,5 +1,5 @@
 <template>
-  <project-welcome />
+  <!-- <project-welcome /> -->
 </template>
 
 <script lang="ts" setup>
