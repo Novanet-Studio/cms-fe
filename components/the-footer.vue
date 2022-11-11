@@ -1,5 +1,5 @@
 <template>
-  <footer class="container mx-auto flex justify-between">
+  <footer class="container mx-auto flex justify-between py-16">
     <div>
       <p class="mb-2">
         Derechos Reservados 2022

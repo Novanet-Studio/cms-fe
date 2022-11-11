@@ -1,0 +1,41 @@
+@layer base {
+  @font-face {
+    font-family: NunitoSans;
+    font-weight: 400;
+    src: url(/fonts/NunitoSans-Regular.ttf) format('truetype');
+  }
+
+  @font-face {
+    font-family: NunitoSans;
+    font-weight: 500;
+    src: url(/fonts/NunitoSans-Medium.ttf) format('truetype');
+  }
+
+  @font-face {
+    font-family: NunitoSans;
+    font-weight: 600;
+    src: url(/fonts/NunitoSans-Medium.ttf) format('truetype');
+  }
+
+  @font-face {
+    font-family: NunitoSans;
+    font-weight: 700;
+    src: url(/fonts/NunitoSans-SemiBold.ttf) format('truetype');
+  }
+
+  @font-face {
+    font-family: NunitoSans;
+    font-weight: 800;
+    src: url(/fonts/NunitoSans-Bold.ttf) format('truetype');
+  }
+
+  @font-face {
+    font-family: NunitoSans;
+    font-weight: 900;
+    src: url(/fonts/NunitoSans-Black.ttf) format('truetype');
+  }
+
+  html {
+    font-family: 'NunitoSans', sans-serif;
+  }
+}

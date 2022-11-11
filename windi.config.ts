@@ -3,17 +3,25 @@ import { defineConfig } from 'windicss/helpers';
 export default defineConfig({
   theme: {
     extend: {
+      screens: {
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1366px',
+      },
       colors: {
         primary: '#F18A00',
         secondary: '#001E61',
         tertiary: '#231F20',
-        grayMid: '#A7A9AC',
-        grayLight: '#E6E7E8',
+        'gray-mid': '#A7A9AC',
+        'gray-light': '#E6E7E8',
       },
       textColor: {
-        primary: '#3490dc',
-        secondary: 'green',
-        info: 'blue',
+        'primary-alt': '#231F20',
+      },
+      boxShadow: {
+        card: '0 6.0051px 6.0051px rgba(0,0,0,0.25)',
       },
     },
   },

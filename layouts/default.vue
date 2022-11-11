@@ -1,6 +1,6 @@
 <template>
   <transition name="fade" appear>
-    <div class="layout">
+    <div>
       <the-header />
       <slot />
       <the-footer />

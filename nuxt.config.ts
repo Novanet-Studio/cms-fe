@@ -18,7 +18,7 @@ export default defineNuxtConfig({
     'nuxt-windicss',
   ],
 
-  css: ['virtual:windi.css', 'virtual:windi-devtools'],
+  css: ['~/assets/index.css', 'virtual:windi.css', 'virtual:windi-devtools'],
 
   pwa,
 
