@@ -93,7 +93,9 @@ import 'swiper/css/pagination';
 const config = useAppConfig();
 
 useHead({
-  titleTemplate: 'My simple title - %s',
+  titleTemplate() {
+    return config.pwaManifest.name;
+  },
   title() {
     return config.pwaManifest.short_name;
   }
