@@ -1,5 +1,5 @@
 <template>
-  <section class="flex min-h-[calc(100vh-25rem)] container mx-auto items-center">
+  <section class="flex py-24 container mx-auto items-center">
     <div class="w-2xl flex flex-col items-end">
       <logo-dots />
       <h3 class="text-4xl font-black text-[#231F20] text-right">Siempre hay un motivo <br> para lograr cruzar una meta
@@ -93,7 +93,7 @@ import 'swiper/css/pagination';
 const config = useAppConfig();
 
 useHead({
-  titleTemplate: 'My simple title - %s',
+  titleTemplate: 'CCS Multisports - %s',
   title() {
     return config.pwaManifest.short_name;
   }
