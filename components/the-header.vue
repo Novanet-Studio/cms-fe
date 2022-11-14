@@ -10,7 +10,7 @@
         <nav class="flex mr-8">
           <nuxt-link class="px-4" to="/">¿Quiénes somos?</nuxt-link>
           <nuxt-link class="px-4" to="/disciplinas">Disciplinas</nuxt-link>
-          <nuxt-link class="px-4" to="#">tienda</nuxt-link>
+          <nuxt-link class="px-4" to="/tienda">tienda</nuxt-link>
           <nuxt-link class="px-4" to="/aliados">Aliados</nuxt-link>
           <nuxt-link class="px-4" to="/blog">Blog</nuxt-link>
           <nuxt-link class="px-4" to="/preguntas-frecuentes">Preguntas frecuentes</nuxt-link>

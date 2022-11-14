@@ -35,6 +35,12 @@ export default defineNuxtConfig({
     url: process.env.STRAPI_URL || 'http://localhost:1337',
   },
 
+  router: {
+    options: {
+      linkActiveClass: 'text-black font-bold',
+    },
+  },
+
   image: {
     dir: 'assets/images',
     // The screen sizes predefined by `@nuxt/image`:
