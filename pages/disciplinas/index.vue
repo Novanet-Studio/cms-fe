@@ -11,14 +11,16 @@
       <logo-dots />
       <h1 class="text-3xl font-black mt-2">Disciplinas</h1>
       <card-wrapper>
-        <card logo="/natacion.svg" title="Natación" description="Ver información y planes" />
+        <nuxt-link to="/disciplinas/natacion">
+          <card logo="/natacion.svg" title="Natación" description="Ver información y planes" />
+        </nuxt-link>
         <card logo="/yoga.svg" title="Yoga" description="Ver información y planes" />
         <card logo="/karate.svg" title="Karate" description="Ver información y planes" />
         <card logo="/custom.svg" title="Entrenamiento personalizado" description="Ver información y planes" />
       </card-wrapper>
     </header>
   </section>
-  <section class="flex container mx-auto items-center bg-[#E6E7E8] mb-12">
+  <section class="flex container mx-auto items-center bg-[#E6E7E8]">
     <div class="flex-basis-[50%] flex flex-col items-end mr-9">
       <logo-dots />
       <h3 class="text-4xl font-black text-[#231F20] text-right">Nuestra piscina es un <br> lugar de encuentro, es

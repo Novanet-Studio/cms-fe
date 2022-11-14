@@ -1,14 +1,14 @@
 export default {
   meta: {
     // title: 'Project title',
-    name: 'Project name',
+    name: 'CCS Multisport',
     author: 'Novanet Studio <info@novanet.studio>',
     description: 'Project description',
     theme_color: '#fff',
     lang: 'es',
   },
   manifest: {
-    name: 'Project name',
+    name: 'CCS Multisport',
     short_name: 'Project short_name',
     description: 'Project description',
     start_url: '/',
