@@ -101,6 +101,9 @@ useHead({
   }
 });
 
+
+const graphql = useStrapiGraphQL();
+
 const slides = [
   'https://images.pexels.com/photos/8688568/pexels-photo-8688568.jpeg',
   'https://images.pexels.com/photos/2250432/pexels-photo-2250432.jpeg',
