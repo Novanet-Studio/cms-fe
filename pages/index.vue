@@ -41,38 +41,26 @@
       <swiper-slide v-for="(slide, index) in slides" :key="index">
         <nuxt-img
           :src="slide.attributes.url"
-          class="h-[33.75rem] bg-cover w-full"
+          sizes="xs:100vw sm:640 md:768 lg:1024 xl:1280 xxl:1920"
         />
       </swiper-slide>
     </swiper>
   </section>
   <section class="container mx-auto py-[4.875rem] mb-16">
-
-      <logo-dots />
-      <h1 class="text-3xl font-black mt-2">Disciplinas</h1>
-      <card-wrapper>
-        <card
-          logo="/natacion.svg"
-          title="Natación"
-          description="Ver información y planes"
-        />
-        <card
-          logo="/yoga.svg"
-          title="Yoga"
-          description="Ver información y planes"
-        />
-        <card
-          logo="/karate.svg"
-          title="Karate"
-          description="Ver información y planes"
-        />
-        <card
-          logo="/custom.svg"
-          title="Entrenamiento personalizado"
-          description="Ver información y planes"
-        />
-      </card-wrapper>
-   
+    <logo-dots />
+    <h1 class="text-3xl font-black mt-2">Disciplinas</h1>
+    <card-wrapper>
+      <card
+        v-for="(disciplina, index) in disciplinas"
+        :key="index"
+        :logo="disciplina.attributes.imagen.data.attributes.url"
+        :alternativeText="
+          disciplina.attributes.imagen.data.attributes.alternativeText
+        "
+        :title="disciplina.attributes.nombre"
+        description="Ver información y planes"
+      />
+    </card-wrapper>
   </section>
 
   <section class="flex w-full items-center bg-[#E6E7E8]">
@@ -98,26 +86,24 @@
 
   <section class="container mx-auto py-56 flex flex-col items-center">
     <h2 class="text-[2.5rem] text-center font-extrabold">
-      Conóce la información de nuestras disciplinas
+      {{ mensaje.titulo }}
     </h2>
     <p class="text-center mb-8 text-lg mt-4">
-      información y detalles para que te inscribas en Caracas Multisport
+      {{ mensaje.descripcion }}
     </p>
     <app-button class="px-10 py-4">Conoce más</app-button>
   </section>
 
   <section class="container mx-auto">
-    <header>
-      <logo-dots />
-      <h1 class="text-3xl font-black mt-2">Aliados</h1>
-      <icon-card-wrapper>
-        <icon-card
-          v-for="(logo, index) in allies"
-          :icon="`/${logo}`"
-          :key="index"
-        />
-      </icon-card-wrapper>
-    </header>
+    <logo-dots />
+    <h1 class="text-3xl font-black mt-2">Aliados</h1>
+    <icon-card-wrapper>
+      <icon-card
+        v-for="(aliado, index) in aliados"
+        :icon="aliado.attributes.imagen.data.attributes.url"
+        :key="index"
+      />
+    </icon-card-wrapper>
   </section>
 
   <section class="container mx-auto mt-48">
@@ -153,13 +139,15 @@ useHead({
   },
 });
 
-const print = (e: any) => {
+const clog = (e: any) => {
   console.log(e);
 };
 
 const principal = ref();
-const slides = ref<object>([]);
-/* const disciplinas = ref(); */
+const slides = ref();
+const disciplinas = ref();
+const mensaje = ref();
+const aliados = ref();
 const graphql = useStrapiGraphQL();
 
 try {
@@ -190,14 +178,42 @@ try {
                 }
               }
             }
+
+            mensaje {
+              titulo
+              descripcion
+            }
           }
         }
       }
 
-      disciplinas {
+      disciplinas(sort: "id:asc") {
         data {
           attributes {
             nombre
+            imagen {
+              data {
+                attributes {
+                  url
+                  alternativeText
+                }
+              }
+            }
+          }
+        }
+      }
+
+      aliados(sort: "id:asc") {
+        data {
+          attributes {
+            imagen {
+              data {
+                attributes {
+                  url
+                  alternativeText
+                }
+              }
+            }
           }
         }
       }
@@ -206,20 +222,18 @@ try {
 
   principal.value = query.data.inicio.data.attributes.principal;
   slides.value = query.data.inicio.data.attributes.carrusel.data;
+  disciplinas.value = query.data.disciplinas.data;
+  mensaje.value = query.data.inicio.data.attributes.mensaje;
+  aliados.value = query.data.aliados.data;
 } catch (err) {
+  
   principal.value = [];
   slides.value = [];
+  disciplinas.value = [];
+  mensaje.value = [];
+  aliados.value = [];
   console.log(err);
 }
-
-const allies = [
-  "logo-1.svg",
-  "logo-2.svg",
-  "logo-3.svg",
-  "logo-4.svg",
-  "logo-5.svg",
-  "logo-6.svg",
-];
 
 const storeItems = [
   {
