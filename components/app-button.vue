@@ -1,7 +1,8 @@
 <template>
-  <button :class="`bg-secondary px-8 py-2 rounded-full flex text-white flex flex-start ${classes}`">
+  <button class="bg-secondary px-8 py-2 rounded-full flex text-white flex flex-start" :class="class"
+    @click.prevent="$emit('click')">
     <template v-if="icon">
-      <nuxt-img :src="icon" class="mr-2" />
+      <nuxt-img :src="icon" class="mr-2" :class="iconClass" />
     </template>
     <slot />
   </button>
@@ -12,14 +13,13 @@ type Props = {
   icon?: string;
   text?: string;
   class?: string;
+  iconClass?: string;
 }
 
 type Emits = {
   (e: 'click'): string;
 };
 
-const props = defineProps<Props>();
+defineProps<Props>();
 defineEmits<Emits>();
-
-const classes = computed(() => props.class);
 </script>

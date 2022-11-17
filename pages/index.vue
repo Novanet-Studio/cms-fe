@@ -67,7 +67,7 @@
       <logo-dots />
       <h1 class="text-3xl font-black mt-2">Aliados</h1>
       <icon-card-wrapper>
-        <icon-card v-for="(logo, index) in allies" :icon="`/${logo}`" :key="index" />
+        <icon-card v-for="(logo, index) in allies" :icon="`/${logo}`" :key="index" size="small" />
       </icon-card-wrapper>
     </header>
   </section>
