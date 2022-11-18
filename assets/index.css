@@ -52,3 +52,11 @@
 .header__navigation {
   @apply flex justify-end items-center mr-8;
 }
+
+.header__link {
+  @apply px-4;
+}
+
+.blue-button {
+  @apply bg-secondary px-8 py-2 rounded-full text-white;
+}

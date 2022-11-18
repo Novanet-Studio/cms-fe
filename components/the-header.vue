@@ -7,16 +7,20 @@
         </nuxt-link>
       </div>
       <nav class="header__navigation">
-        <nuxt-link class="px-4" to="/">¿Quiénes somos?</nuxt-link>
-        <nuxt-link class="px-4" to="/disciplinas">Disciplinas</nuxt-link>
-        <nuxt-link class="px-4" to="#">tienda</nuxt-link>
-        <nuxt-link class="px-4" to="/aliados">Aliados</nuxt-link>
-        <nuxt-link class="px-4" to="/blog">Blog</nuxt-link>
-        <nuxt-link class="px-4" to="/preguntas-frecuentes"
+        <nuxt-link class="header__link" to="/">¿Quiénes somos?</nuxt-link>
+        <nuxt-link class="header__link" to="/disciplinas"
+          >Disciplinas</nuxt-link
+        >
+        <nuxt-link class="header__link" to="#">tienda</nuxt-link>
+        <nuxt-link class="header__link" to="/aliados">Aliados</nuxt-link>
+        <nuxt-link class="header__link" to="/blog">Blog</nuxt-link>
+        <nuxt-link class="header__link" to="/preguntas-frecuentes"
           >Preguntas frecuentes</nuxt-link
         >
-        <nuxt-link class="px-4" to="/contacto">Contacto</nuxt-link>
-        <app-button icon="/login.svg"> Login </app-button>
+        <nuxt-link class="header__link" to="/contacto">Contacto</nuxt-link>
+        <app-button class="blue-button" prefix="fas" iconName="right-to-bracket">
+          Login
+        </app-button>
       </nav>
     </div>
   </header>
