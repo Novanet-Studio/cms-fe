@@ -226,7 +226,6 @@ try {
   mensaje.value = query.data.inicio.data.attributes.mensaje;
   aliados.value = query.data.aliados.data;
 } catch (err) {
-  
   principal.value = [];
   slides.value = [];
   disciplinas.value = [];

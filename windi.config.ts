@@ -14,8 +14,8 @@ export default defineConfig({
         primary: "#F18A00",
         secondary: "#001E61",
         tertiary: "#231F20",
-        "gray-mid": "#A7A9AC",
-        "gray-light": "#E6E7E8",
+        "mid-gray": "#A7A9AC",
+        "light-gray": "#E6E7E8",
       },
       fontFamily: {
         sans: ["Nunito Sans", "sans-serif"],

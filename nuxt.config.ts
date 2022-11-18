@@ -27,7 +27,12 @@ export default defineNuxtConfig({
     },
   },
 
-  css: ["~/assets/index.css", "virtual:windi.css", "virtual:windi-devtools"],
+  css: [
+    "~/assets/index.css",
+    "@fortawesome/fontawesome-svg-core/styles.css",
+    "virtual:windi.css",
+    "virtual:windi-devtools",
+  ],
 
   pwa,
 
