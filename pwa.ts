@@ -1,22 +1,24 @@
 export default {
   meta: {
-    // title: 'Project title',
-    name: 'CCS Multisport',
-    author: 'Novanet Studio <info@novanet.studio>',
-    description: 'Project description',
-    theme_color: '#fff',
-    lang: 'es',
+    title: "Caracas Multi Sport - Sitio web",
+    name: "CCS Multi Sport web",
+    author: "Novanet Studio <info@novanet.studio>",
+    description:
+      "Centro Deportivo que integra los sectores del deporte y la salud. Nuestro objetivo principal es mejorar la calidad de vida de nuestros usuarios mediante la enseñanza y práctica de diversas disciplinas deportivas.",
+    theme_color: "#fff",
+    lang: "es",
   },
   manifest: {
-    name: 'CCS Multisport',
-    short_name: 'Project short_name',
-    description: 'Project description',
-    start_url: '/',
-    display: 'standalone',
-    background_color: '#ffffff',
-    theme_color: '#fff',
+    name: "Caracas Multi Sport - Sitio web",
+    short_name: "CCS Multi Sport web app ",
+    description:
+      "Integramos los sectores del deporte y la salud con el  objetivo principal de mejorar la calidad de vida de nuestros usuarios mediante la enseñanza y práctica de diversas disciplinas deportivas.",
+    start_url: "/",
+    display: "standalone",
+    background_color: "#ffffff",
+    theme_color: "#fff",
   },
-  icon: { source: 'static/favicon.png' },
+  icon: { source: "assets/images/favicon.png" },
   workbox: {
     enabled: false,
   },
