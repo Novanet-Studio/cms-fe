@@ -1,18 +1,21 @@
 <template>
   <section class="hero">
-    <div class="hero__info">
-      <h3 class="hero__title" v-html="principal.titulo"></h3>
-      <p class="hero__description" v-html="principal.descripcion"></p>
-    </div>
-    <div class="hero__image">
-      <div class="hero__image-container">
-        <nuxt-img
-          :src="principal.imagen.data.attributes.url"
-          :alt="principal.imagen.data.attributes.alternativeText"
-        />
+    <div class="hero__container">
+      <div class="hero__info">
+        <h1 v-html="principal.titulo"></h1>
+        <p class="hero__description" v-html="principal.descripcion"></p>
+      </div>
+      <div class="hero__image">
+        <div class="hero__image-container">
+          <nuxt-img
+            :src="principal.imagen.data.attributes.url"
+            :alt="principal.imagen.data.attributes.alternativeText"
+          />
+        </div>
       </div>
     </div>
   </section>
+
   <section class="swiper">
     <swiper
       :slider-per-view="1"
@@ -29,79 +32,74 @@
       </swiper-slide>
     </swiper>
   </section>
-  <section class="container mx-auto py-[4.875rem] mb-16">
-    <logo-dots />
-    <h1 class="text-3xl font-black mt-2">Disciplinas</h1>
-    <card-wrapper>
-      <card
-        v-for="(disciplina, index) in disciplinas"
-        :key="index"
-        :logo="disciplina.attributes.imagen.data.attributes.url"
-        :alternativeText="
-          disciplina.attributes.imagen.data.attributes.alternativeText
-        "
-        :title="disciplina.attributes.nombre"
-        description="Ver información y planes"
-      />
-    </card-wrapper>
+  <section class="disciplinas">
+    <div class="disciplinas__container">
+      <h2 class="disciplinas__title">Disciplinas</h2>
+      <div class="cards__wrapper">
+        <card
+          v-for="(disciplina, index) in disciplinas"
+          :key="index"
+          :logo="disciplina.attributes.imagen.data.attributes.url"
+          :alternativeText="
+            disciplina.attributes.imagen.data.attributes.alternativeText
+          "
+          :title="disciplina.attributes.nombre"
+          description="Ver información y planes"
+        />
+      </div>
+    </div>
   </section>
 
-  <section class="flex w-full items-center bg-[#E6E7E8]">
-    <div class="flex-basis-[50%] flex flex-col items-end mr-9">
-      <logo-dots />
-      <h3 class="text-4xl font-black text-[#231F20] text-right">
+  <section class="highlight">
+    <div class="highlight__info">
+      <h2 class="highlight__title">
         FEVEDA prepara su COPA<br />
         Pasión Acuática 2022
-      </h3>
-      <p class="text-right my-4">
+      </h2>
+      <p class="highlight__text">
         Lorem ipsum dolor sit amet consectetur <br />
         adipisicing elit Explicabo sed suscipit aut iure ipsam ex voluptates?
       </p>
-      <app-button class="w-[9.5]">Button</app-button>
+      <app-button class="button--blue">Ver más</app-button>
     </div>
-    <div class="flex-basis-[50%]">
-      <nuxt-img
-        src="https://images.pexels.com/photos/863988/pexels-photo-863988.jpeg"
-        class="w-full h-[45rem] bg-cover"
-      />
+    <div class="highlight__image">
+      <nuxt-img src="/cms-persona-nadando-cenital.webp" />
     </div>
   </section>
 
-  <section class="container mx-auto py-56 flex flex-col items-center">
-    <h2 class="text-[2.5rem] text-center font-extrabold">
-      {{ mensaje.titulo }}
-    </h2>
-    <p class="text-center mb-8 text-lg mt-4">
-      {{ mensaje.descripcion }}
-    </p>
-    <app-button class="px-10 py-4">Conoce más</app-button>
+  <section class="mensaje">
+    <div class="mensaje__container">
+      <h2 class="mensaje__title">
+        {{ mensaje.titulo }}
+      </h2>
+      <p class="text-center mb-8 text-lg mt-4">
+        {{ mensaje.descripcion }}
+      </p>
+      <app-button class="button--blue">Conoce más</app-button>
+    </div>
   </section>
 
-  <section class="container mx-auto">
-    <logo-dots />
-    <h1 class="text-3xl font-black mt-2">Aliados</h1>
-    <icon-card-wrapper>
-      <icon-card
-        v-for="(aliado, index) in aliados"
-        :icon="aliado.attributes.imagen.data.attributes.url"
-        :key="index"
-      />
-    </icon-card-wrapper>
-  </section>
-
-  <section class="container mx-auto mt-48">
-    <header>
-      <logo-dots />
-      <h1 class="text-3xl font-black mt-2">Tienda</h1>
-      <div class="flex gap-8 mt-10 mb-20">
-        <card-overlay
-          v-for="(item, index) in storeItems"
+    <section class="aliados">
+      <h2 class="aliados__title">Aliados</h2>
+      <div class="aliados__wrapper">
+        <icon-card
+          v-for="(aliado, index) in aliados"
+          :icon="aliado.attributes.imagen.data.attributes.url"
           :key="index"
-          :image="item.image"
-          :text="item.text"
         />
       </div>
-    </header>
+    </section>
+
+  <section class="tienda">
+    <h2 class="tienda__title">Tienda</h2>
+    <div class="tienda__categories">
+      <card-overlay
+        v-for="(item, index) in storeItems"
+        :key="index"
+        :image="item.image"
+        :text="item.text"
+      />
+    </div>
   </section>
 </template>
 

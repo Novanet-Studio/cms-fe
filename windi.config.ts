@@ -29,6 +29,8 @@ export default defineConfig({
       backgroundImage: {
         dots: "url('./assets/images/dots.svg')",
         heroBg: "url('./assets/images/cms-hero-image-background.svg')",
+        sectionBg: "url('./assets/images/cms-section-background-1.svg')",
+        sectionBg2: "url('./assets/images/cms-section-background-2.svg')",
       },
     },
   },
