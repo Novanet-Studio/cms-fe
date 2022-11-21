@@ -1,34 +1,19 @@
 <template>
-  <section class="flex py-24 container mx-auto items-center">
-    <div class="w-2xl flex flex-col items-end">
-      <logo-dots />
-      <h3 class="text-4xl font-black text-[#231F20] text-right">
-        {{ principal.titulo }}
-      </h3>
-      <p class="text-right mt-4">
-        {{ principal.descripcion }}
-      </p>
+  <section class="hero">
+    <div class="hero__info">
+      <h3 class="hero__title" v-html="principal.titulo"></h3>
+      <p class="hero__description" v-html="principal.descripcion"></p>
     </div>
-    <div class="ml-20">
-      <div class="w-[23.125rem] h-[23.125rem] relative">
+    <div class="hero__image">
+      <div class="hero__image-container">
         <nuxt-img
           :src="principal.imagen.data.attributes.url"
           :alt="principal.imagen.data.attributes.alternativeText"
-          class="w-full h-full rounded-full z-50 absolute z-[10]"
         />
-        <div
-          class="w-[13.75rem] h-[13.75rem] bg-primary rounded-full absolute top-0 -left-5"
-        ></div>
-        <div
-          class="w-[11.125rem] h-[11.125rem] bg-secondary rounded-full absolute top-18 -right-8"
-        ></div>
-        <div
-          class="w-[6.875rem] h-[6.875rem] bg-tertiary rounded-full absolute bottom-0 left-10"
-        ></div>
       </div>
     </div>
   </section>
-  <section class="w-full">
+  <section class="swiper">
     <swiper
       :slider-per-view="1"
       :space-between="0"

@@ -1,5 +1,32 @@
 @layer base {
+  html {
+    @apply text-base;
+  }
+
+  body {
+    @apply font-sans text-tertiary font-light hyphens-auto;
+    font-kerning: normal;
+    -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+    -ms-font-feature-settings: "kern", "liga", "clig", "calt";
+    -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+    font-feature-settings: "kern", "liga", "clig", "calt";
+    text-rendering: optimizeLegibility;
+  }
+
+  img {
+    @apply max-w-full m-0 p-0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply text-tertiary font-black;
+  }
+
   /* nunito-sans-regular - latin */
+
   @font-face {
     font-family: "Nunito Sans";
     font-style: normal;
@@ -18,7 +45,9 @@
       /* Safari, Android, iOS */
         url("@/assets/fonts/nunito-sans-v12-latin-regular.svg#NunitoSans")
         format("svg"); /* Legacy iOS */
+    font-display: swap;
   }
+
   /* nunito-sans-900 - latin */
   @font-face {
     font-family: "Nunito Sans";
@@ -37,7 +66,13 @@
       /* Safari, Android, iOS */
         url("@/assets/fonts/nunito-sans-v12-latin-900.svg#NunitoSans")
         format("svg"); /* Legacy iOS */
+    font-display: swap;
   }
+}
+
+/* ./components/app-button.vue */
+.button--blue {
+  @apply bg-secondary px-8 py-2 rounded-full text-white;
 }
 
 /* ./components/the-header.vue */
@@ -57,6 +92,40 @@
   @apply px-4;
 }
 
-.blue-button {
-  @apply bg-secondary px-8 py-2 rounded-full text-white;
+/* ./pages/index.vue */
+.hero {
+  @apply flex items-center container mx-auto py-24;
+}
+
+.hero__info {
+  @apply flex flex-col items-end w-1/2 pt-4 bg-dots bg-right-top bg-no-repeat text-right;
+}
+
+.hero__title {
+  @apply text-4xl;
+}
+
+.hero__description {
+  @apply mt-4;
+}
+
+.hero__image {
+  @apply w-1/2 pl-22;
+}
+
+.hero__image-container {
+  @apply flex flex-col justify-center items-center w-[26.563rem] h-[26.563rem] bg-heroBg;
+}
+
+.hero__image-container > img {
+  @apply w-[23.125rem] h-[23.125rem] rounded-full z-50 absolute z-[10];
+}
+
+.swiper {
+  @apply w-full;
+}
+
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next {
+  @apply text-primary;
 }

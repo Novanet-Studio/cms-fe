@@ -26,6 +26,10 @@ export default defineConfig({
       boxShadow: {
         card: "0 6.0051px 6.0051px rgba(0,0,0,0.25)",
       },
+      backgroundImage: {
+        dots: "url('./assets/images/dots.svg')",
+        heroBg: "url('./assets/images/cms-hero-image-background.svg')",
+      },
     },
   },
 });

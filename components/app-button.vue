@@ -1,7 +1,7 @@
 <template>
   <button :class="class" @click.prevent="$emit('click')">
     <template v-if="prefix">
-      <font-awesome-icon :icon="[`${prefix}`, `${iconName}`]" />
+      <font-awesome-icon :icon="[`${prefix}`, `${iconName}`]" :size="iconSize" />
     </template>
     <slot />
   </button>
@@ -12,6 +12,7 @@ type Props = {
   class?: string;
   prefix?: string;
   iconName?: string;
+  iconSize?: string;
   text?: string;
 };
 
