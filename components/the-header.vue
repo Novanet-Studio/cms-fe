@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <div>
+    <div class="header__container">
       <div class="header__logo">
         <nuxt-link to="/" target="_self">
           <nuxt-img alt="Caracas Sport logo" src="ccs-multisports-logo.svg" />
@@ -19,7 +19,7 @@
         >
         <nuxt-link class="header__link" to="/contacto">Contacto</nuxt-link>
         <app-button
-          class="button--blue"
+          class="button--blue button--small"
           prefix="fas"
           iconName="right-to-bracket"
           iconSize="1x"

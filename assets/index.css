@@ -93,13 +93,20 @@
   @apply bg-secondary px-8 py-2 rounded-full text-white;
 }
 
+.button--small {
+  @apply text-sm;
+}
+
 /* ./components/the-header.vue */
 .header {
   @apply border-b border-light-gray shadow-lg;
 }
 
-.header > div {
-  @apply container mx-auto flex justify-between xl:py-8;
+.header__container {
+  @apply container mx-auto flex justify-between xl:p-8;
+}
+
+.header__logo {
 }
 
 .header__navigation {
@@ -108,6 +115,35 @@
 
 .header__link {
   @apply px-4;
+}
+
+/* ./components/the-footer.vue */
+.footer {
+  @apply flex justify-between container mx-auto py-16 xl:px-8;
+}
+
+.footer__legal {
+  @apply mb-2;
+}
+
+.footer__icons {
+  @apply flex;
+}
+
+.footer__link {
+  @apply mr-3;
+}
+
+.footer__author {
+  @apply flex items-center;
+}
+
+.footer__author p {
+  @apply mr-2;
+}
+
+.footer__author img {
+  @apply w-22;
 }
 
 /* ./pages/index.vue */
@@ -137,7 +173,7 @@
 }
 
 .hero__image-container > img {
-  @apply w-[23.125rem] h-[23.125rem] rounded-full z-50 absolute z-[10];
+  @apply w-[23.125rem] h-[23.125rem] rounded-full z-50 absolute;
 }
 
 .swiper {
@@ -154,7 +190,7 @@
 }
 
 .disciplinas__container {
-  @apply container mx-auto py-[4.875rem];
+  @apply container mx-auto xl:(px-8 py-[4.875rem]);
 }
 
 .disciplinas__title {
@@ -226,11 +262,11 @@
 }
 
 .aliados {
-  @apply flex flex-col container mx-auto
+  @apply flex flex-col container mx-auto xl:(px-8 py-[4.875rem]);
 }
 
 .aliados__title {
-  @apply bg-dots bg-left-top bg-no-repeat pt-4
+  @apply bg-dots bg-left-top bg-no-repeat pt-4;
 }
 
 .aliados__wrapper {
@@ -238,13 +274,13 @@
 }
 
 .tienda {
-  @apply container mx-auto mt-12
+  @apply container mx-auto mt-12 xl:(px-8 py-[4.875rem]);
 }
 
 .tienda__title {
-  @apply bg-dots bg-left-top bg-no-repeat pt-4
+  @apply bg-dots bg-left-top bg-no-repeat pt-4;
 }
 
 .tienda__categories {
-  @apply flex justify-between mt-8
+  @apply flex justify-between mt-8;
 }
