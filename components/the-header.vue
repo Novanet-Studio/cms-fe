@@ -5,9 +5,24 @@
         <nuxt-link to="/" target="_self">
           <nuxt-img alt="Caracas Sport logo" src="ccs-multisports-logo.svg" />
         </nuxt-link>
+        <div
+          class="header__bars"
+          @click="toggleMenu"
+          :class="`header__bars ${
+            isExpanded && 'header__bars--expanded'
+          }`"
+        >
+          <font-awesome-icon :icon="['fas', 'bars']" size="2x" />
+        </div>
       </div>
-      <nav class="header__navigation">
-        <nuxt-link class="header__link" to="/quienes-somos">¿Quiénes somos?</nuxt-link>
+      <nav
+        :class="`header__navigation ${
+          isExpanded && 'header__navigation--expanded'
+        }`"
+      >
+        <nuxt-link class="header__link" to="/quienes-somos"
+          >¿Quiénes somos?</nuxt-link
+        >
         <nuxt-link class="header__link" to="/disciplinas"
           >Disciplinas</nuxt-link
         >
@@ -30,3 +45,11 @@
     </div>
   </header>
 </template>
+
+<script lang="ts" setup>
+const isExpanded = ref(false);
+
+const toggleMenu = () => {
+  isExpanded.value = !isExpanded.value;
+};
+</script>

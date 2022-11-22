@@ -94,7 +94,7 @@
 }
 
 .button--small {
-  @apply text-sm;
+  @apply text-sm <sm:(text-xs);
 }
 
 /* ./components/the-header.vue */
@@ -103,18 +103,35 @@
 }
 
 .header__container {
-  @apply container mx-auto flex justify-between xl:p-8;
+  @apply container mx-auto xl:(flex justify-between p-8);
 }
 
 .header__logo {
+  @apply <sm:(flex justify-between ml-4 py-4);
+}
+
+.header__bars {
+  @apply hidden <sm:(flex self-center text-tertiary mr-4 transition-all);
+}
+
+.header__bars--expanded {
+  @apply <sm:(text-primary );
 }
 
 .header__navigation {
-  @apply flex justify-end items-center mr-8;
+  @apply flex <sm:(flex-wrap w-1/2 absolute -right-1/2 bg-white border-light-gray shadow-lg p-4 transition-all z-30) xl:(items-center justify-end mr-8);
+}
+
+.header__navigation--expanded {
+  @apply <sm:(right-0 );
+}
+
+.header__navigation button {
+  @apply <sm:(mt-1);
 }
 
 .header__link {
-  @apply px-4;
+  @apply <sm:(flex w-full py-2) xl:(px-4);
 }
 
 /* ./components/the-footer.vue */
@@ -173,7 +190,7 @@
 }
 
 .hero__image-container > img {
-  @apply w-[23.125rem] h-[23.125rem] rounded-full z-50 absolute;
+  @apply w-[23.125rem] h-[23.125rem] rounded-full z-20 absolute;
 }
 
 .swiper {
