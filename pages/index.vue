@@ -2,7 +2,7 @@
   <section class="hero">
     <div class="hero__container">
       <div class="hero__info">
-        <h1 class="hero__title" v-html="principal.titulo"></h1>
+        <h1 class="heading__title h1" v-html="principal.titulo"></h1>
         <p class="hero__description" v-html="principal.descripcion"></p>
       </div>
       <div class="hero__image">
@@ -63,7 +63,7 @@
       <app-button class="button--blue">Ver más</app-button>
     </div>
     <div class="highlight__image">
-      <nuxt-img src="/cms-persona-nadando-cenital.webp" />
+      <nuxt-img src="https://res.cloudinary.com/novanet-studio/image/upload/v1669243034/ccs-multisport/cms_persona_nadando_cenital_7f70cc22de.webp" />
     </div>
   </section>
 
