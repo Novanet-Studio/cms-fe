@@ -60,7 +60,7 @@
     @apply text-tertiary font-black;
   }
 
-  h1  {
+  .heading-1  {
     @apply text-tertiary font-black text-4xl 
     <sm:(text-3xl);
   }

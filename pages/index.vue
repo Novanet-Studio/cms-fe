@@ -2,7 +2,7 @@
   <section class="hero">
     <div class="hero__container">
       <div class="hero__info">
-        <h1 class="heading__title" v-html="principal.titulo"></h1>
+        <h1 class="heading-1" v-html="principal.titulo"></h1>
         <p class="hero__description" v-html="principal.descripcion"></p>
       </div>
       <div class="hero__image">
