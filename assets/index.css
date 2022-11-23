@@ -11,7 +11,7 @@
     -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
     font-feature-settings: "kern", "liga", "clig", "calt";
     text-rendering: optimizeLegibility;
-  }  
+  }
 
   /* nunito-sans-regular - latin */
   @font-face {
@@ -60,28 +60,36 @@
     @apply text-tertiary font-black;
   }
 
-  .heading-1  {
+  .heading-dots-left {
+    @apply bg-dots bg-left-top bg-no-repeat pt-4;
+  }
+
+  .heading-dots-right {
+    @apply bg-dots bg-no-repeat pt-4;
+  }
+
+  .heading-1 {
     @apply heading text-4xl 
     <sm:(text-3xl);
   }
 
-  h2 {
-    @apply text-3xl 
+  .heading-2 {
+    @apply heading text-3xl 
     <sm:(text-2xl);
   }
 
-  h3 {
-    @apply text-2xl 
+  .heading-3 {
+    @apply heading text-2xl 
     <sm:(text-xl);
   }
 
-  h4 {
-    @apply text-xl 
+  .heading-4 {
+    @apply heading text-xl 
     <sm:(text-lg);
   }
 
-  h5 {
-    @apply text-lg 
+  .heading-5 {
+    @apply heading text-lg 
     <sm:(text-base);
   }
 }
@@ -248,7 +256,7 @@
 }
 
 .disciplinas__title {
-  @apply bg-dots bg-left-top bg-no-repeat pt-4;
+  @apply heading-2 heading-dots-left;
 }
 
 .cards__wrapper {
@@ -280,7 +288,7 @@
 }
 
 .card__title {
-  @apply text-center text-secondary
+  @apply heading-4 text-secondary !important
   <sm:(text-sm);
 }
 
@@ -301,7 +309,7 @@
 }
 
 .highlight__title {
-  @apply bg-dots bg-no-repeat pt-4
+  @apply heading-2 heading-dots-right 
   <sm:(w-full text-center bg-top)
   xl:(text-right bg-right-top);
 }
@@ -332,7 +340,7 @@
 }
 
 .mensaje__title {
-  @apply text-center;
+  @apply heading-2 text-center;
 }
 
 .aliados {
@@ -341,7 +349,7 @@
 }
 
 .aliados__title {
-  @apply bg-dots bg-left-top bg-no-repeat pt-4;
+  @apply heading-2 heading-dots-left;
 }
 
 .aliados__wrapper {
@@ -369,7 +377,7 @@
 }
 
 .tienda__title {
-  @apply bg-dots bg-left-top bg-no-repeat pt-4;
+  @apply heading-2 heading-dots-left;
 }
 
 .tienda__wrapper {
