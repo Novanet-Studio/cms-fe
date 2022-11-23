@@ -57,11 +57,12 @@
   }
 
   .heading-title {
-    text-tertiary font-black;
+    @apply text-tertiary font-black;
   }
 
-  .h1  {
-    text-4xl <sm:(text-3xl);
+  .heading-1  {
+    @apply text-4xl 
+    <sm:(text-3xl);
   }
 
   h2 {
