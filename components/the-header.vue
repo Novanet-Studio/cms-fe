@@ -3,7 +3,7 @@
     <div class="header__container">
       <div class="header__logo">
         <nuxt-link to="/" target="_self">
-          <nuxt-img alt="Caracas Sport logo" src="ccs-multisports-logo.svg" />
+          <img alt="Caracas Sport logo" src="~/assets/images/ccs-multisports-logo.svg" />
         </nuxt-link>
         <div
           class="header__bars"
