@@ -24,23 +24,28 @@
   }
 
   h1 {
-    @apply text-4xl;
+    @apply text-4xl 
+    <sm:(text-3xl);
   }
 
   h2 {
-    @apply text-3xl;
+    @apply text-3xl 
+    <sm:(text-2xl);
   }
 
   h3 {
-    @apply text-2xl;
+    @apply text-2xl 
+    <sm:(text-xl);
   }
 
   h4 {
-    @apply text-xl;
+    @apply text-xl 
+    <sm:(text-lg);
   }
 
   h5 {
-    @apply text-lg;
+    @apply text-lg 
+    <sm:(text-base);
   }
 
   /* nunito-sans-regular - latin */
@@ -94,7 +99,8 @@
 }
 
 .button--small {
-  @apply text-sm <sm:(text-xs);
+  @apply text-sm
+  <sm:(text-xs);
 }
 
 /* ./components/the-header.vue */
@@ -103,15 +109,22 @@
 }
 
 .header__container {
-  @apply container mx-auto xl:(flex justify-between p-8);
+  @apply container mx-auto 
+  xl:(flex justify-between p-8);
 }
 
 .header__logo {
   @apply <sm:(flex justify-between ml-4 py-4);
 }
 
+.header__logo img {
+  @apply 
+  <sm:(w-16)
+}
+
 .header__bars {
-  @apply hidden <sm:(flex self-center text-tertiary mr-4 transition-all);
+  @apply hidden 
+  <sm:(flex self-center text-tertiary mr-4 transition-all);
 }
 
 .header__bars--expanded {
@@ -119,11 +132,13 @@
 }
 
 .header__navigation {
-  @apply flex <sm:(flex-wrap w-1/2 absolute -right-1/2 bg-white border-light-gray shadow-lg p-4 transition-all z-30) xl:(items-center justify-end mr-8);
+  @apply flex 
+  <sm:(flex-wrap w-1/2 fixed -right-1/2 bg-white border-light-gray shadow-lg p-4 transition-all z-30) 
+  xl:(items-center justify-end mr-8);
 }
 
 .header__navigation--expanded {
-  @apply <sm:(right-0 );
+  @apply <sm:(right-0);
 }
 
 .header__navigation button {
@@ -134,67 +149,98 @@
   @apply <sm:(flex w-full py-2) xl:(px-4);
 }
 
+/* ./layouts/default.vue */
+.main > section {
+  @apply <sm:(px-3);
+}
+
 /* ./components/the-footer.vue */
 .footer {
-  @apply flex justify-between container mx-auto py-16 xl:px-8;
+  @apply flex justify-between container mx-auto py-16 
+  <sm:(mt-4 px-4 py-6)
+  xl:px-8;
+}
+
+.footer__left {
+@apply w-1/2
 }
 
 .footer__legal {
-  @apply mb-2;
+  @apply 
+  <sm:(text-[0.8rem])
+  xl:(mb-2);
 }
 
 .footer__icons {
-  @apply flex;
+  @apply flex
+  <sm:(text-primary text-xs mt-2);
 }
 
 .footer__link {
   @apply mr-3;
 }
 
-.footer__author {
-  @apply flex items-center;
+.footer__right {
+  @apply flex
+  <sm:(flex-wrap justify-end w-1/2);
 }
 
-.footer__author p {
-  @apply mr-2;
+.footer__right p {
+  @apply 
+  <sm:(w-full text-[0.8rem] text-right)
+  xl:(mr-2);
 }
 
-.footer__author img {
-  @apply w-22;
+.footer__right img {
+  @apply w-22
 }
 
 /* ./pages/index.vue */
 
 .hero {
-  @apply w-full bg-sectionBg bg-right bg-no-repeat bg-contain;
+  @apply w-full bg-sectionBg bg-no-repeat bg-contain 
+  <sm:(bg-right-top) xl:(bg-right);
 }
 
 .hero__container {
-  @apply flex items-center container mx-auto py-24;
+  @apply flex items-center container mx-auto 
+  <sm:(flex-wrap py-12) xl:(py-24);
 }
 
 .hero__info {
-  @apply flex flex-col items-end w-1/2 pt-4 bg-dots bg-right-top bg-no-repeat text-right;
+  @apply flex flex-col pt-4 bg-dots bg-no-repeat text-right 
+  <sm:(w-full bg-top) xl:(w-1/2 bg-right-top);
+}
+
+.hero__title {
+  @apply <sm:(text-center);
 }
 
 .hero__description {
-  @apply mt-4;
+  @apply mt-4 
+  <sm:(text-center);
 }
 
 .hero__image {
-  @apply w-1/2 pl-22;
+  @apply <sm:(w-full mt-4) 
+  xl:(w-1/2 pl-22);
 }
 
 .hero__image-container {
-  @apply flex flex-col justify-center items-center w-[26.563rem] h-[26.563rem] bg-heroBg;
+  @apply flex flex-col justify-center items-center bg-heroBg bg-no-repeat 
+  <sm:(w-88 h-88 bg-contain) 
+  xl:(w-107 h-107);
 }
 
 .hero__image-container > img {
-  @apply w-[23.125rem] h-[23.125rem] rounded-full z-20 absolute;
+  @apply rounded-full z-20 absolute 
+  <sm:(w-80 h-80) 
+  xl:(w-92 h-92);
 }
 
 .swiper {
-  @apply w-full;
+  @apply w-full 
+  <sm:(mb-4);
 }
 
 .swiper .swiper-button-prev,
@@ -207,7 +253,8 @@
 }
 
 .disciplinas__container {
-  @apply container mx-auto xl:(px-8 py-[4.875rem]);
+  @apply container mx-auto 
+  xl:(px-8 py-20);
 }
 
 .disciplinas__title {
@@ -215,15 +262,21 @@
 }
 
 .cards__wrapper {
-  @apply flex justify-between container mx-auto mt-9 px-20;
+  @apply flex container mx-auto  
+  <sm:(flex-wrap justify-around content-around mt-4 min-h-112)
+  xl:(justify-between mt-9 px-20);
 }
 
 .card__outer {
-  @apply flex justify-center items-center w-[12.8863rem] h-[16.245rem] border border-[rgba(0,30,97,0.3)] rounded-2xl;
+  @apply flex justify-center items-center border border-mid-gray rounded-2xl 
+  <sm:(w-38 h-50) 
+  xl:(w-51 h-64);
 }
 
 .card__inner {
-  @apply flex flex-col items-center justify-between w-[11.7894rem] h-[15.2163rem] shadow-card p-4 rounded-xl bg-gradient-to-br from-light-gray to-white;
+  @apply flex flex-col items-center justify-between shadow-card rounded-xl bg-gradient-to-br from-light-gray to-white 
+  <sm:(w-34 h-46 p-3) 
+  xl:(w-46 h-60 p-4);
 }
 
 .card__elements {
@@ -231,35 +284,47 @@
 }
 
 .card__icon {
-  @apply w-20 h-20 bg-primary rounded-full flex items-center justify-center mb-[.875rem];
+  @apply bg-primary rounded-full flex items-center justify-center mb-[.875rem]
+  <sm:(w-15 h-15 p-3)
+  xl:(w-20 h-20);
 }
 
 .card__title {
-  @apply text-center text-secondary;
+  @apply text-center text-secondary
+  <sm:(text-sm);
 }
 
 .card__text {
-  @apply text-sm text-center;
+  @apply text-sm text-center
+  <sm:(text-xs);
 }
 
 .highlight {
-  @apply flex w-full items-center bg-light-gray;
+  @apply flex w-full items-center bg-light-gray
+  <sm:(flex-wrap);
 }
 
 .highlight__info {
-  @apply flex flex-col items-end basis-1/2 mr-10;
+  @apply flex flex-col w-1/2 
+  <sm:(w-full py-4 items-center)
+  xl:(mr-10 items-end);
 }
 
 .highlight__title {
-  @apply text-right bg-dots bg-right-top bg-no-repeat pt-4;
+  @apply bg-dots bg-no-repeat pt-4
+  <sm:(w-full text-center bg-top)
+  xl:(text-right bg-right-top);
 }
 
 .highlight__text {
-  @apply text-right my-4;
+  @apply my-4
+  <sm:(text-center)
+  xl:(text-right);
 }
 
 .highlight__image {
-  @apply flex basis-1/2 h-[50vh];
+  @apply flex w-1/2 
+  <sm:(w-full pb-4);
 }
 
 .highlight__image img {
@@ -271,7 +336,9 @@
 }
 
 .mensaje__container {
-  @apply container mx-auto py-40 flex flex-col items-center;
+  @apply flex flex-col items-center container mx-auto
+  xl:(py-30)
+  <sm:(py-20);
 }
 
 .mensaje__title {
@@ -279,7 +346,8 @@
 }
 
 .aliados {
-  @apply flex flex-col container mx-auto xl:(px-8 py-[4.875rem]);
+  @apply flex flex-col container mx-auto 
+  xl:(px-8);
 }
 
 .aliados__title {
@@ -287,17 +355,48 @@
 }
 
 .aliados__wrapper {
-  @apply flex flex-row justify-between px-12 py-8;
+  @apply flex flex-row justify-between 
+  <sm:(flex-wrap h-130 px-4 pt-6)
+  xl:(px-12 py-8);
+}
+
+.aliado {
+  @apply <sm:(w-36 h-36);
+}
+
+.aliado__logo {
+  @apply p-2 border border-mid-gray rounded-2xl;
+}
+
+.aliado__image {
+  @apply w-full;
 }
 
 .tienda {
-  @apply container mx-auto mt-12 xl:(px-8 py-[4.875rem]);
+  @apply container mx-auto
+  <sm:()  
+  xl:(mt-12 px-8 py-4);
 }
 
 .tienda__title {
   @apply bg-dots bg-left-top bg-no-repeat pt-4;
 }
 
-.tienda__categories {
-  @apply flex justify-between mt-8;
+.tienda__wrapper {
+  @apply flex justify-between
+  <sm:(flex-wrap)
+  xl:(mt-8);
+}
+
+.tienda__category {
+  @apply relative w-full mt-2
+  xl:(w-[33%]);
+}
+
+.tienda__overlay {
+  @apply flex items-end absolute bottom-0 left-0 top-0 right-0 p-2 from-[rgba(35,31,32,0)] bg-gradient-to-t;
+}
+
+.tienda__name {
+  @apply text-white p-4;
 }

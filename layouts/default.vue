@@ -2,7 +2,9 @@
   <transition name="fade" appear>
     <div>
       <the-header />
-      <slot />
+      <main class="main">
+        <slot />
+      </main>
       <the-footer />
     </div>
   </transition>

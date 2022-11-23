@@ -1,8 +1,7 @@
 <template>
-  <div :class="wrapperClass" class="flex">
-    <div :class="[imgClass, wrapperImageSize.wrapper]"
-      class="w-40 h-40 flex justify-center items-center border border-[rgba(167,169,172,0.75)] rounded-[1.25rem]">
-      <nuxt-img :src="icon" class="w-36 h-36" :class="wrapperImageSize.image" />
+  <div class="aliado">
+    <div class="aliado__logo">
+      <nuxt-img :src="logo" />
     </div>
     <div class="w-auto ml-4" :class="textClass" v-if="title || content">
       <h2 :class="titleClass" class="text-2xl text-secondary font-extrabold" v-if="title">{{ title }}</h2>
@@ -13,7 +12,7 @@
 
 <script lang="ts" setup>
 type Props = {
-  icon: string;
+  logo: string;
   title?: string;
   content?: string;
   textClass?: string;

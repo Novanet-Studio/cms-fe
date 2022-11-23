@@ -2,7 +2,7 @@
   <section class="hero">
     <div class="hero__container">
       <div class="hero__info">
-        <h1 v-html="principal.titulo"></h1>
+        <h1 class="hero__title" v-html="principal.titulo"></h1>
         <p class="hero__description" v-html="principal.descripcion"></p>
       </div>
       <div class="hero__image">
@@ -16,7 +16,7 @@
     </div>
   </section>
 
-  <section class="swiper">
+  <div class="swiper">
     <swiper
       :slider-per-view="1"
       :space-between="0"
@@ -31,7 +31,7 @@
         />
       </swiper-slide>
     </swiper>
-  </section>
+  </div>
   <section class="disciplinas">
     <div class="disciplinas__container">
       <h2 class="disciplinas__title">Disciplinas</h2>
@@ -82,9 +82,9 @@
     <section class="aliados">
       <h2 class="aliados__title">Aliados</h2>
       <div class="aliados__wrapper">
-        <icon-card
+        <logo-card
           v-for="(aliado, index) in aliados"
-          :icon="aliado.attributes.imagen.data.attributes.url"
+          :logo="aliado.attributes.imagen.data.attributes.url"
           :key="index"
         />
       </div>
@@ -92,7 +92,7 @@
 
   <section class="tienda">
     <h2 class="tienda__title">Tienda</h2>
-    <div class="tienda__categories">
+    <div class="tienda__wrapper">
       <card-overlay
         v-for="(item, index) in storeItems"
         :key="index"

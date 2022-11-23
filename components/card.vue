@@ -8,8 +8,8 @@
         <h4 class="card__title">
           {{ title }}
         </h4>
+        <p class="card__text">{{ description }}</p>       
       </div>
-      <p class="card__text">{{ description }}</p>
       <logo-dots />
     </div>
   </div>
