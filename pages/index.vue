@@ -32,6 +32,7 @@
       </swiper-slide>
     </swiper>
   </div>
+
   <section class="disciplinas">
     <div class="disciplinas__container">
       <h2 class="disciplinas__title">Disciplinas</h2>
@@ -39,9 +40,9 @@
         <card
           v-for="(disciplina, index) in disciplinas"
           :key="index"
-          :logo="disciplina.attributes.imagen.data.attributes.url"
+          :logo="disciplina.attributes.icono.data.attributes.url"
           :alternativeText="
-            disciplina.attributes.imagen.data.attributes.alternativeText
+            disciplina.attributes.icono.data.attributes.alternativeText
           "
           :title="disciplina.attributes.nombre"
           description="Ver información y planes"
@@ -50,22 +51,14 @@
     </div>
   </section>
 
-  <section class="highlight">
-    <div class="highlight__info">
-      <h2 class="highlight__title">
-        FEVEDA prepara su COPA<br />
-        Pasión Acuática 2022
-      </h2>
-      <p class="highlight__text">
-        Lorem ipsum dolor sit amet consectetur <br />
-        adipisicing elit Explicabo sed suscipit aut iure ipsam ex voluptates?
-      </p>
-      <app-button class="button--blue">Ver más</app-button>
-    </div>
-    <div class="highlight__image">
-      <nuxt-img src="https://res.cloudinary.com/novanet-studio/image/upload/v1669243034/ccs-multisport/cms_persona_nadando_cenital_7f70cc22de.webp" />
-    </div>
-  </section>
+  <highlight
+    title="FEVEDA prepara su COPA<br />
+        Pasión Acuática 2022"
+    description="La junta directiva de la federación venezolana de<br />
+        deportes acuáticos “FEVEDA”, se complace en invitar a<br />
+        todas las asociaciones afiliadas"
+    image="https://res.cloudinary.com/novanet-studio/image/upload/v1669315525/ccs-multisport/cms_hombre_nadando_crawl_be03030bbb.webp"
+  />
 
   <section class="mensaje">
     <div class="mensaje__container">
@@ -79,16 +72,16 @@
     </div>
   </section>
 
-    <section class="aliados">
-      <h2 class="aliados__title">Aliados</h2>
-      <div class="aliados__wrapper">
-        <logo-card
-          v-for="(aliado, index) in aliados"
-          :logo="aliado.attributes.imagen.data.attributes.url"
-          :key="index"
-        />
-      </div>
-    </section>
+  <section class="aliados">
+    <h2 class="aliados__title">Aliados</h2>
+    <div class="aliados__wrapper">
+      <logo-card
+        v-for="(aliado, index) in aliados"
+        :logo="aliado.attributes.imagen.data.attributes.url"
+        :key="index"
+      />
+    </div>
+  </section>
 
   <section class="tienda">
     <h2 class="tienda__title">Tienda</h2>
@@ -172,7 +165,7 @@ try {
         data {
           attributes {
             nombre
-            imagen {
+            icono {
               data {
                 attributes {
                   url
@@ -217,15 +210,18 @@ try {
 
 const storeItems = [
   {
-    image: "https://images.pexels.com/photos/1415810/pexels-photo-1415810.jpeg",
+    image:
+      "https://res.cloudinary.com/novanet-studio/image/upload/v1669302437/ccs-multisport/cms_tienda_caballeros_a58d315abf.webp",
     text: "Caballeros",
   },
   {
-    image: "https://images.pexels.com/photos/3775161/pexels-photo-3775161.jpeg",
+    image:
+      "https://res.cloudinary.com/novanet-studio/image/upload/v1669302437/ccs-multisport/cms_tienda_damas_e30adea4aa.webp",
     text: "Damas",
   },
   {
-    image: "https://images.pexels.com/photos/2326887/pexels-photo-2326887.jpeg",
+    image:
+      "https://res.cloudinary.com/novanet-studio/image/upload/v1669302437/ccs-multisport/cms_tienda_ninos_65e60acc37.webp",
     text: "Niños",
   },
 ];

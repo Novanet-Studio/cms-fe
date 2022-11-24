@@ -401,5 +401,5 @@
 }
 
 .tienda__name {
-  @apply text-white p-4;
+  @apply heading heading-3 text-white !important p-4;
 }
