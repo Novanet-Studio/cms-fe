@@ -8,7 +8,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@kevinmarrec/nuxt-pwa": "^0.11.1",
+    "@kevinmarrec/nuxt-pwa": "^0.13.0",
     "@nuxt/image-edge": "^1.0.0-27809804.194d2d6",
     "@nuxtjs/strapi": "^1.6.3",
     "nuxt": "3.0.0",
