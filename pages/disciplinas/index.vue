@@ -78,6 +78,7 @@ try {
         data {
           attributes {
             nombre
+            descripcion
             link
             icono {
               data {
@@ -85,6 +86,44 @@ try {
                   url
                   alternativeText
                 }
+              }
+            }
+            
+            imagen {
+              data {
+                attributes {
+                  url
+                  alternativeText
+                }
+              }
+            }
+
+            clases {
+              ... on ComponentDisciplinasClases {
+                titulo
+                descripcion
+                icono {
+                  data {
+                    attributes {
+                      url
+                      alternativeText
+                    }
+                  }
+                }
+                planes
+                horarios
+              }
+            }
+
+            horarios {
+              ... on ComponentDisciplinasHorarios {
+                horarios
+              }
+            }
+
+            planes {
+              ... on ComponentDisciplinasPlanes {
+                planes
               }
             }
           }
