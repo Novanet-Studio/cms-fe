@@ -7,18 +7,12 @@
       <div class="w-36 h-36 bg-primary rounded-full flex items-center justify-center mb-[.875rem]">
         <nuxt-img class="w-20" :src="logo" />
       </div>
-      <h2 class="text-5xl text-white">Natación</h2>
+      <h2 class="text-5xl text-white">{{ disciplina?.attributes?.nombre || 'Cargando...' }}</h2>
     </div>
   </section>
   <section class="container mx-auto">
     <div class="p-8 border rounded-xl mt-16">
-      <p class="text-2xl">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam beatae dolorum corporis dolor
-        sed quo natus
-        magnam quia illum adipisci velit unde consectetur facere error molestias eius aliquid fugit repellendus, quaerat
-        eaque ullam nulla repellat? Quos dolorum nulla repellat consequuntur. Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Dicta hic necessitatibus quo accusamus fuga corrupti. Excepturi quidem incidunt quia assumenda
-        sunt perspiciatis, autem vero porro corporis aperiam eligendi omnis hic dolorum numquam voluptate eius modi
-        ducimus saepe molestiae amet rem.</p>
+      <p class="text-2xl" v-html="disciplina?.attributes?.descripcion || `<span>Cargando...</span>`"></p>
     </div>
     <div class="my-6 flex justify-center">
       <logo-dots />
@@ -30,5 +24,9 @@
 </template>
 <script lang="ts" setup>
 const route = useRoute();
-const logo = `${route.params.id}.svg`;
+const id = route.params.id as string;
+const logo = `${id}.svg`;
+const { discipline: disciplina } = useDisciplines({
+  link: id,
+});
 </script>
