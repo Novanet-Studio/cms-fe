@@ -2,7 +2,7 @@ import pwa from "./pwa";
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  target:'static',
+  target: "static",
   build: {
     transpile: [
       "@fortawesome/vue-fontawesome",
@@ -43,12 +43,15 @@ export default defineNuxtConfig({
 
   router: {
     options: {
-      linkActiveClass: 'text-black font-bold',
+      linkActiveClass: "text-black font-bold",
     },
   },
 
   image: {
     dir: "assets/images",
+    cloudinary: {
+      baseURL: "https://res.cloudinary.com/novanet-studio/image/upload/",
+    },
     // The screen sizes predefined by `@nuxt/image`:
     screens: {
       xs: 320,
@@ -57,16 +60,6 @@ export default defineNuxtConfig({
       lg: 1024,
       xl: 1280,
       xxl: 1920,
-    },
-
-    presets: {
-      slide: {
-        modifiers: {
-          format: "jpg",
-          width: 1280,
-          height: 620,
-        },
-      },
     },
   },
 });

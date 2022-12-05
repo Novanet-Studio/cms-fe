@@ -26,7 +26,7 @@
         lugar de encuentro, es nuestra <br />
         casa, es CCS Multisport"
     description="Esta piscina alberga los sueños y las ilusiones de muchos y el escape de la rutina para otros.Aquí nadan los que entrenan duro, los que entrenan para competir, para relajarse y para llevar una una vida saludable"
-    image="https://res.cloudinary.com/novanet-studio/image/upload/v1669315525/ccs-multisport/cms_piscina_en_atardecer_e435d69ea6.webp" />
+    image="https://res.cloudinary.com/novanet-studio/image/upload/v1669823171/ccs-multisport/cms_piscina_en_atardecer_281eb141f9.webp" />
 </template>
 
 <script lang="ts" setup>

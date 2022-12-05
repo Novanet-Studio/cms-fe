@@ -69,27 +69,27 @@
   }
 
   .heading-1 {
-    @apply heading text-4xl 
+    @apply heading text-3xl 
     <sm:(text-3xl);
   }
 
   .heading-2 {
-    @apply heading text-3xl 
+    @apply heading text-2xl 
     <sm:(text-2xl);
   }
 
   .heading-3 {
-    @apply heading text-2xl 
+    @apply heading text-xl 
     <sm:(text-xl);
   }
 
   .heading-4 {
-    @apply heading text-xl 
+    @apply heading text-lg 
     <sm:(text-lg);
   }
 
   .heading-5 {
-    @apply heading text-lg 
+    @apply heading text-md 
     <sm:(text-base);
   }
 }
@@ -148,11 +148,6 @@
 .header__link {
   @apply <sm:(flex w-full py-2) xl:(px-4);
 }
-
-.router-link-exact-active {
-  @apply font-normal !important
-}
-
 
 /* ./layouts/default.vue */
 .main > section {
@@ -293,13 +288,81 @@
 }
 
 .card__title {
-  @apply heading-4 text-secondary !important
+  @apply heading-4 text-center text-secondary !important
   <sm:(text-sm);
 }
 
 .card__text {
   @apply text-sm text-center
   <sm:(text-xs);
+}
+
+.disciplina__header {
+  @apply w-full h-72 relative mb-16;
+}
+
+.disciplina__cover {
+  @apply w-full h-full object-cover;
+}
+
+.disciplina__icon-container {
+  @apply flex flex-col items-center justify-center absolute bottom-0 left-0 top-0 right-0 px-4 py-2 from-secondary bg-gradient-to-t;
+}
+
+.disciplina__icon-circle {
+  @apply flex items-center justify-center w-36 h-36 bg-primary rounded-full mb-4;
+}
+
+.disciplina__icon-image {
+  @apply w-20;
+}
+
+.disciplina__title {
+  @apply heading-1 text-white;
+}
+
+.disciplina__box {
+  @apply container mx-auto p-8 border border-mid-gray rounded-xl;
+}
+
+.disciplina__box .horarios {
+  @apply flex pl-0;
+}
+
+.disciplina__box  .horarios > li {
+  @apply list-none p-4  mr-4 border border-mid-gray rounded-full;
+}
+
+.disciplina__box--noborder {
+  @apply container mx-auto pt-0 pr-4 pb-8 pl-4;
+}
+
+.disciplina__dots {
+  @apply my-6 flex justify-center;
+}
+
+.disciplina__summary {
+  @apply flex items-center;
+}
+
+.disciplina__summary-icon-container {
+  @apply flex items-center justify-center w-14 h-14 bg-primary rounded-full
+}
+
+.disciplina__summary-icon {
+  @apply w-6;
+}
+
+.disciplina__summary-title {
+  @apply  heading-3 ml-2 text-secondary;
+}
+
+.disciplina__summary-content {
+  @apply w-full mb-10;
+}
+
+.disciplina__summary-content h3 {
+  @apply heading-4
 }
 
 .highlight {

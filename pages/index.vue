@@ -57,7 +57,7 @@
     description="La junta directiva de la federación venezolana de<br />
         deportes acuáticos “FEVEDA”, se complace en invitar a<br />
         todas las asociaciones afiliadas"
-    image="https://res.cloudinary.com/novanet-studio/image/upload/v1669315525/ccs-multisport/cms_hombre_nadando_crawl_be03030bbb.webp"
+    image="https://res.cloudinary.com/novanet-studio/image/upload/v1669823165/ccs-multisport/cms_hombre_nadando_crawl_6e3eead054.webp"
   />
 
   <section class="mensaje">
