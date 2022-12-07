@@ -2,7 +2,7 @@
   <section class="hero">
     <div class="hero__container">
       <div class="hero__info">
-        <h1 class="heading-1" v-html="principal.titulo"></h1>
+        <h1 class="hero__title" v-html="principal.titulo"></h1>
         <p class="hero__description" v-html="principal.descripcion"></p>
       </div>
       <div class="hero__image">
@@ -78,6 +78,9 @@
       <logo-card
         v-for="(aliado, index) in aliados"
         :logo="aliado.attributes.imagen.data.attributes.url"
+        :alternativeText="
+          aliado.attributes.imagen.data.attributes.alternativeText
+        "
         :key="index"
       />
     </div>
@@ -211,17 +214,17 @@ try {
 const storeItems = [
   {
     image:
-      "https://res.cloudinary.com/novanet-studio/image/upload/v1669302437/ccs-multisport/cms_tienda_caballeros_a58d315abf.webp",
+      "https://res.cloudinary.com/novanet-studio/image/upload/v1669823173/ccs-multisport/cms_tienda_caballeros_d004a62d61.webp",
     text: "Caballeros",
   },
   {
     image:
-      "https://res.cloudinary.com/novanet-studio/image/upload/v1669302437/ccs-multisport/cms_tienda_damas_e30adea4aa.webp",
+      "https://res.cloudinary.com/novanet-studio/image/upload/v1669823172/ccs-multisport/cms_tienda_damas_8a5caff429.webp",
     text: "Damas",
   },
   {
     image:
-      "https://res.cloudinary.com/novanet-studio/image/upload/v1669302437/ccs-multisport/cms_tienda_ninos_65e60acc37.webp",
+      "https://res.cloudinary.com/novanet-studio/image/upload/v1669823173/ccs-multisport/cms_tienda_ninos_3af6013c20.webp",
     text: "Niños",
   },
 ];

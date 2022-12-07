@@ -1,40 +1,24 @@
 <template>
   <div class="aliado">
     <div class="aliado__logo">
-      <nuxt-img :src="logo" />
+      <nuxt-img :src="logo" :alt="alternativeText"/>
     </div>
-    <div class="w-auto ml-4" :class="textClass" v-if="title || content">
-      <h2 :class="titleClass" class="text-2xl text-secondary font-extrabold" v-if="title">{{ title }}</h2>
-      <p class="max-w-72" v-if="content">{{ content }}</p>
+    <div class="aliado__info" v-if="(title || description)">
+      <h3 class="aliado__title" v-html="title"></h3>
+      <div class="" v-html="description"></div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+
 type Props = {
   logo: string;
+  alternativeText: string
   title?: string;
-  content?: string;
-  textClass?: string;
-  wrapperClass?: string;
-  imgClass?: string;
-  titleClass?: string;
-  size?: 'small' | 'normal' | 'large';
+  description?: string;
+  aliadoClass?: string; 
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  size: 'normal'
-});
-
-const wrapperImageSize = computed(() => {
-  if (props.size === 'small') {
-    return { wrapper: '!w-36 !h-36', image: '!w-30 !h-30' };
-  }
-
-  if (props.size === 'normal') {
-    return { wrapper: '!w-40 !h-40', image: '!w-36 !h-36' };
-  }
-
-  return { wrapper: '!w-74 !h-52', image: '!w-64 !h-44' };
-});
+defineProps<Props>();
 </script>
