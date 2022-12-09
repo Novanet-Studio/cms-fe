@@ -26,7 +26,7 @@
   </div>
 
   <div v-if="disciplina?.attributes.clases?.length >= 1">
-    <classes-list :clases="disciplina?.attributes.clases" />
+    <items-list :items="disciplina?.attributes.clases" />
   </div>
 
   <section

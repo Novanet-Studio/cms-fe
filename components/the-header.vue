@@ -3,14 +3,15 @@
     <div class="header__container">
       <div class="header__logo">
         <nuxt-link to="/" target="_self">
-          <img alt="Caracas Sport logo" src="~/assets/images/ccs-multisports-logo.svg" />
+          <img
+            alt="Caracas Sport logo"
+            src="~/assets/images/ccs-multisports-logo.svg"
+          />
         </nuxt-link>
         <div
           class="header__bars"
           @click="toggleMenu"
-          :class="`header__bars ${
-            isExpanded && 'header__bars--expanded'
-          }`"
+          :class="`header__bars ${isExpanded && 'header__bars--expanded'}`"
         >
           <font-awesome-icon :icon="['fas', 'bars']" size="2x" />
         </div>
@@ -20,18 +21,16 @@
           isExpanded && 'header__navigation--expanded'
         }`"
       >
-        <nuxt-link class="header__link" to="/quienes-somos"
+        <nuxt-link class="header__link" to="/quienes-somos/"
           >¿Quiénes somos?</nuxt-link
         >
-        <nuxt-link class="header__link" to="/disciplinas"
+        <nuxt-link class="header__link" to="/disciplinas/"
           >Disciplinas</nuxt-link
         >
         <nuxt-link class="header__link" to="/">Tienda</nuxt-link>
-        <nuxt-link class="header__link" to="/">Aliados</nuxt-link>
+        <nuxt-link class="header__link" to="/aliados/">Aliados</nuxt-link>
         <nuxt-link class="header__link" to="/">Blog</nuxt-link>
-        <nuxt-link class="header__link" to="/"
-          >Preguntas frecuentes</nuxt-link
-        >
+        <nuxt-link class="header__link" to="/">Preguntas frecuentes</nuxt-link>
         <nuxt-link class="header__link" to="/contacto">Contacto</nuxt-link>
         <app-button
           class="button--blue button--small"

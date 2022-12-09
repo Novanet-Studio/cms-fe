@@ -1,7 +1,7 @@
 <template>
-  <div class="aliado" :class="aliadoClass">
-    <div class="aliado__logo" :class="logoClass">
-      <nuxt-img :src="logo" :alt="alternativeText"/>
+  <div class="item">
+    <div class="aliado__logo">
+      <nuxt-img :src="imagen" :alt="alternativeText"/>
     </div>
     <div class="aliado__info" v-if="(title || description)">
       <h3 class="aliado__title" v-html="title"></h3>
@@ -13,12 +13,10 @@
 <script lang="ts" setup>
 
 type Props = {
-  logo: string;
+  imagen: string;
   alternativeText: string
   title?: string;
   description?: string;
-  aliadoClass?: string;
-  logoClass?: string; 
 }
 
 defineProps<Props>();

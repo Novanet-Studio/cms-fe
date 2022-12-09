@@ -78,10 +78,10 @@
       <logo-card
         v-for="(aliado, index) in aliados"
         :logo="aliado.attributes.imagen.data.attributes.url"
-        :alternativeText="
-          aliado.attributes.imagen.data.attributes.alternativeText
-        "
+        :alternativeText="aliado.attributes.imagen.data.attributes.alternativeText"
+        logoClass="aliado__logo--index"
         :key="index"
+
       />
     </div>
   </section>
@@ -105,6 +105,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+const clog = (e: any) => {
+  console.log(e);
+};
+
 const config = useAppConfig();
 
 useHead({
@@ -115,10 +119,6 @@ useHead({
     return config.pwaManifest.short_name;
   },
 });
-
-const clog = (e: any) => {
-  console.log(e);
-};
 
 const principal = ref();
 const slides = ref();

@@ -5,10 +5,10 @@
       :open-multiple-items="openMultipleItems"
       ref="accordionListRef"
     >
-      <accordion-item v-for="(clase, index) in clases" :key="index">
+      <accordion-item v-for="(clase, index) in items" :key="index">
         <template #summary>
           <div class="disciplina__summary">
-            <div class="disciplina__summary-icon-container">
+            <div class="disciplina__summary-icon-container" v-if="clase.icono">
               <img
                 class="disciplina__summary-icon"
                 :src="clase.icono.data.attributes.url"
@@ -32,7 +32,7 @@
 
 <script lang="ts" setup>
 type Props = {
-  clases: any;
+  items: any;
 };
 
 type State = Record<string, boolean>;
@@ -76,6 +76,4 @@ defineProps<Props>();
 :global(.accordion-list .accordion-item > .accordion-item__summary) {
   @apply bg-transparent;
 }
-
-
 </style>

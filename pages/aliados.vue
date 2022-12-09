@@ -25,6 +25,8 @@
         :alternativeText="aliado.attributes.imagen.data.attributes.alternativeText"
         :title="aliado.attributes.nombre"
         :description="aliado.attributes.descripcion"
+        aliadoClass="aliado--aliados"
+        logoClass="aliado__logo--aliados"
         :key="index"
       />
     </div>
