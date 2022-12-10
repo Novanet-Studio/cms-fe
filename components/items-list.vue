@@ -50,11 +50,11 @@ defineProps<Props>();
 
 <style scoped>
 :global(.accordion-list) {
-  @apply p-3 border rounded-xl border-light-gray !important;
+  @apply p-3 border rounded-xl border-light-gray !important ;
 }
 
 :global(.accordion-list .accordion-item) {
-  @apply mt-5 shadow shadow-xl h-auto px-6 transition ease bg-gradient-to-tr from-white to-light-gray;
+  @apply mt-5 shadow shadow-xl h-24 px-6 transition ease bg-gradient-to-tr from-white to-light-gray ;
 }
 
 :global(.accordion-list .accordion-item--open) {

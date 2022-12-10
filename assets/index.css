@@ -104,6 +104,10 @@
   <sm:(text-xs);
 }
 
+.round-border {
+  @apply border border-mid-gray rounded-xl p-4
+}
+
 /* ./components/the-header.vue */
 .header {
   @apply border-b border-light-gray shadow-lg;
@@ -440,7 +444,7 @@
 }
 
 .aliado__logo {
-  @apply border border-mid-gray rounded-xl p-4;
+  @apply round-border;
 }
 
 .aliado__logo--index {
@@ -470,6 +474,22 @@
 
 .identidad {
   @apply flex flex-col container mx-auto 
+}
+
+.identidad__item {
+  @apply flex mb-8 round-border
+}
+
+.identidad__imagen {
+  @apply xl:(w-1/4)
+}
+
+.identidad__info {
+  @apply xl:(w-3/4 pl-4)
+}
+
+.identidad__title {
+  @apply heading-2 heading-dots-left  text-secondary;
 }
 
 .tienda {
