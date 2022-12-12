@@ -310,7 +310,7 @@
 
 .disciplina__summary {
   @apply flex items-center
-  xl:(mt-2);
+  xl:(mt-2 mb-2);
 }
 
 .disciplina__summary-icon-container {
@@ -322,7 +322,7 @@
 }
 
 .disciplina__summary-title {
-  @apply heading-3  ml-2 text-secondary;
+  @apply heading-3 ml-2 text-secondary;
 }
 
 .disciplina__summary-content {
@@ -487,6 +487,10 @@
 
 .identidad__title {
   @apply heading-2 heading-dots-left text-secondary;
+}
+
+.articulos {
+  @apply container mx-auto grid grid-cols-2 gap-8
 }
 
 .tienda {

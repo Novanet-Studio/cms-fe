@@ -28,6 +28,7 @@ declare namespace Project {
     link: string;
     planes: Plans[];
   }
+
   interface DisplicinesStrapi {
     id: string;
     attributes: Discipline;
@@ -38,6 +39,28 @@ declare namespace Project {
     data: {
       disciplinas: {
         data: DisplicinesStrapi[];
+      };
+    };
+  }
+
+  interface Article {
+    nombre: string;
+    descripcion: string;
+    imagen: Image;
+    destacado: boolean;
+    slug: string;
+  }
+
+  interface ArticlesStrapi {
+    createdAt: date;
+    attributes: Article;
+  }
+
+  interface ArticlesResponse {
+    createdAt: date;
+    data: {
+      articulos: {
+        data: ArticlesStrapi[];
       };
     };
   }

@@ -5,7 +5,7 @@
       :open-multiple-items="openMultipleItems"
       ref="accordionListRef"
     >
-      <accordion-item v-for="(clase, index) in items" :key="index" defaultOpened="defaultOpened">
+      <accordion-item v-for="(clase, index) in items" :key="index" :defaultOpened="defaultOpened">
         <template #summary>
           <div class="disciplina__summary">
             <div class="disciplina__summary-icon-container" v-if="clase.icono">

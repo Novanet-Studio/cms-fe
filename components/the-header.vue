@@ -29,7 +29,7 @@
         >
         <!-- <nuxt-link class="header__link" to="/">Tienda</nuxt-link> -->
         <nuxt-link class="header__link" to="/aliados/">Aliados</nuxt-link>
-        <!--  <nuxt-link class="header__link" to="/">Blog</nuxt-link> -->
+         <nuxt-link class="header__link" to="/blog/">Blog</nuxt-link>
         <!-- <nuxt-link class="header__link" to="/">Preguntas frecuentes</nuxt-link> -->
         <!-- <nuxt-link class="header__link" to="/contacto">Contacto</nuxt-link> -->
         <app-button

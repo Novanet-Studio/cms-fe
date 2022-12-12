@@ -29,8 +29,7 @@
         :imagen="item.imagen.data.attributes.url"
         :alternativeText="item.imagen.data.attributes.alternativeText"
         :title="item.titulo"
-        :description="item.descripcion"
-        
+        :description="item.descripcion"        
         :key="index"
       />
   </section>
@@ -58,10 +57,6 @@ useHead({
     return config.pwaManifest.short_name;
   },
 });
-
-const defaultOpened = ref(true);
-
-
 const clog = (e: any) => {
   console.log(e);
 };
