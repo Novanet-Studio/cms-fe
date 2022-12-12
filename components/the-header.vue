@@ -27,11 +27,11 @@
         <nuxt-link class="header__link" to="/disciplinas/"
           >Disciplinas</nuxt-link
         >
-        <nuxt-link class="header__link" to="/">Tienda</nuxt-link>
+        <!-- <nuxt-link class="header__link" to="/">Tienda</nuxt-link> -->
         <nuxt-link class="header__link" to="/aliados/">Aliados</nuxt-link>
-        <nuxt-link class="header__link" to="/">Blog</nuxt-link>
-        <nuxt-link class="header__link" to="/">Preguntas frecuentes</nuxt-link>
-        <nuxt-link class="header__link" to="/contacto">Contacto</nuxt-link>
+        <!--  <nuxt-link class="header__link" to="/">Blog</nuxt-link> -->
+        <!-- <nuxt-link class="header__link" to="/">Preguntas frecuentes</nuxt-link> -->
+        <!-- <nuxt-link class="header__link" to="/contacto">Contacto</nuxt-link> -->
         <app-button
           class="button--blue button--small"
           prefix="fas"
