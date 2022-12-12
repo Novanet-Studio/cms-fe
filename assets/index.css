@@ -105,7 +105,7 @@
 }
 
 .round-border {
-  @apply border border-mid-gray rounded-xl p-4
+  @apply border border-mid-gray rounded-xl p-4;
 }
 
 /* ./components/the-header.vue */
@@ -264,45 +264,6 @@
 .disciplinas__title {
   @apply heading-2 heading-dots-left;
 }
-
-.cards__wrapper {
-  @apply flex container mx-auto  
-  <sm:(flex-wrap justify-around content-around mt-4 min-h-112)
-  xl:(justify-between mt-9 px-20);
-}
-
-.card__outer {
-  @apply flex justify-center items-center border border-mid-gray rounded-2xl 
-  <sm:(w-38 h-50) 
-  xl:(w-51 h-64);
-}
-
-.card__inner {
-  @apply flex flex-col items-center justify-between shadow-card rounded-xl bg-gradient-to-br from-light-gray to-white 
-  <sm:(w-34 h-46 p-3) 
-  xl:(w-46 h-60 p-4);
-}
-
-.card__elements {
-  @apply flex flex-col items-center justify-center;
-}
-
-.card__icon {
-  @apply bg-primary rounded-full flex items-center justify-center mb-[.875rem]
-  <sm:(w-15 h-15 p-3)
-  xl:(w-20 h-20);
-}
-
-.card__title {
-  @apply heading-4 text-center text-secondary !important
-  <sm:(text-sm);
-}
-
-.card__text {
-  @apply text-sm text-center
-  <sm:(text-xs);
-}
-
 .disciplina__header {
   @apply w-full h-72 relative mb-16;
 }
@@ -348,7 +309,8 @@
 }
 
 .disciplina__summary {
-  @apply flex items-center;
+  @apply flex items-center
+  xl:(mt-2);
 }
 
 .disciplina__summary-icon-container {
@@ -360,7 +322,7 @@
 }
 
 .disciplina__summary-title {
-  @apply heading-3 ml-2 text-secondary;
+  @apply heading-3  ml-2 text-secondary;
 }
 
 .disciplina__summary-content {
@@ -369,6 +331,44 @@
 
 .disciplina__summary-content h3 {
   @apply heading-4;
+}
+
+.cards__wrapper {
+  @apply flex container mx-auto  
+  <sm:(flex-wrap justify-around content-around mt-4 min-h-112)
+  xl:(justify-between mt-9 px-20);
+}
+
+.card__outer {
+  @apply flex justify-center items-center border border-mid-gray rounded-2xl 
+  <sm:(w-38 h-50) 
+  xl:(w-51 h-64);
+}
+
+.card__inner {
+  @apply flex flex-col items-center justify-between shadow-card rounded-xl bg-gradient-to-br from-light-gray to-white 
+  <sm:(w-34 h-46 p-3) 
+  xl:(w-46 h-60 p-4);
+}
+
+.card__elements {
+  @apply flex flex-col items-center justify-center;
+}
+
+.card__icon {
+  @apply bg-primary rounded-full flex items-center justify-center mb-[.875rem]
+  <sm:(w-15 h-15 p-3)
+  xl:(w-20 h-20);
+}
+
+.card__title {
+  @apply heading-4 text-center text-secondary !important
+  <sm:(text-sm);
+}
+
+.card__text {
+  @apply text-sm text-center
+  <sm:(text-xs);
 }
 
 .highlight {
@@ -438,8 +438,7 @@
 }
 
 .aliado--aliados {
-  @apply 
-  <sm:(w-full)
+  @apply <sm:(w-full)
   xl:(flex w-1/2);
 }
 
@@ -448,18 +447,16 @@
 }
 
 .aliado__logo--index {
-  @apply
-  xl:(w-36)
+  @apply xl:(w-36);
 }
 
 .aliado__logo--aliados {
-  @apply
-  <sm:(w-36)
+  @apply <sm:(w-36)
   xl:(w-1/4 mb-8);
 }
 
 .aliado__info {
-  @apply xl:(w-3/4 ml-4)
+  @apply xl:(w-3/4 ml-4);
 }
 
 .aliado__title,
@@ -473,23 +470,23 @@
 }
 
 .identidad {
-  @apply flex flex-col container mx-auto 
+  @apply flex flex-col container mx-auto;
 }
 
 .identidad__item {
-  @apply flex mb-8 round-border
+  @apply flex mb-8 round-border;
 }
 
 .identidad__imagen {
-  @apply xl:(w-1/4)
+  @apply xl:(w-1/4);
 }
 
 .identidad__info {
-  @apply xl:(w-3/4 pl-4)
+  @apply xl:(w-3/4 pl-4);
 }
 
 .identidad__title {
-  @apply heading-2 heading-dots-left  text-secondary;
+  @apply heading-2 heading-dots-left text-secondary;
 }
 
 .tienda {

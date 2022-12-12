@@ -5,7 +5,7 @@
       :open-multiple-items="openMultipleItems"
       ref="accordionListRef"
     >
-      <accordion-item v-for="(clase, index) in items" :key="index">
+      <accordion-item v-for="(clase, index) in items" :key="index" defaultOpened="defaultOpened">
         <template #summary>
           <div class="disciplina__summary">
             <div class="disciplina__summary-icon-container" v-if="clase.icono">
@@ -33,6 +33,7 @@
 <script lang="ts" setup>
 type Props = {
   items: any;
+  defaultOpened?: boolean;
 };
 
 type State = Record<string, boolean>;
@@ -54,7 +55,7 @@ defineProps<Props>();
 }
 
 :global(.accordion-list .accordion-item) {
-  @apply mt-5 shadow shadow-xl h-24 px-6 transition ease bg-gradient-to-tr from-white to-light-gray ;
+  @apply mt-5 shadow shadow-xl h-auto px-6 transition ease bg-gradient-to-tr from-white to-light-gray ;
 }
 
 :global(.accordion-list .accordion-item--open) {

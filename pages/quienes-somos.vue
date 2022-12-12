@@ -43,7 +43,7 @@
   />
 
   <div v-if="trabajo?.length >= 1">
-    <items-list :items="trabajo" />
+    <items-list :items="trabajo" :defaultOpened="true" />
   </div>
 </template>
 
@@ -58,6 +58,9 @@ useHead({
     return config.pwaManifest.short_name;
   },
 });
+
+const defaultOpened = ref(true);
+
 
 const clog = (e: any) => {
   console.log(e);
@@ -135,4 +138,5 @@ try {
   principal.value = [];
   console.log(err);
 }
+
 </script>
