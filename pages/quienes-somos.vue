@@ -5,11 +5,12 @@
         <h1 class="hero__title" v-html="principal.titulo"></h1>
         <p class="hero__description" v-html="principal.descripcion"></p>
       </div>
-      <div class="hero__image">
-        <div class="hero__image-container">
-          <nuxt-img
+      <div class="hero__images">
+        <div class="hero__image-bg">
+          <nuxt-picture
             :src="principal.imagen.data.attributes.url"
             :alt="principal.imagen.data.attributes.alternativeText"
+            class="hero__image-fg"
           />
         </div>
       </div>

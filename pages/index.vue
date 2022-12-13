@@ -5,11 +5,12 @@
         <h1 class="hero__title" v-html="principal.titulo"></h1>
         <p class="hero__description" v-html="principal.descripcion"></p>
       </div>
-      <div class="hero__image">
-        <div class="hero__image-container">
-          <nuxt-img
+      <div class="hero__images">
+        <div class="hero__image-bg">
+          <nuxt-picture
             :src="principal.imagen.data.attributes.url"
             :alt="principal.imagen.data.attributes.alternativeText"
+            class="hero__image-fg"
           />
         </div>
       </div>
@@ -25,7 +26,7 @@
       :modules="[Autoplay, Navigation, Pagination]"
     >
       <swiper-slide v-for="(slide, index) in slides" :key="index">
-        <nuxt-img
+        <nuxt-picture
           :src="slide.attributes.url"
           sizes="xs:100vw sm:640 md:768 lg:1024 xl:1280 xxl:1920"
         />

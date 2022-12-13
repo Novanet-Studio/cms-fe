@@ -1,7 +1,7 @@
 <template>
   <div class="identidad__item">
     <div class="identidad__imagen">
-      <nuxt-img :src="imagen" :alt="alternativeText" />
+      <nuxt-picture :src="imagen" :alt="alternativeText" />
     </div>
     <div class="identidad__info">
       <h3 class="identidad__title" v-html="title"></h3>

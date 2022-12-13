@@ -61,5 +61,15 @@ export default defineNuxtConfig({
       xl: 1280,
       xxl: 1920,
     },
+
+    presets: {
+      slide: {
+        modifiers: {
+          format: "webp",
+          width: 1280,
+          height: 620,
+        },
+      },
+    },
   },
 });

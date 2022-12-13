@@ -7,37 +7,35 @@
   />
 
   <section class="articulos">
-    <article class="flex" v-for="(post, index) in articulos" :key="index">
-      <picture
-        class="border p-4 border-[rgba(167,169,172,0.75)] rounded-2xl min-w-60"
-      >
-        <nuxt-img
-          class="w-60 h-40 object-cover object-center"
-          :src="post.attributes.imagen.data.attributes.url"
-          :alt="post.attributes.imagen.data.attributes.alternativeText"
-        />
-      </picture>
-      <div class="flex flex-col ml-4">
-        <h3 class="font-extrabold text-2xl text-secondary mt-2">
-          {{ post.attributes.titulo }}
-        </h3>
-        <p class="mt-2">
-          {{ post.attributes.descripcion.substring(0, 160).concat("...") }}
-        </p>
-        <app-button
-          class="bg-primary mt-8 w-36"
-          @click="$router.push(`/blog/${post.attributes.slug}`)"
-          >Leer más</app-button
-        >
-      </div>
-    </article>
+    <h2 class="articulos__title">Artículos</h2>
+    <div class="articulos__wrapper">
+      <article class="articulo" v-for="(post, index) in articulos" :key="index">
+        <div class="articulo__img-container">
+          <nuxt-img
+            class="articulo__imagen"
+            :src="post.attributes.imagen.data.attributes.url"
+            :alt="post.attributes.imagen.data.attributes.alternativeText"
+          />
+        </div>
+        <div class="articulo__info">
+          <h3 class="articulo__title">
+            {{ post.attributes.titulo }}
+          </h3>
+          <p>
+            {{ post.attributes.descripcion.substring(0, 80).concat("...") }}
+          </p>
+          <app-button
+            class="button--yellow button--small articulo__boton"
+            @click="$router.push(`/blog/${post.attributes.slug}`)"
+          >
+            Leer más
+          </app-button>
+        </div>
+      </article>
+    </div>
   </section>
 </template>
 
 <script lang="ts" setup>
-const clog = (e: any) => {
-  console.log(e);
-};
-
 const { articles: articulos } = useArticles();
 </script>

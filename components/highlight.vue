@@ -6,7 +6,7 @@
       <app-button class="button--blue">Ver más</app-button>
     </div>
     <div class="highlight__image">
-      <nuxt-img
+      <nuxt-picture
         :src="image"
       />
     </div>

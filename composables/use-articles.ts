@@ -19,7 +19,6 @@ export const useArticles = (
             attributes {
               titulo
               descripcion
-              destacado
               slug
               imagen {
                 data {

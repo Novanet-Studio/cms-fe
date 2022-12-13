@@ -99,6 +99,10 @@
   @apply bg-secondary px-8 py-2 rounded-full text-white;
 }
 
+.button--yellow {
+  @apply bg-primary px-8 py-2 rounded-full text-white;
+}
+
 .button--small {
   @apply text-sm
   <sm:(text-xs);
@@ -175,8 +179,7 @@
 }
 
 .footer__icons {
-  @apply flex text-primary
-  <sm:(text-xs mt-2);
+  @apply flex text-primary text-xs;
 }
 
 .footer__link {
@@ -225,18 +228,18 @@
   <sm:(text-center);
 }
 
-.hero__image {
+.hero__images {
   @apply <sm:(flex justify-center flex-wrap w-full mt-4) 
   xl:(w-1/2 pl-22);
 }
 
-.hero__image-container {
+.hero__image-bg {
   @apply flex flex-col justify-center items-center bg-heroBg bg-no-repeat 
   <sm:(w-82 h-82 bg-contain) 
   xl:(w-107 h-107);
 }
 
-.hero__image-container > img {
+.hero__image-fg {
   @apply rounded-full z-20 absolute 
   <sm:(w-76 h-76) 
   xl:(w-92 h-92);
@@ -490,7 +493,40 @@
 }
 
 .articulos {
-  @apply container mx-auto grid grid-cols-2 gap-8
+  @apply container mx-auto pt-20;
+}
+
+.articulos__wrapper {
+  @apply container mx-auto grid grid-cols-2 gap-6 mt-4;
+}
+
+.articulos__title {
+  @apply heading-2 heading-dots-left;
+}
+
+.articulo {
+  @apply flex items-start mb-4;
+}
+
+.articulo__img-container {
+  @apply round-border min-w-60;
+}
+
+.articulo__info {
+  @apply flex flex-col ml-4;
+}
+
+.articulo__imagen {
+  @apply object-cover object-center
+  xl:(w-60 );
+}
+
+.articulo__title {
+  @apply heading-3 text-secondary;
+}
+
+.articulo__boton {
+  @apply w-32 mt-3;
 }
 
 .tienda {

@@ -47,7 +47,6 @@ declare namespace Project {
     nombre: string;
     descripcion: string;
     imagen: Image;
-    destacado: boolean;
     slug: string;
   }
 

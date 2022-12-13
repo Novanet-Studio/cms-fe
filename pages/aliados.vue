@@ -5,11 +5,12 @@
         <h1 class="hero__title" v-html="principal.titulo"></h1>
         <p class="hero__description" v-html="principal.descripcion"></p>
       </div>
-      <div class="hero__image">
-        <div class="hero__image-container">
-          <nuxt-img
+      <div class="hero__images">
+        <div class="hero__image-bg">
+          <nuxt-picture
             src="https://res.cloudinary.com/novanet-studio/image/upload/v1670336594/ccs-multisport/cms_aliados_hombre_nadando_crawl_231313b588.webp"
             alt="Hombre nadando crawl"
+            class="hero__image-fg"
           />
         </div>
       </div>

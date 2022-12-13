@@ -1,7 +1,7 @@
 <template>
   <div class="aliado" :class="aliadoClass">
     <div class="aliado__logo" :class="logoClass">
-      <nuxt-img :src="logo" :alt="alternativeText"/>
+      <nuxt-picture :src="logo" :alt="alternativeText"/>
     </div>
     <div class="aliado__info" v-if="(title || description)">
       <h3 class="aliado__title" v-html="title"></h3>
