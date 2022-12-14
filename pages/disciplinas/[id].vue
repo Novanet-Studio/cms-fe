@@ -16,12 +16,12 @@
       </h1>
     </div>
   </section>
-  <section class="disciplina__box">
+  <section class="box">
     <p
       v-html="disciplina?.attributes?.descripcion || `<span>Cargando...</span>`"
     ></p>
   </section>
-  <div class="disciplina__dots">
+  <div class="dots">
     <logo-dots />
   </div>
 
@@ -31,9 +31,9 @@
 
   <section
     v-if="disciplina?.attributes.horarios.length >= 1"
-    class="disciplina__box"
+    class="box"
   >
-    <h2 class="disciplina__summary-title">Horarios</h2>
+    <h2 class="summary-title">Horarios</h2>
     <div
       v-for="(horario, index) in disciplina?.attributes.horarios"
       :key="index"
@@ -41,15 +41,15 @@
       <div v-html="horario.horarios"></div>
     </div>
   </section>
-  <div class="disciplina__dots">
+  <div class="dots">
     <logo-dots />
   </div>
 
   <section
     v-if="disciplina?.attributes.planes.length >= 1"
-    class="disciplina__box"
+    class="box"
   >
-    <h2 class="disciplina__summary-title">Planes</h2>
+    <h2 class="summary-title">Planes</h2>
     <div v-for="(plan, index) in disciplina?.attributes.planes" :key="index">
       <div v-html="plan.planes"></div>
     </div>

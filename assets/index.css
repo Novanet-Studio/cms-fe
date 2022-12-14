@@ -112,6 +112,10 @@
   @apply border border-mid-gray rounded-xl p-4;
 }
 
+.grid-70-30 {
+  @apply container mx-auto grid grid-cols-[70%_30%] pt-6
+}
+
 /* ./components/the-header.vue */
 .header {
   @apply border-b border-light-gray shadow-lg;
@@ -291,48 +295,48 @@
   @apply heading-1 text-white;
 }
 
-.disciplina__box {
+.box {
   @apply container mx-auto p-8 border border-mid-gray rounded-xl;
 }
 
-.disciplina__box .horarios {
+.box .horarios {
   @apply flex pl-0;
 }
 
-.disciplina__box .horarios > li {
+.box .horarios > li {
   @apply list-none p-4  mr-4 border border-mid-gray rounded-full;
 }
 
-.disciplina__box--noborder {
+.box--noborder {
   @apply container mx-auto pt-0 pr-4 pb-8 pl-4;
 }
 
-.disciplina__dots {
+.dots {
   @apply my-6 flex justify-center;
 }
 
-.disciplina__summary {
+.summary {
   @apply flex items-center
   xl:(mt-2 mb-2);
 }
 
-.disciplina__summary-icon-container {
+.summary-icon-container {
   @apply flex items-center justify-center w-14 h-14 bg-primary rounded-full;
 }
 
-.disciplina__summary-icon {
+.summary-icon {
   @apply w-6;
 }
 
-.disciplina__summary-title {
+.summary-title {
   @apply heading-3 ml-2 text-secondary;
 }
 
-.disciplina__summary-content {
+.summary-content {
   @apply w-full mb-10;
 }
 
-.disciplina__summary-content h3 {
+.summary-content h3 {
   @apply heading-4;
 }
 
@@ -449,6 +453,10 @@
   @apply mt-8 mb-8
 }
 
+.basic--articulo .basic__title {
+  @apply mt-2
+}
+
 .basic__logo {
   @apply round-border;
 }
@@ -481,11 +489,11 @@
 }
 
 .identidad__item {
-  @apply flex mb-8 round-border;
+  @apply flex mb-8;
 }
 
 .identidad__imagen {
-  @apply xl:(w-1/4);
+  @apply round-border xl:(w-1/4);
 }
 
 .identidad__info {
@@ -513,11 +521,11 @@
 }
 
 .blog-item__img-container {
-  @apply round-border;
+  @apply round-border w-2/5;
 }
 
 .blog-item__info {
-  @apply flex flex-col ml-4;
+  @apply flex flex-col w-3/5 ml-4;
 }
 
 .blog-item__imagen {
@@ -537,7 +545,7 @@
 }
 
 .articulo-grid {
-  @apply container mx-auto grid grid-cols-[70%_30%] pt-6;
+  @apply grid-70-30;
 }
 
 .articulo-aside {
@@ -545,15 +553,23 @@
 }
 
 .articulo__image {
-  @apply w-full
+  @apply w-full round-border
 }
 
 .articulo__title {
-  @apply heading-1 heading-dots-left text-secondary mt-4;
+  @apply heading-1 heading-dots-left text-secondary mt-6;
 }
 
 .articulo__description p {
   @apply mt-4 mb-4
+}
+
+.faq-grid {
+  @apply grid-70-30 mt-6;
+}
+
+.faq__title {
+  @apply heading-2 heading-dots-left mb-8;
 }
 
 .tienda {

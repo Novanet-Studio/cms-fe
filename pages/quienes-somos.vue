@@ -17,10 +17,10 @@
     </div>
   </section>
 
-  <section class="disciplina__box">
+  <section class="box">
     <p v-html="parrafo || `<span>Cargando...</span>`"></p>
   </section>
-  <div class="disciplina__dots">
+  <div class="dots">
     <logo-dots />
   </div>
 

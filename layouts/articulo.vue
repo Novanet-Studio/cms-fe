@@ -5,7 +5,7 @@
       <main class="main">
         <div class="articulo">
           <app-button
-            class="button--blue button--small"
+            class="button--yellow button--small"
             prefix="fas"
             iconName="caret-left"
             iconSize="1x"

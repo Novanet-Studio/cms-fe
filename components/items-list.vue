@@ -1,29 +1,44 @@
 <template>
-  <section class="disciplina__box--noborder">
+  <section class="box--noborder">
     <accordion-list
       v-model:state="state"
       :open-multiple-items="openMultipleItems"
       ref="accordionListRef"
     >
-      <accordion-item v-for="(clase, index) in items" :key="index" :defaultOpened="defaultOpened">
+      <accordion-item
+        v-for="(item, index) in items"
+        :key="index"
+        :defaultOpened="defaultOpened"
+      >
         <template #summary>
-          <div class="disciplina__summary">
-            <div class="disciplina__summary-icon-container" v-if="clase.icono">
+          <div class="summary">
+            <div class="summary-icon-container" v-if="item.icono">
               <img
-                class="disciplina__summary-icon"
-                :src="clase.icono.data.attributes.url"
-                :alt="clase.icono.data.attributes.alternativeText"
+                class="summary-icon"
+                :src="item.icono.data.attributes.url"
+                :alt="item.icono.data.attributes.alternativeText"
               />
             </div>
-
-            <h2 class="disciplina__summary-title">{{ clase.titulo }}</h2>
+            <h2 v-if="item.titulo" class="summary-title">
+              {{ item.titulo }}
+            </h2>
+            <h2 v-else class="summary-title">
+              {{ item.attributes.titulo }}
+            </h2>
           </div>
         </template>
         <template #icon>⌃</template>
 
         <div
-          class="disciplina__summary-content"
-          v-html="clase.descripcion"
+          v-if="item.descripcion"
+          class="summary-content"
+          v-html="item.descripcion"
+        ></div>
+
+        <div
+          v-else
+          class="summary-content"
+          v-html="item.attributes.descripcion"
         ></div>
       </accordion-item>
     </accordion-list>
@@ -51,11 +66,11 @@ defineProps<Props>();
 
 <style scoped>
 :global(.accordion-list) {
-  @apply p-3 border rounded-xl border-light-gray !important ;
+  @apply p-3 border rounded-xl border-light-gray !important;
 }
 
 :global(.accordion-list .accordion-item) {
-  @apply mt-5 shadow shadow-xl h-auto px-6 transition ease bg-gradient-to-tr from-white to-light-gray ;
+  @apply mt-5 shadow shadow-xl h-auto px-6 transition ease bg-gradient-to-tr from-white to-light-gray;
 }
 
 :global(.accordion-list .accordion-item--open) {

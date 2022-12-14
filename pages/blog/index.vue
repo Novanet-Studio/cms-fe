@@ -25,9 +25,7 @@
           <h3 class="blog-item__title">
             {{ post.attributes.titulo }}
           </h3>
-          <p>
-            {{ post.attributes.descripcion.substring(0, 80).concat("...") }}
-          </p>
+          <div v-html="excerpt(post.attributes.descripcion)"></div>
           <app-button
             class="button--yellow button--small blog-item__boton"
             @click="$router.push(`/blog/${post.attributes.slug}`)"
@@ -42,4 +40,9 @@
 
 <script lang="ts" setup>
 const { articles: articulos } = useArticles();
+
+const excerpt = (string: string) => {
+  const subconcat = string.substring(0, 80).concat("...");
+  return subconcat;
+};
 </script>
