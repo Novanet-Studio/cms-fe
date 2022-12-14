@@ -51,12 +51,12 @@ declare namespace Project {
   }
 
   interface ArticlesStrapi {
-    createdAt: date;
+    id: string;
     attributes: Article;
   }
 
   interface ArticlesResponse {
-    createdAt: date;
+    id: string;
     data: {
       articulos: {
         data: ArticlesStrapi[];

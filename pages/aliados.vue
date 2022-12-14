@@ -20,14 +20,14 @@
   <section class="aliados">
     <h2 class="aliados__title">Aliados</h2>
     <div class="aliados__wrapper">
-      <logo-card
+      <basic
         v-for="(aliado, index) in aliados"
         :logo="aliado.attributes.imagen.data.attributes.url"
         :alternativeText="aliado.attributes.imagen.data.attributes.alternativeText"
         :title="aliado.attributes.nombre"
         :description="aliado.attributes.descripcion"
-        aliadoClass="aliado--aliados"
-        logoClass="aliado__logo--aliados"
+        viewClass="basic--aliados"
+        logoClass="basic__logo--aliados"
         :key="index"
       />
     </div>

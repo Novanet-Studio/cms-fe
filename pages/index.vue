@@ -76,11 +76,11 @@
   <section class="aliados">
     <h2 class="aliados__title">Aliados</h2>
     <div class="aliados__wrapper">
-      <logo-card
+      <basic
         v-for="(aliado, index) in aliados"
         :logo="aliado.attributes.imagen.data.attributes.url"
         :alternativeText="aliado.attributes.imagen.data.attributes.alternativeText"
-        logoClass="aliado__logo--index"
+        logoClass="basic__logo--index"
         :key="index"
 
       />
@@ -90,11 +90,12 @@
   <section class="tienda">
     <h2 class="tienda__title">Tienda</h2>
     <div class="tienda__wrapper">
-      <card-overlay
+      <gradient-overlay
         v-for="(item, index) in storeItems"
         :key="index"
         :image="item.image"
         :text="item.text"
+        :alternativeText="item.alternativeText"
       />
     </div>
   </section>
@@ -217,16 +218,19 @@ const storeItems = [
     image:
       "https://res.cloudinary.com/novanet-studio/image/upload/v1669823173/ccs-multisport/cms_tienda_caballeros_d004a62d61.webp",
     text: "Caballeros",
+    alternativeText: "Hombre con gorro y lentes nadando en aguas abiertas"
   },
   {
     image:
       "https://res.cloudinary.com/novanet-studio/image/upload/v1669823172/ccs-multisport/cms_tienda_damas_8a5caff429.webp",
     text: "Damas",
+    alternativeText: "Mujer con gorro y lentes nadando en piscimna"
   },
   {
     image:
       "https://res.cloudinary.com/novanet-studio/image/upload/v1669823173/ccs-multisport/cms_tienda_ninos_3af6013c20.webp",
     text: "Niños",
+    alternativeText: "Niño posando al borde de piscina con lentes en la frente"
   },
 ];
 </script>

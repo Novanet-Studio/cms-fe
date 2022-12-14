@@ -436,38 +436,42 @@
   xl:(px-6 py-8);
 }
 
-.aliado {
+.basic {
   @apply <sm:(w-1/2 p-4);
 }
 
-.aliado--aliados {
+.basic--aliados {
   @apply <sm:(w-full)
   xl:(flex w-1/2);
 }
 
-.aliado__logo {
+.basic--articulo {
+  @apply mt-8 mb-8
+}
+
+.basic__logo {
   @apply round-border;
 }
 
-.aliado__logo--index {
+.basic__logo--index {
   @apply xl:(w-36);
 }
 
-.aliado__logo--aliados {
+.basic__logo--aliados {
   @apply <sm:(w-36)
   xl:(w-1/4 mb-8);
 }
 
-.aliado__info {
+.basic__info {
   @apply xl:(w-3/4 ml-4);
 }
 
-.aliado__title,
-.aliado__description {
+.basic__title,
+.basic__description {
   @apply w-full;
 }
 
-.aliado__title {
+.basic__title {
   @apply heading-3 text-secondary
   <sm:(mt-2);
 }
@@ -492,41 +496,64 @@
   @apply heading-2 heading-dots-left text-secondary;
 }
 
-.articulos {
+.blog {
   @apply container mx-auto pt-20;
 }
 
-.articulos__wrapper {
+.blog__wrapper {
   @apply container mx-auto grid grid-cols-2 gap-6 mt-4;
 }
 
-.articulos__title {
+.blog__title {
   @apply heading-2 heading-dots-left;
 }
 
-.articulo {
+.blog-item {
   @apply flex items-start mb-4;
 }
 
-.articulo__img-container {
-  @apply round-border min-w-60;
+.blog-item__img-container {
+  @apply round-border;
 }
 
-.articulo__info {
+.blog-item__info {
   @apply flex flex-col ml-4;
 }
 
-.articulo__imagen {
+.blog-item__imagen {
   @apply object-cover object-center
-  xl:(w-60 );
 }
 
-.articulo__title {
+.blog-item__title {
   @apply heading-3 text-secondary;
 }
 
-.articulo__boton {
+.blog-item__boton {
   @apply w-32 mt-3;
+}
+
+.articulo {
+  @apply container mx-auto pt-6;
+}
+
+.articulo-grid {
+  @apply container mx-auto grid grid-cols-[70%_30%] pt-6;
+}
+
+.articulo-aside {
+  @apply pl-10
+}
+
+.articulo__image {
+  @apply w-full
+}
+
+.articulo__title {
+  @apply heading-1 heading-dots-left text-secondary mt-4;
+}
+
+.articulo__description p {
+  @apply mt-4 mb-4
 }
 
 .tienda {
