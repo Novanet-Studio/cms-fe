@@ -40,12 +40,26 @@
           class="summary-content"
           v-html="item.attributes.descripcion"
         ></div>
+
+        <div
+          v-if="item.horarios"
+          class="summary-content"
+          v-html="item.horarios"
+        ></div>
+
+        <div
+          v-if="item.planes"
+          class="summary-content"
+          v-html="item.planes"
+        ></div>
+        
       </accordion-item>
     </accordion-list>
   </section>
 </template>
 
 <script lang="ts" setup>
+
 type Props = {
   items: any;
   defaultOpened?: boolean;
@@ -70,7 +84,7 @@ defineProps<Props>();
 }
 
 :global(.accordion-list .accordion-item) {
-  @apply mt-5 shadow shadow-xl h-auto px-6 transition ease bg-gradient-to-tr from-white to-light-gray;
+  @apply transition ease shadow shadow-xl h-auto mb-8 px-6 bg-gradient-to-tr from-white to-light-gray;
 }
 
 :global(.accordion-list .accordion-item--open) {

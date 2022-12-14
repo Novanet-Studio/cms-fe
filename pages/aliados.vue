@@ -1,21 +1,10 @@
 <template>
-  <section class="hero">
-    <div class="hero__container">
-      <div class="hero__info">
-        <h1 class="hero__title" v-html="principal.titulo"></h1>
-        <p class="hero__description" v-html="principal.descripcion"></p>
-      </div>
-      <div class="hero__images">
-        <div class="hero__image-bg">
-          <nuxt-picture
-            src="https://res.cloudinary.com/novanet-studio/image/upload/v1670336594/ccs-multisport/cms_aliados_hombre_nadando_crawl_231313b588.webp"
-            alt="Hombre nadando crawl"
-            class="hero__image-fg"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
+  <hero
+    :titulo="principal.titulo"
+    :descripcion="principal.descripcion"
+    url="https://res.cloudinary.com/novanet-studio/image/upload/v1670336594/ccs-multisport/cms_aliados_hombre_nadando_crawl_231313b588.webp"
+    alternativeText="Hombre nadando crawl"
+  />
 
   <section class="aliados">
     <h2 class="aliados__title">Aliados</h2>
@@ -23,7 +12,9 @@
       <basic
         v-for="(aliado, index) in aliados"
         :logo="aliado.attributes.imagen.data.attributes.url"
-        :alternativeText="aliado.attributes.imagen.data.attributes.alternativeText"
+        :alternativeText="
+          aliado.attributes.imagen.data.attributes.alternativeText
+        "
         :title="aliado.attributes.nombre"
         :description="aliado.attributes.descripcion"
         viewClass="basic--aliados"
@@ -57,7 +48,7 @@ try {
         }
       }
 
-      aliados(sort: "id:asc") {
+      aliados(sort: "updatedAt:desc") {
         data {
           attributes {
             nombre

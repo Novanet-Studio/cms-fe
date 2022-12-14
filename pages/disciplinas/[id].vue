@@ -16,6 +16,18 @@
       </h1>
     </div>
   </section>
+  <div class="disciplinas__button">
+    <app-button
+      class="button--blue"
+      prefix="fas"
+      iconName="caret-left"
+      iconSize="1x"
+      @click="$router.push('/disciplinas')"
+    >
+      Volver
+    </app-button>
+  </div>
+
   <section class="box">
     <p
       v-html="disciplina?.attributes?.descripcion || `<span>Cargando...</span>`"
@@ -29,10 +41,7 @@
     <items-list :items="disciplina?.attributes.clases" />
   </div>
 
-  <section
-    v-if="disciplina?.attributes.horarios.length >= 1"
-    class="box"
-  >
+  <section v-if="disciplina?.attributes.horarios.length >= 1" class="box">
     <h2 class="summary-title">Horarios</h2>
     <div
       v-for="(horario, index) in disciplina?.attributes.horarios"
@@ -45,10 +54,7 @@
     <logo-dots />
   </div>
 
-  <section
-    v-if="disciplina?.attributes.planes.length >= 1"
-    class="box"
-  >
+  <section v-if="disciplina?.attributes.planes.length >= 1" class="box">
     <h2 class="summary-title">Planes</h2>
     <div v-for="(plan, index) in disciplina?.attributes.planes" :key="index">
       <div v-html="plan.planes"></div>

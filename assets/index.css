@@ -113,7 +113,7 @@
 }
 
 .grid-70-30 {
-  @apply container mx-auto grid grid-cols-[70%_30%] pt-6
+  @apply container mx-auto grid grid-cols-[70%_30%] pt-6;
 }
 
 /* ./components/the-header.vue */
@@ -271,6 +271,11 @@
 .disciplinas__title {
   @apply heading-2 heading-dots-left;
 }
+
+.disciplinas__button {
+  @apply container mx-auto mb-6;
+}
+
 .disciplina__header {
   @apply w-full h-72 relative mb-16;
 }
@@ -450,11 +455,11 @@
 }
 
 .basic--articulo {
-  @apply mt-8 mb-8
+  @apply mt-8 mb-8;
 }
 
 .basic--articulo .basic__title {
-  @apply mt-2
+  @apply mt-2;
 }
 
 .basic__logo {
@@ -477,6 +482,10 @@
 .basic__title,
 .basic__description {
   @apply w-full;
+}
+
+.basic__description a {
+  @apply font-bold italic
 }
 
 .basic__title {
@@ -529,7 +538,7 @@
 }
 
 .blog-item__imagen {
-  @apply object-cover object-center
+  @apply object-cover object-center;
 }
 
 .blog-item__title {
@@ -549,11 +558,11 @@
 }
 
 .articulo-aside {
-  @apply pl-10
+  @apply pl-10;
 }
 
 .articulo__image {
-  @apply w-full round-border
+  @apply w-full round-border;
 }
 
 .articulo__title {
@@ -561,7 +570,7 @@
 }
 
 .articulo__description p {
-  @apply mt-4 mb-4
+  @apply mt-4 mb-4;
 }
 
 .faq-grid {

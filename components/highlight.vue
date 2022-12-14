@@ -6,13 +6,10 @@
       <app-button class="button--blue">Ver más</app-button>
     </div>
     <div class="highlight__image">
-      <nuxt-picture
-        :src="image"
-      />
+      <nuxt-picture :src="image" />
     </div>
   </section>
 </template>
-
 
 <script lang="ts" setup>
 type Props = {

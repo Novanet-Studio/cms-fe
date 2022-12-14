@@ -1,21 +1,10 @@
 <template>
-  <section class="hero">
-    <div class="hero__container">
-      <div class="hero__info">
-        <h1 class="hero__title" v-html="principal.titulo"></h1>
-        <p class="hero__description" v-html="principal.descripcion"></p>
-      </div>
-      <div class="hero__images">
-        <div class="hero__image-bg">
-          <nuxt-picture
-            :src="principal.imagen.data.attributes.url"
-            :alt="principal.imagen.data.attributes.alternativeText"
-            class="hero__image-fg"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
+  <hero
+    :titulo="principal.titulo"
+    :descripcion="principal.descripcion"
+    :url="principal.imagen.data.attributes.url"
+    :alternativeText="principal.imagen.data.attributes.alternativeText"
+  />
 
   <div class="swiper">
     <swiper
@@ -79,10 +68,11 @@
       <basic
         v-for="(aliado, index) in aliados"
         :logo="aliado.attributes.imagen.data.attributes.url"
-        :alternativeText="aliado.attributes.imagen.data.attributes.alternativeText"
+        :alternativeText="
+          aliado.attributes.imagen.data.attributes.alternativeText
+        "
         logoClass="basic__logo--index"
         :key="index"
-
       />
     </div>
   </section>
@@ -218,19 +208,19 @@ const storeItems = [
     image:
       "https://res.cloudinary.com/novanet-studio/image/upload/v1669823173/ccs-multisport/cms_tienda_caballeros_d004a62d61.webp",
     text: "Caballeros",
-    alternativeText: "Hombre con gorro y lentes nadando en aguas abiertas"
+    alternativeText: "Hombre con gorro y lentes nadando en aguas abiertas",
   },
   {
     image:
       "https://res.cloudinary.com/novanet-studio/image/upload/v1669823172/ccs-multisport/cms_tienda_damas_8a5caff429.webp",
     text: "Damas",
-    alternativeText: "Mujer con gorro y lentes nadando en piscimna"
+    alternativeText: "Mujer con gorro y lentes nadando en piscimna",
   },
   {
     image:
       "https://res.cloudinary.com/novanet-studio/image/upload/v1669823173/ccs-multisport/cms_tienda_ninos_3af6013c20.webp",
     text: "Niños",
-    alternativeText: "Niño posando al borde de piscina con lentes en la frente"
+    alternativeText: "Niño posando al borde de piscina con lentes en la frente",
   },
 ];
 </script>
