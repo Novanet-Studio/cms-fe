@@ -31,9 +31,6 @@
 </template>
 
 <script lang="ts" setup>
-const clog = (e: any) => {
-  console.log(e);
-};
 
 const preguntas = ref();
 const graphql = useStrapiGraphQL();

@@ -85,7 +85,7 @@
         :key="index"
         :image="item.image"
         :text="item.text"
-        :alternativeText="item.alternativeText"
+        :alternativeText="item.alternativeText"        
       />
     </div>
   </section>
@@ -172,7 +172,7 @@ try {
         }
       }
 
-      aliados(sort: "id:asc") {
+      aliados(sort: "updatedAt:desc") {
         data {
           attributes {
             imagen {

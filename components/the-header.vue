@@ -20,7 +20,9 @@
         :class="`header__navigation ${
           isExpanded && 'header__navigation--expanded'
         }`"
+        @click="toggleMenu"
       >
+        <nuxt-link class="header__link" to="/">Inicio</nuxt-link>
         <nuxt-link class="header__link" to="/quienes-somos/"
           >¿Quiénes somos?</nuxt-link
         >
@@ -29,8 +31,10 @@
         >
         <!-- <nuxt-link class="header__link" to="/">Tienda</nuxt-link> -->
         <nuxt-link class="header__link" to="/aliados/">Aliados</nuxt-link>
-         <nuxt-link class="header__link" to="/blog/">Blog</nuxt-link>
-        <nuxt-link class="header__link" to="/preguntas-frecuentes/">Preguntas frecuentes</nuxt-link>
+        <nuxt-link class="header__link" to="/blog/">Blog</nuxt-link>
+        <nuxt-link class="header__link" to="/preguntas-frecuentes/"
+          >Preguntas frecuentes</nuxt-link
+        >
         <!-- <nuxt-link class="header__link" to="/contacto">Contacto</nuxt-link> -->
         <app-button
           class="button--blue button--small"

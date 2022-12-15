@@ -14,10 +14,6 @@ definePageMeta({
   layout: "articulo",
 });
 
-const clog = (e: any) => {
-  console.log(e);
-};
-
 const route = useRoute();
 const id = route.params.id as string;
 const { article: articulo } = useArticles({

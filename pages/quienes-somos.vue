@@ -58,9 +58,6 @@ useHead({
     return config.pwaManifest.short_name;
   },
 });
-const clog = (e: any) => {
-  console.log(e);
-};
 
 const principal = ref();
 const parrafo = ref();

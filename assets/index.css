@@ -94,7 +94,7 @@
   }
 }
 
-/* ./components/app-button.vue */
+/* Common classes */
 .button--blue {
   @apply bg-secondary px-8 py-2 rounded-full text-white;
 }
@@ -183,11 +183,17 @@
 }
 
 .footer__icons {
-  @apply flex text-primary text-xs;
+  @apply flex text-primary text-xs
+  <sm:(pt-3);
 }
 
 .footer__link {
   @apply mr-3;
+}
+
+.footer__link svg {
+  @apply
+  <sm:(w-4);
 }
 
 .footer__right {
@@ -201,10 +207,11 @@
 }
 
 .footer__right img {
-  @apply w-22;
+  @apply w-22
+  <sm:(w-20);
 }
 
-/* ./pages/index.vue */
+/* Common components */
 
 .hero {
   @apply w-full bg-sectionBg bg-no-repeat bg-contain 
@@ -212,14 +219,17 @@
 }
 
 .hero__container {
-  @apply flex items-center container mx-auto 
-  <sm:(flex-wrap py-12) xl:(py-24);
+  @apply flex items-center container mx-auto py-10
+  <sm:(flex-wrap);
 }
 
 .hero__info {
   @apply flex flex-col pt-4 bg-dots bg-no-repeat text-right 
-  <sm:(w-full bg-top) 
-  xl:(w-1/2 bg-right-top);
+  <sm:(w-full bg-top my-12 mx-8
+  
+  
+  ) 
+  xl:(w-1/2 bg-right-top pl-40);
 }
 
 .hero__title {
@@ -233,19 +243,19 @@
 }
 
 .hero__images {
-  @apply <sm:(flex justify-center flex-wrap w-full mt-4) 
-  xl:(w-1/2 pl-22);
+  @apply <sm:(flex justify-center flex-wrap w-full mt-6) 
+  xl:(w-1/2 pl-16);
 }
 
 .hero__image-bg {
   @apply flex flex-col justify-center items-center bg-heroBg bg-no-repeat 
-  <sm:(w-82 h-82 bg-contain) 
+  <sm:(w-78 h-78 bg-contain) 
   xl:(w-107 h-107);
 }
 
 .hero__image-fg {
   @apply rounded-full z-20 absolute 
-  <sm:(w-76 h-76) 
+  <sm:(w-70 h-70) 
   xl:(w-92 h-92);
 }
 
@@ -257,47 +267,6 @@
 .swiper .swiper-button-prev,
 .swiper .swiper-button-next {
   @apply text-primary;
-}
-
-.disciplinas {
-  @apply w-full bg-sectionBg2 bg-left bg-no-repeat bg-contain pb-16;
-}
-
-.disciplinas__container {
-  @apply container mx-auto 
-  xl:(px-8 py-20);
-}
-
-.disciplinas__title {
-  @apply heading-2 heading-dots-left;
-}
-
-.disciplinas__button {
-  @apply container mx-auto mb-6;
-}
-
-.disciplina__header {
-  @apply w-full h-72 relative mb-16;
-}
-
-.disciplina__cover {
-  @apply w-full h-full object-cover;
-}
-
-.disciplina__icon-container {
-  @apply flex flex-col items-center justify-center absolute bottom-0 left-0 top-0 right-0 px-4 py-2 from-secondary bg-gradient-to-t;
-}
-
-.disciplina__icon-circle {
-  @apply flex items-center justify-center w-36 h-36 bg-primary rounded-full mb-4;
-}
-
-.disciplina__icon-image {
-  @apply w-20;
-}
-
-.disciplina__title {
-  @apply heading-1 text-white;
 }
 
 .box {
@@ -390,7 +359,7 @@
 
 .highlight__info {
   @apply flex flex-col w-1/2 
-  <sm:(w-full py-4 items-center)
+  <sm:(w-full py-8 items-center)
   xl:(mr-10 items-end);
 }
 
@@ -420,29 +389,13 @@
 }
 
 .mensaje__container {
-  @apply flex flex-col items-center container mx-auto
-  xl:(py-30)
-  <sm:(py-20);
+  @apply flex flex-col items-center container mx-auto  
+  <sm:(py-16)
+  xl:(py-22);
 }
 
 .mensaje__title {
   @apply heading-2 text-center;
-}
-
-.aliados {
-  @apply flex flex-col container mx-auto 
-  <sm:(mb-6)
-  xl:(px-8);
-}
-
-.aliados__title {
-  @apply heading-2 heading-dots-left;
-}
-
-.aliados__wrapper {
-  @apply flex justify-between flex-wrap
-  <sm:()
-  xl:(px-6 py-8);
 }
 
 .basic {
@@ -470,6 +423,10 @@
   @apply xl:(w-36);
 }
 
+.basic__logo--index img {
+  @apply <sm:(w-full);
+}
+
 .basic__logo--aliados {
   @apply <sm:(w-36)
   xl:(w-1/4 mb-8);
@@ -485,12 +442,70 @@
 }
 
 .basic__description a {
-  @apply font-bold italic
+  @apply font-bold italic;
 }
 
 .basic__title {
   @apply heading-3 text-secondary
   <sm:(mt-2);
+}
+
+.disciplinas {
+  @apply w-full bg-sectionBg2 bg-left bg-no-repeat bg-contain;
+}
+
+.disciplinas__container {
+  @apply container mx-auto 
+  <sm:(py-4)
+  xl:(px-8 py-16);
+}
+
+.disciplinas__title {
+  @apply heading-2 heading-dots-left;
+}
+
+.disciplinas__button {
+  @apply container mx-auto mb-6;
+}
+
+.disciplina__header {
+  @apply w-full h-72 relative mb-16;
+}
+
+.disciplina__cover {
+  @apply w-full h-full object-cover;
+}
+
+.disciplina__icon-container {
+  @apply flex flex-col items-center justify-center absolute bottom-0 left-0 top-0 right-0 px-4 py-2 from-secondary bg-gradient-to-t;
+}
+
+.disciplina__icon-circle {
+  @apply flex items-center justify-center w-36 h-36 bg-primary rounded-full mb-4;
+}
+
+.disciplina__icon-image {
+  @apply w-20;
+}
+
+.disciplina__title {
+  @apply heading-1 text-white;
+}
+
+.aliados {
+  @apply flex flex-col container mx-auto 
+  <sm:(mb-6)
+  xl:(px-);
+}
+
+.aliados__title {
+  @apply heading-2 heading-dots-left;
+}
+
+.aliados__wrapper {
+  @apply flex justify-between flex-wrap
+  <sm:()
+  xl:(px-6 py-8);
 }
 
 .identidad {
@@ -584,7 +599,7 @@
 .tienda {
   @apply container mx-auto
   <sm:()  
-  xl:(mt-12 px-8 py-4);
+  xl:(mt-12 py-4);
 }
 
 .tienda__title {
@@ -594,7 +609,7 @@
 .tienda__wrapper {
   @apply flex justify-between
   <sm:(flex-wrap)
-  xl:(mt-8);
+  xl:(mt-8 px-8);
 }
 
 .tienda__category {
@@ -604,6 +619,10 @@
 
 .tienda__overlay {
   @apply flex items-end absolute bottom-0 left-0 top-0 right-0 p-2 from-[rgba(35,31,32,0)] bg-gradient-to-t;
+}
+
+.tienda__imagen {
+  @apply <sm:(w-full)
 }
 
 .tienda__name {

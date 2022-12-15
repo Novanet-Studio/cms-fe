@@ -26,10 +26,6 @@
 </template>
 
 <script lang="ts" setup>
-const clog = (e: any) => {
-  console.log(e);
-};
-
 const principal = ref();
 const aliados = ref();
 const graphql = useStrapiGraphQL();
