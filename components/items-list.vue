@@ -52,14 +52,12 @@
           class="summary-content"
           v-html="item.planes"
         ></div>
-        
       </accordion-item>
     </accordion-list>
   </section>
 </template>
 
 <script lang="ts" setup>
-
 type Props = {
   items: any;
   defaultOpened?: boolean;

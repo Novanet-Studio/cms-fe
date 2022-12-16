@@ -35,7 +35,7 @@
         <nuxt-link class="header__link" to="/preguntas-frecuentes/"
           >Preguntas frecuentes</nuxt-link
         >
-        <!-- <nuxt-link class="header__link" to="/contacto">Contacto</nuxt-link> -->
+        <nuxt-link class="header__link" to="/contacto">Contacto</nuxt-link>
         <app-button
           class="button--blue button--small"
           prefix="fas"

@@ -6,22 +6,7 @@
     :alternativeText="principal.imagen.data.attributes.alternativeText"
   />
 
-  <div class="swiper">
-    <swiper
-      :slider-per-view="1"
-      :space-between="0"
-      loop
-      navigation
-      :modules="[Autoplay, Navigation, Pagination]"
-    >
-      <swiper-slide v-for="(slide, index) in slides" :key="index">
-        <nuxt-picture
-          :src="slide.attributes.url"
-          sizes="xs:100vw sm:640 md:768 lg:1024 xl:1280 xxl:1920"
-        />
-      </swiper-slide>
-    </swiper>
-  </div>
+  <slider :slides="slides" />
 
   <section class="disciplinas">
     <div class="disciplinas__container">
@@ -85,7 +70,7 @@
         :key="index"
         :image="item.image"
         :text="item.text"
-        :alternativeText="item.alternativeText"        
+        :alternativeText="item.alternativeText"
       />
     </div>
   </section>

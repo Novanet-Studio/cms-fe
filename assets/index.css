@@ -407,11 +407,11 @@
   xl:(flex w-1/2);
 }
 
-.basic--articulo {
+.basic--aside {
   @apply mt-8 mb-8;
 }
 
-.basic--articulo .basic__title {
+.basic--aside .basic__title {
   @apply mt-2;
 }
 
@@ -572,7 +572,7 @@
   @apply grid-70-30;
 }
 
-.articulo-aside {
+.aside {
   @apply pl-10;
 }
 
@@ -594,6 +594,10 @@
 
 .faq__title {
   @apply heading-2 heading-dots-left mb-8;
+}
+
+.contacto__grid {
+  @apply grid-70-30
 }
 
 .tienda {

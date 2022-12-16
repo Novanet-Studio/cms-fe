@@ -1,21 +1,10 @@
 <template>
-  <section class="hero">
-    <div class="hero__container">
-      <div class="hero__info">
-        <h1 class="hero__title" v-html="principal.titulo"></h1>
-        <p class="hero__description" v-html="principal.descripcion"></p>
-      </div>
-      <div class="hero__images">
-        <div class="hero__image-bg">
-          <nuxt-picture
-            :src="principal.imagen.data.attributes.url"
-            :alt="principal.imagen.data.attributes.alternativeText"
-            class="hero__image-fg"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
+  <hero
+    :titulo="principal.titulo"
+    :descripcion="principal.descripcion"
+    :url="principal.imagen.data.attributes.url"
+    :alternativeText="principal.imagen.data.attributes.alternativeText"
+  />
 
   <section class="box">
     <p v-html="parrafo || `<span>Cargando...</span>`"></p>

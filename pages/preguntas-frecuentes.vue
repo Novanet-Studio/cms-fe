@@ -12,7 +12,7 @@
       <h2 class="faq__title">Preguntas frecuentes</h2>
       <items-list :items="preguntas" />
     </section>
-    <aside class="articulo-aside">
+    <aside class="aside">
       <h2 class="tienda__title">Tienda</h2>
       <p>
         Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
@@ -24,7 +24,7 @@
         :logo="item.image"
         :alternativeText="item.alternativeText"
         :title="item.text"
-        viewClass="basic--articulo"
+        viewClass="basic--aside"
       />
     </aside>
   </div>

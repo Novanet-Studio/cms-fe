@@ -27,7 +27,7 @@
                 :logo="item.image"
                 :alternativeText="item.alternativeText"
                 :title="item.text"
-                viewClass="basic--articulo"
+                viewClass="basic--aside"
               />
             </aside>
           </div>
