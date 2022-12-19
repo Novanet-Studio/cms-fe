@@ -116,6 +116,46 @@
   @apply container mx-auto grid grid-cols-[70%_30%] pt-6;
 }
 
+.form {
+  @apply py-8 flex w-full flex-wrap
+  <sm:();
+}
+
+.form__col {
+  @apply w-full
+  xl:(pr-8);
+}
+
+.form__3col {
+  @apply w-1/3;
+}
+
+.form__2col {
+  @apply w-1/2
+  xl:(pr-8);
+}
+
+.form__input {
+  @apply list-none p-4  mr-4 border border-mid-gray rounded-full  mb-8
+  xl:(w-full)
+  <sm:();
+}
+
+.form__textarea {
+  @apply list-none p-4 mr-4 border border-mid-gray rounded-3xl mb-8
+  xl:(w-full);
+}
+
+.form__title {
+  @apply heading-2 heading-dots-left mb-8 mb-8 
+  <sm:()
+  xl:( w-full);
+}
+
+.row {
+  @apply flex flex-wrap w-full;
+}
+
 /* ./components/the-header.vue */
 .header {
   @apply border-b border-light-gray shadow-lg;
@@ -192,8 +232,7 @@
 }
 
 .footer__link svg {
-  @apply
-  <sm:(w-4);
+  @apply <sm:(w-4);
 }
 
 .footer__right {
@@ -278,7 +317,7 @@
 }
 
 .box .horarios > li {
-  @apply list-none p-4  mr-4 border border-mid-gray rounded-full;
+  @apply form-input;
 }
 
 .box--noborder {
@@ -384,20 +423,6 @@
   @apply w-full;
 }
 
-.mensaje {
-  @apply w-full bg-sectionBg bg-right bg-no-repeat bg-contain;
-}
-
-.mensaje__container {
-  @apply flex flex-col items-center container mx-auto  
-  <sm:(py-16)
-  xl:(py-22);
-}
-
-.mensaje__title {
-  @apply heading-2 text-center;
-}
-
 .basic {
   @apply <sm:(w-1/2 p-4);
 }
@@ -448,6 +473,20 @@
 .basic__title {
   @apply heading-3 text-secondary
   <sm:(mt-2);
+}
+
+.mensaje {
+  @apply w-full bg-sectionBg bg-right bg-no-repeat bg-contain;
+}
+
+.mensaje__container {
+  @apply flex flex-col items-center container mx-auto  
+  <sm:(py-16)
+  xl:(py-22);
+}
+
+.mensaje__title {
+  @apply heading-2 text-center;
 }
 
 .disciplinas {
@@ -576,7 +615,7 @@
   @apply pl-10;
 }
 
-.articulo__image {
+.articulo__image img {
   @apply w-full round-border;
 }
 
@@ -597,8 +636,29 @@
 }
 
 .contacto__grid {
-  @apply grid-70-30
+  @apply grid-70-30;
 }
+
+.contacto__group {
+  @apply my-4;
+}
+
+.contacto__title {
+  @apply heading-2 heading-dots-left;
+}
+
+.contacto__subtitle {
+  @apply heading-3 heading-dots-left;
+}
+
+
+.contacto__link {
+  @apply mr-3;
+}
+.contacto__link svg {
+  @apply xl:(w-4) <sm:(w-2);
+}
+
 
 .tienda {
   @apply container mx-auto
@@ -626,7 +686,7 @@
 }
 
 .tienda__imagen {
-  @apply <sm:(w-full)
+  @apply <sm:(w-full);
 }
 
 .tienda__name {
