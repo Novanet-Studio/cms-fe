@@ -64,6 +64,10 @@
     @apply bg-dots bg-left-top bg-no-repeat pt-4;
   }
 
+  .heading-dots-left-small {  
+    @apply bg-dotsSmall bg-left-top bg-no-repeat pt-4;
+  }
+
   .heading-dots-right {
     @apply bg-dots bg-no-repeat pt-4;
   }
@@ -117,7 +121,7 @@
 }
 
 .form {
-  @apply py-8 flex w-full flex-wrap
+  @apply py-8 flex w-full flex-wrap mb-0 !important
   <sm:();
 }
 
@@ -134,6 +138,11 @@
   @apply w-1/2
   xl:(pr-8);
 }
+
+.form__input::placeholder,
+.form__textarea::placeholder {
+  @apply text-tertiary
+} 
 
 .form__input {
   @apply list-none p-4  mr-4 border border-mid-gray rounded-full  mb-8
@@ -644,16 +653,16 @@
 }
 
 .contacto__title {
-  @apply heading-2 heading-dots-left;
+  @apply heading-2 ;
 }
 
 .contacto__subtitle {
-  @apply heading-3 heading-dots-left;
+  @apply heading-3 heading-dots-left-small;
 }
 
 
 .contacto__link {
-  @apply mr-3;
+  @apply mr-3 text-primary;
 }
 .contacto__link svg {
   @apply xl:(w-4) <sm:(w-2);
