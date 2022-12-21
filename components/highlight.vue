@@ -1,5 +1,5 @@
 <template>
-  <section class="highlight">
+  <div class="highlight">
     <div class="highlight__info">
       <h2 class="highlight__title" v-html="title"></h2>
       <p class="highlight__text" v-html="description"></p>
@@ -8,7 +8,7 @@
     <div class="highlight__image">
       <nuxt-picture :src="image" />
     </div>
-  </section>
+  </div>
 </template>
 
 <script lang="ts" setup>

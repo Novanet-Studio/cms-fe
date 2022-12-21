@@ -82,7 +82,15 @@ defineProps<Props>();
 }
 
 :global(.accordion-list .accordion-item) {
-  @apply transition ease shadow shadow-xl h-auto mb-8 px-6 bg-gradient-to-tr from-white to-light-gray;
+  @apply transition ease shadow shadow-xl h-auto my-6 px-6 bg-gradient-to-tr from-white to-light-gray;
+}
+
+:global(.accordion-list .accordion-item:first-child) {
+  @apply my-0
+}
+
+:global(.accordion-list .accordion-item:last-child) {
+  @apply my-0
 }
 
 :global(.accordion-list .accordion-item--open) {

@@ -64,7 +64,7 @@
     @apply bg-dots bg-left-top bg-no-repeat pt-4;
   }
 
-  .heading-dots-left-small {  
+  .heading-dots-left-small {
     @apply bg-dotsSmall bg-left-top bg-no-repeat pt-4;
   }
 
@@ -141,8 +141,8 @@
 
 .form__input::placeholder,
 .form__textarea::placeholder {
-  @apply text-tertiary
-} 
+  @apply text-tertiary;
+}
 
 .form__input {
   @apply list-none p-4  mr-4 border border-mid-gray rounded-full  mb-8
@@ -211,8 +211,10 @@
 }
 
 /* ./layouts/default.vue */
+
 .main > section {
-  @apply <sm:(px-3);
+  @apply <sm:(px-3)
+  xl:(px-8);
 }
 
 /* ./components/the-footer.vue */
@@ -273,11 +275,8 @@
 
 .hero__info {
   @apply flex flex-col pt-4 bg-dots bg-no-repeat text-right 
-  <sm:(w-full bg-top my-12 mx-8
-  
-  
-  ) 
-  xl:(w-1/2 bg-right-top pl-40);
+  <sm:(w-full bg-top my-12 mx-8) 
+  xl:(w-1/2 bg-right-top pl-34);
 }
 
 .hero__title {
@@ -318,7 +317,11 @@
 }
 
 .box {
-  @apply container mx-auto p-8 border border-mid-gray rounded-xl;
+  @apply container mx-auto;
+}
+
+.box p {
+  @apply p-8 border border-mid-gray rounded-xl;
 }
 
 .box .horarios {
@@ -420,7 +423,7 @@
 .highlight__text {
   @apply my-4
   <sm:(text-center)
-  xl:(text-right);
+  xl:(text-right pl-24);
 }
 
 .highlight__image {
@@ -505,7 +508,7 @@
 .disciplinas__container {
   @apply container mx-auto 
   <sm:(py-4)
-  xl:(px-8 py-16);
+  xl:(py-16);
 }
 
 .disciplinas__title {
@@ -513,11 +516,15 @@
 }
 
 .disciplinas__button {
-  @apply container mx-auto mb-6;
+  @apply container mx-auto;
+}
+
+.disciplinas__button button {
+  @apply mx-8 mb-6;
 }
 
 .disciplina__header {
-  @apply w-full h-72 relative mb-16;
+  @apply w-full h-72 relative mb-16 px-0 !important;
 }
 
 .disciplina__cover {
@@ -542,8 +549,7 @@
 
 .aliados {
   @apply flex flex-col container mx-auto 
-  <sm:(mb-6)
-  xl:(px-);
+  <sm:(mb-6);
 }
 
 .aliados__title {
@@ -566,6 +572,10 @@
 
 .identidad__imagen {
   @apply round-border xl:(w-1/4);
+}
+
+.identidad__imagen img {
+  @apply w-full;
 }
 
 .identidad__info {
@@ -613,7 +623,7 @@
 }
 
 .articulo {
-  @apply container mx-auto pt-6;
+  @apply pt-6 px-8;
 }
 
 .articulo-grid {
@@ -621,7 +631,7 @@
 }
 
 .aside {
-  @apply pl-10;
+  @apply pl-6;
 }
 
 .articulo__image img {
@@ -637,7 +647,7 @@
 }
 
 .faq-grid {
-  @apply grid-70-30 mt-6;
+  @apply grid-70-30 mt-6 px-8;
 }
 
 .faq__title {
@@ -645,7 +655,7 @@
 }
 
 .contacto__grid {
-  @apply grid-70-30;
+  @apply grid-70-30 px-8;
 }
 
 .contacto__group {
@@ -653,13 +663,12 @@
 }
 
 .contacto__title {
-  @apply heading-2 ;
+  @apply heading-2;
 }
 
 .contacto__subtitle {
   @apply heading-3 heading-dots-left-small;
 }
-
 
 .contacto__link {
   @apply mr-3 text-primary;
@@ -667,7 +676,6 @@
 .contacto__link svg {
   @apply xl:(w-4) <sm:(w-2);
 }
-
 
 .tienda {
   @apply container mx-auto
@@ -682,7 +690,7 @@
 .tienda__wrapper {
   @apply flex justify-between
   <sm:(flex-wrap)
-  xl:(mt-8 px-8);
+  xl:(mt-8);
 }
 
 .tienda__category {
@@ -695,7 +703,7 @@
 }
 
 .tienda__imagen {
-  @apply <sm:(w-full);
+  @apply w-full;
 }
 
 .tienda__name {
