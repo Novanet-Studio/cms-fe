@@ -122,21 +122,20 @@
 
 .form {
   @apply py-8 flex w-full flex-wrap mb-0 !important
-  <sm:();
-}
-
-.form__col {
-  @apply w-full
-  xl:(pr-8);
+  <sm:(px-4 !important);
 }
 
 .form__3col {
   @apply w-1/3;
 }
 
-.form__2col {
-  @apply w-1/2
+.form__a-col {
+  @apply w-full
   xl:(pr-8);
+}
+
+.form__b-col {
+  @apply <sm:(w-full) xl:(w-1/2 pr-8);
 }
 
 .form__input::placeholder,
@@ -145,13 +144,14 @@
 }
 
 .form__input {
-  @apply list-none p-4  mr-4 border border-mid-gray rounded-full  mb-8
+  @apply list-none mb-8 mr-4 p-4 border border-mid-gray rounded-full  
   xl:(w-full)
-  <sm:();
+  <sm:(w-full);
 }
 
 .form__textarea {
   @apply list-none p-4 mr-4 border border-mid-gray rounded-3xl mb-8
+  <sm:(w-full)
   xl:(w-full);
 }
 
@@ -333,7 +333,8 @@
 }
 
 .box--noborder {
-  @apply container mx-auto pt-0 pr-4 pb-8 pl-4;
+  @apply container mx-auto pt-0 pb-8 px-4
+  <sm:(px-0);
 }
 
 .dots {
@@ -416,19 +417,19 @@
 
 .highlight__title {
   @apply heading-2 heading-dots-right 
-  <sm:(w-full text-center bg-top)
+  <sm:(w-full text-center bg-top px-1)
   xl:(text-right bg-right-top);
 }
 
 .highlight__text {
   @apply my-4
-  <sm:(text-center)
+  <sm:(text-center px-6)
   xl:(text-right pl-24);
 }
 
 .highlight__image {
   @apply flex w-1/2 
-  <sm:(w-full pb-4);
+  <sm:(w-full);
 }
 
 .highlight__image img {
@@ -445,7 +446,8 @@
 }
 
 .basic--aside {
-  @apply mt-8 mb-8;
+  @apply mt-8 mb-8
+  <sm:(w-full mb-0 mt-0);
 }
 
 .basic--aside .basic__title {
@@ -454,6 +456,10 @@
 
 .basic__logo {
   @apply round-border;
+}
+
+.basic__logo img {
+  @apply <sm:(w-full);
 }
 
 .basic__logo--index {
@@ -465,7 +471,7 @@
 }
 
 .basic__logo--aliados {
-  @apply <sm:(w-36)
+  @apply <sm:(w-28)
   xl:(w-1/4 mb-8);
 }
 
@@ -567,11 +573,11 @@
 }
 
 .identidad__item {
-  @apply flex mb-8;
+  @apply flex flex-wrap mb-8;
 }
 
 .identidad__imagen {
-  @apply round-border xl:(w-1/4);
+  @apply round-border <sm:(w-full) xl:(w-1/4);
 }
 
 .identidad__imagen img {
@@ -583,7 +589,8 @@
 }
 
 .identidad__title {
-  @apply heading-2 heading-dots-left text-secondary;
+  @apply heading-2 heading-dots-left text-secondary
+  <sm:(mt-4);
 }
 
 .blog {
@@ -591,7 +598,9 @@
 }
 
 .blog__wrapper {
-  @apply container mx-auto grid grid-cols-2 gap-6 mt-4;
+  @apply container mx-auto grid mt-4
+  <sm:(grid-cols-1 gap-4)
+  xl:(grid-cols-2);
 }
 
 .blog__title {
@@ -599,15 +608,19 @@
 }
 
 .blog-item {
-  @apply flex items-start mb-4;
+  @apply flex items-start flex-wrap mb-4;
 }
 
 .blog-item__img-container {
-  @apply round-border w-2/5;
+  @apply round-border
+  <sm:(w-full)
+  xl:(w-2/5);
 }
 
 .blog-item__info {
-  @apply flex flex-col w-3/5 ml-4;
+  @apply flex flex-col 
+  <sm:(w-full)
+  xl:(w-3/5 ml-4);
 }
 
 .blog-item__imagen {
@@ -615,7 +628,8 @@
 }
 
 .blog-item__title {
-  @apply heading-3 text-secondary;
+  @apply heading-3 text-secondary
+  <sm:(mt-4);
 }
 
 .blog-item__boton {
@@ -627,11 +641,12 @@
 }
 
 .articulo-grid {
-  @apply grid-70-30;
+  @apply container mx-auto grid grid-cols-[70%_30%] pt-6;
 }
 
 .aside {
-  @apply pl-6;
+  @apply pl-6
+  <sm:(pl-0);
 }
 
 .articulo__image img {
@@ -647,7 +662,9 @@
 }
 
 .faq-grid {
-  @apply grid-70-30 mt-6 px-8;
+  @apply mt-6
+  <sm:(px-3)
+  xl:(container mx-auto grid grid-cols-[70%_30%] pt-6 px-8);
 }
 
 .faq__title {
@@ -655,7 +672,7 @@
 }
 
 .contacto__grid {
-  @apply grid-70-30 px-8;
+  @apply <sm:(px-3) xl:(container mx-auto grid grid-cols-[70%_30%] pt-6 px-8);
 }
 
 .contacto__group {
@@ -674,7 +691,7 @@
   @apply mr-3 text-primary;
 }
 .contacto__link svg {
-  @apply xl:(w-4) <sm:(w-2);
+  @apply xl:(w-4) <sm:(w-5);
 }
 
 .tienda {

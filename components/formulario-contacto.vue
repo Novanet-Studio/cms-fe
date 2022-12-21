@@ -12,7 +12,7 @@
       <h3 class="form__title">Envíanos un mensaje</h3>
       <input type="hidden" name="form-name" value="contacto" />
       <div class="row">
-        <div class="form__2col">
+        <div class="form__b-col">
           <input
             class="form__input"
             type="text"
@@ -22,7 +22,7 @@
           />
         </div>
 
-        <div class="form__2col">
+        <div class="form__b-col">
           <input
             class="form__input"
             type="email"
@@ -32,7 +32,7 @@
           />
         </div>
 
-        <div class="form__col">
+        <div class="form__a-col">
           <input
             class="form__input"
             type="text"
@@ -42,7 +42,7 @@
           />
         </div>
 
-        <div class="form__col">
+        <div class="form__a-col">
           <textarea
             class="form__textarea"
             rows="5"
@@ -52,7 +52,7 @@
           />
         </div>
       </div>
-      <div class="form__2col submit">
+      <div class="form__a-col submit">
         <app-button
           class="button--blue button--small"
           prefix="fa"
