@@ -7,7 +7,7 @@
       </div>
       <div class="hero__images">
         <div class="hero__image-bg">
-          <nuxt-picture
+          <nuxt-img
             :src="url"
             :alt="alternativeText"
             class="hero__image-fg"
