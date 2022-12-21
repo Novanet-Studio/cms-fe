@@ -28,11 +28,10 @@
     </app-button>
   </div>
 
-  <section class="box">
-    <p
-      v-html="disciplina?.attributes?.descripcion || `<span>Cargando...</span>`"
-    ></p>
-  </section>
+  <section
+    class="box"
+    v-html="disciplina?.attributes?.descripcion || `<span>Cargando...</span>`"
+  ></section>
   <div class="dots">
     <logo-dots />
   </div>

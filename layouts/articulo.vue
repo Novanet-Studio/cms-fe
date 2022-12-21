@@ -15,7 +15,7 @@
           </app-button>
           <div class="articulo-grid">
             <slot />
-            <aside class="articulo-aside">
+            <aside class="aside">
               <h2 class="tienda__title">Tienda</h2>
               <p>
                 Quis autem vel eum iure reprehenderit qui in ea voluptate velit
@@ -27,7 +27,7 @@
                 :logo="item.image"
                 :alternativeText="item.alternativeText"
                 :title="item.text"
-                viewClass="basic--articulo"
+                viewClass="basic--aside"
               />
             </aside>
           </div>
