@@ -141,6 +141,11 @@
   <sm:();
 }
 
+.form__input::placeholder,
+.form__textarea::placeholder {
+  @apply text-primary-alt;
+}
+
 .form__textarea {
   @apply list-none p-4 mr-4 border border-mid-gray rounded-3xl mb-8
   xl:(w-full);
@@ -292,8 +297,8 @@
   xl:(w-107 h-107);
 }
 
-.hero__image-fg {
-  @apply rounded-full z-20 absolute 
+.hero__image-fg img {
+  @apply rounded-full z-20 
   <sm:(w-70 h-70) 
   xl:(w-92 h-92);
 }
@@ -312,12 +317,16 @@
   @apply container mx-auto p-8 border border-mid-gray rounded-xl;
 }
 
+.box__title {
+  @apply heading-3 text-primary-alt;
+}
+
 .box .horarios {
-  @apply flex pl-0;
+  @apply flex pl-0 list-none;
 }
 
 .box .horarios > li {
-  @apply form-input;
+  @apply bg-light-gray border border-mid-gray rounded-full mr-10 p-8;
 }
 
 .box--noborder {
@@ -350,6 +359,10 @@
 }
 
 .summary-content h3 {
+  @apply heading-3;
+}
+
+.summary-content h4 {
   @apply heading-4;
 }
 
@@ -463,7 +476,8 @@
 
 .basic__title,
 .basic__description {
-  @apply w-full;
+  @apply w-full
+  xl:(pr-8);
 }
 
 .basic__description a {
@@ -651,14 +665,12 @@
   @apply heading-3 heading-dots-left;
 }
 
-
 .contacto__link {
   @apply mr-3;
 }
 .contacto__link svg {
-  @apply xl:(w-4) <sm:(w-2);
+  @apply text-primarycsd xl:(w-4) <sm:(w-2);
 }
-
 
 .tienda {
   @apply container mx-auto

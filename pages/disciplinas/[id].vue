@@ -60,9 +60,27 @@
       <div v-html="plan.planes"></div>
     </div>
   </section>
+  <div class="dots">
+    <logo-dots />
+  </div>
+  <section class="box">
+    <h3 class="box__title">
+      {{ disciplina?.attributes.informacion_adicional.titulo }}
+    </h3>
+    <p
+      v-html="
+        disciplina?.attributes.informacion_adicional.descripcion ||
+        `<span>Cargando...</span>`
+      "
+    ></p>
+  </section>
 </template>
 
 <script lang="ts" setup>
+const clog = (e: any) => {
+  console.log(e);
+};
+
 const route = useRoute();
 const id = route.params.id as string;
 const { discipline: disciplina } = useDisciplines({
