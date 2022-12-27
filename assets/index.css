@@ -300,7 +300,7 @@
   xl:(w-107 h-107);
 }
 
-.hero__image-fg img {
+.hero__image-fg {
   @apply rounded-full z-20 absolute 
   <sm:(w-70 h-70) 
   xl:(w-92 h-92);
