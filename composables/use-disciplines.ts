@@ -66,6 +66,11 @@ export const useDisciplines = (
                     planes
                   }
                 }
+
+                informacion_adicional {
+                  titulo
+                  descripcion
+                }
               }
             }
           }

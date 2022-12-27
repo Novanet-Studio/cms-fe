@@ -48,10 +48,7 @@
     >
       <div v-html="horario.horarios"></div>
     </div>
-  </section>
-  <div class="dots">
-    <logo-dots />
-  </div>
+  </section> 
 
   <section v-if="disciplina?.attributes.planes.length >= 1" class="box">
     <h2 class="summary-title">Planes</h2>
@@ -59,6 +56,23 @@
       <div v-html="plan.planes"></div>
     </div>
   </section>
+  <div class="dots">
+    <logo-dots />
+  </div>
+  <section class="box">
+    <h3 class="box__title">
+      {{ disciplina?.attributes.informacion_adicional.titulo }}
+    </h3>
+    <p
+      v-html="
+        disciplina?.attributes.informacion_adicional.descripcion ||
+        `<span>Cargando...</span>`
+      "
+    ></p>
+  </section>
+  <div class="dots">
+    <logo-dots />
+  </div>
 </template>
 
 <script lang="ts" setup>
