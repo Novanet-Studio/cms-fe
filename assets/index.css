@@ -121,7 +121,7 @@
 }
 
 .form {
-  @apply py-8 flex w-full flex-wrap mb-0 !important
+  @apply pl-12 pr-4 py-12 flex w-full flex-wrap mb-0 !important
   <sm:(px-4 !important);
 }
 
@@ -363,7 +363,7 @@
 }
 
 .summary-content {
-  @apply w-full mb-10;
+  @apply w-full mb-10 hyphens-manual;
 }
 
 .summary-content h3 {
@@ -381,7 +381,7 @@
 .cards__wrapper {
   @apply flex container mx-auto  
   <sm:(flex-wrap justify-around content-around mt-4 min-h-112)
-  xl:(justify-between mt-9 px-20);
+  xl:(justify-between mt-9 px-16);
 }
 
 .card__outer {
@@ -391,9 +391,9 @@
 }
 
 .card__inner {
-  @apply flex flex-col items-center justify-between shadow-card rounded-xl bg-gradient-to-br from-light-gray to-white 
+  @apply flex flex-col items-center justify-around shadow-card rounded-xl bg-gradient-to-br from-light-gray to-white 
   <sm:(w-34 h-46 p-3) 
-  xl:(w-46 h-60 p-4);
+  xl:(w-46 h-60 py-4);
 }
 
 .card__elements {
@@ -407,12 +407,12 @@
 }
 
 .card__title {
-  @apply heading-4 text-center text-secondary !important
+  @apply heading-4 text-center leading-tight text-secondary !important
   <sm:(text-sm);
 }
 
 .card__text {
-  @apply text-sm text-center
+  @apply text-sm text-center hyphens-manual
   <sm:(text-xs);
 }
 
@@ -434,7 +434,7 @@
 }
 
 .highlight__text {
-  @apply my-4
+  @apply my-4 hyphens-manual
   <sm:(text-center px-6)
   xl:(text-right pl-24);
 }
@@ -493,13 +493,19 @@
 
 .basic__title,
 .basic__description {
-  @apply w-full
-  xl:(pr-8);;
+  @apply w-full hyphens-manual
+  xl:();;
 }
 
 .basic__description a {
   @apply font-bold italic;
 }
+
+.basic__description strong,
+.basic__description a {
+  @apply block
+}
+
 
 .basic__title {
   @apply heading-3 text-secondary
@@ -527,7 +533,7 @@
 .disciplinas__container {
   @apply container mx-auto 
   <sm:(py-4)
-  xl:(py-16);
+  xl:(px-8 py-16);
 }
 
 .disciplinas__title {
@@ -621,7 +627,7 @@
 }
 
 .blog-item {
-  @apply flex items-start flex-wrap mb-4;
+  @apply flex items-start flex-wrap mb-12;
 }
 
 .blog-item__img-container {
@@ -633,7 +639,7 @@
 .blog-item__info {
   @apply flex flex-col 
   <sm:(w-full)
-  xl:(w-3/5 ml-4);
+  xl:(w-3/5 pl-3 pr-4);
 }
 
 .blog-item__imagen {
@@ -692,6 +698,10 @@
   @apply my-4;
 }
 
+.contacto__group p {
+  @apply hyphens-manual
+}
+
 .contacto__title {
   @apply heading-2;
 }
@@ -732,7 +742,7 @@
   @apply flex items-end absolute bottom-0 left-0 top-0 right-0 p-2 from-[rgba(35,31,32,0)] bg-gradient-to-t;
 }
 
-.tienda__imagen {
+.tienda__imagen img {
   @apply w-full;
 }
 

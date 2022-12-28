@@ -25,11 +25,14 @@
   </section>
 
   <highlight
-    title="Profesionales"
-    description="Nuestros profesores cuentan en su mayoría con 5 o más años de experiencia, especialmente en la enseñanza de la práctica de la natación, con estudios de diplomados en Psicología Deportiva, Natación para niños con discapacidades,preparación física y además, algunos de ellos cuentan con experiencia en la práctica de la disciplina así como también en la natación competitiva; con esta experiencia a lo largo desus carreras han contribuido con la formaciónde muchos atletas de alta competencia.
-"
-    image="https://res.cloudinary.com/novanet-studio/image/upload/v1670606850/ccs-multisport/cms_mujer_nadando_crawl_ba37ab45e1.webp"
+    :title="profesionales.titulo"
+    :description="profesionales.descripcion"
+    :image="profesionales.imagen.data.attributes.url"
   />
+
+  <div class="dots">
+
+  </div>
 
   <div v-if="trabajo?.length >= 1">
     <items-list :items="trabajo" :defaultOpened="true" />
@@ -51,6 +54,7 @@ useHead({
 const principal = ref();
 const parrafo = ref();
 const identidad = ref();
+const profesionales = ref();
 const trabajo = ref();
 
 const graphql = useStrapiGraphQL();
@@ -115,6 +119,7 @@ try {
   principal.value = query.data.empresa.data.attributes.principal;
   parrafo.value = query.data.empresa.data.attributes.parrafo;
   identidad.value = query.data.empresa.data.attributes.identidad;
+  profesionales.value = query.data.empresa.data.attributes.profesionales;
   trabajo.value = query.data.empresa.data.attributes.trabajo;
 } catch (err) {
   principal.value = [];

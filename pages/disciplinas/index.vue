@@ -7,8 +7,8 @@
     </swiper>
   </div>
 
-  <section class="disciplinas">
-    <div class="disciplinas__container">
+  <div class="disciplinas">
+    <section class="disciplinas__container">
       <h2 class="disciplinas__title">Disciplinas</h2>
       <div class="cards__wrapper">
         <div v-for="(disciplina, index) in disciplinas" :key="index">
@@ -19,8 +19,8 @@
           </nuxt-link>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
   <highlight title="Nuestra piscina es un <br />
         lugar de encuentro, es nuestra <br />

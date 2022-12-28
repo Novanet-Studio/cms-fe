@@ -8,8 +8,8 @@
 
   <slider :slides="slides" />
 
-  <section class="disciplinas">
-    <div class="disciplinas__container">
+  <div class="disciplinas">
+    <section class="disciplinas__container">
       <h2 class="disciplinas__title">Disciplinas</h2>
       <div class="cards__wrapper">
         <card
@@ -23,8 +23,8 @@
           description="Ver información y planes"
         />
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
   <highlight
     title="FEVEDA prepara su COPA<br />
