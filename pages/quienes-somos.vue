@@ -30,9 +30,7 @@
     :image="profesionales.imagen.data.attributes.url"
   />
 
-  <div class="dots">
-
-  </div>
+  <div class="dots"></div>
 
   <div v-if="trabajo?.length >= 1">
     <items-list :items="trabajo" :defaultOpened="true" />

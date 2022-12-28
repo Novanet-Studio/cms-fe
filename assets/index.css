@@ -121,7 +121,7 @@
 }
 
 .form {
-  @apply pl-12 pr-4 py-12 flex w-full flex-wrap mb-0 !important
+  @apply py-12 flex w-full flex-wrap mb-0 !important pl-12 !important pr-4 !important
   <sm:(px-4 !important);
 }
 
@@ -573,7 +573,7 @@
 }
 
 .aliados {
-  @apply flex flex-col container mx-auto 
+  @apply flex flex-col container mx-auto bg-sectionBg2 bg-no-repeat bg-left
   <sm:(mb-6);
 }
 
@@ -588,7 +588,11 @@
 }
 
 .identidad {
-  @apply flex flex-col container mx-auto;
+  @apply flex flex-col container mx-auto bg-sectionBg2 bg-no-repeat bg-left;
+}
+
+.identidad__container {
+  @apply 
 }
 
 .identidad__item {
@@ -613,7 +617,7 @@
 }
 
 .blog {
-  @apply container mx-auto pt-20;
+  @apply container mx-auto pt-20 bg-sectionBg bg-no-repeat bg-right;
 }
 
 .blog__wrapper {
