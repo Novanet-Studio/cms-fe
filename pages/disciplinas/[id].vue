@@ -48,7 +48,10 @@
     >
       <div v-html="horario.horarios"></div>
     </div>
-  </section> 
+  </section>
+  <div class="dots">
+    <logo-dots />
+  </div>
 
   <section v-if="disciplina?.attributes.planes.length >= 1" class="box">
     <h2 class="summary-title">Planes</h2>

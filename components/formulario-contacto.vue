@@ -1,7 +1,7 @@
 <template>
-  <div class="accordion-list">
+  <div class="form__container">
     <form
-      class="form accordion-item"
+      class="form"
       name="contacto"
       v-on:submit.prevent="handleSubmit"
       action="/gracias/"
@@ -11,7 +11,7 @@
     >
       <h3 class="form__title">Envíanos un mensaje</h3>
       <input type="hidden" name="form-name" value="contacto" />
-      <div class="row">
+
         <div class="form__b-col">
           <input
             class="form__input"
@@ -51,7 +51,7 @@
             placeholder="Mensaje"
           />
         </div>
-      </div>
+    
       <div class="form__a-col submit">
         <app-button
           class="button--blue button--small"

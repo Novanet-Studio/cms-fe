@@ -82,20 +82,16 @@ defineProps<Props>();
 }
 
 :global(.accordion-list .accordion-item) {
-  @apply transition ease shadow shadow-xl h-auto my-6 px-6 bg-gradient-to-tr from-white to-light-gray
+  @apply shadow shadow-xl my-6 px-6 bg-gradient-to-tr from-white to-light-gray
   <sm:();
 }
 
 :global(.accordion-list .accordion-item:first-child) {
-  @apply my-0
+  @apply my-0;
 }
 
 :global(.accordion-list .accordion-item:last-child) {
-  @apply my-0
-}
-
-:global(.accordion-list .accordion-item--open) {
-  @apply h-auto;
+  @apply my-0;
 }
 
 :global(.accordion-list .accordion-item--open > .accordion-item__summary) {
