@@ -318,7 +318,11 @@
 }
 
 .box {
-  @apply container mx-auto p-8 border border-mid-gray rounded-xl;
+  @apply container mx-auto ;
+}
+
+.box > div {
+  @apply p-8 border border-mid-gray rounded-xl
 }
 
 .box__title {

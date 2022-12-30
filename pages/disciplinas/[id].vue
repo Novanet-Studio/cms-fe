@@ -28,10 +28,11 @@
     </app-button>
   </div>
 
-  <section
-    class="box"
-    v-html="disciplina?.attributes?.descripcion || `<span>Cargando...</span>`"
-  ></section>
+  <section class="box">
+    <div
+      v-html="disciplina?.attributes?.descripcion || `<span>Cargando...</span>`"
+    ></div>
+  </section>
   <div class="dots">
     <logo-dots />
   </div>
@@ -63,19 +64,18 @@
     <logo-dots />
   </div>
   <section class="box">
-    <h3 class="box__title">
-      {{ disciplina?.attributes.informacion_adicional.titulo }}
-    </h3>
-    <p
-      v-html="
-        disciplina?.attributes.informacion_adicional.descripcion ||
-        `<span>Cargando...</span>`
-      "
-    ></p>
+    <div>
+      <h3 class="box__title">
+        {{ disciplina?.attributes.informacion_adicional.titulo }}
+      </h3>
+      <p
+        v-html="
+          disciplina?.attributes.informacion_adicional.descripcion ||
+          `<span>Cargando...</span>`
+        "
+      ></p>
+    </div>
   </section>
-  <div class="dots">
-    <logo-dots />
-  </div>
 </template>
 
 <script lang="ts" setup>

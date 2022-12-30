@@ -7,7 +7,7 @@
   />
 
   <section class="box">
-    <p v-html="parrafo || `<span>Cargando...</span>`"></p>
+    <div v-html="parrafo || `<span>Cargando...</span>`"></div>
   </section>
   <div class="dots">
     <logo-dots />
