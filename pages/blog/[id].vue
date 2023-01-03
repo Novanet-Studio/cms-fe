@@ -1,5 +1,8 @@
 <template>
-  <section>
+  <section v-if="loading">
+    <article-skeletor />
+  </section>
+  <section v-else>
     <template v-if="articulo?.attributes?.imagen.data.attributes.url">
       <nuxt-picture
         :src="articulo?.attributes?.imagen.data.attributes.url"
@@ -7,24 +10,25 @@
         class="articulo__image"
       />
     </template>
-    <template v-else> Cargando... </template>
     <h1 class="articulo__title">
-      {{ articulo?.attributes?.titulo ?? "Cargando.." }}
+      {{ articulo?.attributes?.titulo }}
     </h1>
     <div
       class="articulo__description"
-      v-html="articulo?.attributes?.descripcion ?? `<p>Cargando...</p>`"
-    ></div>
+      v-html="articulo?.attributes?.descripcion"
+    />
   </section>
 </template>
 <script lang="ts" setup>
 definePageMeta({
-  layout: "articulo",
+  layout: 'articulo',
 });
 
 const route = useRoute();
 const id = route.params.id as string;
-const { article: articulo } = useArticles({
+const { article: articulo, loading } = useArticles({
   slug: id,
 });
+
+loading.value = true;
 </script>

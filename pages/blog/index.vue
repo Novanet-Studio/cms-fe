@@ -9,40 +9,45 @@
   <section class="blog">
     <h2 class="blog__title">Artículos</h2>
     <div class="blog__wrapper">
-      <article
-        class="blog-item"
-        v-for="(post, index) in articulos"
-        :key="index"
-      >
-        <div class="blog-item__img-container">
-          <nuxt-picture
-            :src="post.attributes.imagen.data.attributes.url"
-            :alt="post.attributes.imagen.data.attributes.alternativeText"
-            class="blog-item__imagen"
-          />
-        </div>
-        <div class="blog-item__info">
-          <h3 class="blog-item__title">
-            {{ post.attributes.titulo }}
-          </h3>
-          <div v-html="excerpt(post.attributes.descripcion)"></div>
-          <app-button
-            class="button--yellow button--small blog-item__boton"
-            @click="$router.push(`/blog/${post.attributes.slug}`)"
-          >
-            Leer más
-          </app-button>
-        </div>
-      </article>
+      <template v-if="loading">
+        <article-summary-skeletor v-for="i in 3" />
+      </template>
+      <template v-else>
+        <article
+          class="blog-item"
+          v-for="(post, index) in articulos"
+          :key="index"
+        >
+          <div class="blog-item__img-container">
+            <nuxt-picture
+              :src="post.attributes.imagen.data.attributes.url"
+              :alt="post.attributes.imagen.data.attributes.alternativeText"
+              class="blog-item__imagen"
+            />
+          </div>
+          <div class="blog-item__info">
+            <h3 class="blog-item__title">
+              {{ post.attributes.titulo }}
+            </h3>
+            <div v-html="excerpt(post.attributes.descripcion)"></div>
+            <app-button
+              class="button--yellow button--small blog-item__boton"
+              @click="$router.push(`/blog/${post.attributes.slug}`)"
+            >
+              Leer más
+            </app-button>
+          </div>
+        </article>
+      </template>
     </div>
   </section>
 </template>
 
 <script lang="ts" setup>
-const { articles: articulos } = useArticles();
+const { articles: articulos, loading } = useArticles();
 
 const excerpt = (string: string) => {
-  const subconcat = string.substring(0, 80).concat("...");
+  const subconcat = string.substring(0, 80).concat('...');
   return subconcat;
 };
 </script>

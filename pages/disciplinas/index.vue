@@ -19,16 +19,18 @@
   <div class="disciplinas">
     <section class="disciplinas__container">
       <h2 class="disciplinas__title">Disciplinas</h2>
-      <div
-        v-if="disciplinas !== undefined && disciplinas!"
-        class="cards__wrapper"
-      >
-        <div v-for="(disciplina, index) in disciplinas" :key="index">
+      <div class="cards__wrapper">
+        <template v-if="loading">
+          <card-skeletor v-for="i in 4" />
+        </template>
+        <template v-else-if="!loading && disciplinas.length">
           <nuxt-link
             :to="{
               path: `/disciplinas/${disciplina.attributes.link}`,
               replace: true,
             }"
+            v-for="(disciplina, index) in disciplinas"
+            :key="index"
           >
             <card
               :logo="disciplina.attributes.icono.data.attributes.url"
@@ -39,9 +41,8 @@
               description="Ver información y planes"
             />
           </nuxt-link>
-        </div>
+        </template>
       </div>
-      <Skeletor v-else-if="isLoading === true" height="200" width="200" />
     </section>
   </div>
 
@@ -55,14 +56,13 @@
 </template>
 
 <script lang="ts" setup>
-import { Autoplay, Navigation, Pagination } from "swiper";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import { Autoplay, Navigation, Pagination } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-let isLoading: boolean = true;
 const slides = ref();
-const { disciplines: disciplinas } = useDisciplines();
+const { disciplines: disciplinas, loading } = useDisciplines();
 const graphql = useStrapiGraphQL();
 
 try {

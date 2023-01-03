@@ -5,13 +5,16 @@ export const useDisciplines = (
 ): {
   disciplines: Ref<Project.DisplicinesStrapi[]>;
   discipline: Ref<Project.DisplicinesStrapi | null>;
+  loading: Ref<boolean>;
 } => {
   const disciplines = ref<any>([]);
+  const loading = ref(false);
   const discipline = ref<Project.DisplicinesStrapi | null>(null);
   const graphql = useStrapiGraphQL();
 
   onMounted(async () => {
     try {
+      loading.value = true;
       const query = await graphql<Project.DisplicinesResponse>(`
         query {
           disciplinas(sort: "id:asc") {
@@ -89,11 +92,14 @@ export const useDisciplines = (
       disciplines.value = query.data.disciplinas.data;
     } catch (error) {
       console.log(error);
+    } finally {
+      loading.value = false;
     }
   });
 
   return {
     discipline,
     disciplines,
+    loading,
   };
 };
