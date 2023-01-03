@@ -26,12 +26,24 @@
         <nuxt-link class="header__link" to="/quienes-somos/"
           >¿Quiénes somos?</nuxt-link
         >
-        <nuxt-link class="header__link" to="/disciplinas/"
+        <nuxt-link
+          class="header__link"
+          :class="{
+            'text-black font-bold': $route.path.includes('/disciplinas'),
+          }"
+          to="/disciplinas/"
           >Disciplinas</nuxt-link
         >
         <!-- <nuxt-link class="header__link" to="/">Tienda</nuxt-link> -->
         <nuxt-link class="header__link" to="/aliados/">Aliados</nuxt-link>
-        <nuxt-link class="header__link" to="/blog/">Blog</nuxt-link>
+        <nuxt-link
+          class="header__link"
+          :class="{
+            'text-black font-bold': $route.path.includes('/blog'),
+          }"
+          to="/blog/"
+          >Blog</nuxt-link
+        >
         <nuxt-link class="header__link" to="/preguntas-frecuentes/"
           >Preguntas frecuentes</nuxt-link
         >
