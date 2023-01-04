@@ -21,7 +21,9 @@
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "@fortawesome/vue-fontawesome": "^3.0.2",
     "swiper": "^8.4.4",
+    "vee-validate": "^4.7.3",
     "vue-skeletor": "^1.0.6",
-    "vue3-rich-accordion": "^0.0.7"
+    "vue3-rich-accordion": "^0.0.7",
+    "yup": "^0.32.11"
   }
 }

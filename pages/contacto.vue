@@ -16,7 +16,7 @@
     <logo-dots />
   </div>
   <div class="contacto__grid">
-    <FormularioContacto />
+    <contact-form />
     <aside class="aside">
       <div class="contacto__group">
         <h2 class="contacto__subtitle">Ubicación</h2>
@@ -57,7 +57,11 @@
           <a class="contacto__link" href="https://facebook.com" target="_blank">
             <font-awesome-icon :icon="['fab', 'facebook']" size="2x" />
           </a>
-          <a class="contacto__link" href="https://instagram.com" target="_blank">
+          <a
+            class="contacto__link"
+            href="https://instagram.com"
+            target="_blank"
+          >
             <font-awesome-icon :icon="['fab', 'instagram']" size="2x" />
           </a>
         </div>
@@ -67,11 +71,6 @@
 </template>
 
 <script lang="ts" setup>
-import { Autoplay, Navigation, Pagination } from "swiper";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
 const slides = ref();
 const graphql = useStrapiGraphQL();
 
