@@ -102,7 +102,7 @@ const [name, email, subject, message] = useFieldModel([
 ]);
 
 const mapper = (data: Form) => ({
-  name: data.name,
+  nombre: data.name,
   email: data.email,
   asunto: data.subject,
   mensaje: data.message,
