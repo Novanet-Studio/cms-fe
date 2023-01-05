@@ -286,7 +286,7 @@
 }
 
 .hero__description {
-  @apply mt-4 
+  @apply mt-4 hyphens-manual
   <sm:(text-center);
 }
 
@@ -308,8 +308,7 @@
 }
 
 .swiper {
-  @apply w-full 
-  <sm:(mb-4);
+  @apply w-full mb-4
 }
 
 .swiper .swiper-button-prev,
@@ -338,7 +337,7 @@
 }
 
 .box--noborder {
-  @apply container mx-auto pt-0 pb-8 px-4
+  @apply container mx-auto pt-0 px-4
   <sm:(px-0);
 }
 
@@ -352,19 +351,22 @@
 }
 
 .summary-icon-container {
-  @apply flex items-center justify-center w-14 h-14 bg-primary rounded-full;
+  @apply flex items-center justify-center bg-primary rounded-full box-border
+  <sm:(w-[15%] h-[2.75rem] py-2)
+  xl:(w-14 h-14);
 }
 
 .summary-icon {
-  @apply w-6;
+  @apply <sm:(w-5) xl:(w-6);
 }
 
 .summary-title {
-  @apply heading-3 ml-2 text-secondary;
+  @apply heading-3 ml-2 text-secondary
+  <sm:(w-[85%] leading-tight);
 }
 
 .summary-content {
-  @apply w-full mb-10 hyphens-manual;
+  @apply w-full hyphens-manual;
 }
 
 .summary-content h3 {

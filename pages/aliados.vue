@@ -44,7 +44,7 @@ try {
         }
       }
 
-      aliados(sort: "updatedAt:desc") {
+      aliados(sort: "nombre:asc") {
         data {
           attributes {
             nombre
