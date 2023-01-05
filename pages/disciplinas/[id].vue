@@ -39,6 +39,9 @@
 
   <div v-if="disciplina?.attributes.clases?.length >= 1">
     <items-list :items="disciplina?.attributes.clases" />
+    <span class="dots">
+      <logo-dots />
+    </span>
   </div>
 
   <section v-if="disciplina?.attributes.horarios.length >= 1" class="box">
@@ -49,20 +52,21 @@
     >
       <div v-html="horario.horarios"></div>
     </div>
+    <span class="dots">
+      <logo-dots />
+    </span>
   </section>
-  <div class="dots">
-    <logo-dots />
-  </div>
 
   <section v-if="disciplina?.attributes.planes.length >= 1" class="box">
     <h2 class="summary-title">Planes</h2>
     <div v-for="(plan, index) in disciplina?.attributes.planes" :key="index">
       <div v-html="plan.planes"></div>
     </div>
+    <span class="dots">
+      <logo-dots />
+    </span>
   </section>
-  <div class="dots">
-    <logo-dots />
-  </div>
+
   <section class="box">
     <div>
       <h3 class="box__title">

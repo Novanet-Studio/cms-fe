@@ -168,7 +168,9 @@
 
 /* ./components/the-header.vue */
 .header {
-  @apply border-b border-light-gray shadow-lg;
+  @apply border-b border-light-gray shadow-lg bg-white
+  <sm:(w-full fixed z-50);
+
 }
 
 .header__container {
@@ -213,6 +215,9 @@
 
 /* ./layouts/default.vue */
 
+.main {
+  @apply <sm:( pt-[5.625rem])
+}
 .main > section {
   @apply <sm:(px-3)
   xl:(px-8);
@@ -286,7 +291,7 @@
 }
 
 .hero__description {
-  @apply mt-4 
+  @apply mt-4 hyphens-manual
   <sm:(text-center);
 }
 
@@ -308,8 +313,7 @@
 }
 
 .swiper {
-  @apply w-full 
-  <sm:(mb-4);
+  @apply w-full mb-4
 }
 
 .swiper .swiper-button-prev,
@@ -338,7 +342,7 @@
 }
 
 .box--noborder {
-  @apply container mx-auto pt-0 pb-8 px-4
+  @apply container mx-auto pt-0 px-4
   <sm:(px-0);
 }
 
@@ -352,19 +356,22 @@
 }
 
 .summary-icon-container {
-  @apply flex items-center justify-center w-14 h-14 bg-primary rounded-full;
+  @apply flex items-center justify-center bg-primary rounded-full box-border
+  <sm:(w-[15%] h-[2.75rem] py-2)
+  xl:(w-14 h-14);
 }
 
 .summary-icon {
-  @apply w-6;
+  @apply <sm:(w-5) xl:(w-6);
 }
 
 .summary-title {
-  @apply heading-3 ml-2 text-secondary;
+  @apply heading-3 ml-2 text-secondary
+  <sm:(w-[85%] leading-tight);
 }
 
 .summary-content {
-  @apply w-full mb-10 hyphens-manual;
+  @apply w-full hyphens-manual;
 }
 
 .summary-content h3 {
@@ -573,19 +580,23 @@
 }
 
 .aliados {
-  @apply flex flex-col container mx-auto bg-sectionBg2 bg-no-repeat bg-left
+  @apply flex flex-col  bg-sectionBg2 bg-no-repeat bg-left bg-contain
+  xl:(mt-6 py-12);
   <sm:(mb-6);
-}
-
-.aliados__title {
-  @apply heading-2 heading-dots-left;
+  
 }
 
 .aliados__wrapper {
-  @apply flex justify-between flex-wrap
+  @apply flex justify-between flex-wrap container mx-auto
   <sm:()
   xl:(px-6 py-8);
 }
+
+.aliados__title {
+  @apply heading-2 heading-dots-left
+  <sm:(w-full);
+}
+
 
 .identidad {
   @apply flex flex-col container mx-auto bg-sectionBg2 bg-no-repeat bg-left;
@@ -660,16 +671,19 @@
 }
 
 .articulo {
-  @apply pt-6 px-8;
+  @apply <sm:(px-3)
+  xl:(container mx-auto grid grid-cols-[70%_30%] pt-6 px-8);
 }
 
 .articulo-grid {
-  @apply container mx-auto grid grid-cols-[70%_30%] pt-6;
+  @apply mt-6
+  <sm:(px-3)
+  xl:(container mx-auto grid grid-cols-[70%_30%] pt-6 px-8);
 }
 
 .aside {
   @apply pl-6
-  <sm:(pl-0);
+  <sm:(pl-0 mt-8);
 }
 
 .articulo__image img {
@@ -685,9 +699,9 @@
 }
 
 .faq-grid {
-  @apply mt-6
+  @apply grid mt-6
   <sm:(px-3)
-  xl:(container mx-auto grid grid-cols-[70%_30%] pt-6 px-8);
+  xl:(container mx-auto grid-cols-[70%_30%] pt-6 px-8);
 }
 
 .faq__title {

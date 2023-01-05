@@ -83,7 +83,7 @@ defineProps<Props>();
 
 :global(.accordion-list .accordion-item) {
   @apply shadow shadow-xl my-6 px-6 bg-gradient-to-tr from-white to-light-gray
-  <sm:();
+  <sm:(px-2);
 }
 
 :global(.accordion-list .accordion-item:first-child) {
@@ -92,6 +92,10 @@ defineProps<Props>();
 
 :global(.accordion-list .accordion-item:last-child) {
   @apply my-0;
+}
+
+:global(.accordion-list .accordion-item--open ) {
+  @apply pb-20;
 }
 
 :global(.accordion-list .accordion-item--open > .accordion-item__summary) {
@@ -103,7 +107,7 @@ defineProps<Props>();
 }
 
 :global(.accordion-list .accordion-item > .accordion-item__content) {
-  @apply mt-6 mb-6 bg-transparent;
+  @apply bg-transparent;
 }
 
 :global(.accordion-list .accordion-item > .accordion-item__summary) {

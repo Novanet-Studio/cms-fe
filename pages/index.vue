@@ -8,23 +8,35 @@
 
   <slider :slides="slides" />
 
-  <div class="disciplinas">
-    <section class="disciplinas__container">
+  <section class="disciplinas">    
+    <div class="disciplinas__container">
       <h2 class="disciplinas__title">Disciplinas</h2>
       <div class="cards__wrapper">
-        <card
-          v-for="(disciplina, index) in disciplinas"
-          :key="index"
-          :logo="disciplina.attributes.icono.data.attributes.url"
-          :alternativeText="
-            disciplina.attributes.icono.data.attributes.alternativeText
-          "
-          :title="disciplina.attributes.nombre"
-          description="Ver información y planes"
-        />
+        <template v-if="loading">
+          <card-skeletor v-for="i in 4" />
+        </template>
+        <template v-else-if="!loading && disciplinas.length">
+          <nuxt-link
+            :to="{
+              path: `/disciplinas/${disciplina.attributes.link}`,
+              replace: true,
+            }"
+            v-for="(disciplina, index) in disciplinas"
+            :key="index"
+          >
+            <card
+              :logo="disciplina.attributes.icono.data.attributes.url"
+              :alternativeText="
+                disciplina.attributes.icono.data.attributes.alternativeText
+              "
+              :title="disciplina.attributes.nombre"
+              description="Ver información y planes"
+            />
+          </nuxt-link>
+        </template>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 
   <highlight
     title="FEVEDA prepara su COPA<br />
@@ -48,8 +60,9 @@
   </section>
 
   <section class="aliados">
-    <h2 class="aliados__title">Aliados</h2>
+    
     <div class="aliados__wrapper">
+      <h2 class="aliados__title">Aliados</h2>
       <basic
         v-for="(aliado, index) in aliados"
         :logo="aliado.attributes.imagen.data.attributes.url"
@@ -77,10 +90,10 @@
 </template>
 
 <script lang="ts" setup>
-import { Autoplay, Navigation, Pagination } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import { Autoplay, Navigation, Pagination } from "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const clog = (e: any) => {
   console.log(e);
@@ -145,6 +158,7 @@ try {
         data {
           attributes {
             nombre
+            link
             icono {
               data {
                 attributes {
@@ -191,21 +205,21 @@ try {
 const storeItems = [
   {
     image:
-      'https://res.cloudinary.com/novanet-studio/image/upload/v1669823173/ccs-multisport/cms_tienda_caballeros_d004a62d61.webp',
-    text: 'Caballeros',
-    alternativeText: 'Hombre con gorro y lentes nadando en aguas abiertas',
+      "https://res.cloudinary.com/novanet-studio/image/upload/v1669823173/ccs-multisport/cms_tienda_caballeros_d004a62d61.webp",
+    text: "Caballeros",
+    alternativeText: "Hombre con gorro y lentes nadando en aguas abiertas",
   },
   {
     image:
-      'https://res.cloudinary.com/novanet-studio/image/upload/v1669823172/ccs-multisport/cms_tienda_damas_8a5caff429.webp',
-    text: 'Damas',
-    alternativeText: 'Mujer con gorro y lentes nadando en piscimna',
+      "https://res.cloudinary.com/novanet-studio/image/upload/v1669823172/ccs-multisport/cms_tienda_damas_8a5caff429.webp",
+    text: "Damas",
+    alternativeText: "Mujer con gorro y lentes nadando en piscimna",
   },
   {
     image:
-      'https://res.cloudinary.com/novanet-studio/image/upload/v1669823173/ccs-multisport/cms_tienda_ninos_3af6013c20.webp',
-    text: 'Niños',
-    alternativeText: 'Niño posando al borde de piscina con lentes en la frente',
+      "https://res.cloudinary.com/novanet-studio/image/upload/v1669823173/ccs-multisport/cms_tienda_ninos_3af6013c20.webp",
+    text: "Niños",
+    alternativeText: "Niño posando al borde de piscina con lentes en la frente",
   },
 ];
 </script>
