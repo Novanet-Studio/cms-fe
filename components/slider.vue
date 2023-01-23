@@ -1,6 +1,7 @@
 <template>
   <div class="swiper">
     <swiper
+      :autoplay="{ delay: 3000, disableOnInteraction: false }"
       :slider-per-view="1"
       :space-between="0"
       loop

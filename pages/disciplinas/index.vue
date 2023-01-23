@@ -1,20 +1,5 @@
 <template>
-  <div class="swiper">
-    <swiper
-      :slider-per-view="1"
-      :space-between="0"
-      loop
-      navigation
-      :modules="[Autoplay, Navigation, Pagination]"
-    >
-      <swiper-slide v-for="(slide, index) in slides" :key="index">
-        <nuxt-img
-          :src="slide.attributes.url"
-          sizes="xs:100vw sm:640 md:768 lg:1024 xl:1280 xxl:1920"
-        />
-      </swiper-slide>
-    </swiper>
-  </div>
+  <slider :slides="slides" />
 
   <div class="disciplinas">
     <section class="disciplinas__container">
@@ -52,6 +37,7 @@
         casa, es CCS Multisport"
     description="Esta piscina alberga los sueños y las ilusiones de muchos y el escape de la rutina para otros.Aquí nadan los que entrenan duro, los que entrenan para competir, para relajarse y para llevar una una vida saludable"
     image="https://res.cloudinary.com/novanet-studio/image/upload/v1669823171/ccs-multisport/cms_piscina_en_atardecer_281eb141f9.webp"
+    url="natacion"
   />
 </template>
 

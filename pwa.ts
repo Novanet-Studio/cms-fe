@@ -19,4 +19,7 @@ export default {
     theme_color: "#fff",
   },
   icon: { source: "assets/images/favicon.png" },
+  workbox: {
+    enabled: false,
+  }
 };

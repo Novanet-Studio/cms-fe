@@ -1,5 +1,5 @@
 <template>
-  <button :class="class" @click.prevent="$emit('click')" :type="type">
+  <button :class="class" @click.prevent="$emit('click')" @click="click(url)" :type="type">
     <template v-if="prefix">
       <font-awesome-icon
         :icon="[`${prefix}`, `${iconName}`]"
@@ -17,15 +17,24 @@ type Props = {
   iconName?: string;
   iconSize?: string;
   text?: string;
-  type?: 'button' | 'reset' | 'submit';
+  type?: "button" | "reset" | "submit";
+  url?: string;
 };
 
 type Emits = {
-  (e: 'click'): string;
+  (e: "click"): string;
 };
 
 withDefaults(defineProps<Props>(), {
-  type: 'button',
+  type: "button",
 });
 defineEmits<Emits>();
+
+const router = useRouter();
+const click = (url: string) => {
+
+  router.push({
+    path: `${url}`,
+  });
+};
 </script>

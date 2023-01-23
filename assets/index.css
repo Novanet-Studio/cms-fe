@@ -168,8 +168,8 @@
 
 /* ./components/the-header.vue */
 .header {
-  @apply border-b border-light-gray shadow-lg bg-white
-  <sm:(w-full fixed z-50);
+  @apply w-full border-b border-light-gray shadow-lg bg-white fixed z-50
+  <sm:();
 
 }
 
@@ -216,7 +216,7 @@
 /* ./layouts/default.vue */
 
 .main {
-  @apply <sm:( pt-[5.625rem])
+  @apply <sm:( pt-[5.625rem]) xl:(pt-[8.438em])
 }
 .main > section {
   @apply <sm:(px-3)
@@ -593,7 +593,7 @@
 }
 
 .aliados__title {
-  @apply heading-2 heading-dots-left
+  @apply heading-2 heading-dots-left w-full pb-6
   <sm:(w-full);
 }
 
