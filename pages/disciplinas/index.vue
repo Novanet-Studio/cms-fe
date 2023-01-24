@@ -32,20 +32,22 @@
   </div>
 
   <highlight
+    estilo="highlight"
     title="Nuestra piscina es un <br />
         lugar de encuentro, es nuestra <br />
         casa, es CCS Multisport"
     description="Esta piscina alberga los sueños y las ilusiones de muchos y el escape de la rutina para otros.Aquí nadan los que entrenan duro, los que entrenan para competir, para relajarse y para llevar una una vida saludable"
     image="https://res.cloudinary.com/novanet-studio/image/upload/v1669823171/ccs-multisport/cms_piscina_en_atardecer_281eb141f9.webp"
     url="natacion"
+    alt="Pisicina de natación con fondo en atardecer rosado"
   />
 </template>
 
 <script lang="ts" setup>
-import { Autoplay, Navigation, Pagination } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import { Autoplay, Navigation, Pagination } from "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const slides = ref();
 const { disciplines: disciplinas, loading } = useDisciplines();

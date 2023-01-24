@@ -1,8 +1,10 @@
 <template>
   <highlight
+    estilo="highlight"
     title="Preguntas frecuentes"
     description="La junta directiva de la federación venezolana de deportes acuáticos “FEVEDA”, se complace en invitar a todas las asociaciones afiliadas"
     image="https://res.cloudinary.com/novanet-studio/image/upload/v1669823165/ccs-multisport/cms_hombre_nadando_crawl_6e3eead054.webp"
+    alt="Nombre nadando estilo crawl en competencia"
   />
 
   <div class="faq-grid">

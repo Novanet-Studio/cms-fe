@@ -25,9 +25,11 @@
   </section>
 
   <highlight
+    estilo="highlight"
     :title="profesionales.titulo"
     :description="profesionales.descripcion"
     :image="profesionales.imagen.data.attributes.url"
+    :alt="profesionales.imagen.data.attributes.alternativeText"
   />
 
   <div class="dots"></div>

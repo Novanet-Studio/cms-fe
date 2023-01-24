@@ -170,7 +170,6 @@
 .header {
   @apply w-full border-b border-light-gray shadow-lg bg-white fixed z-50
   <sm:();
-
 }
 
 .header__container {
@@ -216,7 +215,7 @@
 /* ./layouts/default.vue */
 
 .main {
-  @apply <sm:( pt-[5.625rem]) xl:(pt-[8.438em])
+  @apply <sm:( pt-[5.625rem]) xl:(pt-[8.438em]);
 }
 .main > section {
   @apply <sm:(px-3)
@@ -313,7 +312,7 @@
 }
 
 .swiper {
-  @apply w-full mb-4
+  @apply w-full mb-4;
 }
 
 .swiper .swiper-button-prev,
@@ -322,11 +321,11 @@
 }
 
 .box {
-  @apply container mx-auto ;
+  @apply container mx-auto;
 }
 
 .box > div {
-  @apply p-8 border border-mid-gray rounded-xl
+  @apply p-8 border border-mid-gray rounded-xl;
 }
 
 .box__title {
@@ -429,6 +428,24 @@
   <sm:(flex-wrap);
 }
 
+.highlight-slide {
+  @apply highlight;
+}
+
+.highlight .highlight__image {
+  @apply flex w-1/2 
+  <sm:(w-full);
+}
+
+.highlight-slide .highlight__image {
+  @apply flex w-[59%] 
+  <sm:(w-full);
+}
+
+.highlight-slide .highlight__image img {
+  @apply h-full
+}
+
 .highlight__info {
   @apply flex flex-col w-1/2 
   <sm:(w-full py-8 items-center)
@@ -436,21 +453,18 @@
 }
 
 .highlight__title {
-  @apply heading-2 heading-dots-right 
+  @apply heading-2 heading-dots-right hyphens-none
   <sm:(w-full text-center bg-top px-1)
   xl:(text-right bg-right-top);
 }
 
 .highlight__text {
-  @apply my-4 hyphens-manual
+  @apply my-4 hyphens-none
   <sm:(text-center px-6)
   xl:(text-right pl-24);
 }
 
-.highlight__image {
-  @apply flex w-1/2 
-  <sm:(w-full);
-}
+
 
 .highlight__image img {
   @apply w-full;
@@ -581,9 +595,8 @@
 
 .aliados {
   @apply flex flex-col  bg-sectionBg2 bg-no-repeat bg-left bg-contain
-  xl:(mt-6 py-12);
-  <sm:(mb-6);
-  
+  xl:(mt-0 pb-6);
+  <sm: (mb-6);
 }
 
 .aliados__wrapper {
@@ -596,7 +609,6 @@
   @apply heading-2 heading-dots-left w-full pb-6
   <sm:(w-full);
 }
-
 
 .identidad {
   @apply flex flex-col container mx-auto bg-sectionBg2 bg-no-repeat bg-left;
@@ -672,13 +684,13 @@
 
 .articulo {
   @apply <sm:(px-3)
-  xl:(container mx-auto grid grid-cols-[70%_30%] pt-6 px-8);
+  xl:(container mx-auto pt-6);
 }
 
 .articulo-grid {
   @apply mt-6
   <sm:(px-3)
-  xl:(container mx-auto grid grid-cols-[70%_30%] pt-6 px-8);
+  xl:(container mx-auto grid grid-cols-[70%_30%]);
 }
 
 .aside {

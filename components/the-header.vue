@@ -42,7 +42,9 @@
             'text-black font-bold': $route.path.includes('/blog'),
           }"
           to="/blog/"
-          >Blog</nuxt-link
+          >Blog</nuxt-link>
+          <nuxt-link class="header__link" to="/tienda/"
+          >Tienda</nuxt-link
         >
         <nuxt-link class="header__link" to="/preguntas-frecuentes/"
           >Preguntas frecuentes</nuxt-link

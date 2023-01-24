@@ -7,8 +7,8 @@
   />
 
   <section class="aliados">
-    <h2 class="aliados__title">Aliados</h2>
     <div class="aliados__wrapper">
+      <h2 class="aliados__title">Aliados</h2>
       <basic
         v-for="(aliado, index) in aliados"
         :logo="aliado.attributes.imagen.data.attributes.url"

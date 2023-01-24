@@ -1,22 +1,32 @@
 <template>
-  <div class="highlight">
+  <div :class="estilo">
     <div class="highlight__info">
       <h2 class="highlight__title" v-html="title"></h2>
       <p class="highlight__text" v-html="description"></p>
-      <app-button class="button--blue" :url="url">Ver más</app-button>
+      <div v-if="buttonText">
+        <app-button class="button--blue" :url="url">{{
+          buttonText
+        }}</app-button>
+      </div>
+      <div v-else>
+        <app-button class="button--blue" :url="url">Ver más</app-button>
+      </div>
     </div>
     <div class="highlight__image">
-      <nuxt-picture :src="image" />
+      <nuxt-picture :src="image" :alt="alt" />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 type Props = {
+  estilo: string;
   title: string;
   description: string;
   image: string;
   url?: string;
+  alt?: string;
+  buttonText?: string;
 };
 
 defineProps<Props>();

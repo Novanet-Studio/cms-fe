@@ -8,7 +8,7 @@
 
   <slider :slides="slides" />
 
-  <section class="disciplinas">    
+  <section class="disciplinas">
     <div class="disciplinas__container">
       <h2 class="disciplinas__title">Disciplinas</h2>
       <div class="cards__wrapper">
@@ -45,6 +45,8 @@
         deportes acuáticos “FEVEDA”, se complace en invitar a<br />
         todas las asociaciones afiliadas"
     image="https://res.cloudinary.com/novanet-studio/image/upload/v1669823165/ccs-multisport/cms_hombre_nadando_crawl_6e3eead054.webp"
+    estilo="highlight"
+    alt="Hombre en piscina nadando estilo crawl"
   />
 
   <section class="mensaje">
@@ -60,7 +62,6 @@
   </section>
 
   <section class="aliados">
-    
     <div class="aliados__wrapper">
       <h2 class="aliados__title">Aliados</h2>
       <basic
@@ -76,7 +77,8 @@
   </section>
 
   <section class="tienda">
-    <h2 class="tienda__title">Tienda</h2>
+    
+    <!-- <h2 class="tienda__title">Tienda</h2>
     <div class="tienda__wrapper">
       <gradient-overlay
         v-for="(item, index) in storeItems"
@@ -85,7 +87,7 @@
         :text="item.text"
         :alternativeText="item.alternativeText"
       />
-    </div>
+    </div> -->
   </section>
 </template>
 

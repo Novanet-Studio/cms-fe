@@ -9,7 +9,7 @@
             prefix="fas"
             iconName="caret-left"
             iconSize="1x"
-            @click="$router.push('/blog')"
+            url="/blog"
           >
             Volver al blog
           </app-button>
