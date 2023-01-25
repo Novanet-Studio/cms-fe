@@ -18,10 +18,20 @@
       v-for="(item, index) in identidad"
       :imagen="item.imagen.data.attributes.url"
       :alternativeText="item.imagen.data.attributes.alternativeText"
-      :title="item.titulo"
-      :description="item.descripcion"
       :key="index"
     />
+  </section>
+
+  <section class="identidad">
+    <div v-for="(item, index) in identidad" class="mensaje">
+      <mensaje-destacado
+        estilo="mensaje"
+        buttonText=""
+        :mensaje="item"
+        url="contacto"
+        :key="index"
+      />
+    </div>
   </section>
 
   <highlight
@@ -123,6 +133,10 @@ try {
   trabajo.value = query.data.empresa.data.attributes.trabajo;
 } catch (err) {
   principal.value = [];
+  parrafo.value = [];
+  identidad.value = [];
+  profesionales.value = [];
+  trabajo.value = [];
   console.log(err);
 }
 </script>

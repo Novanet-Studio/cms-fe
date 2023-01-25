@@ -1,8 +1,8 @@
 <template>
   <hero
-    :titulo="principal.titulo"
+    titulo="Nuestros aliados amplian y complementan nuestra oferta de servicios"
     :descripcion="principal.descripcion"
-    url="https://res.cloudinary.com/novanet-studio/image/upload/v1670336594/ccs-multisport/cms_aliados_hombre_nadando_crawl_231313b588.webp"
+    url="https://res.cloudinary.com/novanet-studio/image/upload/v1669823173/ccs-multisport/cms_piscina_fondo_avila_ad6293238e.webp"
     alternativeText="Hombre nadando crawl"
   />
 

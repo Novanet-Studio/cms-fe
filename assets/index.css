@@ -285,7 +285,7 @@
 }
 
 .hero__title {
-  @apply heading-1
+  @apply heading-1 hyphens-none
   <sm:(text-center);
 }
 
@@ -308,7 +308,7 @@
 .hero__image-fg {
   @apply rounded-full z-20 absolute 
   <sm:(w-70 h-70) 
-  xl:(w-92 h-92);
+  xl:(w-101 h-101);
 }
 
 .swiper {
@@ -443,7 +443,7 @@
 }
 
 .highlight-slide .highlight__image img {
-  @apply h-full
+  @apply h-full;
 }
 
 .highlight__info {
@@ -463,8 +463,6 @@
   <sm:(text-center px-6)
   xl:(text-right pl-24);
 }
-
-
 
 .highlight__image img {
   @apply w-full;
@@ -533,10 +531,14 @@
   <sm:(mt-2);
 }
 
-.mensaje {
+/* .mensaje:nth-child(odd) {
   @apply w-full bg-sectionBg bg-right bg-no-repeat bg-contain;
 }
 
+.mensaje:nth-child(even) {
+  @apply w-full bg-sectionBg2 bg-left bg-no-repeat bg-contain;
+}
+ */
 .mensaje__container {
   @apply flex flex-col items-center container mx-auto  
   <sm:(py-16)
@@ -545,6 +547,10 @@
 
 .mensaje__title {
   @apply heading-2 text-center;
+}
+
+.mensaje__description {
+  @apply text-center mb-8 text-lg mt-4;
 }
 
 .disciplinas {
@@ -611,19 +617,11 @@
 }
 
 .identidad {
-  @apply flex flex-col container mx-auto bg-sectionBg2 bg-no-repeat bg-left;
-}
-
-.identidad__container {
-  @apply;
-}
-
-.identidad__item {
-  @apply flex flex-wrap mb-8;
+  @apply flex flex-wrap container mx-auto justify-between;
 }
 
 .identidad__imagen {
-  @apply round-border <sm:(w-full) xl:(w-1/4);
+  @apply round-border w-full;
 }
 
 .identidad__imagen img {
@@ -637,6 +635,14 @@
 .identidad__title {
   @apply heading-2 heading-dots-left text-secondary
   <sm:(mt-4);
+}
+
+.identidad {
+  @apply py-12;
+}
+
+.identidad .mensaje {
+  @apply pb-4;
 }
 
 .blog {

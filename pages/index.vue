@@ -6,34 +6,29 @@
     :alternativeText="principal.imagen.data.attributes.alternativeText"
   />
 
-  <slider :slides="slides" />
+  <slider :slides="carrusel" />
 
   <section class="disciplinas">
     <div class="disciplinas__container">
       <h2 class="disciplinas__title">Disciplinas</h2>
       <div class="cards__wrapper">
-        <template v-if="loading">
-          <card-skeletor v-for="i in 4" />
-        </template>
-        <template v-else-if="!loading && disciplinas.length">
-          <nuxt-link
-            :to="{
-              path: `/disciplinas/${disciplina.attributes.link}`,
-              replace: true,
-            }"
-            v-for="(disciplina, index) in disciplinas"
-            :key="index"
-          >
-            <card
-              :logo="disciplina.attributes.icono.data.attributes.url"
-              :alternativeText="
-                disciplina.attributes.icono.data.attributes.alternativeText
-              "
-              :title="disciplina.attributes.nombre"
-              description="Ver información y planes"
-            />
-          </nuxt-link>
-        </template>
+        <nuxt-link
+          :to="{
+            path: `/disciplinas/${disciplina.attributes.link}`,
+            replace: true,
+          }"
+          v-for="(disciplina, index) in disciplinas"
+          :key="index"
+        >
+          <card
+            :logo="disciplina.attributes.icono.data.attributes.url"
+            :alternativeText="
+              disciplina.attributes.icono.data.attributes.alternativeText
+            "
+            :title="disciplina.attributes.nombre"
+            description="Ver información y planes"
+          />
+        </nuxt-link>
       </div>
     </div>
   </section>
@@ -77,7 +72,6 @@
   </section>
 
   <section class="tienda">
-    
     <!-- <h2 class="tienda__title">Tienda</h2>
     <div class="tienda__wrapper">
       <gradient-overlay
@@ -113,7 +107,7 @@ useHead({
 });
 
 const principal = ref();
-const slides = ref();
+const carrusel = ref();
 const disciplinas = ref();
 const mensaje = ref();
 const aliados = ref();
@@ -138,19 +132,24 @@ try {
               }
             }
 
-            carrusel {
-              data {
-                attributes {
-                  name
-                  alternativeText
-                  url
-                }
-              }
-            }
-
             mensaje {
               titulo
               descripcion
+            }
+          }
+        }
+      }
+
+      carrusel(id: 1) {
+        data {
+          attributes {
+            imagenes {
+              data {
+                attributes {
+                  url
+                  alternativeText
+                }
+              }
             }
           }
         }
@@ -191,13 +190,13 @@ try {
   `);
 
   principal.value = query.data.inicio.data.attributes.principal;
-  slides.value = query.data.inicio.data.attributes.carrusel.data;
+  carrusel.value = query.data.carrusel.data.attributes.imagenes.data;
   disciplinas.value = query.data.disciplinas.data;
   mensaje.value = query.data.inicio.data.attributes.mensaje;
   aliados.value = query.data.aliados.data;
 } catch (err) {
   principal.value = [];
-  slides.value = [];
+  carrusel.value = [];
   disciplinas.value = [];
   mensaje.value = [];
   aliados.value = [];

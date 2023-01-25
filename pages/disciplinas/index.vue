@@ -1,5 +1,5 @@
 <template>
-  <slider :slides="slides" />
+  <slider :slides="carrusel" />
 
   <div class="disciplinas">
     <section class="disciplinas__container">
@@ -49,22 +49,21 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const slides = ref();
+const carrusel = ref();
 const { disciplines: disciplinas, loading } = useDisciplines();
 const graphql = useStrapiGraphQL();
 
 try {
   const query = await graphql<any>(`
     query {
-      inicio {
+      carrusel(id: 2) {
         data {
           attributes {
-            carrusel {
+            imagenes {
               data {
                 attributes {
-                  name
-                  alternativeText
                   url
+                  alternativeText
                 }
               }
             }
@@ -74,9 +73,9 @@ try {
     }
   `);
 
-  slides.value = query.data.inicio.data.attributes.carrusel.data;
+  carrusel.value = query.data.carrusel.data.attributes.imagenes.data;
 } catch (err) {
-  slides.value = [];
+  carrusel.value = [];
   console.log(err);
 }
 </script>

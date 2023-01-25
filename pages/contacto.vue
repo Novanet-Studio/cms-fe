@@ -1,5 +1,5 @@
 <template>
-  <slider :slides="slides" />
+  <slider :slides="carrusel" />
   <div class="dots">
     <logo-dots />
   </div>
@@ -71,21 +71,20 @@
 </template>
 
 <script lang="ts" setup>
-const slides = ref();
+const carrusel = ref();
 const graphql = useStrapiGraphQL();
 
 try {
   const query = await graphql<any>(`
     query {
-      inicio {
+      carrusel(id: 3) {
         data {
           attributes {
-            carrusel {
+            imagenes {
               data {
                 attributes {
-                  name
-                  alternativeText
                   url
+                  alternativeText
                 }
               }
             }
@@ -95,9 +94,9 @@ try {
     }
   `);
 
-  slides.value = query.data.inicio.data.attributes.carrusel.data;
+  carrusel.value = query.data.carrusel.data.attributes.imagenes.data;
 } catch (err) {
-  slides.value = [];
+  carrusel.value = [];
 
   console.log(err);
 }
