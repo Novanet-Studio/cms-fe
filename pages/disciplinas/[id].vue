@@ -22,7 +22,7 @@
       prefix="fas"
       iconName="caret-left"
       iconSize="1x"
-      @click="$router.push('/disciplinas')"
+      url="/"
     >
       Volver
     </app-button>

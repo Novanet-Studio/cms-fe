@@ -34,14 +34,11 @@
   </section>
 
   <highlight
-    title="FEVEDA prepara su COPA<br />
-        Pasión Acuática 2022"
-    description="La junta directiva de la federación venezolana de<br />
-        deportes acuáticos “FEVEDA”, se complace en invitar a<br />
-        todas las asociaciones afiliadas"
-    image="https://res.cloudinary.com/novanet-studio/image/upload/v1669823165/ccs-multisport/cms_hombre_nadando_crawl_6e3eead054.webp"
     estilo="highlight"
-    alt="Hombre en piscina nadando estilo crawl"
+    :title="profesionales.titulo"
+    :description="profesionales.descripcion"
+    :image="profesionales.imagen.data.attributes.url"
+    :alt="profesionales.imagen.data.attributes.alternativeText"
   />
 
   <section class="mensaje">
@@ -109,6 +106,7 @@ useHead({
 const principal = ref();
 const carrusel = ref();
 const disciplinas = ref();
+const profesionales = ref();
 const mensaje = ref();
 const aliados = ref();
 const graphql = useStrapiGraphQL();
@@ -172,6 +170,25 @@ try {
         }
       }
 
+      empresa {
+        data {
+          attributes {
+            profesionales {
+              titulo
+              descripcion
+              imagen {
+                data {
+                  attributes {
+                    url
+                    alternativeText
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
       aliados(sort: "updatedAt:desc") {
         data {
           attributes {
@@ -192,12 +209,14 @@ try {
   principal.value = query.data.inicio.data.attributes.principal;
   carrusel.value = query.data.carrusel.data.attributes.imagenes.data;
   disciplinas.value = query.data.disciplinas.data;
+  profesionales.value = query.data.empresa.data.attributes.profesionales;
   mensaje.value = query.data.inicio.data.attributes.mensaje;
   aliados.value = query.data.aliados.data;
 } catch (err) {
   principal.value = [];
   carrusel.value = [];
   disciplinas.value = [];
+  profesionales.value = [];
   mensaje.value = [];
   aliados.value = [];
   console.log(err);

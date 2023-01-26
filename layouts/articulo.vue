@@ -3,7 +3,7 @@
     <div>
       <the-header />
       <main class="main">
-        <div class="articulo">
+        <section class="articulo">
           <app-button
             class="button--yellow button--small"
             prefix="fas"
@@ -31,7 +31,7 @@
               />
             </aside>
           </div>
-        </div>
+        </section>
       </main>
       <the-footer />
     </div>

@@ -542,7 +542,7 @@
 .mensaje__container {
   @apply flex flex-col items-center container mx-auto  
   <sm:(py-16)
-  xl:(py-22);
+  xl:(pt-16 pb-8);
 }
 
 .mensaje__title {
@@ -617,11 +617,20 @@
 }
 
 .identidad {
-  @apply flex flex-wrap container mx-auto justify-between;
+  @apply flex flex-col container mx-auto;
+}
+
+.identidad__container {
+  @apply;
+}
+
+.identidad__item {
+  @apply flex flex-wrap mb-8;
 }
 
 .identidad__imagen {
-  @apply round-border w-full;
+  @apply round-border 
+  <sm:(w-full) xl:(w-1/4);
 }
 
 .identidad__imagen img {
@@ -635,14 +644,6 @@
 .identidad__title {
   @apply heading-2 heading-dots-left text-secondary
   <sm:(mt-4);
-}
-
-.identidad {
-  @apply py-12;
-}
-
-.identidad .mensaje {
-  @apply pb-4;
 }
 
 .blog {
@@ -696,7 +697,7 @@
 .articulo-grid {
   @apply mt-6
   <sm:(px-3)
-  xl:(container mx-auto grid grid-cols-[70%_30%]);
+  xl:(container mx-auto grid grid-cols-[70%_30%]); 
 }
 
 .aside {

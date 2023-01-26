@@ -33,7 +33,7 @@ defineEmits<Emits>();
 const router = useRouter();
 const click = (url: string) => {
 
-  router.push({
+  router.replace({
     path: `${url}`,
   });
 };
