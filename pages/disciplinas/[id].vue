@@ -22,7 +22,7 @@
       prefix="fas"
       iconName="caret-left"
       iconSize="1x"
-      url="/"
+      url="/disciplinas"
     >
       Volver
     </app-button>

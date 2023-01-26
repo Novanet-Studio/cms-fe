@@ -1,10 +1,10 @@
 <template>
   <highlight
     estilo="highlight"
-    title="Preguntas frecuentes"
-    description="La junta directiva de la federación venezolana de deportes acuáticos “FEVEDA”, se complace en invitar a todas las asociaciones afiliadas"
-    image="https://res.cloudinary.com/novanet-studio/image/upload/v1669823165/ccs-multisport/cms_hombre_nadando_crawl_6e3eead054.webp"
-    alt="Nombre nadando estilo crawl en competencia"
+    title="¿En qué podemos ayudarte?"
+    description="Estás son las preguntas que responden a alguna de sus inquietudes. Contáctanos para mayor información"
+    image="https://res.cloudinary.com/novanet-studio/image/upload/v1674752999/ccs-multisport/cms_triatleta_en_cada_disciplina_890ac7a154.webp"
+    alt="Montaje de triatleta nadando, en bicicleta y nadando"
   />
 
   <div class="faq-grid">
