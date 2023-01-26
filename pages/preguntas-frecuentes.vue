@@ -5,6 +5,7 @@
     description="Estás son las preguntas que responden a alguna de sus inquietudes. Contáctanos para mayor información"
     image="https://res.cloudinary.com/novanet-studio/image/upload/v1674752999/ccs-multisport/cms_triatleta_en_cada_disciplina_890ac7a154.webp"
     alt="Montaje de triatleta nadando, en bicicleta y nadando"
+    url="/contacto"
   />
 
   <div class="faq-grid">
