@@ -13,10 +13,7 @@
       <h2 class="disciplinas__title">Disciplinas</h2>
       <div class="cards__wrapper">
         <nuxt-link
-          :to="{
-            path: `/disciplinas/${disciplina.attributes.link}`,
-            replace: true,
-          }"
+          :to="`/disciplinas/${disciplina.attributes.link}`"
           v-for="(disciplina, index) in disciplinas"
           :key="index"
         >
@@ -39,7 +36,7 @@
     :description="profesionales.descripcion"
     :image="profesionales.imagen.data.attributes.url"
     :alt="profesionales.imagen.data.attributes.alternativeText"
-    url="/disciplinas"
+    url="/quienes-somos"
   />
 
   <section class="mensaje">
@@ -50,7 +47,9 @@
       <p class="text-center mb-8 text-lg mt-4">
         {{ mensaje.descripcion }}
       </p>
-      <app-button class="button--blue" url="/disciplinas">Conoce más</app-button>
+      <app-button class="button--blue" url="/disciplinas"
+        >Conoce más</app-button
+      >
     </div>
   </section>
 

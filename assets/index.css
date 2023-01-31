@@ -647,17 +647,18 @@
 }
 
 .blog {
-  @apply container mx-auto pt-20 bg-sectionBg bg-no-repeat bg-right;
+  @apply pt-20 bg-sectionBg bg-no-repeat bg-right;
 }
 
 .blog__wrapper {
-  @apply container mx-auto grid mt-4
-  <sm:(grid-cols-1 gap-4)
+  @apply container mx-auto grid mt-4 gap-6
+  <sm:(grid-cols-1)
   xl:(grid-cols-2);
 }
 
 .blog__title {
-  @apply heading-2 heading-dots-left;
+  @apply heading-2 heading-dots-left
+  xl:(col-span-full);
 }
 
 .blog-item {

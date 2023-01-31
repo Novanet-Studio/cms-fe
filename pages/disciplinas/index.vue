@@ -10,10 +10,7 @@
         </template>
         <template v-else-if="!loading && disciplinas.length">
           <nuxt-link
-            :to="{
-              path: `/disciplinas/${disciplina.attributes.link}`,
-              replace: true,
-            }"
+            :to="`/disciplinas/${disciplina.attributes.link}`"
             v-for="(disciplina, index) in disciplinas"
             :key="index"
           >

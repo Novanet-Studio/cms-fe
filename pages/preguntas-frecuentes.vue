@@ -6,6 +6,7 @@
     image="https://res.cloudinary.com/novanet-studio/image/upload/v1674752999/ccs-multisport/cms_triatleta_en_cada_disciplina_890ac7a154.webp"
     alt="Montaje de triatleta nadando, en bicicleta y nadando"
     url="/contacto"
+    buttonText="Contáctanos"
   />
 
   <div class="faq-grid">
@@ -16,8 +17,7 @@
     <aside class="aside">
       <h2 class="tienda__title">Tienda</h2>
       <p>
-        Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
-        quam nihil molestiae consequatur
+        Tienda artículos deportivos y natación para niños, niñas, damas y caballeros, cambiar las fotos por alguna de ellos.
       </p>
       <basic
         v-for="(item, index) in storeItems"

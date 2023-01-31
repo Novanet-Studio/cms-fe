@@ -18,8 +18,7 @@
             <aside class="aside">
               <h2 class="tienda__title">Tienda</h2>
               <p>
-                Quis autem vel eum iure reprehenderit qui in ea voluptate velit
-                esse quam nihil molestiae consequatur
+                Tienda artículos deportivos y natación para niños, niñas, damas y caballeros, cambiar las fotos por alguna de ellos.
               </p>
               <basic
                 v-for="(item, index) in storeItems"

@@ -15,7 +15,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/image-edge',
     '@nuxtjs/strapi',
-    '@kevinmarrec/nuxt-pwa',
+/*  '@kevinmarrec/nuxt-pwa', */
     'nuxt-windicss',
   ],
 
@@ -35,7 +35,6 @@ export default defineNuxtConfig({
     'virtual:windi-devtools',
   ],
 
-  pwa,
 
   strapi: {
     url: process.env.STRAPI_URL || 'http://localhost:1337',
@@ -49,9 +48,6 @@ export default defineNuxtConfig({
 
   image: {
     dir: 'assets/images',
-    cloudinary: {
-      baseURL: 'https://res.cloudinary.com/novanet-studio/image/upload/',
-    },
     // The screen sizes predefined by `@nuxt/image`:
     screens: {
       xs: 320,

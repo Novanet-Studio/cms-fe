@@ -3,6 +3,7 @@
     <img
       class="disciplina__cover"
       :src="disciplina?.attributes?.imagen.data.attributes.url"
+      :alt="disciplina?.attributes?.imagen.data.attributes.alternativeText"
     />
     <div class="disciplina__icon-container">
       <div class="disciplina__icon-circle">
@@ -88,4 +89,8 @@ const id = route.params.id as string;
 const { discipline: disciplina } = useDisciplines({
   link: id,
 });
+
+const clog = (e: any) => {
+  console.log(e);
+};
 </script>
