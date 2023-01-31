@@ -15,7 +15,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/image-edge',
     '@nuxtjs/strapi',
-/*  '@kevinmarrec/nuxt-pwa', */
+    '@kevinmarrec/nuxt-pwa',
     'nuxt-windicss',
   ],
 
@@ -35,6 +35,7 @@ export default defineNuxtConfig({
     'virtual:windi-devtools',
   ],
 
+  pwa,
 
   strapi: {
     url: process.env.STRAPI_URL || 'http://localhost:1337',
