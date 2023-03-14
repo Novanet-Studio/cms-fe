@@ -34,15 +34,9 @@
       v-html="disciplina?.attributes?.descripcion || `<span>Cargando...</span>`"
     ></div>
   </section>
-  <div class="dots">
-    <logo-dots />
-  </div>
 
   <div v-if="disciplina?.attributes.clases?.length >= 1">
     <items-list :items="disciplina?.attributes.clases" />
-    <span class="dots">
-      <logo-dots />
-    </span>
   </div>
 
   <section v-if="disciplina?.attributes.horarios.length >= 1" class="box">

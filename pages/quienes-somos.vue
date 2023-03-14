@@ -15,10 +15,6 @@
     url="/disciplinas/"
   />
 
-  <div class="dots">
-    <logo-dots />
-  </div>
-
   <div class="identidad">
     <identidad-card
       v-for="(item, index) in identidad"

@@ -1,9 +1,9 @@
 <template>
   <hero
-    titulo="Nuestros aliados amplian y complementan nuestra oferta de servicios"
+     titulo="Nuestros aliados amplian y complementan nuestra oferta de servicios"
     :descripcion="principal.descripcion"
-    url="https://res.cloudinary.com/novanet-studio/image/upload/v1669823173/ccs-multisport/cms_piscina_fondo_avila_ad6293238e.webp"
-    alternativeText="Hombre nadando crawl"
+    :url="principal.imagen.data.attributes.url"
+    :alternativeText="principal.imagen.data.attributes.alternativeText"
   />
 
   <section class="aliados">
@@ -39,6 +39,14 @@ try {
             principal {
               titulo
               descripcion
+              imagen {
+                data {
+                  attributes {
+                    url
+                    alternativeText
+                  }
+                }
+              }
             }
           }
         }

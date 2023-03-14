@@ -61,15 +61,15 @@
   }
 
   .heading-dots-left {
-    @apply bg-dots bg-left-top bg-no-repeat pt-4;
+    @apply bg-left-top bg-no-repeat pt-4;
   }
 
   .heading-dots-left-small {
-    @apply bg-dotsSmall bg-left-top bg-no-repeat pt-4;
+    @apply bg-left-top bg-no-repeat pt-4;
   }
 
   .heading-dots-right {
-    @apply bg-dots bg-no-repeat pt-4;
+    @apply bg-no-repeat pt-4;
   }
 
   .heading-1 {
@@ -279,7 +279,7 @@
 }
 
 .hero__info {
-  @apply flex flex-col pt-4 bg-dots bg-no-repeat text-right 
+  @apply flex flex-col pt-4 bg-no-repeat text-right 
   <sm:(w-full bg-top my-12 mx-8) 
   xl:(w-1/2 bg-right-top pl-34);
 }

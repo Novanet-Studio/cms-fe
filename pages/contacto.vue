@@ -1,8 +1,5 @@
 <template>
   <slider :slides="carrusel" />
-  <div class="dots">
-    <logo-dots />
-  </div>
   <section class="box">
     <p class="accordion-item">
       Te invitamos a visitar y conocer nuestra sede en la Alta Florida, una
@@ -12,9 +9,6 @@
       y estimulante para todos.
     </p>
   </section>
-  <div class="dots">
-    <logo-dots />
-  </div>
   <div class="contacto__grid">
     <contact-form />
     <aside class="aside">
@@ -41,11 +35,7 @@
       <div class="contacto__group">
         <h2 class="contacto__subtitle">WhatsApp</h2>
         <div>
-          <a
-            class="contacto__link"
-            href="https://whatsapp.me/+581241289"
-            target="_blank"
-          >
+          <a class="contacto__link" href="https://whatsapp.me/+581241289" target="_blank">
             <font-awesome-icon :icon="['fab', 'whatsapp']" size="2x" />
           </a>
         </div>
@@ -57,11 +47,7 @@
           <a class="contacto__link" href="https://facebook.com" target="_blank">
             <font-awesome-icon :icon="['fab', 'facebook']" size="2x" />
           </a>
-          <a
-            class="contacto__link"
-            href="https://instagram.com"
-            target="_blank"
-          >
+          <a class="contacto__link" href="https://instagram.com" target="_blank">
             <font-awesome-icon :icon="['fab', 'instagram']" size="2x" />
           </a>
         </div>

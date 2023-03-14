@@ -10,7 +10,6 @@
         </h4>
         <p class="card__text">{{ description }}</p>       
       </div>
-      <logo-dots />
     </div>
   </div>
 </template>
