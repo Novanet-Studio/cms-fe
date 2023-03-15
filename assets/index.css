@@ -325,7 +325,7 @@
 }
 
 .box > div {
-  @apply p-8 border border-mid-gray rounded-xl;
+  @apply p-8 my-8 border border-mid-gray rounded-xl;
 }
 
 .box__title {
