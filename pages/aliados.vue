@@ -17,6 +17,7 @@
         "
         :title="aliado.attributes.nombre"
         :description="aliado.attributes.descripcion"
+        :link="aliado.attributes.link"
         viewClass="basic--aliados"
         logoClass="basic__logo--aliados"
         :key="index"
@@ -57,6 +58,7 @@ try {
           attributes {
             nombre
             descripcion
+            link
             imagen {
               data {
                 attributes {

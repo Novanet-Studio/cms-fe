@@ -341,7 +341,7 @@
 }
 
 .box--noborder {
-  @apply container mx-auto pt-0 px-4
+  @apply container mx-auto pt-0 
   <sm:(px-0);
 }
 
@@ -617,7 +617,7 @@
 }
 
 .identidad {
-  @apply flex flex-col container mx-auto;
+  @apply flex flex-col container mx-auto mt-8;
 }
 
 .identidad__container {

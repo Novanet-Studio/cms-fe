@@ -38,16 +38,18 @@
     url="/disciplinas/natacion"
     alt="Pisicina de natación con fondo en atardecer rosado"
   />
+
+  <div class="dots"></div>
+
+  <div v-if="normas?.length >= 0">
+    <items-list :items="normas" :defaultOpened="false" />
+  </div>
 </template>
 
 <script lang="ts" setup>
-import { Autoplay, Navigation, Pagination } from "swiper";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
-const carrusel = ref();
 const { disciplines: disciplinas, loading } = useDisciplines();
+const normas = ref();
+const carrusel = ref();
 const graphql = useStrapiGraphQL();
 
 try {
@@ -67,12 +69,25 @@ try {
           }
         }
       }
+
+      norma {
+        data {
+          attributes {
+            normas {
+              titulo
+              descripcion
+            }
+          }
+        }
+      }
     }
   `);
 
   carrusel.value = query.data.carrusel.data.attributes.imagenes.data;
+  normas.value = query.data.norma.data.attributes.normas;
 } catch (err) {
   carrusel.value = [];
+  normas.value = [];
   console.log(err);
 }
 </script>

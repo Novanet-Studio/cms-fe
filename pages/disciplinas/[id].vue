@@ -1,10 +1,16 @@
 <template>
   <section class="disciplina__header">
-    <img class="disciplina__cover" :src="disciplina?.attributes?.imagen.data.attributes.url"
-      :alt="disciplina?.attributes?.imagen.data.attributes.alternativeText" />
+    <img
+      class="disciplina__cover"
+      :src="disciplina?.attributes?.imagen.data.attributes.url"
+      :alt="disciplina?.attributes?.imagen.data.attributes.alternativeText"
+    />
     <div class="disciplina__icon-container">
       <div class="disciplina__icon-circle">
-        <img class="disciplina__icon-image" :src="disciplina?.attributes?.icono.data.attributes.url" />
+        <img
+          class="disciplina__icon-image"
+          :src="disciplina?.attributes?.icono.data.attributes.url"
+        />
       </div>
       <h1 class="disciplina__title">
         {{ disciplina?.attributes?.nombre || "Cargando..." }}
@@ -12,13 +18,21 @@
     </div>
   </section>
   <div class="disciplinas__button">
-    <app-button class="button--blue" prefix="fas" iconName="caret-left" iconSize="1x" url="/disciplinas">
+    <app-button
+      class="button--blue"
+      prefix="fas"
+      iconName="caret-left"
+      iconSize="1x"
+      url="/disciplinas"
+    >
       Volver
     </app-button>
   </div>
 
   <section class="box">
-    <div v-html="disciplina?.attributes?.descripcion || `<span>Cargando...</span>`"></div>
+    <div
+      v-html="disciplina?.attributes?.descripcion || `<span>Cargando...</span>`"
+    ></div>
   </section>
 
   <div v-if="disciplina?.attributes.clases?.length >= 1">
@@ -27,7 +41,10 @@
 
   <section v-if="disciplina?.attributes.horarios.length >= 1" class="box">
     <h2 class="summary-title">Horarios</h2>
-    <div v-for="(horario, index) in disciplina?.attributes.horarios" :key="index">
+    <div
+      v-for="(horario, index) in disciplina?.attributes.horarios"
+      :key="index"
+    >
       <div v-html="horario.horarios"></div>
     </div>
     <span class="dots">
@@ -50,32 +67,26 @@
       <h3 class="box__title">
         {{ disciplina?.attributes.informacion_adicional.titulo }}
       </h3>
-      <p v-html="
-        disciplina?.attributes.informacion_adicional.descripcion ||
-        `<span>Cargando...</span>`
-      "></p>
+      <p
+        v-html="
+          disciplina?.attributes.informacion_adicional.descripcion ||
+          `<span>Cargando...</span>`
+        "
+      ></p>
     </div>
   </section>
 
-   <section class="box">
+  <section class="box">
     <div>
       <h3 class="box__title">
-        {{ requisitos?.titulo }}
+        {{ requisitos[0]?.titulo }}
       </h3>
-      <p v-html="
-        requisitos?.descripcion ||
-        `<span>Cargando...</span>`
-      "></p>
+      <p v-html="requisitos[0]?.descripcion || `<span>Cargando...</span>`"></p>
     </div>
   </section>
-  {{ clog(requisitos) }}
 </template>
 
 <script lang="ts" setup>
-const clog = (e: any) => {
-  console.log(e);
-};
-
 const route = useRoute();
 const id = route.params.id as string;
 const { discipline: disciplina } = useDisciplines({
@@ -90,15 +101,17 @@ try {
       requisito {
         data {
           attributes {
-            titulo
-            descripcion
+            requisitos {
+              titulo
+              descripcion
+            }
           }
         }
       }
     }
   `);
 
-  requisitos.value = query.data.requisito.data.attributes;
+  requisitos.value = query.data.requisito.data.attributes.requisitos;
 } catch (err) {
   requisitos.value = [];
 }

@@ -82,16 +82,16 @@ defineProps<Props>();
 }
 
 :global(.accordion-list .accordion-item) {
-  @apply shadow shadow-xl my-6 px-6 bg-gradient-to-tr from-white to-light-gray
+  @apply shadow shadow-xl mt-6 px-6 bg-gradient-to-tr from-white to-light-gray
   <sm:(px-2);
 }
 
 :global(.accordion-list .accordion-item:first-child) {
-  @apply my-0;
+  @apply mt-0;
 }
 
 :global(.accordion-list .accordion-item:last-child) {
-  @apply my-0;
+  @apply mb-0;
 }
 
 :global(.accordion-list .accordion-item--open ) {
@@ -109,6 +109,26 @@ defineProps<Props>();
 :global(.accordion-list .accordion-item > .accordion-item__content) {
   @apply bg-transparent;
 }
+
+:global(.accordion-list .accordion-item > .accordion-item__content > .summary-content) {
+  @apply mb-6 ;
+}
+
+:global(.accordion-list .accordion-item > .accordion-item__content > .summary-content > ol) {
+  @apply list-none;
+  counter-reset: item;
+}
+
+:global(.accordion-list .accordion-item > .accordion-item__content > .summary-content > ol > li) {
+  @apply my-4;
+  counter-increment: item;
+}
+
+:global(.accordion-list .accordion-item > .accordion-item__content > .summary-content > ol > li:before) {
+  @apply font-bold mr-1;
+  content: counter(item)"." ;
+}
+
 
 :global(.accordion-list .accordion-item > .accordion-item__summary) {
   @apply bg-transparent;

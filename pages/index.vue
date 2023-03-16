@@ -58,6 +58,7 @@
       <h2 class="aliados__title">Aliados</h2>
       <basic
         v-for="(aliado, index) in aliados"
+        :link="aliado.attributes.link"
         :logo="aliado.attributes.imagen.data.attributes.url"
         :alternativeText="
           aliado.attributes.imagen.data.attributes.alternativeText
@@ -192,6 +193,7 @@ try {
       aliados(sort: "updatedAt:desc") {
         data {
           attributes {
+            link
             imagen {
               data {
                 attributes {

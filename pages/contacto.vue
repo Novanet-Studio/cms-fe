@@ -35,7 +35,11 @@
       <div class="contacto__group">
         <h2 class="contacto__subtitle">WhatsApp</h2>
         <div>
-          <a class="contacto__link" href="https://whatsapp.me/+581241289" target="_blank">
+          <a
+            class="contacto__link"
+            href="https://wa.me/message/XTA7RUDHZKT4C1"
+            target="_blank"
+          >
             <font-awesome-icon :icon="['fab', 'whatsapp']" size="2x" />
           </a>
         </div>
@@ -47,7 +51,11 @@
           <a class="contacto__link" href="https://facebook.com" target="_blank">
             <font-awesome-icon :icon="['fab', 'facebook']" size="2x" />
           </a>
-          <a class="contacto__link" href="https://instagram.com" target="_blank">
+          <a
+            class="contacto__link"
+            href="https://instagram.com"
+            target="_blank"
+          >
             <font-awesome-icon :icon="['fab', 'instagram']" size="2x" />
           </a>
         </div>

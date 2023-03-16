@@ -29,11 +29,23 @@
   <div class="dots"></div>
 
   <div v-if="trabajo?.length >= 1">
-    <items-list :items="trabajo" :defaultOpened="true" />
+    <items-list :items="trabajo" :defaultOpened="false" />
+  </div>
+
+  <div v-if="requisitos?.length >= 0">
+    <items-list :items="requisitos" :defaultOpened="false" />
+  </div>
+
+  <div v-if="normas?.length >= 0">
+    <items-list :items="normas" :defaultOpened="false" />
   </div>
 </template>
 
 <script lang="ts" setup>
+const clog = (e: any) => {
+  console.log(e);
+};
+
 const config = useAppConfig();
 
 useHead({
@@ -49,6 +61,8 @@ const principal = ref();
 const identidad = ref();
 const profesionales = ref();
 const trabajo = ref();
+const requisitos = ref();
+const normas = ref();
 
 const graphql = useStrapiGraphQL();
 
@@ -104,6 +118,28 @@ try {
           }
         }
       }
+
+      requisito {
+        data {
+          attributes {
+            requisitos {
+              titulo
+              descripcion
+            }
+          }
+        }
+      }
+
+      norma {
+        data {
+          attributes {
+            normas {
+              titulo
+              descripcion
+            }
+          }
+        }
+      }
     }
   `);
 
@@ -111,11 +147,15 @@ try {
   identidad.value = query.data.empresa.data.attributes.identidad;
   profesionales.value = query.data.empresa.data.attributes.profesionales;
   trabajo.value = query.data.empresa.data.attributes.trabajo;
+  requisitos.value = query.data.requisito.data.attributes.requisitos;
+  normas.value = query.data.norma.data.attributes.normas;
 } catch (err) {
   principal.value = [];
   identidad.value = [];
   profesionales.value = [];
   trabajo.value = [];
+  requisitos.value = [];
+  normas.value = [];
   console.log(err);
 }
 </script>
