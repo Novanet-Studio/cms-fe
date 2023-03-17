@@ -10,8 +10,8 @@
     estilo="highlight"
     :title="profesionales.titulo"
     :description="profesionales.descripcion"
-    :image="profesionales.imagen.data.attributes.url"
-    :alt="profesionales.imagen.data.attributes.alternativeText"
+    image="https://res.cloudinary.com/novanet-studio/image/upload/v1679081889/ccs-multisport/cms_quienes_somos_bfa5f868d7.webp"
+    alt="Nadadora con lentes puestos mirando hacia la derecha"
     url="/disciplinas/"
   />
 

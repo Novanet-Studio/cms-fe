@@ -84,11 +84,6 @@
 </template>
 
 <script lang="ts" setup>
-import { Autoplay, Navigation, Pagination } from "swiper";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
 const clog = (e: any) => {
   console.log(e);
 };
@@ -190,7 +185,7 @@ try {
         }
       }
 
-      aliados(sort: "updatedAt:desc") {
+      aliados(sort: "nombre:asc") {
         data {
           attributes {
             link

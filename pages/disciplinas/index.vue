@@ -34,9 +34,9 @@
         lugar de encuentro, es nuestra <br />
         casa, es CCS Multisport"
     description="Esta piscina alberga los sueños y las ilusiones de muchos y el escape de la rutina para otros.Aquí nadan los que entrenan duro, los que entrenan para competir, para relajarse y para llevar una una vida saludable"
-    image="https://res.cloudinary.com/novanet-studio/image/upload/v1669823171/ccs-multisport/cms_piscina_en_atardecer_281eb141f9.webp"
+    image="https://res.cloudinary.com/novanet-studio/image/upload/v1679082237/ccs-multisport/cms_disciplinas_hombre_nadando_estilo_mariposa_8740ad8328.webp"
     url="/disciplinas/natacion"
-    alt="Pisicina de natación con fondo en atardecer rosado"
+    alt="Hombre nadando estilo mariposa"
   />
 
   <div class="dots"></div>

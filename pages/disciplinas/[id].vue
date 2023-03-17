@@ -48,7 +48,7 @@
       <div v-html="horario.horarios"></div>
     </div>
     <span class="dots">
-      <logo-dots />
+ 
     </span>
   </section>
 
@@ -58,7 +58,7 @@
       <div v-html="plan.planes"></div>
     </div>
     <span class="dots">
-      <logo-dots />
+  
     </span>
   </section>
 
