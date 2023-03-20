@@ -1,0 +1,74 @@
+<template>
+  <highlight
+    estilo="highlight"
+    :title="empresa.titulo"
+    :description="empresa.descripcion"
+    image="https://res.cloudinary.com/novanet-studio/image/upload/v1679081889/ccs-multisport/cms_quienes_somos_bfa5f868d7.webp"
+    :alt="empresa.imagen.data.attributes.alternativeText"
+    url="/contacto"
+  />
+
+  <section class="profesionales">
+    <div class="profesionales__container">
+      <h2 class="profesionales__title">Nuestros profesores</h2>
+      <div class="cards__wrapper">
+        <nuxt-link
+          :to="`/profesionales/${profesor.attributes.link}`"
+          v-for="(profesor, index) in profesores"
+          :key="index"
+          class="profesionales__item"
+        >
+          <card
+            :logo="profesor.attributes.imagen.data.attributes.url"
+            :alternativeText="
+              profesor.attributes.imagen.data.attributes.alternativeText
+            "
+            :title="profesor.attributes.nombre_apellido"
+            description=""
+          />
+        </nuxt-link>
+      </div>
+    </div>
+  </section>
+
+  {{ clog(profesores) }}
+</template>
+
+<script lang="ts" setup>
+
+const clog = (e: any) => {
+  console.log(e);
+};
+const { profesionals: profesores, loading } = useProfesionals();
+const empresa = ref();
+const graphql = useStrapiGraphQL();
+try {
+  const query = await graphql<any>(`
+    query {
+      empresa {
+        data {
+          attributes {
+            profesionales {
+              titulo
+              descripcion
+              imagen {
+                data {
+                  attributes {
+                    url
+                    alternativeText
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  empresa.value = query.data.empresa.data.attributes.profesionales;
+} catch (err) {
+  empresa.value = [];
+  console.log(err);
+}
+</script>

@@ -698,7 +698,7 @@
 .articulo-grid {
   @apply mt-6
   <sm:(px-3)
-  xl:(container mx-auto grid grid-cols-[70%_30%]); 
+  xl:(container mx-auto grid grid-cols-[70%_30%]);
 }
 
 .aside {
@@ -787,3 +787,61 @@
 .tienda__name {
   @apply heading heading-3 text-white !important p-4;
 }
+
+.profesionales {
+  @apply w-full bg-sectionBg2 bg-left bg-no-repeat bg-contain;
+}
+
+.profesionales__container {
+  @apply container mx-auto 
+  <sm:(py-4)
+  xl:(px-8 py-16);
+}
+
+.profesionales__title {
+  @apply heading-2;
+}
+
+.profesionales .cards__wrapper {
+  @apply flex-wrap;
+}
+
+.profesionales__item {
+  @apply w-1/4 mt-32 mb-4;
+}
+
+.profesionales .card__outer {
+  @apply h-40 !important;
+}
+
+.profesionales .card__inner {
+  @apply h-36 !important;
+}
+
+.profesionales .card__icon {
+  @apply w-38 h-38 bg-transparent -mt-24 !important;
+}
+
+.profesionales .card__icon img {
+  @apply rounded-full flex items-center justify-center;
+}
+
+.perfil {
+  @apply mt-6
+  <sm:(px-3)
+  xl:(container mx-auto grid grid-cols-[30%_70%]);
+}
+
+.perfil__image-wrapper {
+  @apply flex items-center justify-center bg-heroBg bg-no-repeat bg-contain bg-center;
+}
+
+.perfil__image-wrapper img {
+  @apply rounded-full flex items-center justify-center;
+}
+
+.perfil__extracto {
+  @apply flex flex-col justify-center text-xl 
+  
+}
+

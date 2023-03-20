@@ -63,4 +63,26 @@ declare namespace Project {
       };
     };
   }
+
+  interface Profesional {
+    nombre_apellido: string;
+    extracto: string;
+    bio: string;
+    imagen: Image;
+    link: string;
+  }
+
+  interface ProfesionalsStrapi {
+    id: string;
+    attributes: Profesional;
+  }
+
+  interface ProfesionalsResponse {
+    id: string;
+    data: {
+      profesionales: {
+        data: ProfesionalesStrapi[];
+      };
+    };
+  }
 }

@@ -36,7 +36,7 @@
     :description="profesionales.descripcion"
     :image="profesionales.imagen.data.attributes.url"
     :alt="profesionales.imagen.data.attributes.alternativeText"
-    url="/quienes-somos"
+    url="/profesionales"
   />
 
   <section class="mensaje">

@@ -53,8 +53,6 @@ try {
   console.log(err);
 }
 
-const test = preguntas;
-
 const storeItems = [
   {
     image:

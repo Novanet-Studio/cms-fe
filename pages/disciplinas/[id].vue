@@ -47,9 +47,7 @@
     >
       <div v-html="horario.horarios"></div>
     </div>
-    <span class="dots">
- 
-    </span>
+    <span class="dots"> </span>
   </section>
 
   <section v-if="disciplina?.attributes.planes.length >= 1" class="box">
@@ -57,9 +55,7 @@
     <div v-for="(plan, index) in disciplina?.attributes.planes" :key="index">
       <div v-html="plan.planes"></div>
     </div>
-    <span class="dots">
-  
-    </span>
+    <span class="dots"> </span>
   </section>
 
   <section class="box">
