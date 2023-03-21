@@ -173,8 +173,8 @@
 }
 
 .header__container {
-  @apply container mx-auto 
-  xl:(flex justify-between p-8);
+  @apply md:(flex justify-between py-6 px-4)
+  xl:(container mx-auto p-8);
 }
 
 .header__logo {
@@ -182,7 +182,9 @@
 }
 
 .header__logo img {
-  @apply <sm:(w-16);
+  @apply <sm:(w-16)
+  md:(w-14)
+  lg:(w-16);
 }
 
 .header__bars {
@@ -197,7 +199,8 @@
 .header__navigation {
   @apply flex 
   <sm:(flex-wrap w-[55%] fixed -right-[55%] bg-white border-light-gray shadow-lg p-4 transition-all z-30) 
-  xl:(items-center justify-end mr-8);
+  md:(items-center justify-end)
+  xl:(mr-8);
 }
 
 .header__navigation--expanded {
@@ -209,24 +212,28 @@
 }
 
 .header__link {
-  @apply <sm:(flex w-full py-2) xl:(px-4);
+  @apply <sm:(flex w-full py-2)
+  md:(text-xs pr-3)
+  lg:(text-sm pr-4)
+  xl:(px-4);
 }
 
 /* ./layouts/default.vue */
 
 .main {
-  @apply <sm:( pt-[5.625rem]) xl:(pt-[8.438em]);
+  @apply <sm:( pt-[5.625rem]) 
+  md:(pt-[8.438em]);
 }
 .main > section {
   @apply <sm:(px-3)
-  xl:(px-8);
+  md:(px-8);
 }
 
 /* ./components/the-footer.vue */
 .footer {
   @apply flex justify-between container mx-auto py-16 
   <sm:(mt-4 px-4 py-6)
-  xl:px-8;
+  md:(px-8);
 }
 
 .footer__left {
@@ -270,7 +277,8 @@
 
 .hero {
   @apply w-full bg-sectionBg bg-no-repeat bg-contain 
-  <sm:(bg-right-top) xl:(bg-right);
+  <sm:(bg-right-top)
+  md:(bg-right);
 }
 
 .hero__container {
@@ -281,7 +289,8 @@
 .hero__info {
   @apply flex flex-col pt-4 bg-no-repeat text-right 
   <sm:(w-full bg-top my-12 mx-8) 
-  xl:(w-1/2 bg-right-top pl-34);
+  md:(w-1/2 bg-right-top)
+  xl:(pl-34);
 }
 
 .hero__title {
@@ -296,18 +305,22 @@
 
 .hero__images {
   @apply <sm:(flex justify-center flex-wrap w-full mt-6) 
-  xl:(w-1/2 pl-16);
+  md:(w-1/2 pl-8)
+  lg:(pl-20)
+  xl:(pl-16);
 }
 
 .hero__image-bg {
-  @apply flex flex-col justify-center items-center bg-heroBg bg-no-repeat 
-  <sm:(w-78 h-78 bg-contain) 
+  @apply flex flex-col justify-center items-center bg-heroBg bg-no-repeat bg-contain
+  <sm:(w-78 h-78) 
+  md:(w-80 h-80)
   xl:(w-107 h-107);
 }
 
 .hero__image-fg {
   @apply rounded-full z-20 absolute 
   <sm:(w-70 h-70) 
+  md:(w-72 h-72)
   xl:(w-101 h-101);
 }
 
@@ -400,20 +413,24 @@
 }
 
 .cards__wrapper {
-  @apply flex container mx-auto  
-  <sm:(flex-wrap justify-around content-around mt-4 min-h-112)
-  xl:(justify-between mt-9 px-16);
+  @apply flex flex-wrap justify-around content-around 
+  <sm:(mt-4 min-h-112)
+  md:(container mx-auto justify-between min-h-145 px-24)
+  lg:(min-h-110 px-0)
+  xl:(px-16);
 }
 
 .card__outer {
   @apply flex justify-center items-center border border-mid-gray rounded-2xl 
-  <sm:(w-38 h-50) 
+  <sm:(w-38 h-50)
+  md:(w-50 h-62) 
   xl:(w-51 h-64);
 }
 
 .card__inner {
   @apply flex flex-col items-center justify-around shadow-card rounded-xl bg-gradient-to-br from-light-gray to-white 
-  <sm:(w-34 h-46 p-3) 
+  <sm:(w-34 h-46 p-3)
+  md:(w-45 h-57) 
   xl:(w-46 h-60 py-4);
 }
 
@@ -556,7 +573,7 @@
 .mensaje__container {
   @apply flex flex-col items-center container mx-auto  
   <sm:(py-16)
-  xl:(pt-16 pb-8);
+  md:(pt-16 pb-8);
 }
 
 .mensaje__title {
@@ -572,8 +589,8 @@
 }
 
 .disciplinas__container {
-  @apply container mx-auto 
-  <sm:(py-4)
+  @apply <sm:(py-4)
+  md:(container mx-auto py-8 )
   xl:(px-8 py-16);
 }
 
@@ -615,7 +632,7 @@
 
 .aliados {
   @apply flex flex-col  bg-sectionBg2 bg-no-repeat bg-left bg-contain
-  xl:(mt-0 pb-6);
+  xl:(mt-0 pb-6)
   <sm: (mb-6);
 }
 
@@ -628,6 +645,10 @@
 .aliados__title {
   @apply heading-2 heading-dots-left w-full pb-6
   <sm:(w-full);
+}
+
+.aliados .basic {
+  @apply mb-2;
 }
 
 .identidad {
