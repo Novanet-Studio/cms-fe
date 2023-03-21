@@ -9,11 +9,11 @@
     buttonText="Contáctanos"
   />
 
-  <div class="faq-grid">
-    <section>
+  <section class="faq-grid">
+    <div>
       <h2 class="faq__title">Preguntas frecuentes</h2>
       <items-list :items="preguntas" />
-    </section>
+    </div>
     <aside class="aside">
       <h2 class="tienda__title">Tienda</h2>
       <p>
@@ -28,7 +28,7 @@
         viewClass="basic--aside"
       />
     </aside>
-  </div>
+  </section>
 </template>
 
 <script lang="ts" setup>

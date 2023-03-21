@@ -127,7 +127,7 @@
 .form {
   @apply flex w-full flex-wrap  justify-between shadow shadow-xl border rounded-xl border-mid-gray bg-gradient-to-tr from-white to-light-gray 
   xl:(p-10)
-  <sm:(px-4 !important);
+  <sm:(px-4 py-5);
 }
 
 .form__a-col {
@@ -196,7 +196,7 @@
 
 .header__navigation {
   @apply flex 
-  <sm:(flex-wrap w-1/2 fixed -right-1/2 bg-white border-light-gray shadow-lg p-4 transition-all z-30) 
+  <sm:(flex-wrap w-[55%] fixed -right-[55%] bg-white border-light-gray shadow-lg p-4 transition-all z-30) 
   xl:(items-center justify-end mr-8);
 }
 
@@ -313,6 +313,20 @@
 
 .swiper {
   @apply w-full mb-4;
+}
+
+.swiper-slide {
+  @apply <sm:(absolute max-w-full overflow-hidden);
+}
+
+.blog .swiper-slide img {
+  position: unset;
+  max-width: 100%;
+  overflow: unset;
+}
+
+.swiper-slide img {
+  @apply <sm:(relative max-w-[150%] -left-[25%] !important);
 }
 
 .swiper .swiper-button-prev,
@@ -647,7 +661,9 @@
 }
 
 .blog {
-  @apply pt-20 bg-sectionBg bg-no-repeat bg-right;
+  @apply bg-sectionBg bg-no-repeat bg-right
+  <sm:(pt-0)
+  xl:(pt-6);
 }
 
 .blog__wrapper {
@@ -720,8 +736,7 @@
 
 .faq-grid {
   @apply grid mt-6
-  <sm:(px-3)
-  xl:(container mx-auto grid-cols-[70%_30%] pt-6 px-8);
+  xl:(container mx-auto grid-cols-[70%_30%] pt-6);
 }
 
 .faq__title {
@@ -729,7 +744,9 @@
 }
 
 .contacto__grid {
-  @apply <sm:(px-3) xl:(container mx-auto grid grid-cols-[70%_30%] pt-6 px-8);
+  @apply pt-6
+  <sm:(px-3) 
+  xl:(container mx-auto grid grid-cols-[70%_30%] px-8);
 }
 
 .contacto__group {
@@ -752,7 +769,7 @@
   @apply mr-3 text-primary;
 }
 .contacto__link svg {
-  @apply text-primarycsd xl:(w-4) <sm:(w-2);
+  @apply text-primarycsd xl:(w-4) <sm:(w-6);
 }
 
 .tienda {
@@ -807,7 +824,9 @@
 }
 
 .profesionales__item {
-  @apply w-1/4 mt-32 mb-4;
+  @apply mb-4
+  <sm:(mt-24)
+  xl:(w-1/4 mt-32);
 }
 
 .profesionales .card__outer {
@@ -819,11 +838,12 @@
 }
 
 .profesionales .card__icon {
-  @apply w-38 h-38 bg-transparent -mt-24 !important;
+  @apply w-42 h-42 bg-transparent bg-heroBg bg-no-repeat bg-center -mt-24 !important;
+  background-size: 81%;
 }
 
 .profesionales .card__icon img {
-  @apply rounded-full flex items-center justify-center;
+  @apply w-34 h-34 rounded-full flex items-center justify-center;
 }
 
 .perfil {
@@ -833,7 +853,8 @@
 }
 
 .perfil__image-wrapper {
-  @apply flex items-center justify-center bg-heroBg bg-no-repeat bg-contain bg-center;
+  @apply flex items-center justify-center bg-heroBg bg-no-repeat bg-contain bg-center
+  <sm:(mb-10);
 }
 
 .perfil__image-wrapper img {
@@ -841,7 +862,5 @@
 }
 
 .perfil__extracto {
-  @apply flex flex-col justify-center text-xl 
-  
+  @apply flex flex-col justify-center text-xl;
 }
-

@@ -1,5 +1,5 @@
 <template>
-  <div class="swiper">
+  <div class="blog swiper">
     <swiper :autoplay="{ delay: 6000, disableOnInteraction: false }" :slider-per-view="1" :space-between="0" loop
       navigation :modules="[Autoplay, Navigation, Pagination]">
       <swiper-slide v-for="(articulo, index) in articulos" :key="index">

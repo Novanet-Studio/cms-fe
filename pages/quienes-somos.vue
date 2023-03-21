@@ -15,7 +15,7 @@
     url="/disciplinas/"
   />
 
-  <div class="identidad">
+  <section class="identidad">
     <identidad-card
       v-for="(item, index) in identidad"
       :imagen="item.imagen.data.attributes.url"
@@ -24,7 +24,7 @@
       :description="item.descripcion"
       :key="index"
     />
-  </div>
+  </section>
 
   <div class="dots"></div>
 

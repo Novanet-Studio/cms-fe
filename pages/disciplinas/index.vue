@@ -1,8 +1,8 @@
 <template>
   <slider :slides="carrusel" />
 
-  <div class="disciplinas">
-    <section class="disciplinas__container">
+  <section class="disciplinas">
+    <div class="disciplinas__container">
       <h2 class="disciplinas__title">Disciplinas</h2>
       <div class="cards__wrapper">
         <template v-if="loading">
@@ -25,8 +25,8 @@
           </nuxt-link>
         </template>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 
   <highlight
     estilo="highlight"

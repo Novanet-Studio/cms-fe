@@ -12,7 +12,7 @@
           src="https://res.cloudinary.com/novanet-studio/image/upload/v1679059107/ccs-multisport/cms_natacion_cff093757a.svg"
         />
       </div>
-      <h1 class="disciplina__title">Natación</h1>
+      <h1 class="disciplina__title">Nuestros profesores</h1>
     </div>
   </section>
 
@@ -44,7 +44,7 @@
 
   <section class="box">
     <div>
-      <h3 class="box__title">Bio</h3>
+      <h3 class="box__title">Resumen curricular</h3>
       <div v-if="profesor?.attributes.bio">
         <p
           v-html="
