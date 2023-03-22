@@ -126,8 +126,9 @@
 
 .form {
   @apply flex w-full flex-wrap  justify-between shadow shadow-xl border rounded-xl border-mid-gray bg-gradient-to-tr from-white to-light-gray 
-  xl:(p-10)
-  <sm:(px-4 py-5);
+  <sm:(px-4 py-5)
+  md:(p-5)
+  xl:(p-10);
 }
 
 .form__a-col {
@@ -136,7 +137,7 @@
 }
 
 .form__b-col {
-  @apply <sm:(w-full) xl:(w-[48%]);
+  @apply <sm:(w-full) md:(w-[48%]);
 }
 
 .form__input::placeholder,
@@ -145,21 +146,21 @@
 }
 
 .form__input {
-  @apply list-none mb-8 p-4 border border-mid-gray rounded-full  
-  xl:(w-full)
-  <sm:(w-full);
+  @apply list-none mb-8 p-4 border border-mid-gray rounded-full    
+  <sm:(w-full)
+  md:(w-full);
 }
 
 .form__textarea {
   @apply list-none p-4 mr-4 border border-mid-gray rounded-3xl mb-8
   <sm:(w-full)
-  xl:(w-full);
+  md:(w-full);
 }
 
 .form__title {
   @apply heading-2 heading-dots-left mb-8 mb-8 
   <sm:()
-  xl:( w-full);
+  md:(w-full);
 }
 
 .row {
@@ -221,8 +222,10 @@
 /* ./layouts/default.vue */
 
 .main {
-  @apply <sm:( pt-[5.625rem]) 
-  md:(pt-[8.438em]);
+  @apply <sm:(pt-[5.625rem]) 
+  @md:(pt-[6.146em])
+  @lg:(pt-[6.595em])
+  xl:(pt-[7.578em]);
 }
 .main > section {
   @apply <sm:(px-3)
@@ -441,7 +444,7 @@
 .card__icon {
   @apply bg-primary rounded-full flex items-center justify-center mb-[.875rem]
   <sm:(w-15 h-15 p-3)
-  xl:(w-20 h-20);
+  md:(w-20 h-20);
 }
 
 .card__title {
@@ -479,8 +482,8 @@
 
 .highlight__info {
   @apply flex flex-col w-1/2 
-  <sm:(w-full py-8 items-center)
-  xl:(mr-10 items-end);
+  <sm:(w-full py-7 items-center)
+  md:(mr-10 items-end);
 }
 
 .highlight__title {
@@ -492,7 +495,7 @@
 .highlight__text {
   @apply my-4 hyphens-none
   <sm:(text-center px-6)
-  xl:(text-right pl-24);
+  md:(text-right pl-24);
 }
 
 .highlight__image img {
@@ -504,7 +507,8 @@
 }
 
 .basic--aliados {
-  @apply <sm:(w-full)
+  @apply <sm:(w-full) 
+  md:(w-full flex flex-nowrap gap-1)
   xl:(flex w-1/2);
 }
 
@@ -518,11 +522,17 @@
 }
 
 .basic__logo {
-  @apply round-border;
+  @apply round-border
+  md:(w-[20%]);
+}
+
+.aside .basic__logo {
+  @apply md:(w-full);
 }
 
 .basic__logo img {
-  @apply <sm:(w-full);
+  @apply <sm:(w-full)
+  md:(w-full);
 }
 
 .basic__logo--index {
@@ -539,7 +549,7 @@
 }
 
 .basic__info {
-  @apply xl:(w-3/4 ml-4);
+  @apply md:(w-[80%] ml-4);
 }
 
 .basic__title,
@@ -631,15 +641,15 @@
 }
 
 .aliados {
-  @apply flex flex-col  bg-sectionBg2 bg-no-repeat bg-left bg-contain
-  xl:(mt-0 pb-6)
-  <sm: (mb-6);
+  @apply flex flex-col bg-sectionBg2 bg-no-repeat bg-left bg-contain  
+  <sm:(mb-6)
+  xl:(mt-0 pb-6);
 }
 
 .aliados__wrapper {
   @apply flex justify-between flex-wrap container mx-auto
   <sm:()
-  xl:(px-6 py-8);
+  md:(px-6 py-8);
 }
 
 .aliados__title {
@@ -690,12 +700,12 @@
 .blog__wrapper {
   @apply container mx-auto grid mt-4 gap-6
   <sm:(grid-cols-1)
-  xl:(grid-cols-2);
+  md:(grid-cols-2);
 }
 
 .blog__title {
   @apply heading-2 heading-dots-left
-  xl:(col-span-full);
+  md:(col-span-full);
 }
 
 .blog-item {
@@ -735,7 +745,7 @@
 .articulo-grid {
   @apply mt-6
   <sm:(px-3)
-  xl:(container mx-auto grid grid-cols-[70%_30%]);
+  md:(container mx-auto grid grid-cols-[70%_30%]);
 }
 
 .aside {
@@ -757,7 +767,7 @@
 
 .faq-grid {
   @apply grid mt-6
-  xl:(container mx-auto grid-cols-[70%_30%] pt-6);
+  md:(container mx-auto grid-cols-[70%_30%] pt-6);
 }
 
 .faq__title {
@@ -767,7 +777,7 @@
 .contacto__grid {
   @apply pt-6
   <sm:(px-3) 
-  xl:(container mx-auto grid grid-cols-[70%_30%] px-8);
+  md:(container mx-auto grid grid-cols-[70%_30%] px-8);
 }
 
 .contacto__group {
