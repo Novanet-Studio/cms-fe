@@ -523,7 +523,7 @@
 
 .basic__logo {
   @apply round-border
-  md:(w-[20%]);
+
 }
 
 .aside .basic__logo {
@@ -540,12 +540,12 @@
 }
 
 .basic__logo--index img {
-  @apply <sm:(w-full);
+  @apply <sm:(w-full)
 }
 
 .basic__logo--aliados {
   @apply <sm:(w-28)
-  xl:(w-1/4 mb-8);
+  md:(w-1/4 mb-8);
 }
 
 .basic__info {
