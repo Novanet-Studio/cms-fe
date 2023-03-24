@@ -2,7 +2,7 @@
   <hero
      titulo="Nuestros aliados amplian y complementan nuestra oferta de servicios"
     :descripcion="principal.descripcion"
-    :url="principal.imagen.data.attributes.url"
+    url="https://res.cloudinary.com/novanet-studio/image/upload/v1679055991/ccs-multisport/cms_caracas_multisport_la_florida_4c348f133f.webp"
     :alternativeText="principal.imagen.data.attributes.alternativeText"
   />
 
