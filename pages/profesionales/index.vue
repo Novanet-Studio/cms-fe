@@ -5,8 +5,22 @@
     :description="empresa.descripcion"
     image="https://res.cloudinary.com/novanet-studio/image/upload/v1679081889/ccs-multisport/cms_quienes_somos_bfa5f868d7.webp"
     :alt="empresa.imagen.data.attributes.alternativeText"
-    url="/contacto"
   />
+
+  <div class="dots"></div>
+
+
+  <div class="disciplinas__button">
+    <app-button
+      class="button--blue"
+      prefix="fas"
+      iconName="caret-left"
+      iconSize="1x"
+      url="/quienes-somos"
+    >
+      Volver a la página anterior
+    </app-button>
+  </div>
 
   <section class="profesionales">
     <div class="profesionales__container">
@@ -35,7 +49,6 @@
 </template>
 
 <script lang="ts" setup>
-
 const clog = (e: any) => {
   console.log(e);
 };

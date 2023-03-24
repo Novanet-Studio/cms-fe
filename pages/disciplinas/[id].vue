@@ -50,13 +50,14 @@
     <span class="dots"> </span>
   </section>
 
-  <section v-if="disciplina?.attributes.planes.length >= 1" class="box">
+  <section class="box">
     <h2 class="summary-title">Planes</h2>
     <div v-for="(plan, index) in disciplina?.attributes.planes" :key="index">
       <div v-html="plan.planes"></div>
     </div>
     <span class="dots"> </span>
   </section>
+  
 
   <section class="box">
     <div>

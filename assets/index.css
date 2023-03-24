@@ -420,7 +420,7 @@
   <sm:(mt-4 min-h-112)
   md:(container mx-auto justify-between min-h-145 px-24)
   lg:(min-h-110 px-0)
-  xl:(px-16);
+  xl:(min-h-80 px-16);
 }
 
 .card__outer {
@@ -799,8 +799,13 @@
 .contacto__link {
   @apply mr-3 text-primary;
 }
+
+.contacto__map-icon {
+  @apply leading-6
+}
+
 .contacto__link svg {
-  @apply text-primarycsd xl:(w-4) <sm:(w-6);
+  @apply text-primary xl:(w-4) <sm:(w-6);
 }
 
 .tienda {

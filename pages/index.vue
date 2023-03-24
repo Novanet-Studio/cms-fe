@@ -36,6 +36,7 @@
     :description="profesionales.descripcion"
     :image="profesionales.imagen.data.attributes.url"
     :alt="profesionales.imagen.data.attributes.alternativeText"
+    buttonText="Ver profesores"
     url="/profesionales"
   />
 

@@ -3,15 +3,23 @@
     <div class="footer__left">
       <p class="footer__legal">Derechos Reservados 2022</p>
       <div class="footer__icons">
-        <a class="footer__link" href="https://facebook.com" target="_blank">
+        <a
+          class="footer__link"
+          href="https://www.facebook.com/CcsMultiSport"
+          target="_blank"
+        >
           <font-awesome-icon :icon="['fab', 'facebook']" size="2x" />
         </a>
-        <a class="footer__link" href="https://instagram.com" target="_blank">
+        <a
+          class="footer__link"
+          href="https://www.instagram.com/ccsmultisport"
+          target="_blank"
+        >
           <font-awesome-icon :icon="['fab', 'instagram']" size="2x" />
         </a>
         <a
           class="footer__link"
-          href="https://whatsapp.me/+581241289"
+          href="https://wa.me/message/XTA7RUDHZKT4C1"
           target="_blank"
         >
           <font-awesome-icon :icon="['fab', 'whatsapp']" size="2x" />

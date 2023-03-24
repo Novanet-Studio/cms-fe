@@ -3,14 +3,12 @@
     <div class="highlight__info">
       <h2 class="highlight__title" v-html="title"></h2>
       <p class="highlight__text" v-html="description"></p>
-      <div v-if="buttonText">
+      <div v-if="buttonText && url">
         <app-button class="button--blue" :url="url">{{
           buttonText
         }}</app-button>
       </div>
-      <div v-else>
-        <app-button class="button--blue" :url="url">Ver más</app-button>
-      </div>
+      <div v-else></div>
     </div>
     <div class="highlight__image">
       <nuxt-picture :src="image" :alt="alt" />
