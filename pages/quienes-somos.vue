@@ -13,7 +13,7 @@
     image="https://res.cloudinary.com/novanet-studio/image/upload/v1679063407/ccs-multisport/cms_collage_8_coaches_3f5d08b048.webp"
     alt="Nadadora con lentes puestos mirando hacia la derecha"
     buttonText="Ver profesores"
-    url="/profesores"
+    url="/profesionales"
   />
 
   <section class="identidad">
