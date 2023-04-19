@@ -36,13 +36,13 @@
         >
         <!-- <nuxt-link class="header__link" to="/">Tienda</nuxt-link> -->
         <nuxt-link class="header__link" to="/aliados/">Aliados</nuxt-link>
-        <nuxt-link
+        <!-- <nuxt-link
           class="header__link"
           :class="{
             'text-black font-bold': $route.path.includes('/blog'),
           }"
           to="/blog/"
-          >Blog</nuxt-link>
+          >Blog</nuxt-link> -->
           <nuxt-link class="header__link" to="/tienda/"
           >Tienda</nuxt-link
         >

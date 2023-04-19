@@ -483,7 +483,8 @@
 .highlight__info {
   @apply flex flex-col w-1/2 
   <sm:(w-full py-7 items-center)
-  md:(mr-10 items-end);
+  @md:(mr-3 text-base)
+  lg:(mr-10 items-end);
 }
 
 .highlight__title {
@@ -495,7 +496,8 @@
 .highlight__text {
   @apply my-4 hyphens-none
   <sm:(text-center px-6)
-  md:(text-right pl-24);
+  @md:(text-right pl-3)
+  lg:(pl-24);
 }
 
 .highlight__image img {
@@ -856,12 +858,13 @@
 }
 
 .profesionales .cards__wrapper {
-  @apply flex-wrap;
+  @apply flex-wrap
 }
 
 .profesionales__item {
   @apply mb-4
   <sm:(mt-24)
+  md:(pt-24)
   xl:(w-1/4 mt-32);
 }
 
@@ -898,5 +901,8 @@
 }
 
 .perfil__extracto {
-  @apply flex flex-col justify-center text-xl;
+  @apply flex flex-col justify-center text-xl
+  @md:(pt-8)
+  @lg:(pt-8)
+  xl:(pr-36);
 }

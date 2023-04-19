@@ -14,7 +14,8 @@
       <h2 class="faq__title">Preguntas frecuentes</h2>
       <items-list :items="preguntas" />
     </div>
-    <aside class="aside">
+    <the-aside />
+    <!-- <aside class="aside">
       <h2 class="tienda__title">Tienda</h2>
       <p>
         Tienda artículos deportivos y natación para niños, niñas, damas y caballeros, cambiar las fotos por alguna de ellos.
@@ -27,7 +28,7 @@
         :title="item.text"
         viewClass="basic--aside"
       />
-    </aside>
+    </aside> -->
   </section>
 </template>
 
