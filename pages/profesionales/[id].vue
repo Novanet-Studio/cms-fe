@@ -36,10 +36,16 @@
         class="perfil__image"
       />
     </div>
-    <div
-      v-html="profesor?.attributes.extracto || `<span>Cargando...</span>`"
-      class="perfil__extracto"
-    ></div>
+    <div>
+      <h1
+        class="perfil__titulo"
+        v-html="profesor?.attributes.nombre_apellido"
+      ></h1>
+      <div
+        v-html="profesor?.attributes.extracto || `<span>Cargando...</span>`"
+        class="perfil__extracto"
+      ></div>
+    </div>
   </section>
 
   <section class="box">

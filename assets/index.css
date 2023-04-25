@@ -892,13 +892,17 @@
 }
 
 .perfil__image-wrapper {
-  @apply flex items-center justify-center bg-heroBg bg-no-repeat bg-contain bg-center
+  @apply flex flex-wrap items-center justify-center bg-heroBg bg-no-repeat bg-contain bg-center
   <sm:(mb-10);
 }
 
 .perfil__image-wrapper img {
   @apply rounded-full flex items-center justify-center;
 }
+
+.perfil__titulo {
+  @apply w-full heading-2 pb-3 <sm:(text-center);
+} 
 
 .perfil__extracto {
   @apply flex flex-col justify-center text-xl
