@@ -69,7 +69,7 @@ const markdown = new MarkdownIt();
 
 const route = useRoute();
 const id = route.params.id as string;
-const { profesional: profesor, loading } = useProfesionals({
+const { profesional: profesor } = useProfesionals({
   link: id,
 });
 </script>
