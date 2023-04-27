@@ -74,6 +74,11 @@ export const useDisciplines = (
                   titulo
                   descripcion
                 }
+
+                requisitos {
+                  titulo
+                  descripcion
+                }
               }
             }
           }

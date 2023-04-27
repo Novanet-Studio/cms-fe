@@ -75,9 +75,14 @@
   <section class="box">
     <div>
       <h3 class="box__title">
-        {{ requisitos[0]?.titulo }}
+        {{ disciplina?.attributes.requisitos.titulo }}
       </h3>
-      <p v-html="requisitos[0]?.descripcion || `<span>Cargando...</span>`"></p>
+      <p
+        v-html="
+          disciplina?.attributes.requisitos.descripcion ||
+          `<span>Cargando...</span>`
+        "
+      ></p>
     </div>
   </section>
 </template>
@@ -88,27 +93,4 @@ const id = route.params.id as string;
 const { discipline: disciplina } = useDisciplines({
   link: id,
 });
-
-const requisitos = ref();
-const graphql = useStrapiGraphQL();
-try {
-  const query = await graphql<any>(`
-    query {
-      requisito {
-        data {
-          attributes {
-            requisitos {
-              titulo
-              descripcion
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  requisitos.value = query.data.requisito.data.attributes.requisitos;
-} catch (err) {
-  requisitos.value = [];
-}
 </script>

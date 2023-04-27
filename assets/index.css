@@ -258,7 +258,7 @@
 }
 
 .footer__link svg {
-  @apply <sm:(w-4);
+  @apply <sm:(w-5);
 }
 
 .footer__right {
@@ -858,7 +858,8 @@
 }
 
 .profesionales .cards__wrapper {
-  @apply flex-wrap
+  @apply flex-wrap 
+  lg:(justify-start);
 }
 
 .profesionales__item {
