@@ -55,6 +55,7 @@
           prefix="fas"
           iconName="right-to-bracket"
           iconSize="1x"
+          url="/"
         >
           Login
         </app-button>

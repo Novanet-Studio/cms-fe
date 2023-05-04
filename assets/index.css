@@ -113,7 +113,7 @@
 }
 
 .round-border {
-  @apply border border-mid-gray rounded-xl p-4;
+  @apply border border-mid-gray rounded-xl p-3;
 }
 
 .grid-70-30 {
@@ -258,7 +258,7 @@
 }
 
 .footer__link svg {
-  @apply <sm:(w-5);
+  @apply w-7;
 }
 
 .footer__right {
@@ -524,7 +524,7 @@
 }
 
 .basic__logo {
-  @apply round-border
+  @apply round-border;
 
 }
 
@@ -649,14 +649,14 @@
 }
 
 .aliados__wrapper {
-  @apply flex justify-between flex-wrap container mx-auto
+  @apply flex justify-between flex-wrap container mx-auto w-full
   <sm:()
   md:(px-6 py-8);
 }
 
 .aliados__title {
   @apply heading-2 heading-dots-left w-full pb-6
-  <sm:(w-full);
+
 }
 
 .aliados .basic {

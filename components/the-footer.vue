@@ -8,21 +8,21 @@
           href="https://www.facebook.com/CcsMultiSport"
           target="_blank"
         >
-          <font-awesome-icon :icon="['fab', 'facebook']" size="2x" />
+          <font-awesome-icon :icon="['fab', 'facebook']" size="3x" />
         </a>
         <a
           class="footer__link"
           href="https://www.instagram.com/ccsmultisport"
           target="_blank"
         >
-          <font-awesome-icon :icon="['fab', 'instagram']" size="2x" />
+          <font-awesome-icon :icon="['fab', 'instagram']" size="3x" />
         </a>
         <a
           class="footer__link"
           href="https://wa.me/message/XTA7RUDHZKT4C1"
           target="_blank"
         >
-          <font-awesome-icon :icon="['fab', 'whatsapp']" size="2x" />
+          <font-awesome-icon :icon="['fab', 'whatsapp']" size="3x" />
         </a>
       </div>
     </div>
