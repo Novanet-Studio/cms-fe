@@ -50,6 +50,15 @@
     </div>
   </section>
 
+  <section class="box">
+    <div>
+      <h3 class="box__title">
+        {{ descuentos[0]?.titulo }}
+      </h3>
+      <p v-html="descuentos[0]?.descripcion || `<span>Cargando...</span>`"></p>
+    </div>
+  </section>
+
   <div v-if="normas?.length >= 0">
     <items-list :items="normas" :defaultOpened="false" />
   </div>
@@ -60,6 +69,7 @@ const { disciplines: disciplinas, loading } = useDisciplines();
 const normas = ref();
 const carrusel = ref();
 const requisitos = ref();
+const descuentos = ref();
 const graphql = useStrapiGraphQL();
 
 try {
@@ -101,16 +111,29 @@ try {
           }
         }
       }
+
+      descuento {
+        data {
+          attributes {
+            descuentos {
+              titulo
+              descripcion
+            }
+          }
+        }
+      }
     }
   `);
 
   carrusel.value = query.data.carrusel.data.attributes.imagenes.data;
   normas.value = query.data.norma.data.attributes.normas;
   requisitos.value = query.data.requisito.data.attributes.requisitos;
+  descuentos.value = query.data.descuento.data.attributes.descuentos;
 } catch (err) {
   carrusel.value = [];
   normas.value = [];
   requisitos.value = [];
+  descuentos.value = [];
   console.log(err);
 }
 </script>
