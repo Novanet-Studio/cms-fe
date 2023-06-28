@@ -46,7 +46,7 @@
       <h3 class="box__title">
         {{ requisitos[0]?.titulo }}
       </h3>
-      <p v-html="requisitos[0]?.descripcion || `<span>Cargando...</span>`"></p>
+      <div v-html="requisitos[0]?.descripcion || `<span>Cargando...</span>`"></div>
     </div>
   </section>
 
@@ -55,7 +55,7 @@
       <h3 class="box__title">
         {{ descuentos[0]?.titulo }}
       </h3>
-      <p v-html="descuentos[0]?.descripcion || `<span>Cargando...</span>`"></p>
+      <div v-html="descuentos[0]?.descripcion || `<span>Cargando...</span>`"></div>
     </div>
   </section>
 
