@@ -15,20 +15,7 @@
           </app-button>
           <div class="articulo-grid">
             <slot />
-            <aside class="aside">
-              <h2 class="tienda__title">Tienda</h2>
-              <p>
-                Tienda artículos deportivos y natación para niños, niñas, damas y caballeros, cambiar las fotos por alguna de ellos.
-              </p>
-              <basic
-                v-for="(item, index) in storeItems"
-                :key="index"
-                :logo="item.image"
-                :alternativeText="item.alternativeText"
-                :title="item.text"
-                viewClass="basic--aside"
-              />
-            </aside>
+            <the-aside />
           </div>
         </section>
       </main>
