@@ -228,7 +228,7 @@
   xl:(pt-[7.578em]);
 }
 .main > section {
-  @apply <sm:(px-3)
+  @apply <sm:(px-3 pt-4)
   md:(px-8);
 }
 
@@ -328,7 +328,7 @@
 }
 
 .swiper {
-  @apply w-full mb-4;
+  @apply w-full md:(mb-4);
 }
 
 .swiper-slide {
@@ -337,7 +337,7 @@
 
 .blog .swiper-slide img {
   position: unset;
-  max-width: 100%;
+  width: 100%;
   overflow: unset;
 }
 
@@ -472,12 +472,11 @@
 }
 
 .highlight-slide .highlight__image {
-  @apply flex w-[59%] 
-  <sm:(w-full);
+  @apply <sm:(w-full)
+  md:(flex w-[57%]);
 }
 
 .highlight-slide .highlight__image img {
-  @apply h-full;
 }
 
 .highlight__info {
@@ -525,7 +524,6 @@
 
 .basic__logo {
   @apply round-border;
-
 }
 
 .aside .basic__logo {
@@ -542,7 +540,7 @@
 }
 
 .basic__logo--index img {
-  @apply <sm:(w-full)
+  @apply <sm:(w-full);
 }
 
 .basic__logo--aliados {
@@ -655,8 +653,7 @@
 }
 
 .aliados__title {
-  @apply heading-2 heading-dots-left w-full pb-6
-
+  @apply heading-2 heading-dots-left w-full pb-6;
 }
 
 .aliados .basic {
@@ -728,6 +725,10 @@
 
 .blog-item__imagen {
   @apply object-cover object-center;
+}
+
+.blog-item__imagen img {
+  @apply w-full;
 }
 
 .blog-item__title {
@@ -803,7 +804,7 @@
 }
 
 .contacto__map-icon {
-  @apply leading-6
+  @apply leading-6;
 }
 
 .contacto__link svg {
@@ -903,7 +904,7 @@
 
 .perfil__titulo {
   @apply w-full heading-2 pb-3 <sm:(text-center);
-} 
+}
 
 .perfil__extracto {
   @apply flex flex-col justify-center text-xl

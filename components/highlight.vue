@@ -20,7 +20,7 @@
 type Props = {
   estilo: string;
   title: string;
-  description: string;
+  description?: string;
   image: string;
   url?: string;
   alt?: string;

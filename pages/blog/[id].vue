@@ -15,13 +15,16 @@
     </h1>
     <div
       class="articulo__description"
-      v-html="articulo?.attributes?.descripcion"
+      v-html="markdown.render(articulo?.attributes?.descripcion)"
     />
   </section>
 </template>
 <script lang="ts" setup>
+import MarkdownIt from "markdown-it";
+const markdown = new MarkdownIt();
+
 definePageMeta({
-  layout: 'articulo',
+  layout: "articulo",
 });
 
 const route = useRoute();
