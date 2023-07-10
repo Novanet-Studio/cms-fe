@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     "@nuxtjs/strapi",
     "@kevinmarrec/nuxt-pwa",
     "nuxt-windicss",
+    "nuxt-gtag",
   ],
 
   runtimeConfig: {
@@ -72,5 +73,9 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+
+  gtag: {
+    id: "G-HLTR7W1LL8",
   },
 });
