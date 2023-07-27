@@ -76,6 +76,6 @@ export default defineNuxtConfig({
   },
 
   gtag: {
-    id: "G-HLTR7W1LL8",
+    id: "G-M2VFL7ZD5M",
   },
 });
