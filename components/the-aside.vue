@@ -26,7 +26,7 @@
     </div>
     <div class="contacto__group">
       <h2 class="contacto__subtitle">Teléfonos</h2>
-      <p>+58 212-935.45.46</p>
+      <p>+58 212-935.45.46 / 0212–935.45.46 / 935.45.47</p>
     </div>
     <div class="contacto__group">
       <h2 class="contacto__subtitle">WhatsApp</h2>

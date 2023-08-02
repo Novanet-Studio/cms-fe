@@ -9,22 +9,20 @@
         con el mejor equipo de entrenadores capaces de brindar un ambiente
         cálido y estimulante para todos.
       </p>
-      <br/>
+      <br />
       <h3>Horarios de atención</h3>
       <p>Oficina Administrativa para pagos y formalizar inscripción</p>
-      <br/>
+      <br />
       <h3>De Lunes a Viernes</h3>
       <ul>
         <li>De 9:00 am a 12:30pm</li>
         <li>De 1:30 pm a 07:30pm</li>
       </ul>
-      <br/>
+      <br />
       <h3>Sábados</h3>
-   
-        <p>De 9:00 am A 12:00pm</p>
-        <br />
-        <h3>Teléfonos</h3>
-        <p>0212–935.45.46 / 935.45.47</p>
+
+      <p>De 9:00 am A 12:00pm</p>
+      <br />
     </div>
   </section>
   <div class="contacto__grid">
