@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="blog swiper">
-      <swiper
+      <swiper-container
         :autoplay="{ delay: 6000, disableOnInteraction: false }"
         :slider-per-view="1"
         :space-between="0"
@@ -18,7 +18,7 @@
             :url="`/blog/${articulo.attributes.slug}`"
           />
         </swiper-slide>
-      </swiper>
+      </swiper-container>
     </div>
 
     <section class="blog">

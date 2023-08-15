@@ -4,6 +4,11 @@
   </nuxt-layout>
 </template>
 
+<script setup>
+import { register } from 'swiper/element/bundle';
+register();
+</script>
+
 <style>
 .page-enter-active,
 .page-leave-active {
