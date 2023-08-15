@@ -34,7 +34,6 @@
           to="/disciplinas/"
           >Disciplinas</nuxt-link
         >
-        <!-- <nuxt-link class="header__link" to="/">Tienda</nuxt-link> -->
         <nuxt-link class="header__link" to="/aliados/">Aliados</nuxt-link>
         <nuxt-link
           class="header__link"
