@@ -1,87 +1,92 @@
 <template>
-  <hero
-    :titulo="principal.titulo"
-    :descripcion="principal.descripcion"
-    :url="principal.imagen.data?.attributes?.url"
-    :alternativeText="principal.imagen?.data?.attributes?.alternativeText"
-  />
+  <div>
+    <client-only>
+      <hero
+        :titulo="principal.titulo"
+        :descripcion="principal.descripcion"
+        :url="principal.imagen.data?.attributes?.url"
+        :alternativeText="principal.imagen?.data?.attributes?.alternativeText"
+      />
 
-  <slider :slides="carrusel" />
+      <slider v-if="principal?.titulo" :slides="carrusel" />
 
-  <section class="disciplinas">
-    <div class="disciplinas__container">
-      <h2 class="disciplinas__title">Disciplinas</h2>
-      <div class="cards__wrapper">
-        <nuxt-link
-          :to="`/disciplinas/${disciplina.attributes.link}`"
-          v-for="(disciplina, index) in disciplinas"
-          :key="index"
-        >
-          <card
-            :logo="disciplina.attributes.icono.data?.attributes?.url ?? ''"
+      <section class="disciplinas">
+        <div class="disciplinas__container">
+          <h2 class="disciplinas__title">Disciplinas</h2>
+          <div class="cards__wrapper">
+            <nuxt-link
+              :to="`/disciplinas/${disciplina.attributes.link}`"
+              v-for="(disciplina, index) in disciplinas"
+              :key="index"
+            >
+              <card
+                :logo="disciplina.attributes.icono.data?.attributes?.url ?? ''"
+                :alternativeText="
+                  disciplina.attributes.icono.data?.attributes
+                    ?.alternativeText ?? ''
+                "
+                :title="disciplina.attributes.nombre"
+                description="Ver información y planes"
+              />
+            </nuxt-link>
+          </div>
+        </div>
+      </section>
+
+      <highlight
+        estilo="highlight"
+        :title="profesionales.titulo"
+        :description="profesionales.descripcion"
+        :image="profesionales.imagen.data?.attributes?.url ?? ''"
+        :alt="profesionales.imagen.data?.attributes?.alternativeText ?? ''"
+        buttonText="Ver profesores"
+        url="/profesionales"
+      />
+
+      <section class="mensaje">
+        <div class="mensaje__container">
+          <h2 class="mensaje__title">
+            {{ mensaje.titulo }}
+          </h2>
+          <p class="text-center mb-8 text-lg mt-4">
+            {{ mensaje.descripcion }}
+          </p>
+          <app-button class="button--blue" url="/disciplinas"
+            >Conoce más</app-button
+          >
+        </div>
+      </section>
+
+      <section class="aliados">
+        <div class="aliados__wrapper">
+          <h2 class="aliados__title">Aliados</h2>
+          <basic
+            v-for="(aliado, index) in aliados"
+            :link="aliado.attributes.link"
+            :logo="aliado.attributes.imagen.data.attributes.url"
             :alternativeText="
-              disciplina.attributes.icono.data?.attributes?.alternativeText ?? ''
+              aliado.attributes.imagen.data.attributes.alternativeText
             "
-            :title="disciplina.attributes.nombre"
-            description="Ver información y planes"
+            logoClass="basic__logo--index"
+            :key="index"
           />
-        </nuxt-link>
-      </div>
-    </div>
-  </section>
+        </div>
+      </section>
 
-  <highlight
-    estilo="highlight"
-    :title="profesionales.titulo"
-    :description="profesionales.descripcion"
-    :image="profesionales.imagen.data?.attributes?.url ?? ''"
-    :alt="profesionales.imagen.data?.attributes?.alternativeText ?? ''"
-    buttonText="Ver profesores"
-    url="/profesionales"
-  />
-
-  <section class="mensaje">
-    <div class="mensaje__container">
-      <h2 class="mensaje__title">
-        {{ mensaje.titulo }}
-      </h2>
-      <p class="text-center mb-8 text-lg mt-4">
-        {{ mensaje.descripcion }}
-      </p>
-      <app-button class="button--blue" url="/disciplinas"
-        >Conoce más</app-button
-      >
-    </div>
-  </section>
-
-  <section class="aliados">
-    <div class="aliados__wrapper">
-      <h2 class="aliados__title">Aliados</h2>
-      <basic
-        v-for="(aliado, index) in aliados"
-        :link="aliado.attributes.link"
-        :logo="aliado.attributes.imagen.data.attributes.url"
-        :alternativeText="
-          aliado.attributes.imagen.data.attributes.alternativeText
-        "
-        logoClass="basic__logo--index"
-        :key="index"
-      />
-    </div>
-  </section>
-
-  <section class="tienda">
-    <!-- <h2 class="tienda__title">Tienda</h2>
-    <div class="tienda__wrapper">
-      <gradient-overlay
-        v-for="(item, index) in storeItems"
-        :key="index"
-        :image="item.image"
-        :text="item.text"
-        :alternativeText="item.alternativeText"
-      />
-    </div> -->
-  </section>
+      <section class="tienda">
+        <!-- <h2 class="tienda__title">Tienda</h2>
+      <div class="tienda__wrapper">
+        <gradient-overlay
+          v-for="(item, index) in storeItems"
+          :key="index"
+          :image="item.image"
+          :text="item.text"
+          :alternativeText="item.alternativeText"
+        />
+      </div> -->
+      </section>
+    </client-only>
+  </div>
 </template>
 
 <script lang="ts" setup>

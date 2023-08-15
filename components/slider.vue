@@ -1,5 +1,5 @@
 <template>
-  <div class="swiper">
+  <div class="swiper" v-if="slides.length">
     <swiper
       :autoplay="{ delay: 3000, disableOnInteraction: false }"
       :slider-per-view="1"
@@ -10,8 +10,7 @@
     >
       <swiper-slide v-for="(slide, index) in slides" :key="index">
         <nuxt-picture
-          v-if="slides.attributes.url"
-          :src="slide.attributes.url"
+          :src="slide?.attributes?.url"
           sizes="xs:100vw sm:640 md:768 lg:1024 xl:1280 xxl:1920"
         />
       </swiper-slide>
