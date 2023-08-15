@@ -85,10 +85,6 @@
 </template>
 
 <script lang="ts" setup>
-const clog = (e: any) => {
-  console.log(e);
-};
-
 const config = useAppConfig();
 
 useHead({
