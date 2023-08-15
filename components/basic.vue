@@ -1,12 +1,12 @@
 <template>
   <div class="basic" :class="viewClass">
     <div class="basic__logo" :class="logoClass">
-      <a :href="link" target="_blank">
+      <a :href="to || link" :target="linkTarget ?? ''">
         <nuxt-picture :src="logo" :alt="alternativeText" />
       </a>
     </div>
     <div class="basic__info">
-      <h3 v-if="title" class="basic__title" v-html="title"></h3>
+      <h3 v-if="title && !to" class="basic__title" v-html="title"></h3>
       <div
         v-if="description"
         class="basic__description"
@@ -25,6 +25,8 @@ type Props = {
   viewClass?: string;
   logoClass?: string;
   link?: string;
+  linkTarget?: string;
+  to?: string;
 };
 
 defineProps<Props>();
