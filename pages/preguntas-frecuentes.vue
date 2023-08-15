@@ -1,21 +1,22 @@
 <template>
-  <highlight
-    estilo="highlight"
-    title="¿En qué podemos ayudarte?"
-    description="Estás son las preguntas que responden a alguna de sus inquietudes. Contáctanos para mayor información"
-    image="https://res.cloudinary.com/novanet-studio/image/upload/v1674752999/ccs-multisport/cms_triatleta_en_cada_disciplina_890ac7a154.webp"
-    alt="Montaje de triatleta nadando, en bicicleta y nadando"
-    url="/contacto"
-    buttonText="Contáctanos"
-  />
+  <div>
+    <highlight
+      estilo="highlight"
+      title="¿En qué podemos ayudarte?"
+      description="Estás son las preguntas que responden a alguna de sus inquietudes. Contáctanos para mayor información"
+      image="https://res.cloudinary.com/novanet-studio/image/upload/v1674752999/ccs-multisport/cms_triatleta_en_cada_disciplina_890ac7a154.webp"
+      alt="Montaje de triatleta nadando, en bicicleta y nadando"
+      url="/contacto"
+      buttonText="Contáctanos"
+    />
 
-  <section class="faq-grid">
-    <div>
-      <h2 class="faq__title">Preguntas frecuentes</h2>
-      <items-list :items="preguntas" />
-    </div>
-    <the-aside />
-    <!-- <aside class="aside">
+    <section class="faq-grid">
+      <div>
+        <h2 class="faq__title">Preguntas frecuentes</h2>
+        <items-list :items="preguntas" />
+      </div>
+      <the-aside />
+      <!-- <aside class="aside">
       <h2 class="tienda__title">Tienda</h2>
       <p>
         Tienda artículos deportivos y natación para niños, niñas, damas y caballeros, cambiar las fotos por alguna de ellos.
@@ -29,7 +30,8 @@
         viewClass="basic--aside"
       />
     </aside> -->
-  </section>
+    </section>
+  </div>
 </template>
 
 <script lang="ts" setup>

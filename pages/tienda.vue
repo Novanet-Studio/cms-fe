@@ -8,5 +8,4 @@
     buttonText="Contáctanos"
     url="../contacto"
   />
-
 </template>
