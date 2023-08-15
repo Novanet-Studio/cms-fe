@@ -26,13 +26,13 @@
   </section>
 </template>
 
-<script lang="ts" setup>
+<script setup>
 const principal = ref();
 const aliados = ref();
 const graphql = useStrapiGraphQL();
 
 try {
-  const query = await graphql<any>(`
+  const query = await graphql(`
     query {
       inicio {
         data {
