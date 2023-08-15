@@ -3,7 +3,7 @@
      titulo="Nuestros aliados amplian y complementan nuestra oferta de servicios"
     :descripcion="principal.descripcion"
     url="https://res.cloudinary.com/novanet-studio/image/upload/v1679055991/ccs-multisport/cms_caracas_multisport_la_florida_4c348f133f.webp"
-    :alternativeText="principal.imagen.data.attributes.alternativeText"
+    :alternativeText="principal.imagen.data?.attributes?.alternativeText"
   />
 
   <section class="aliados">
@@ -17,9 +17,9 @@
         "
         :title="aliado.attributes.nombre"
         :description="aliado.attributes.descripcion"
-        :to="!aliado.attributes?.personal || !aliado.attributes?.servicios ? '' : `/aliados/${slugify(aliado?.attributes?.nombre ?? '', { lower: true })}-${aliado?.id}`"
-        :link="!aliado.attributes?.personal || !aliado.attributes?.servicios ? aliado.attributes.link : ''"
-        :link-target="!aliado.attributes?.personal || !aliado.attributes?.servicios ? '_blank' : ''"
+        :to="getAliaseData(aliado).to"
+        :link="getAliaseData(aliado).link"
+        :linkTarget="getAliaseData(aliado).linkTarget"
         viewClass="basic--aliados"
         logoClass="basic__logo--aliados"
         :key="index"
@@ -34,6 +34,16 @@ import slugify from 'slugify';
 const principal = ref();
 const aliados = ref();
 const graphql = useStrapiGraphQL();
+
+function getAliaseData(aliado) {
+  const hasPersonalOrServices = aliado.attributes?.personal || aliado.attributes?.servicios;
+
+  return {
+    to: hasPersonalOrServices ? `/aliados/${slugify(aliado?.attributes?.nombre ?? '', { lower: true })}-${aliado?.id}` : '',
+    link: hasPersonalOrServices ? '' : aliado.attributes.link,
+    linkTarget: hasPersonalOrServices ? '' : '_blank'
+  }
+}
 
 try {
   const query = await graphql(`

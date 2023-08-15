@@ -2,8 +2,8 @@
   <hero
     :titulo="principal.titulo"
     :descripcion="principal.descripcion"
-    :url="principal.imagen.data.attributes.url"
-    :alternativeText="principal.imagen.data.attributes.alternativeText"
+    :url="principal.imagen.data?.attributes?.url"
+    :alternativeText="principal.imagen?.data?.attributes?.alternativeText"
   />
 
   <slider :slides="carrusel" />
@@ -18,9 +18,9 @@
           :key="index"
         >
           <card
-            :logo="disciplina.attributes.icono.data.attributes.url"
+            :logo="disciplina.attributes.icono.data?.attributes?.url ?? ''"
             :alternativeText="
-              disciplina.attributes.icono.data.attributes.alternativeText
+              disciplina.attributes.icono.data?.attributes?.alternativeText ?? ''
             "
             :title="disciplina.attributes.nombre"
             description="Ver información y planes"
@@ -34,8 +34,8 @@
     estilo="highlight"
     :title="profesionales.titulo"
     :description="profesionales.descripcion"
-    :image="profesionales.imagen.data.attributes.url"
-    :alt="profesionales.imagen.data.attributes.alternativeText"
+    :image="profesionales.imagen.data?.attributes?.url ?? ''"
+    :alt="profesionales.imagen.data?.attributes?.alternativeText ?? ''"
     buttonText="Ver profesores"
     url="/profesionales"
   />
