@@ -17,7 +17,9 @@
         "
         :title="aliado.attributes.nombre"
         :description="aliado.attributes.descripcion"
-        :link="aliado.attributes.link"
+        :to="!aliado.attributes?.personal || !aliado.attributes?.servicios ? '' : `/aliados/${slugify(aliado?.attributes?.nombre ?? '', { lower: true })}-${aliado?.id}`"
+        :link="!aliado.attributes?.personal || !aliado.attributes?.servicios ? aliado.attributes.link : ''"
+        :link-target="!aliado.attributes?.personal || !aliado.attributes?.servicios ? '_blank' : ''"
         viewClass="basic--aliados"
         logoClass="basic__logo--aliados"
         :key="index"
@@ -27,6 +29,8 @@
 </template>
 
 <script setup>
+import slugify from 'slugify';
+
 const principal = ref();
 const aliados = ref();
 const graphql = useStrapiGraphQL();
@@ -55,6 +59,7 @@ try {
 
       aliados(sort: "nombre:asc") {
         data {
+          id
           attributes {
             nombre
             descripcion
@@ -65,6 +70,16 @@ try {
                   url
                   alternativeText
                 }
+              }
+            }
+            servicios {
+              servicio {
+                titulo
+              }
+            }
+            personal {
+              profesionales {
+                titulo
               }
             }
           }
