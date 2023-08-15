@@ -3,7 +3,7 @@
     <div class="card__inner">
       <div class="card__elements">
         <div class="card__icon">
-          <nuxt-img :src="logo" :alt="alternativeText" />
+          <nuxt-img v-if="logo" :src="logo" :alt="alternativeText" />
         </div>
         <h4 class="card__title">
           {{ title }}

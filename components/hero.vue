@@ -8,6 +8,7 @@
       <div class="hero__images">
         <div class="hero__image-bg">
           <nuxt-img
+            v-if="url"
             :src="url"
             :alt="alternativeText"
             class="hero__image-fg"

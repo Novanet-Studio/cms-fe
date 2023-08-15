@@ -3,6 +3,12 @@ import pwa from "./pwa";
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   telemetry: false,
+  app: {
+    pageTransition: {
+      name: 'page',
+      mode: 'out-in'
+    }
+  },
   build: {
     transpile: [
       "@fortawesome/vue-fontawesome",
@@ -26,6 +32,12 @@ export default defineNuxtConfig({
         url: process.env.STRAPI_URL || "http://localhost:1337",
       },
     },
+  },
+
+  vue: {
+    compilerOptions: {
+      isCustomElement: (tag) => ['swiper-container', 'swiper-slide'].includes(tag)
+    }
   },
 
   typescript: {
