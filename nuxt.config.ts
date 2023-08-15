@@ -34,6 +34,12 @@ export default defineNuxtConfig({
     },
   },
 
+  vue: {
+    compilerOptions: {
+      isCustomElement: (tag) => ['swiper-container', 'swiper-slide'].includes(tag)
+    }
+  },
+
   typescript: {
     strict: true,
     tsConfig: {
