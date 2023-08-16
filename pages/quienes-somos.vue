@@ -1,52 +1,50 @@
 <template>
-  <hero
-    :titulo="principal.titulo"
-    :descripcion="principal.descripcion"
-    :url="principal.imagen.data.attributes.url"
-    :alternativeText="principal.imagen.data.attributes.alternativeText"
-  />
-
-  <highlight
-    estilo="highlight"
-    :title="profesionales.titulo"
-    :description="profesionales.descripcion"
-    image="https://res.cloudinary.com/novanet-studio/image/upload/v1679063407/ccs-multisport/cms_collage_8_coaches_3f5d08b048.webp"
-    alt="Nadadora con lentes puestos mirando hacia la derecha"
-    buttonText="Ver profesores"
-    url="/profesionales"
-  />
-
-  <section class="identidad">
-    <identidad-card
-      v-for="(item, index) in identidad"
-      :imagen="item.imagen.data.attributes.url"
-      :alternativeText="item.imagen.data.attributes.alternativeText"
-      :title="item.titulo"
-      :description="item.descripcion"
-      :key="index"
+  <div>
+    <hero
+      :titulo="principal.titulo"
+      :descripcion="principal.descripcion"
+      :url="principal.imagen.data.attributes.url"
+      :alternativeText="principal.imagen.data.attributes.alternativeText"
     />
-  </section>
 
-  <div class="dots"></div>
+    <highlight
+      estilo="highlight"
+      :title="profesionales.titulo"
+      :description="profesionales.descripcion"
+      image="https://res.cloudinary.com/novanet-studio/image/upload/v1679063407/ccs-multisport/cms_collage_8_coaches_3f5d08b048.webp"
+      alt="Nadadora con lentes puestos mirando hacia la derecha"
+      buttonText="Ver profesores"
+      url="/profesionales"
+    />
 
-  <div v-if="trabajo?.length >= 1">
-    <items-list :items="trabajo" :defaultOpened="false" />
-  </div>
+    <section class="identidad">
+      <identidad-card
+        v-for="(item, index) in identidad"
+        :imagen="item.imagen.data.attributes.url"
+        :alternativeText="item.imagen.data.attributes.alternativeText"
+        :title="item.titulo"
+        :description="item.descripcion"
+        :key="index"
+      />
+    </section>
 
-  <div v-if="requisitos?.length >= 0">
-    <items-list :items="requisitos" :defaultOpened="false" />
-  </div>
+    <div class="dots"></div>
 
-  <div v-if="normas?.length >= 0">
-    <items-list :items="normas" :defaultOpened="false" />
+    <div v-if="trabajo?.length >= 1">
+      <items-list :items="trabajo" :defaultOpened="false" />
+    </div>
+
+    <div v-if="requisitos?.length >= 0">
+      <items-list :items="requisitos" :defaultOpened="false" />
+    </div>
+
+    <div v-if="normas?.length >= 0">
+      <items-list :items="normas" :defaultOpened="false" />
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-const clog = (e: any) => {
-  console.log(e);
-};
-
 const config = useAppConfig();
 
 useHead({

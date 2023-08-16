@@ -7,9 +7,9 @@ export const useDisciplines = (
   discipline: Ref<Project.DisplicinesStrapi | null>;
   loading: Ref<boolean>;
 } => {
-  const disciplines = ref<any>([]);
-  const loading = ref(false);
-  const discipline = ref<Project.DisplicinesStrapi | null>(null);
+  const disciplines = useState<any>('disciplines', () => []);
+  const loading = useState('loading', () => false);
+  const discipline = useState<Project.DisplicinesStrapi | null>('discipline', () => null);
   const graphql = useStrapiGraphQL();
 
   onMounted(async () => {

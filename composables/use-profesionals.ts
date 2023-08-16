@@ -7,9 +7,9 @@ export const useProfesionals = (
   profesional: Ref<Project.ProfesionalsStrapi | null>;
   loading: Ref<boolean>;
 } => {
-  const profesionals = ref<any>([]);
-  const loading = ref<boolean>(false);
-  const profesional = ref<Project.ProfesionalsStrapi | null>(null);
+  const profesionals = useState<any>('profesionals', () => []);
+  const loading = useState<boolean>('loading', () => false);
+  const profesional = useState<Project.ProfesionalsStrapi | null>('profesional', () => null);
   const graphql = useStrapiGraphQL();
 
   onMounted(async () => {

@@ -11,7 +11,7 @@
       <div v-else></div>
     </div>
     <div class="highlight__image">
-      <nuxt-picture :src="image" :alt="alt" />
+      <nuxt-picture v-if="image" :src="image" :alt="alt" />
     </div>
   </div>
 </template>

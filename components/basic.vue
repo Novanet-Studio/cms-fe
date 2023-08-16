@@ -2,7 +2,7 @@
   <div class="basic" :class="viewClass">
     <div class="basic__logo" :class="logoClass">
       <a :href="to || link" :target="linkTarget ?? ''">
-        <nuxt-picture :src="logo" :alt="alternativeText" />
+        <nuxt-picture v-if="logo" :src="logo" :alt="alternativeText" />
       </a>
     </div>
     <div class="basic__info">
