@@ -53,9 +53,9 @@
       <span class="dots"> </span>
     </section>
 
-    <section v-if="disciplina?.attributes.planes.length >= 1" class="box">
+    <section v-if="disciplina?.attributes?.planes.length >= 1" class="box">
       <h2 class="summary-title">Planes</h2>
-      <div v-for="(plan, index) in disciplina?.attributes.planes" :key="index">
+      <div v-for="(plan, index) in disciplina?.attributes?.planes" :key="index">
         <div v-html="plan.planes"></div>
       </div>
       <span class="dots"> </span>
@@ -64,11 +64,11 @@
     <section class="box">
       <div>
         <h3 class="box__title">
-          {{ disciplina?.attributes.informacion_adicional.titulo }}
+          {{ disciplina?.attributes?.informacion_adicional?.titulo }}
         </h3>
         <p
           v-html="
-            disciplina?.attributes.informacion_adicional.descripcion ||
+            disciplina?.attributes?.informacion_adicional?.descripcion ||
             `<span>Cargando...</span>`
           "
         ></p>
@@ -78,11 +78,11 @@
     <section class="box">
       <div>
         <h3 class="box__title">
-          {{ disciplina?.attributes.requisitos.titulo }}
+          {{ disciplina?.attributes?.requisitos?.titulo }}
         </h3>
         <p
           v-html="
-            disciplina?.attributes.requisitos.descripcion ||
+            disciplina?.attributes?.requisitos?.descripcion ||
             `<span>Cargando...</span>`
           "
         ></p>
@@ -94,6 +94,7 @@
 <script lang="ts" setup>
 const route = useRoute();
 const id = route.params.id as string;
+
 const { discipline: disciplina } = useDisciplines({
   link: id,
 });
