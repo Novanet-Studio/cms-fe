@@ -40,6 +40,28 @@
           </div>
         </div>
       </div>
+
+      <div class="grid gap-8 mt-8 grid-cols-1 md:(grid-cols-2 mt-12) lg:(grid-cols-[70%_1fr] mt-24)">
+        <div>
+          <nuxt-img class="h-[400px] w-full" src="https://res.cloudinary.com/novanet-studio/image/upload/v1692046941/ccs-multisport/cms_aliados_physia_31b2222f66.webp" lazy />
+        </div>
+        <div class="flex flex-col gap-6">
+          <div>
+            <h5 class="text-2xl font-extrabold relative mt-2"><logo-dots class="absolute left-0 -top-3" />Ubicación</h5>
+            <p class="mt-2">Estamos ubicados en la Av. Los Mangos de la Alta Florida (Multisport, Caracas)</p>
+          </div>
+          <div>
+            <h5 class="text-2xl font-extrabold relative mt-2"><logo-dots class="absolute left-0 -top-3" />Teléfonos</h5>
+            <p class="mt-2">(+58) 412-5727652</p>
+            <p class="my-2">(+58) 212-7304673</p>
+            <p>(+58) 212-7304356</p>
+          </div>
+          <div>
+            <h5 class="text-2xl font-extrabold relative mt-2"><logo-dots class="absolute left-0 -top-3" />Instagram</h5>
+            <a class="mt-2" :href="aliado?.attributes?.link" target="_blank">@physia.ve</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -48,6 +70,7 @@
 const aliado = ref({});
 const route = useRoute();
 const graphql = useStrapiGraphQL();
+const media = useStrapiMedia()
 
 try {
   const query = await graphql(`
