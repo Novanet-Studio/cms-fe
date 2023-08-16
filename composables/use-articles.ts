@@ -7,9 +7,9 @@ export const useArticles = (
   article: Ref<Project.ArticlesStrapi | null>;
   loading: Ref<boolean>;
 } => {
-  const articles = ref<any>([]);
-  const loading = ref<boolean>(false);
-  const article = ref<Project.ArticlesStrapi | null>(null);
+  const articles = useState<any>('articles', () => []);
+  const loading = useState<boolean>('loadingArticles', () => false);
+  const article = useState<Project.ArticlesStrapi | null>('article', () => null);
   const graphql = useStrapiGraphQL();
 
   onMounted(async () => {
