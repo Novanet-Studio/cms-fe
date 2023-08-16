@@ -70,7 +70,6 @@
 const aliado = ref({});
 const route = useRoute();
 const graphql = useStrapiGraphQL();
-const media = useStrapiMedia()
 
 try {
   const query = await graphql(`
