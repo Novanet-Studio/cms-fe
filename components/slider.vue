@@ -9,9 +9,9 @@
       :modules="[Autoplay, Navigation, Pagination]"
     >
       <swiper-slide v-for="(slide, index) in slides" :key="index">
-        <nuxt-picture
+        <NuxtImg
           :src="slide?.attributes?.url"
-          sizes="xs:100vw sm:640 md:768 lg:1024 xl:1280 xxl:1920"
+          class="w-full"
         />
       </swiper-slide>
     </swiper-container>
