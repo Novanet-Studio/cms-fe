@@ -4,7 +4,7 @@
       class="form"
       name="contacto"
       method="post"
-      action="../pages/gracias"
+      action="/gracias"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
     >
@@ -47,7 +47,7 @@
           rows="5"
           name="mensaje"
           v-model="message"
-          placeholder="Mensaje"
+          placeholder="Mensaje" 
         />
       </div>
 
@@ -58,8 +58,7 @@
           iconName="paper-plane"
           iconSize="1x"
           type="submit"
-          url="/"
-
+          url="/gracias"
         >
           Enviar
         </app-button>
