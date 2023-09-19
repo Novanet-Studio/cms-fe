@@ -4,6 +4,7 @@
       class="form"
       name="contacto"
       method="post"
+      action="/gracias"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
     >
@@ -77,8 +78,6 @@ type Form = {
   message: string;
 };
 
-const router = useRouter();
-
 const schema = yup.object({
   name: yup.string().required('Este campo es requerido'),
   email: yup.string().email().required('Este campo es requerido'),
@@ -124,7 +123,6 @@ const onSubmit = handleSubmit(async (data) => {
         ...mapped,
       }),
     });
-    router.push('/gracias');
   } catch (error: any) {
     console.log(
       'Hubo un error al intentar enviar el formulario: ',
