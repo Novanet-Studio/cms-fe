@@ -47,7 +47,7 @@
           rows="5"
           name="mensaje"
           v-model="message"
-          placeholder="Mensaje"
+          placeholder="Mensaje" 
         />
       </div>
 
@@ -58,7 +58,7 @@
           iconName="paper-plane"
           iconSize="1x"
           type="submit"
-
+          url="/gracias"
         >
           Enviar
         </app-button>
