@@ -57,7 +57,7 @@
           prefix="fa"
           iconName="paper-plane"
           iconSize="1x"
-          @click="onSubmit"
+
         >
           Enviar
         </app-button>
@@ -112,7 +112,7 @@ const encode = (data: any) =>
     .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&');
 
-const onSubmit = handleSubmit(async (data) => {
+/* const onSubmit = handleSubmit(async (data) => {
   try {
     const mapped = mapper(data);
     await fetch('/', {
@@ -129,5 +129,5 @@ const onSubmit = handleSubmit(async (data) => {
       error.message
     );
   }
-});
+}); */
 </script>
