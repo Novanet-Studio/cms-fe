@@ -4,7 +4,6 @@
       class="form"
       name="contacto"
       method="post"
-      action="/gracias"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
     >
@@ -57,6 +56,7 @@
           prefix="fa"
           iconName="paper-plane"
           iconSize="1x"
+          @click="onSubmit"
           type="submit"
           url="/gracias"
         >
@@ -113,7 +113,7 @@ const encode = (data: any) =>
     .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&');
 
-/* const onSubmit = handleSubmit(async (data) => {
+const onSubmit = handleSubmit(async (data) => {
   try {
     const mapped = mapper(data);
     await fetch('/', {
@@ -130,5 +130,5 @@ const encode = (data: any) =>
       error.message
     );
   }
-}); */
+});
 </script>
