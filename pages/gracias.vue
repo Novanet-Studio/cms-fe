@@ -5,7 +5,7 @@
       <p class="text-center mb-8 text-lg mt-4">
         Te estaremos respondiendo lo más pronto posible.
       </p>
-      <app-button class="button--blue" @click="$router.push('/')"
+      <app-button class="button--blue" url="/"
         >Ir a inicio</app-button
       >
     </div>

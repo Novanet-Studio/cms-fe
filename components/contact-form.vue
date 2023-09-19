@@ -57,6 +57,7 @@
           prefix="fa"
           iconName="paper-plane"
           iconSize="1x"
+          type="submit"
 
         >
           Enviar
