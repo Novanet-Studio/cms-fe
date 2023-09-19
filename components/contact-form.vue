@@ -4,7 +4,7 @@
       class="form"
       name="contacto"
       method="post"
-      action="/gracias"
+      action="../pages/gracias"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
     >
@@ -58,6 +58,7 @@
           iconName="paper-plane"
           iconSize="1x"
           type="submit"
+          url="/"
 
         >
           Enviar
