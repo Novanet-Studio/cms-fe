@@ -17,7 +17,7 @@ export const useArticles = (
       loading.value = true;
       const query = await graphql<Project.ArticlesResponse>(`
         query {
-          articulos(sort: "createdAt:asc") {
+          articulos(sort: "createdAt:desc") {
             data {
               attributes {
                 titulo
