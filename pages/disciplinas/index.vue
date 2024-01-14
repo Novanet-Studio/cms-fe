@@ -143,3 +143,22 @@ try {
   console.log(err);
 }
 </script>
+
+<style scoped>
+/* DO NOT REMOVE. FIX BULLETS ISSUE FOR DISCIPLINES PAGE */
+:global(.box > div > div > ul ul) {
+  @apply list-disc list-inside;
+}
+
+:global(.box > div > div > ul p) {
+  @apply text-lg;
+}
+
+:global(.box > div > div > ul p + ul) {
+  @apply pl-2;
+}
+
+:global(.box > div > div > p + ul) {
+  @apply list-disc list-inside pl-2;
+}
+</style>
