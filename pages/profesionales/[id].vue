@@ -75,3 +75,10 @@ const { profesional: profesor } = useProfesionals({
   link: id,
 });
 </script>
+
+<style scoped>
+/* DO NOT REMOVE. FIX BULLETS ISSUE FOR PROFESSIONALS DETAIL PAGE */
+:global(.box > div > div > p > ul) {
+  @apply list-disc list-inside;
+}
+</style>
