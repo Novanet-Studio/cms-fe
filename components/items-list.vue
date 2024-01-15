@@ -69,9 +69,9 @@ const accordionListRef = ref();
 const state = ref<State>({});
 const openMultipleItems = ref(false);
 
-watch(state, () => {
-  console.log(state.value);
-});
+// watch(state, () => {
+//   console.log(state.value);
+// });
 
 defineProps<Props>();
 </script>
@@ -94,7 +94,7 @@ defineProps<Props>();
   @apply mb-0;
 }
 
-:global(.accordion-list .accordion-item--open ) {
+:global(.accordion-list .accordion-item--open) {
   @apply pb-20;
 }
 
@@ -110,25 +110,49 @@ defineProps<Props>();
   @apply bg-transparent;
 }
 
-:global(.accordion-list .accordion-item > .accordion-item__content > .summary-content) {
-  @apply mb-6 ;
+:global(
+    .accordion-list
+      .accordion-item
+      > .accordion-item__content
+      > .summary-content
+  ) {
+  @apply mb-6;
 }
 
-:global(.accordion-list .accordion-item > .accordion-item__content > .summary-content > ol) {
+:global(
+    .accordion-list
+      .accordion-item
+      > .accordion-item__content
+      > .summary-content
+      > ol
+  ) {
   @apply list-none;
   counter-reset: item;
 }
 
-:global(.accordion-list .accordion-item > .accordion-item__content > .summary-content > ol > li) {
+:global(
+    .accordion-list
+      .accordion-item
+      > .accordion-item__content
+      > .summary-content
+      > ol
+      > li
+  ) {
   @apply my-4;
   counter-increment: item;
 }
 
-:global(.accordion-list .accordion-item > .accordion-item__content > .summary-content > ol > li:before) {
+:global(
+    .accordion-list
+      .accordion-item
+      > .accordion-item__content
+      > .summary-content
+      > ol
+      > li:before
+  ) {
   @apply font-bold mr-1;
-  content: counter(item)"." ;
+  content: counter(item) ".";
 }
-
 
 :global(.accordion-list .accordion-item > .accordion-item__summary) {
   @apply bg-transparent;

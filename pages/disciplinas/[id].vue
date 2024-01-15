@@ -42,7 +42,7 @@
       <items-list :items="disciplina?.attributes.clases" />
     </div>
 
-    <section v-if="disciplina?.attributes.horarios.length >= 1" class="box">
+    <section v-if="disciplina?.attributes?.horarios?.length >= 1" class="box">
       <h2 class="summary-title">Horarios</h2>
       <div
         v-for="(horario, index) in disciplina?.attributes.horarios"
@@ -66,12 +66,12 @@
         <h3 class="box__title">
           {{ disciplina?.attributes?.informacion_adicional?.titulo }}
         </h3>
-        <p
+        <div
           v-html="
             disciplina?.attributes?.informacion_adicional?.descripcion ||
             `<span>Cargando...</span>`
           "
-        ></p>
+        ></div>
       </div>
     </section>
 
@@ -80,12 +80,12 @@
         <h3 class="box__title">
           {{ disciplina?.attributes?.requisitos?.titulo }}
         </h3>
-        <p
+        <div
           v-html="
             disciplina?.attributes?.requisitos?.descripcion ||
             `<span>Cargando...</span>`
           "
-        ></p>
+        ></div>
       </div>
     </section>
   </div>
@@ -99,3 +99,52 @@ const { discipline: disciplina } = useDisciplines({
   link: id,
 });
 </script>
+
+<style scoped>
+/* DO NOT REMOVE. FIX BULLETS ISSUE FOR DISCIPLINES PAGE (Natacion) */
+ul {
+  @apply list-disc list-inside;
+}
+
+:global(.summary-content > ul) {
+  @apply list-disc list-inside;
+}
+
+:global(.summary-content > ul > ul) {
+  @apply list-disc list-inside pl-3;
+}
+
+:global(.summary-content > ul > li > p) {
+  @apply inline-block;
+}
+
+:global(.summary-content > ul > li > p + ul) {
+  @apply list-disc list-inside pl-4;
+}
+
+:global(.summary-content > h3 + ul ul ul) {
+  @apply list-disc list-inside pl-4;
+}
+
+:global(.summary-content > h3 + ul ul) {
+  @apply list-disc list-inside pl-4;
+}
+
+/* BOX */
+:global(.box > div > h3 + div > ul p) {
+  @apply inline-block;
+}
+
+:global(.box > div > h3 + div > ul) {
+  @apply list-disc list-inside;
+}
+
+/* YOGA */
+:global(.box p + ul) {
+  @apply list-disc list-inside;
+}
+
+:global(.box > h2 + div > div > ul) {
+  @apply list-disc list-inside;
+}
+</style>
