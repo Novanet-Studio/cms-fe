@@ -147,7 +147,7 @@ try {
 <style scoped>
 /* DO NOT REMOVE. FIX BULLETS ISSUE FOR DISCIPLINES PAGE */
 :global(.box > div > div > ul ul) {
-  @apply list-disc list-inside;
+  @apply list-disc pl-4;
 }
 
 :global(.box > div > div > ul p) {
@@ -159,6 +159,6 @@ try {
 }
 
 :global(.box > div > div > p + ul) {
-  @apply list-disc list-inside pl-2;
+  @apply list-disc pl-4;
 }
 </style>

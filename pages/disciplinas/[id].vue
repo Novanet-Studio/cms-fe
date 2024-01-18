@@ -107,11 +107,11 @@ ul {
 }
 
 :global(.summary-content > ul) {
-  @apply list-disc list-inside;
+  @apply list-disc pl-5;
 }
 
 :global(.summary-content > ul > ul) {
-  @apply list-disc list-inside pl-3;
+  @apply list-disc pl-4;
 }
 
 :global(.summary-content > ul > li > p) {
@@ -119,15 +119,15 @@ ul {
 }
 
 :global(.summary-content > ul > li > p + ul) {
-  @apply list-disc list-inside pl-4;
+  @apply list-disc pl-4;
 }
 
 :global(.summary-content > h3 + ul ul ul) {
-  @apply list-disc list-inside pl-4;
+  @apply list-disc;
 }
 
 :global(.summary-content > h3 + ul ul) {
-  @apply list-disc list-inside pl-4;
+  @apply list-disc pl-4;
 }
 
 /* BOX */
@@ -136,15 +136,15 @@ ul {
 }
 
 :global(.box > div > h3 + div > ul) {
-  @apply list-disc list-inside;
+  @apply list-disc pl-4;
 }
 
 /* YOGA */
 :global(.box p + ul) {
-  @apply list-disc list-inside;
+  @apply list-disc pl-4;
 }
 
 :global(.box > h2 + div > div > ul) {
-  @apply list-disc list-inside;
+  @apply list-disc pl-4;
 }
 </style>
