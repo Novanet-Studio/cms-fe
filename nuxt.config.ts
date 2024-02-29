@@ -5,9 +5,9 @@ export default defineNuxtConfig({
   telemetry: false,
   app: {
     pageTransition: {
-      name: 'page',
-      mode: 'out-in'
-    }
+      name: "page",
+      mode: "out-in",
+    },
   },
   build: {
     transpile: [
@@ -19,7 +19,7 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    "@nuxt/image-edge",
+    "@nuxt/image",
     "@nuxtjs/strapi",
     "@kevinmarrec/nuxt-pwa",
     "nuxt-windicss",
@@ -36,8 +36,9 @@ export default defineNuxtConfig({
 
   vue: {
     compilerOptions: {
-      isCustomElement: (tag) => ['swiper-container', 'swiper-slide'].includes(tag)
-    }
+      isCustomElement: (tag) =>
+        ["swiper-container", "swiper-slide"].includes(tag),
+    },
   },
 
   typescript: {
