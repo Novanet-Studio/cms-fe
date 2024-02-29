@@ -38,7 +38,7 @@ defineProps<Props>();
       <h2 class="contacto__subtitle">Redes sociales</h2>
       <div>
         <a class="contacto__link" :href="link" target="_blank">
-          <font-awesome-icon :icon="['fab', `${icono}`]" />
+          <font-awesome-icon :icon="['fab', `${icono}`]" v-if="icono" />
           {{ handle }}
         </a>
       </div>
