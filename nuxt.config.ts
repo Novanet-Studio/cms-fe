@@ -4,6 +4,14 @@ import pwa from "./pwa";
 export default defineNuxtConfig({
   telemetry: false,
   app: {
+    head: {
+      script: [
+        {
+          type: "text/javascript",
+          src: "metrics.js",
+        },
+      ],
+    },
     pageTransition: {
       name: "page",
       mode: "out-in",
