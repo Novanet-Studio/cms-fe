@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="10.594675mm"
+   height="3.02705mm"
+   viewBox="0 0 40.042867 11.440819"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="dots.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     showgrid="false"
+     showguides="true"
+     inkscape:zoom="16"
+     inkscape:cx="37.03125"
+     inkscape:cy="14.4375"
+     inkscape:window-width="1920"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <sodipodi:guide
+       position="40.000003,7.0658182"
+       orientation="1,0"
+       id="guide9220"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <circle
+       style="fill:#001e61;fill-opacity:1;stroke-width:0.0237796"
+       id="path234"
+       cx="-5.7204094"
+       cy="-5.7204094"
+       transform="scale(-1)"
+       r="5.7204094" />
+    <circle
+       style="fill:#f18a00;fill-opacity:1;stroke-width:0.0237796"
+       id="path234-6"
+       cx="20.021433"
+       cy="-5.7204094"
+       transform="scale(1,-1)"
+       r="5.7204094" />
+    <circle
+       style="fill:#231f20;fill-opacity:1;stroke-width:0.0237796"
+       id="path234-6-7"
+       cx="34.322456"
+       cy="-5.7204094"
+       transform="scale(1,-1)"
+       r="5.7204094" />
+  </g>
+</svg>
