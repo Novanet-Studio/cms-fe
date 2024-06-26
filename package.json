@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "cms-fe",
   "private": true,
   "type": "module",
   "scripts": {
@@ -24,6 +24,7 @@
     "@nuxtjs/seo": "2.0.0-rc.11",
     "@nuxtjs/strapi": "^1.12.0",
     "@nuxtjs/tailwindcss": "^6.12.0",
+    "@tailwindcss/forms": "^0.5.7",
     "@types/markdown-it": "^14.1.1",
     "nuxt-gtag": "^2.0.6"
   }
