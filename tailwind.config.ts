@@ -1,6 +1,3 @@
-import { iconsPlugin, getIconCollections } from "@egoist/tailwindcss-icons";
-import defaultTheme from "tailwindcss/defaultTheme";
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   theme: {
@@ -16,15 +13,9 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ['"Nunito Sans"', ...defaultTheme.fontFamily.sans],
+        sans: ['"Nunito Sans"'],
       },
     },
   },
-  plugins: [
-    require("@tailwindcss/forms"),
-    iconsPlugin({
-      // Select the icon collections you want to use
-      collections: getIconCollections(["fa-solid", "fa-brands"]),
-    }),
-  ],
+  plugins: [],
 };

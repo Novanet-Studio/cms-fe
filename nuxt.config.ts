@@ -10,6 +10,15 @@ export default defineNuxtConfig({
     "@nuxt/ui",
   ],
 
+  ui: {
+    icons: ["fa-solid", "fa-brands"],
+  },
+
+  colorMode: {
+    preference: "ligth",
+    fallback: "light",
+  },
+
   googleFonts: {
     families: {
       "Nunito Sans": [300, 900],

@@ -10,12 +10,12 @@
       <button
         class="w-12 h-12 rounded-full bg-[var(--color-primary)] flex items-center justify-center"
       >
-        <div class="i-fa-solid-bars text-xl text-white"></div>
+        <UIcon name="i-fa-solid-bars" class="text-xl w-8 text-white" />
       </button>
       <button
         class="w-12 h-12 rounded-full bg-[var(--color-primary)] flex items-center justify-center"
       >
-        <div class="i-fa-solid-sign-in-alt text-xl text-white"></div>
+        <UIcon name="i-fa-solid-sign-in-alt" class="text-xl text-white" />
       </button>
     </div>
   </header>
