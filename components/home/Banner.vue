@@ -30,6 +30,8 @@ const items = [
       class="rounded-r-lg overflow-hidden"
       arrows
     >
+      <!-- :next-button="{ icon: 'i-fa-solid-chevron-right' }"
+      :prev-button="{ icon: 'i-fa-solid-chevron-left' }" -->
       <img :src="item" class="w-full" draggable="false" />
     </UCarousel>
   </section>
