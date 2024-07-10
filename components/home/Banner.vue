@@ -10,27 +10,26 @@ const items = [
 </script>
 
 <template>
-  <section class="grid lg:grid-cols-[26.5rem_1fr] max-h-[33.75rem]">
-    <aside
-      class="bg-[var(--color-tertiary)] text-white p-10 flex flex-col justify-center gap-4 rounded-l-md"
-    >
-      <h2 class="font-black text-[44px] leading-[50px] text-balance">
-        Bienvenidos al Ccs MultiSport
-      </h2>
-      <p class="text-xl">
-        Somos un centro deportivo integral para todo público; cada deportista es
-        un mundo diferente, atenderlo es el motivo que nos mueve a superarnos
-        para ser cada día mejor.
-      </p>
-    </aside>
-    <UCarousel
-      v-slot="{ item }"
-      :items="items"
-      :ui="{ item: 'basis-full' }"
-      class="rounded-r-lg overflow-hidden"
-      arrows
-    >
-      <img :src="item" class="w-full" draggable="false" />
-    </UCarousel>
-  </section>
+  <CommonBanner
+    title="Bienvenidos al Ccs MultiSport"
+    description="Somos un centro deportivo integral para todo público; cada deportista es un mundo diferente, atenderlo es el motivo que nos mueve a superarnos para ser cada día mejor."
+    content-position="left"
+    :ui="{
+      aside: {
+        base: 'bg-[var(--color-tertiary)] justify-center',
+        title: 'text-[44px]',
+      },
+    }"
+  >
+    <template #main>
+      <UCarousel
+        v-slot="{ item }"
+        :items="items"
+        :ui="{ item: 'basis-full' }"
+        class="overflow-hidden rounded-r-md"
+      >
+        <img :src="item" class="w-full" draggable="false" />
+      </UCarousel>
+    </template>
+  </CommonBanner>
 </template>
