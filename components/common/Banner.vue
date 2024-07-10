@@ -40,7 +40,7 @@ const classes = computed(() => {
 
   return {
     container: `${container} ${props.ui?.container}`,
-    aside: `${asideCorner} ${asideOrder} ${props.ui?.aside?.base}`,
+    aside: `bg-[var(--color-secondary)] text-white ${asideCorner} ${asideOrder} ${props.ui?.aside?.base}`,
   };
 });
 </script>
@@ -56,10 +56,7 @@ const classes = computed(() => {
     >
       <slot name="main" />
     </div>
-    <aside
-      class="bg-[var(--color-secondary)] text-white p-8 flex flex-col gap-4"
-      :class="classes.aside"
-    >
+    <aside class="p-8 flex flex-col gap-4" :class="classes.aside">
       <slot name="aside">
         <h2
           class="font-black text-[37px] leading-[50px] text-pretty"

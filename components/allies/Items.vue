@@ -1,5 +1,5 @@
 <template>
-  <section class="my-10 flex flex-col gap-8">
+  <section class="flex flex-col gap-8">
     <AlliesTitle />
     <HomeAlliesItems />
   </section>
