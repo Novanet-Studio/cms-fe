@@ -27,7 +27,7 @@ const items = [
       Opciones de descuento
     </h3>
     <UCarousel
-      v-slot="{ item, index }"
+      v-slot="{ item: { title, description, color }, index }"
       arrows
       :items
       :prev-button="{
@@ -42,20 +42,14 @@ const items = [
       }"
     >
       <div class="mx-auto py-10">
-        <div
-          class="size-[23rem] rounded-full outline-offset-[1.7rem] outline-1 outline flex flex-col text-white p-4 transition ease"
+        <CommonRoundedCard
+          :title
+          :description
           :style="{
-            backgroundColor: item.color,
-            outlineColor: item.color,
+            backgroundColor: color,
+            outlineColor: color,
           }"
-        >
-          <h4 class="font-black text-3xl text-center mt-28">
-            {{ item.title }}
-          </h4>
-          <p class="text-xl text-center">
-            {{ item.description }}
-          </p>
-        </div>
+        />
       </div>
     </UCarousel>
   </section>
