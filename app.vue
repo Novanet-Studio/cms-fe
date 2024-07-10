@@ -1,3 +1,16 @@
+<script setup lang="ts">
+useHead({
+  meta: [
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
+    { key: "theme-color", name: "theme-color", content: "light" },
+  ],
+  link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],
+  htmlAttrs: {
+    lang: "es",
+  },
+});
+</script>
+
 <template>
   <div class="container">
     <NuxtLayout>
