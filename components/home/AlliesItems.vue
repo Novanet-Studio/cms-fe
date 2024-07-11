@@ -48,6 +48,7 @@ const {
         <NuxtPicture
           :src="ally.attributes.imagen.data.attributes.url"
           :alt="ally.attributes.imagen.data.attributes.alternativeText"
+          placeholder
         />
       </div>
       <div class="mt-2">
