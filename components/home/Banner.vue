@@ -20,6 +20,7 @@ const items = [
         title: 'text-[44px]',
       },
     }"
+    class="mb-12"
   >
     <template #main>
       <UCarousel
