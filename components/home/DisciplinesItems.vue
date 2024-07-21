@@ -1,11 +1,14 @@
 <script setup lang="ts">
+import { useQuery } from "@tanstack/vue-query";
 const gql = useStrapiGraphQL();
 
-const {
-  data: {
-    disciplinas: { data: disciplines },
-  },
-} = await gql<any>(`
+// const {
+//   data: {
+//     disciplinas: { data: disciplines },
+//   },
+// } = await ;
+
+const fetchDisciplines = gql<any>(`
   query {
     disciplinas(sort: "id:asc") {
       data {
@@ -25,12 +28,28 @@ const {
     }
   }
 `);
+
+const {
+  data: response,
+  suspense,
+  isLoading,
+} = useQuery({
+  queryKey: ["home-disciplines"],
+  queryFn: () => fetchDisciplines,
+  select({ data }) {
+    return data.disciplinas.data;
+  },
+  // 15 minutes
+  staleTime: 1000 * 60 * 15,
+});
+
+await suspense();
 </script>
 
 <template>
-  <div class="grid lg:grid-cols-4 lg:my-10">
+  <div class="grid grid-cols-2 gap-y-6 place-items-center my-10 lg:grid-cols-4">
     <div
-      v-for="discipline in disciplines"
+      v-for="discipline in response"
       :key="discipline.attributes.nombre"
       class="flex flex-col items-center gap-6"
     >
