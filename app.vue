@@ -16,6 +16,7 @@ useHead({
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
+    <USlideovers />
   </div>
 </template>
 
@@ -26,5 +27,9 @@ useHead({
   --color-tertiary: #231f20;
   --color-gray-mid: #a7a9ac;
   --color-gray-light: #e6e7e8;
+}
+
+.router-link-active {
+  @apply font-black border-b border-b-[var(--color-primary)];
 }
 </style>
