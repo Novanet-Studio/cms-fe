@@ -1,23 +1,72 @@
+<script setup lang="ts">
+import { useQuery } from "@tanstack/vue-query";
+const gql = useStrapiGraphQL();
+
+defineProps({
+  onlyImages: {
+    type: Boolean,
+    default: false,
+  },
+});
+
+const fetchProfessionals = gql<any>(`
+  query {
+    empresa {
+      data {
+        attributes {
+          profesionales {
+            titulo
+            descripcion
+            imagen {
+              data {
+                attributes {
+                  url
+                  alternativeText
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`);
+
+const {
+  data: professionals,
+  suspense,
+  isLoading,
+} = useQuery({
+  queryKey: ["home-professionals"],
+  queryFn: () => fetchProfessionals,
+  select({ data }) {
+    return data.empresa.data.attributes.profesionales;
+  },
+  // 15 minutes
+  staleTime: 1000 * 60 * 15,
+});
+
+await suspense();
+</script>
+
 <template>
-  <section class="grid lg:grid-cols-[47em_1fr]">
+  <section
+    class="grid md:grid-cols-[21em_1fr] lg:grid-cols-[45%_1fr] md:place-items-center lg:my-24"
+  >
     <div>
-      <img src="https://placehold.co/753x655" alt="" />
+      <img
+        :src="professionals.imagen.data.attributes.url"
+        :alt="professionals.imagen.data.attributes.alternativeText"
+      />
     </div>
-    <div class="flex flex-col gap-6 pl-[5.8125rem] justify-center">
-      <h3 class="font-black text-[2.5rem]">Somos profesionales</h3>
-      <!-- Dots goes here -->
+    <div
+      class="flex flex-col gap-6 mt-10 px-4 justify-center lg:pl-[5.8125rem] lg:mt-auto pr-0"
+    >
+      <h3 class="font-black text-[2.5rem] md:text-2xl lg:text-[2.5rem]">
+        {{ professionals.titulo }}
+      </h3>
       <CommonDots class="[&>div]:w-3 [&>div]:h-3 w-max gap-1 -mt-4" />
-      <p class="text-xl">
-        Nuestros profesores cuentan en su mayoría con 5 o más años de
-        experiencia en la enseñanza de la práctica de la natación, con estudios
-        de diplomados en psicología deportiva, natación para niños con
-        discapacidades y preparación física. <br />
-      </p>
-      <p class="text-xl">
-        Además, algunos de ellos participan activamente en la natación
-        competitiva; sus conocimientos y vivencias, han contribuido con la
-        formación de muchos atletas de alta competencia.
-      </p>
+      <p v-html="professionals.descripcion"></p>
 
       <UButton
         label="Ver profesores"

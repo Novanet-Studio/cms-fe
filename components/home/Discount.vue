@@ -23,7 +23,9 @@ const items = [
 
 <template>
   <section class="my-20">
-    <h3 class="font-black text-[40px] text-center mt-[7.75rem] mb-12">
+    <h3
+      class="font-black text-[40px] text-center mt-[7.75rem] md:text-3xl mb-8 lg:mb-12"
+    >
       Opciones de descuento
     </h3>
     <UCarousel
@@ -31,13 +33,13 @@ const items = [
       arrows
       :items
       :prev-button="{
-        class: '-left-12',
+        class: '-left-2 lg:-left-12',
       }"
       :next-button="{
-        class: '-right-12',
+        class: '-right-2 lg:-right-12',
       }"
       :ui="{
-        item: 'basis-full md:basis-1/2 lg:basis-1/3',
+        item: 'basis-full lg:basis-1/2',
         container: 'gap-1',
       }"
     >

@@ -2,12 +2,6 @@
 import { useQuery } from "@tanstack/vue-query";
 const gql = useStrapiGraphQL();
 
-// const {
-//   data: {
-//     disciplinas: { data: disciplines },
-//   },
-// } = await ;
-
 const fetchDisciplines = gql<any>(`
   query {
     disciplinas(sort: "id:asc") {
@@ -47,17 +41,17 @@ await suspense();
 </script>
 
 <template>
-  <div class="grid grid-cols-2 gap-y-6 place-items-center my-10 lg:grid-cols-4">
+  <div class="grid grid-cols-2 gap-y-6 place-items-center my-10 md:grid-cols-4">
     <div
       v-for="discipline in response"
       :key="discipline.attributes.nombre"
       class="flex flex-col items-center gap-6"
     >
       <div
-        class="w-24 h-24 bg-[#f18a00] rounded-full flex justify-center items-center"
+        class="w-24 h-24 md:w-16 md:h-16 bg-[#f18a00] rounded-full flex justify-center items-center lg:w-24 lg:h-24"
       >
         <NuxtImg
-          class="w-12"
+          class="w-12 md:w-10"
           :src="discipline.attributes.icono.data?.attributes?.url"
           :alt="
             discipline.attributes.icono.data?.attributes?.alternativeText ?? ''
@@ -65,9 +59,11 @@ await suspense();
         />
       </div>
       <div class="text-[var(--color-tertiary)] gap-2 text-center">
-        <h4 class="font-black text-3xl">{{ discipline.attributes.nombre }}</h4>
+        <h4 class="font-black text-3xl md:text-xl lg:text-3xl">
+          {{ discipline.attributes.nombre }}
+        </h4>
         <p
-          class="text-lg pb-2 border-b border-b-transparent transition ease hover:border-b-[#f18a00] cursor-pointer"
+          class="text-lg pb-2 border-b border-b-transparent transition ease hover:border-b-[#f18a00] cursor-pointer md:text-sm lg:text-lg"
         >
           Ver información y planes
         </p>
