@@ -1,33 +1,56 @@
 <script setup lang="ts">
-const items = [
-  {
-    title: "Misión",
-    description:
-      "Planificar, dirigir y desarrollar los programas deportivos de alto rendimiento como la natación, acondicionamiento físico integral y las actividades recreativas; como herramientas que ayuden a mejorar la calidad de vida del ser humano.",
-    src: "https://placehold.co/682x511",
-    color: "#A7A9AC",
+import { useQuery } from "@tanstack/vue-query";
+const gql = useStrapiGraphQL();
+
+const fetchCompany = gql<any>(`
+    query {
+      empresa {
+        data {
+          attributes {
+            identidad {
+              titulo
+              descripcion
+              imagen {
+                data {
+                  attributes {
+                    url
+                    alternativeText
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
+const {
+  data: response,
+  suspense,
+  isLoading,
+} = useQuery({
+  queryKey: ["about-philosophy"],
+  queryFn: () => fetchCompany,
+  select({ data }) {
+    return data.empresa.data.attributes.identidad.map((identity) => ({
+      title: identity.titulo,
+      description: identity.descripcion,
+      src: identity.imagen.data.attributes.url,
+      color: "#A7A9AC",
+    }));
   },
-  {
-    title: "Visión",
-    description:
-      "Contribuir con la formación integral deportiva de niños, jóvenes y adultos; incorporando el mayor número de personas a la práctica deportiva, sembrando el sentido de espíritu deportivo y la salud para desarrollarse en el ámbito competitivo en la sociedad venezolana.",
-    src: "https://placehold.co/682x511",
-    color: "#A7A9AC",
-  },
-  {
-    title: "Valores",
-    description:
-      "Nos caracterizamos por poner en práctica el trabajo en equipo, con lealtad, responsabilidad, actitud positiva, autoestima, espíritu de colaboración, capacidad para compartir, entusiasmo y solidaridad. Promovemos la disposición al trabajo en situaciones bajo presión cuando algunas actividades del ámbito deportivo así lo ameriten.",
-    src: "https://placehold.co/682x511",
-    color: "#A7A9AC",
-  },
-];
+  // 15 minutes
+  staleTime: 1000 * 60 * 15,
+});
+
+await suspense();
 </script>
 
 <template>
-  <section class="grid grid-cols-3 gap-10">
+  <section class="grid md:grid-cols-2 md:gap-x-10 lg:gap-10 lg:grid-cols-3">
     <CommonRoundedCard
-      v-for="{ title, description, src, color } in items"
+      v-for="{ title, description, src, color } in response"
       :title
       :description
       :src

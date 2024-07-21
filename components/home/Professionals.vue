@@ -62,7 +62,7 @@ await suspense();
     <div
       class="flex flex-col gap-6 mt-10 px-4 justify-center lg:pl-[5.8125rem] lg:mt-auto pr-0"
     >
-      <h3 class="font-black text-[2.5rem] md:text-2xl lg:text-[2.5rem]">
+      <h3 class="font-black text-2xl lg:text-[2.5rem]">
         {{ professionals.titulo }}
       </h3>
       <CommonDots class="[&>div]:w-3 [&>div]:h-3 w-max gap-1 -mt-4" />

@@ -1,13 +1,15 @@
 <template>
   <section class="flex flex-col justify-center gap-4">
-    <h3 class="font-black text-[40px] text-center mt-[7.75rem]">
+    <h3
+      class="font-black text-3xl lg:text-[40px] md:text-3xl text-center mt-[7.75rem]"
+    >
       Normas del centro deportivo
     </h3>
     <p class="lg:text-3xl text-balance text-center">
-      Lorem ipsum dolor sit amet consectetur. Fringilla suspendisse mi nunc
-      vitae tristique sed accumsan sed scelerisque. Egestas nunc sodales turpis
-      nulla nulla egestas. Suspendisse sit magna neque eu. Semper quam amet
-      gravida proin at eget duis vestibulum a.
+      Aquí podrás encontrar las normas y aspectos importantes de la estructura y
+      el funcionamiento general del Ccs MultiSport. Nuestro objetivo es
+      garantizar a usted y sus representados el mejor de los servicios. Para ver
+      las normas completas haga click en el botón de descargar:
     </p>
     <UButton
       label="Descargar"

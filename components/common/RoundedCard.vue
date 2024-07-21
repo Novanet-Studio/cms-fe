@@ -28,7 +28,7 @@ const base = computed(() => {
 <template>
   <div class="flex rounded-full" :class="base">
     <div
-      class="size-[23rem] rounded-full outline-offset-[1.7rem] outline-1 outline flex flex-col text-white p-4 transition ease items-center justify-center"
+      class="size-[21rem] rounded-full outline-offset-[0.5rem] outline-1 outline flex flex-col text-white p-4 transition ease items-center justify-center lg:outline-offset-[0.5rem] lg:size-[22rem]"
       v-bind="attrs"
     >
       <h4 v-if="title && !src" class="font-black text-3xl text-center mt-28">
@@ -38,17 +38,17 @@ const base = computed(() => {
         {{ description }}
       </p>
       <div
-        class="w-[22rem] h-[22rem] rounded-full bg-cover bg-center"
+        class="size-[19rem] rounded-full bg-cover bg-center lg:w-[20rem] lg:h-[20rem]"
         :style="{
           backgroundImage: `url(${src})`,
         }"
       ></div>
     </div>
     <div v-if="src && (title || description)">
-      <h4 class="font-black text-3xl text-center mt-10">
+      <h4 class="font-black text-2xl text-center mt-8 lg:mt-10 lg:text-3xl">
         {{ title }}
       </h4>
-      <p v-if="description" class="text-xl text-center">
+      <p v-if="description" class="text-lg text-center lg:text-xl">
         {{ description }}
       </p>
     </div>

@@ -36,7 +36,7 @@ const classes = computed(() => {
   const asideCorner =
     props.contentPosition === "left"
       ? "rounded-tr-md rounded-l-md md:rounded-tr-none"
-      : "rounded-bl-none rounded-r-md md:rounded-bl-none";
+      : "rounded-bl-md rounded-bl-none rounded-r-md";
 
   const asideOrder = props.contentPosition === "left" ? "order-1" : "order-2";
 
