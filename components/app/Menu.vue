@@ -65,19 +65,7 @@ const menu = [
       }"
     >
       <template #header>
-        <div class="flex items-center justify-between">
-          <h3
-            class="text-base font-semibold leading-6 text-gray-900 dark:text-white"
-          >
-            <!-- Opened programmatically: {{ props.count }} times -->
-          </h3>
-          <!-- <UButton
-            color="gray"
-            variant="ghost"
-            icon="i-heroicons-x-mark-20-solid"
-            class="-my-1"
-            @click="emits('close')"
-          /> -->
+        <div class="flex items-center justify-end">
           <button
             class="w-12 h-12 rounded-full bg-[var(--color-primary)] flex items-center justify-center"
             @click="emits('close')"
