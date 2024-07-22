@@ -61,10 +61,18 @@ await suspense();
 
 <template>
   <div
-    class="grid grid-cols-2 gap-6"
-    :class="{ 'place-items-center md:grid-cols-4 lg:grid-cols-6': onlyImages }"
+    class="grid gap-6"
+    :class="{
+      'grid-cols-2 place-items-center md:grid-cols-4 lg:grid-cols-6':
+        onlyImages,
+    }"
   >
-    <div class="flex gap-4" v-for="ally in allies" :key="ally.id">
+    <div
+      class="flex gap-4"
+      :class="{ 'flex-col md:flex-row md:gap-8': !isOnlyImages }"
+      v-for="ally in allies"
+      :key="ally.id"
+    >
       <div
         class="size-[9rem] min-w-[9rem] min-h-[9rem] rounded-xl p-3 border border-[#A7A9ACBF]"
       >
