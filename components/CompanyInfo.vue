@@ -1,7 +1,7 @@
 <template>
   <aside class="flex flex-col gap-4">
     <div class="contacto__group">
-      <h2 class="font-black text-xl text-[#231f20]">Ubicación</h2>
+      <h2 class="font-black text-sm text-[#231f20] md:text-xl">Ubicación</h2>
       <p class="text-sm text-[#231f20]">
         Urb. Alta Florida Av. Los Mangos Quinta Caracas Multisport (al frente de
         la Plaza Benito Juárez subiendo a la Cota Mil).
@@ -17,20 +17,24 @@
       </p>
     </div>
     <div class="contacto__group">
-      <h2 class="font-black text-xl text-[#231f20]">Información general</h2>
+      <h2 class="font-black text-sm text-[#231f20] md:text-xl">
+        Información general
+      </h2>
       <p class="text-sm text-[#231f20]">info@ccsmultisport.com</p>
     </div>
 
     <div class="contacto__group">
-      <h2 class="font-black text-xl text-[#231f20]">Buzón de sugerencias</h2>
+      <h2 class="font-black text-sm text-[#231f20] md:text-xl">
+        Buzón de sugerencias
+      </h2>
       <p class="text-sm text-[#231f20]">sugerencias@ccsmultisport.com</p>
     </div>
     <div class="contacto__group">
-      <h2 class="font-black text-xl text-[#231f20]">Teléfonos</h2>
+      <h2 class="font-black text-sm text-[#231f20] md:text-xl">Teléfonos</h2>
       <p class="text-sm text-[#231f20]">+58 212-935.45.46 / 0212–935.45.46</p>
     </div>
     <div class="contacto__group">
-      <h2 class="font-black text-xl text-[#231f20]">WhatsApp</h2>
+      <h2 class="font-black text-sm text-[#231f20] md:text-xl">WhatsApp</h2>
       <div>
         <a
           class="text-[var(--color-primary)]"
@@ -43,7 +47,9 @@
     </div>
 
     <div class="contacto__group">
-      <h2 class="font-black text-xl text-[#231f20]">Redes sociales</h2>
+      <h2 class="font-black text-sm text-[#231f20] md:text-xl">
+        Redes sociales
+      </h2>
       <div class="flex gap-2">
         <a
           class="text-[var(--color-primary)]"
