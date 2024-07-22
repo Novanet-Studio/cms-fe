@@ -61,7 +61,7 @@ const menu = [
       :ui="{
         body: { base: 'flex-1' },
         ring: '',
-        divide: 'divide-y divide-gray-100 dark:divide-gray-800',
+        divide: 'divide-none',
       }"
     >
       <template #header>
