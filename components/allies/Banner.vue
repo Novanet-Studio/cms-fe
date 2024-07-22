@@ -21,7 +21,7 @@ const items = [
         v-slot="{ item }"
         :items="items"
         :ui="{ item: 'basis-full' }"
-        class="overflow-hidden rounded-t-md md:rounded-l-md md:rounded-tr-none min-h-[17.81rem] md:min-h-[18.31] lg:min-h-[540px]"
+        class="overflow-hidden rounded-t-md md:rounded-l-md md:rounded-tr-none min-h-[17.81rem] md:min-h-[18.31] lg:max-h-[540px]"
       >
         <img
           :src="item"

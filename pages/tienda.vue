@@ -1,22 +1,17 @@
 <script setup lang="ts">
 const items = [
-  "https://picsum.photos/1920/1080?random=1",
-  "https://picsum.photos/1920/1080?random=2",
-  "https://picsum.photos/1920/1080?random=3",
-  "https://picsum.photos/1920/1080?random=4",
-  "https://picsum.photos/1920/1080?random=5",
-  "https://picsum.photos/1920/1080?random=6",
+  "https://res.cloudinary.com/novanet-studio/image/upload/v1679080991/ccs-multisport/cms_tienda_maniquies_exhibicion_ab9a16ab35.webp",
 ];
 </script>
 
 <template>
-  <section>
+  <section class="mb-40">
     <CommonBanner
       title="Próximamente"
       description="Tienda de artículos deportivos y natación para niños, niñas, damas y caballeros. CTA con vínculo a la página de contacto."
       :ui="{
         aside: {
-          base: 'justify-center',
+          base: 'justify-center py-20',
         },
       }"
     >
@@ -25,10 +20,10 @@ const items = [
           v-slot="{ item }"
           :items="items"
           :ui="{ item: 'basis-full' }"
-          class="overflow-hidden rounded-l-md"
+          class="overflow-hidden rounded-t-md md:rounded-l-md md:rounded-tr-none min-h-[17.81rem] md:min-h-[18.31] lg:max-h-[33.75rem]"
         >
           <NuxtImg
-            class="w-full"
+            class="w-full object-cover min-h-[17.81rem] md:min-h-[18.31] lg:min-h-[33.75rem]"
             :src="item"
             alt="image"
             :placeholder="[1196, 540, 75, 5]"

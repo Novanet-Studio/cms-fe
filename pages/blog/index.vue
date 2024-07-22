@@ -18,26 +18,31 @@ const excerpt = (string: string, indexEnd: number) =>
   <section>
     <UCarousel
       v-slot="{ item }"
-      :items="items"
+      :items="articles"
       :ui="{ item: 'basis-full' }"
-      class="overflow-hidden rounded-md max-h-[33.75rem]"
+      class="overflow-hidden rounded-md min-h-[17.81rem] md:min-h-[18.31] lg:min-h-[33.75rem]"
       arrows
     >
-      <img :src="item" class="w-full" draggable="false" />
+      <img
+        :src="item.attributes.imagen.data.attributes.url"
+        :alt="item.attributes.imagen.data.attributes.alternativeText"
+        class="w-full object-cover min-h-[17.81rem] md:min-h-[18.31] lg:min-h-[33.75rem]"
+        draggable="false"
+      />
     </UCarousel>
 
-    <CommonTitle>Artículos</CommonTitle>
+    <CommonTitle class="my-12 md:my-14 lg:my-16">Artículos</CommonTitle>
 
     <div
-      class="grid lg:grid-cols-2 lg:my-20 lg:gap-20 place-items-center place-content-center"
+      class="grid gap-8 place-items-center place-content-center md:grid-cols-2 lg:my-20 lg:gap-20"
     >
       <article
-        class="flex gap-4"
+        class="flex flex-col gap-4 lg:flex-row md:self-start"
         v-for="post in articles"
         :key="post.attributes.slug"
       >
         <div
-          class="max-w-[19rem] h-max rounded-xl p-3 border border-[#A7A9ACBF]"
+          class="w-full h-max rounded-xl p-3 border border-[#A7A9ACBF] md:max-w-[19rem]"
         >
           <NuxtPicture
             :src="post.attributes.imagen.data.attributes.url"
@@ -56,7 +61,7 @@ const excerpt = (string: string, indexEnd: number) =>
               base: 'self-start',
               rounded: 'rounded-full',
               variant: {
-                solid: 'bg-[#f18a00] font-bold px-8 py-4',
+                solid: 'bg-[#f18a00] font-bold px-10 md:px-8 md:py-4',
                 link: 'text-[#f18a00] underline',
               },
             }"
