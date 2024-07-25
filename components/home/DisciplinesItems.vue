@@ -62,11 +62,13 @@ await suspense();
         <h4 class="font-black text-3xl md:text-xl lg:text-3xl">
           {{ discipline.attributes.nombre }}
         </h4>
-        <p
-          class="text-lg pb-2 border-b border-b-transparent transition ease hover:border-b-[#f18a00] cursor-pointer md:text-sm lg:text-lg"
+        <NuxtLink
+          class="text-lg pb-2 border-b !border-b-transparent transition ease hover:border-b-[#f18a00] cursor-pointer md:text-sm lg:text-lg"
+          :to="`/disciplinas/${discipline.attributes.link}`"
+          active-class="s"
         >
           Ver información y planes
-        </p>
+        </NuxtLink>
       </div>
     </div>
   </div>
