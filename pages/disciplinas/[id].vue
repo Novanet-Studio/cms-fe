@@ -65,15 +65,14 @@ const items = computed(() => {
         >
           <img :src="disciplina?.attributes?.icono.data.attributes.url" />
         </div>
-        <!-- <h1 class="disciplina__title">
-          {{ disciplina?.attributes?.nombre || "Cargando..." }}
-        </h1> -->
       </div>
     </section>
 
     <section class="bg-[#E6E7E8] rounded-2xl grid md:grid-cols-[1fr_40%]">
       <div class="box p-6">
-        <CommonTitle class="mb-4 !items-start">
+        <CommonTitle
+          class="mb-4 !items-start [&_h3]:text-2xl gap-2 [&_div_div]:w-2 [&_div_div]:h-2"
+        >
           {{ disciplina?.attributes?.nombre || "Cargando..." }}
         </CommonTitle>
         <div
@@ -100,7 +99,9 @@ const items = computed(() => {
       </h3>
 
       <div class="flex flex-col gap-10 md:flex-row">
-        <div class="ring-1 ring-offset-8 ring-[#E6E7E8] rounded-2xl md:flex-1">
+        <div
+          class="ring-1 ring-offset-8 ring-[#E6E7E8] rounded-2xl md:flex-1 md:self-start"
+        >
           <UAccordion
             class="rounded-xl"
             color="transparent"
@@ -109,7 +110,7 @@ const items = computed(() => {
             :ui="{
               wrapper: 'gap-6',
               container:
-                'bg-gradient-to-r from-[#f3f3f4] to-[#E6E7E8] shadow-sm rounded-lg border border-[#9E9E9E]',
+                'bg-gradient-to-r from-[#f3f3f4] to-[#E6E7E8] shadow-sm rounded-lg border border-[#9E9E9E] md:shadow-md',
               item: {
                 base: 'text-[#231F20] p-6 box',
               },
@@ -155,7 +156,7 @@ const items = computed(() => {
         ¿Cuáles son las clases que manejamos?
       </h3>
 
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div
           v-for="item in disciplina.attributes.clases"
           class="relative w-full"
@@ -204,11 +205,11 @@ const items = computed(() => {
       </div> -->
     </section>
 
-    <UModal v-model="isOpen">
+    <UModal v-model="isOpen" :ui="{ width: 'md:max-w-3xl lg:max-w-6xl' }">
       <section class="p-4">
         <header class="flex items-center justify-end">
           <button
-            class="w-12 h-12 rounded-full bg-[var(--color-primary)] flex items-center justify-center"
+            class="w-10 h-10 rounded-full bg-[var(--color-primary)] flex items-center justify-center lg:w-12 lg:h-12"
             @click="
               () => {
                 isOpen = false;
@@ -219,9 +220,13 @@ const items = computed(() => {
             <UIcon name="i-fa-solid-times" class="text-xl w-8 text-white" />
           </button>
         </header>
-        <section class="bg-[#E6E7E8] rounded-2xl grid md:grid-cols-[1fr_40%]">
+        <section
+          class="bg-[#E6E7E8] rounded-2xl grid md:grid-cols-[1fr_40%] mt-4 md:min-w-[720px]"
+        >
           <div class="box p-6">
-            <CommonTitle class="mb-4 !items-start">
+            <CommonTitle
+              class="mb-4 !items-start [&_h3]:text-2xl [&_h3]:text-left [&_h3]:text-balance"
+            >
               {{ info.titulo || "Cargando..." }}
             </CommonTitle>
             <div
@@ -243,7 +248,7 @@ const items = computed(() => {
 
           <div class="flex flex-col gap-10 md:flex-row">
             <div
-              class="ring-1 ring-offset-8 ring-[#E6E7E8] rounded-2xl md:flex-1"
+              class="ring-1 ring-offset-8 ring-[#E6E7E8] rounded-2xl md:flex-1 md:self-start"
             >
               <UAccordion
                 class="rounded-xl"
@@ -264,7 +269,7 @@ const items = computed(() => {
                 :ui="{
                   wrapper: 'gap-6',
                   container:
-                    'bg-gradient-to-r from-[#f3f3f4] to-[#E6E7E8] shadow-sm rounded-lg border border-[#9E9E9E]',
+                    'bg-gradient-to-r from-[#f3f3f4] to-[#E6E7E8] shadow-sm rounded-lg border border-[#9E9E9E] md:shadow-md',
                   item: {
                     base: 'text-[#231F20] p-6 box',
                   },
