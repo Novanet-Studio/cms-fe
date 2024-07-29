@@ -45,10 +45,19 @@ const base = computed(() => {
       ></div>
     </div>
     <div v-if="src && (title || description)">
-      <h4 class="font-black text-2xl text-center mt-8 lg:mt-10 lg:text-3xl">
+      <template v-if="$slots.content">
+        <slot name="content" />
+      </template>
+      <h4
+        v-if="!$slots.content"
+        class="font-black text-2xl text-center mt-8 lg:mt-10 lg:text-3xl"
+      >
         {{ title }}
       </h4>
-      <p v-if="description" class="text-lg text-center lg:text-xl">
+      <p
+        v-if="description || !$slots.content"
+        class="text-lg text-center lg:text-xl"
+      >
         {{ description }}
       </p>
     </div>

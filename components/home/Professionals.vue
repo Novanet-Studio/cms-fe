@@ -78,6 +78,7 @@ await suspense();
             solid: 'bg-[#f18a00] font-bold px-8 py-4',
           },
         }"
+        @click="() => $router.push('/profesionales')"
       />
     </div>
   </section>
