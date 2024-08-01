@@ -1,6 +1,15 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
+  app: {
+    pageTransition: {
+      enterFromClass: "opacity-0",
+      enterActiveClass: "transition duration-300",
+      mode: "out-in"
+    }
+  },
+  
   modules: [
     "@nuxt/image",
     "@nuxtjs/google-fonts",
