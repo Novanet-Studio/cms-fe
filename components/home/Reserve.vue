@@ -23,7 +23,7 @@
         base: 'self-center',
         rounded: 'rounded-full',
         variant: {
-          solid: 'bg-[#f18a00] font-bold px-8 py-4',
+          solid: 'bg-[#f18a00] font-bold px-8 py-4 hover:bg-[#f18900c7]',
         },
       }"
     />

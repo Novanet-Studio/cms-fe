@@ -54,12 +54,12 @@ await suspense();
   <section>
     <div class="my-8">
       <UButton
-        label="Volver"
+        label="Volver al blog"
         :ui="{
           base: 'self-start',
           rounded: 'rounded-full',
           variant: {
-            solid: 'bg-[#f18a00] font-bold px-8 py-3 hover:opacity-30',
+            solid: 'bg-[#f18a00] font-bold px-8 py-3 hover:bg-[#f18900c7]',
           },
         }"
         @click="() => $router.push('/blog')"

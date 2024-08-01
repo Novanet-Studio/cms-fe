@@ -61,7 +61,7 @@ const excerpt = (string: string, indexEnd: number) =>
               base: 'self-start',
               rounded: 'rounded-full',
               variant: {
-                solid: 'bg-[#f18a00] font-bold px-10 md:px-8 md:py-4',
+                solid: 'bg-[#f18a00] font-bold px-10 md:px-8 md:py-4 hover:bg-[#f18900c7]',
                 link: 'text-[#f18a00] underline',
               },
             }"

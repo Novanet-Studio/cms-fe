@@ -144,7 +144,7 @@ await suspense();
                 base: 'self-start',
                 rounded: 'rounded-full',
                 variant: {
-                  solid: 'bg-[#001E61] font-bold px-6',
+                  solid: 'bg-[#001E61] font-bold px-6 hover:bg-[#001f61d8]',
                 },
               }"
             />
