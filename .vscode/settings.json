@@ -2,7 +2,9 @@
   "tailwindCSS.experimental.configFile": "tailwind.config.ts",
   "tailwindCSS.experimental.classRegex": [
     ["ui:\\s*{([^)]*)\\s*}", "[\"'`]([^\"'`]*).*?[\"'`]"],
-    ["/\\*\\s?ui\\s?\\*/\\s*{([^;]*)}", ":\\s*[\"'`]([^\"'`]*).*?[\"'`]"]
+    ["/\\*\\s?ui\\s?\\*/\\s*{([^;]*)}", ":\\s*[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
   ],
   "tailwindCSS.classAttributes": [
     "class",
