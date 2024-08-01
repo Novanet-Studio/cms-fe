@@ -29,25 +29,6 @@ const props = withDefaults(defineProps<Props>(), {
   },
 });
 
-// const classes = computed(() => {
-//   // const container =
-//   //   props.contentPosition === "left"
-//   //     ? "md:grid-cols-[18rem_1fr] lg:grid-cols-[27rem_1fr] [&:first-child]:order-2"
-//   //     : "md:grid-cols-[1fr_18rem] lg:grid-cols-[1fr_27rem] [&:first-child]:rounded-r-lg";
-
-//   const asideCorner =
-//     props.contentPosition === "left"
-//       ? "rounded-tr-md rounded-l-md md:rounded-tr-none"
-//       : "rounded-bl-md rounded-bl-none rounded-r-md";
-
-//   const asideOrder = props.contentPosition === "left" ? "ordeclasses.containerr-1" : "order-2";
-
-//   return {
-//     // container: `${container} ${props.ui?.container}`,
-//     aside: `bg-[var(--color-secondary)] text-white ${asideCorner} ${asideOrder} ${props.ui?.aside?.base}`,
-//   };
-// });
-
 const containerVariants = cva('grid min-h-[17.81rem] md:min-h-[18.31] lg:max-h-[33.75rem]', {
   variants: {
     position: {
@@ -110,4 +91,3 @@ const mainWrapperVariants = cva('', {
     </aside>
   </section>
 </template>
-
