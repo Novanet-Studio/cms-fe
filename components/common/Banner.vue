@@ -78,7 +78,7 @@ const mainWrapperVariants = cva('', {
     >
       <slot name="aside">
         <h2
-          :class="cn('font-black text-pretty text-[30px] leading-tight md:text-lg lg:text-[37px] lg:leading-[50px]', ui.aside.title)"
+          :class="cn('font-black text-pretty text-lg leading-tight md:text-lg lg:text-[37px] lg:leading-[50px]', ui.aside.title)"
         >
           {{ title }}
         </h2>

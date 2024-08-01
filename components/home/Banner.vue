@@ -90,7 +90,7 @@ await suspense();
     :ui="{
       aside: {
         base: 'bg-[var(--color-tertiary)] justify-center lg:px-10',
-        title: 'text-[44px]',
+        title: 'text-3xl md:text-[44px]',
       },
     }"
     class="mb-12"
