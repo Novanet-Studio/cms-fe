@@ -10,7 +10,7 @@ function openMenu() {
 
 <template>
   <header class="flex justify-between items-center">
-    <NuxtLink to="/">
+    <NuxtLink to="/" active-class="border-b-none">
       <img
         class="w-[8.8125rem] h-[7.875rem] -ml-6"
         src="~/assets/images/favicon.png"
