@@ -69,7 +69,7 @@ await suspense();
       description="Estás son las preguntas que responden a alguna de sus inquietudes. Contáctanos para mayor información"
       :ui="{
         aside: {
-          base: '!bg-[#E6E7E8] justify-center',
+          base: '!bg-[#E6E7E8] justify-center lg:px-10',
           title: 'text-[var(--color-tertiary)]',
           description: 'text-[var(--color-tertiary)]',
         },

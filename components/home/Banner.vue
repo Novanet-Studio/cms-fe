@@ -89,7 +89,7 @@ await suspense();
     content-position="left"
     :ui="{
       aside: {
-        base: 'bg-[var(--color-tertiary)] justify-center',
+        base: 'bg-[var(--color-tertiary)] justify-center lg:px-10',
         title: 'text-[44px]',
       },
     }"
@@ -100,7 +100,7 @@ await suspense();
         v-slot="{ item }"
         :items="response?.carousel"
         :ui="{ item: 'basis-full' }"
-        class="overflow-hidden rounded-b-md min-h-[17.81rem] md:rounded-bl-none md:min-h-[18.31] lg:min-h-[540px] md:rounded-r-md"
+        class="overflow-hidden rounded-b-md h-[17.81rem] md:rounded-bl-none md:min-h-[18.31] lg:min-h-[540px] md:rounded-r-md"
       >
         <img
           class="w-full object-cover min-h-[17.81rem] md:min-h-[18.31] lg:min-h-[540px]"

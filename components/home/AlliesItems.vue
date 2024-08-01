@@ -2,11 +2,12 @@
 import { useQuery } from "@tanstack/vue-query";
 const gql = useStrapiGraphQL();
 
-defineProps({
-  onlyImages: {
-    type: Boolean,
-    default: false,
-  },
+interface Props {
+  onlyImages?: boolean;
+}
+
+withDefaults(defineProps<Props>(), {
+  onlyImages: false,
 });
 
 const fetchAllies = gql<any>(`

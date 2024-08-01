@@ -11,7 +11,7 @@ const items = [
       description="Tienda de artículos deportivos y natación para niños, niñas, damas y caballeros. CTA con vínculo a la página de contacto."
       :ui="{
         aside: {
-          base: 'justify-center py-20',
+          base: 'justify-center py-20 lg:px-8',
         },
       }"
     >
