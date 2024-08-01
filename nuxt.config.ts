@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: false,
   devtools: { enabled: true },
 
   app: {
@@ -33,4 +34,12 @@ export default defineNuxtConfig({
       "Nunito Sans": [300, 900],
     },
   },
+
+  site: {
+    url: 'https://www.ccsmultisport.com',
+  },
+
+  ogImage: {
+    enabled: false
+  }
 });
