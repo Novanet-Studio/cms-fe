@@ -20,7 +20,7 @@ const excerpt = (string: string, indexEnd: number) =>
       v-slot="{ item }"
       :items="articles"
       :ui="{ item: 'basis-full' }"
-      class="overflow-hidden rounded-md min-h-[17.81rem] md:min-h-[18.31] lg:min-h-[33.75rem]"
+      class="overflow-hidden rounded-md h-[17.81rem] md:min-h-[18.31] lg:min-h-[33.75rem]"
       arrows
     >
       <img
@@ -65,6 +65,7 @@ const excerpt = (string: string, indexEnd: number) =>
                 link: 'text-[#f18a00] underline',
               },
             }"
+            @click="() => $router.push(`/blog/${post.attributes.slug}`)"
           />
         </div>
       </article>
