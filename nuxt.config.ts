@@ -24,7 +24,7 @@ export default defineNuxtConfig({
   },
 
   colorMode: {
-    preference: "ligth",
+    preference: "light",
     fallback: "light",
   },
 
