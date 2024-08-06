@@ -9,7 +9,7 @@
     <div class="flex flex-col gap-10 mt-6 md:flex-row">
       <div class="lg:flex lg:gap-4">
         <div class="w-full rounded-xl p-3 border border-[#A7A9ACBF] self-start">
-          <NuxtPicture
+          <img
             src="https://res.cloudinary.com/novanet-studio/image/upload/v1688588732/ccs-multisport/ccs_multisport_programa_vacaciones_a5f488e9df.webp"
             alt="Boy"
             placeholder
@@ -31,7 +31,7 @@
       </div>
       <div class="lg:flex lg:gap-4">
         <div class="w-full rounded-xl p-3 border border-[#A7A9ACBF] self-start">
-          <NuxtPicture
+          <img
             src="https://res.cloudinary.com/novanet-studio/image/upload/v1703085467/ccs-multisport/cms_ventajas_hacer_natacion_89ba30e5ea.webp"
             alt="Boy"
             placeholder

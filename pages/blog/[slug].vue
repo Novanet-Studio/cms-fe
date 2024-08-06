@@ -68,7 +68,7 @@ await suspense();
 
     <div class="grid gap-8 md:grid-cols-[1fr_30%]">
       <div>
-        <NuxtPicture
+        <img
           v-if="article?.imagen?.data?.attributes?.url"
           class="image"
           :src="article.imagen.data.attributes.url"
