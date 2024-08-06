@@ -44,7 +44,7 @@ const excerpt = (string: string, indexEnd: number) =>
         <div
           class="w-full h-max rounded-xl p-3 border border-[#A7A9ACBF] md:max-w-[19rem]"
         >
-          <NuxtPicture
+          <img
             :src="post.attributes.imagen.data.attributes.url"
             :alt="post.attributes.imagen.data.attributes.alternativeText"
           />

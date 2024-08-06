@@ -77,10 +77,9 @@ await suspense();
       <div
         class="size-[9rem] min-w-[9rem] min-h-[9rem] rounded-xl p-3 border border-[#A7A9ACBF]"
       >
-        <NuxtPicture
+        <img
           :src="ally.attributes.imagen.data.attributes.url"
           :alt="ally.attributes.imagen.data.attributes.alternativeText"
-          placeholder
         />
       </div>
       <div v-if="!onlyImages" class="mt-2">
