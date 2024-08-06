@@ -50,7 +50,7 @@ await suspense();
       <div
         class="w-24 h-24 md:w-16 md:h-16 bg-[#f18a00] rounded-full flex justify-center items-center lg:w-24 lg:h-24"
       >
-        <NuxtImg
+        <img
           class="w-12 md:w-10"
           :src="discipline.attributes.icono.data?.attributes?.url"
           :alt="

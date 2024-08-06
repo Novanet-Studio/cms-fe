@@ -22,11 +22,10 @@ const items = [
           :ui="{ item: 'basis-full' }"
           class="overflow-hidden rounded-t-md md:rounded-l-md md:rounded-tr-none min-h-[17.81rem] md:min-h-[18.31] lg:max-h-[33.75rem]"
         >
-          <NuxtImg
+          <img
             class="w-full object-cover min-h-[17.81rem] md:min-h-[18.31] lg:min-h-[33.75rem]"
             :src="item"
             alt="image"
-            :placeholder="[1196, 540, 75, 5]"
             draggable="false"
           />
         </UCarousel>
