@@ -51,7 +51,7 @@ const items = computed(() => {
 
 <template>
   <div>
-    <section class="w-full h-72 relative mb-16 px-0">
+    <section class="w-full h-72 relative mb-8 px-0">
       <img
         class="w-full h-full object-cover"
         :src="disciplina?.attributes?.imagen.data.attributes.url"
@@ -67,6 +67,20 @@ const items = computed(() => {
         </div>
       </div>
     </section>
+
+    <div class="mb-8 mt-0">
+      <UButton
+          label="Volver"
+          :ui="{
+            base: 'self-start',
+            rounded: 'rounded-full',
+            variant: {
+              solid: 'bg-[#f18a00] font-bold px-8 py-3 hover:bg-[#f18900c7]',
+            },
+          }"
+          @click="() => $router.push('/disciplinas')"
+        />
+    </div>
 
     <section class="bg-[#E6E7E8] rounded-2xl grid md:grid-cols-[1fr_40%]">
       <div class="box p-6">
