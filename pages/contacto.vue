@@ -17,7 +17,7 @@
         <h3>De Lunes a Viernes</h3>
         <ul>
           <li>De 9:00am a 12:30pm</li>
-          <li>De 1:30pm a 07:30pm</li>
+          <li>De 1:30pm a 05:30pm</li>
         </ul>
         <br />
         <h3>Sábados</h3>
