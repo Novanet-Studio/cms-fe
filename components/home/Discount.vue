@@ -1,19 +1,19 @@
 <script setup lang="ts">
 const items = [
   {
-    title: "15% de descuento",
+    title: "15% de descuento en la mensualidad",
     description:
-      "Para pagos por trimestre adelantado (aplican ciertas condiciones)",
+      "Si pagas el trimestre adelantado",
     color: "#001E61",
   },
   {
-    title: "50% en la inscripción",
+    title: "50% de descuento en la inscripción",
     description:
-      "Si al momento de inscribirse pagas el trimestre adelantado, además del descuento, obtienes el 50% en la tarifa de la inscripción.",
+      "Si al inscribirse pagas el trimestre adelantado",
     color: "#F18A00",
   },
   {
-    title: "30% en la tarifa",
+    title: "30% de descuento en la tarifa",
     description:
       "Si te inscribes en el horario flexible de natación para adultos (Consulte horarios).",
     color: "#231F20",
@@ -39,7 +39,7 @@ const items = [
         class: '-right-2 lg:-right-12',
       }"
       :ui="{
-        item: 'basis-full lg:basis-1/2',
+        item: 'basis-full lg:basis-1/3',
         container: 'gap-1',
       }"
     >

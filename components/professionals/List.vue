@@ -71,12 +71,13 @@ await suspense();
         class: '-right-2 lg:-right-12',
       }"
       :ui="{
-        item: 'basis-full lg:basis-1/2',
+        item: 'basis-full lg:basis-1/3',
         container: 'gap-1',
       }"
     >
       <div class="mx-auto py-10">
         <CommonRoundedCard
+          class="lg:outline-offset-[0.3rem]"
           :title
           :src
           :style="{
@@ -86,7 +87,7 @@ await suspense();
           <template #content>
             <NuxtLink :to="`/profesionales/${link}`">
               <h4
-                class="font-black text-2xl text-center mt-8 lg:mt-10 lg:text-3xl"
+                class="font-black text-2xl text-center mt-8 lg:mt-10 lg:text-2xl"
               >
                 {{ title }}
               </h4>

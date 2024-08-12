@@ -8,7 +8,8 @@ const route = useRoute();
 const slug = computed(() => route.params.slug);
 
 const query = (slug: string) =>
-  gql<any>(`
+  gql<any>(
+    `
     query Article($slug: String!) {
       articulos(filters: { slug: { eq: $slug } }) {
         data {
@@ -28,9 +29,11 @@ const query = (slug: string) =>
         }
       }
     }
-  `, {
-    slug
-  });
+  `,
+    {
+      slug,
+    }
+  );
 
 const {
   data: article,
@@ -68,13 +71,17 @@ await suspense();
 
     <div class="grid gap-8 md:grid-cols-[1fr_30%]">
       <div>
-        <img
-          v-if="article?.imagen?.data?.attributes?.url"
-          class="image"
-          :src="article.imagen.data.attributes.url"
-          :alt="article.imagen.data.attributes.alternativeText"
-        />
-        <h1 class="text-2xl text-[var(--color-secondary)] font-black text-balance my-8">
+        <div class="rounded-xl p-3 border border-[#A7A9ACBF]">
+          <img
+            v-if="article?.imagen?.data?.attributes?.url"
+            class="image"
+            :src="article.imagen.data.attributes.url"
+            :alt="article.imagen.data.attributes.alternativeText"
+          />
+        </div>
+        <h1
+          class="text-2xl text-[var(--color-secondary)] font-black text-balance my-8"
+        >
           {{ article?.titulo }}
         </h1>
         <div

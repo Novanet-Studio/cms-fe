@@ -26,6 +26,7 @@
           solid: 'bg-[#f18a00] font-bold px-8 py-4 hover:bg-[#f18900c7]',
         },
       }"
+      @click="$router.push('/contacto')"
     />
   </section>
 </template>

@@ -4,19 +4,13 @@
       <p class="text-[10px] md:text-sm">Derechos reservados 2022</p>
       <div class="flex gap-2">
         <a href="https://www.facebook.com/CcsMultiSport" target="_blank">
-          <div
-            class="i-fa-brands-facebook text-xl text-[var(--color-primary)] md:text-2xl"
-          />
+          <UIcon name="i-fa-brands-facebook" class="text-xl text-[var(--color-primary)] md:text-2xl" />
         </a>
         <a href="https://www.instagram.com/ccsmultisport" target="_blank">
-          <div
-            class="i-fa-brands-instagram text-xl text-[var(--color-primary)] md:text-2xl"
-          />
+          <UIcon name="i-fa-brands-instagram" class="text-xl text-[var(--color-primary)] md:text-2xl" />
         </a>
         <a href="https://wa.me/message/XTA7RUDHZKT4C1" target="_blank">
-          <div
-            class="i-fa-brands-whatsapp text-xl text-[var(--color-primary)] md:text-2xl"
-          />
+          <UIcon name="i-fa-brands-whatsapp" class="text-xl text-[var(--color-primary)] md:text-2xl" />
         </a>
       </div>
     </section>

@@ -64,7 +64,7 @@ await suspense();
   <div
     class="grid gap-6"
     :class="{
-      'grid-cols-2 place-items-center md:grid-cols-4 lg:grid-cols-6':
+      'grid-cols-2 place-items-center place-content-center md:grid-cols-4 lg:grid-cols-4 mx-auto':
         onlyImages,
     }"
   >

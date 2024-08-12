@@ -106,9 +106,10 @@ await suspense();
             :ui="{
               wrapper: 'gap-6',
               container:
-                'bg-gradient-to-r from-[#f3f3f4] to-[#E6E7E8] shadow-sm rounded-lg border border-[#9E9E9E]',
+                'bg-gradient-to-r from-[#f3f3f4] to-[#E6E7E8] shadow-sm rounded-lg border border-[#9E9E9E] [&_span]:font-black [&_span]:text-[#001E61]',
               item: {
-                base: 'text-[#231F20] p-6',
+                base: 'p-6 font-normal',
+                color: 'text-[#231F20]',
               },
             }"
           >

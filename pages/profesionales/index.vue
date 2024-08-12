@@ -49,19 +49,19 @@ await suspense();
 
 <template>
   <section>
-    <UCarousel
+    <!-- <UCarousel
       v-slot="{ item }"
       :items="items"
       :ui="{ item: 'basis-full' }"
       class="overflow-hidden rounded-md h-[17.81rem] md:min-h-[18.31] lg:min-h-[33.75rem]"
       arrows
     >
-      <img
-        :src="item"
-        class="w-full object-cover min-h-[17.81rem] md:min-h-[18.31] lg:min-h-[33.75rem]"
-        draggable="false"
-      />
-    </UCarousel>
+  </UCarousel> -->
+  <img
+    src="https://picsum.photos/1920/1080?random=1"
+    class="rounded-md w-full object-cover h-[17.81rem] md:min-h-[18.31] lg:min-h-[33.75rem]"
+    draggable="false"
+  />
 
     <div class="flex flex-col gap-4 mt-10">
       <h2 class="font-black text-3xl text-[var(--color-secondary)]">
