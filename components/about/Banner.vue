@@ -1,11 +1,6 @@
 <script setup lang="ts">
 const items = [
-  "https://picsum.photos/1920/1080?random=1",
-  "https://picsum.photos/1920/1080?random=2",
-  "https://picsum.photos/1920/1080?random=3",
-  "https://picsum.photos/1920/1080?random=4",
-  "https://picsum.photos/1920/1080?random=5",
-  "https://picsum.photos/1920/1080?random=6",
+  "~/assets/images/cms-piscina.webp",
 ];
 </script>
 
@@ -20,18 +15,18 @@ const items = [
     }"
   >
     <template #main>
-      <UCarousel
+      <!-- <UCarousel
         v-slot="{ item }"
         :items="items"
         :ui="{ item: 'basis-full' }"
         class="overflow-hidden rounded-t-md md:rounded-l-md md:rounded-tr-none h-[17.81rem] md:min-h-[18.31] lg:min-h-[540px]"
-      >
+      > -->
         <img
-          :src="item"
-          class="w-full object-cover min-h-[17.81rem] md:min-h-[18.31] lg:min-h-[540px]"
+          src="~/assets/images/cms-piscina.webp"
+          class="w-full object-cover min-h-[17.81rem] md:min-h-[18.31] lg:min-h-[540px] rounded-t-md md:rounded-l-md md:rounded-tr-none"
           draggable="false"
         />
-      </UCarousel>
+      <!-- </UCarousel> -->
     </template>
   </CommonBanner>
 </template>

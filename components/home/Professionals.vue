@@ -55,12 +55,12 @@ await suspense();
   >
     <div>
       <img
-        :src="professionals.imagen.data.attributes.url"
+        src="~/assets/images/cms-profesores.webp"
         :alt="professionals.imagen.data.attributes.alternativeText"
       />
     </div>
     <div
-      class="flex flex-col gap-6 mt-10 px-4 justify-center lg:pl-[5.8125rem] lg:mt-auto pr-0"
+      class="flex flex-col gap-6 mt-10 px-4 justify-center lg:pl-[5.8125rem] pr-0"
     >
       <h3 class="font-black text-2xl lg:text-[2.5rem]">
         {{ professionals.titulo }}
