@@ -64,14 +64,14 @@ await suspense();
   <div
     class="grid gap-6"
     :class="{
-      'grid-cols-2 place-items-center place-content-center md:grid-cols-4 lg:grid-cols-4 mx-auto':
+      'grid-cols-2 place-items-center place-content-center md:grid-cols-4 lg:grid-cols-7 mx-auto lg:grid-rows-2 lg:gap-x-4':
         onlyImages,
     }"
   >
     <div
       class="flex gap-4"
-      :class="{ 'flex-col md:flex-row md:gap-8': !isOnlyImages }"
-      v-for="ally in allies"
+      :class="{ 'flex-col md:flex-row md:gap-8': !onlyImages, 'col-start-1': index === 0 && onlyImages, 'col-start-3': index === 1 && onlyImages, 'col-start-5': index === 2 && onlyImages, 'col-start-7': index === 3 && onlyImages, 'col-start-2': index === 4 && onlyImages, 'col-start-4': index === 5 && onlyImages, 'col-start-6': index === 6 && onlyImages }"
+      v-for="(ally, index) in allies"
       :key="ally.id"
     >
       <div

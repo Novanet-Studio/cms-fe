@@ -10,7 +10,7 @@ export default defineNuxtConfig({
       mode: "out-in"
     }
   },
-  
+
   modules: [
     "@nuxt/image",
     "@nuxtjs/google-fonts",
@@ -41,5 +41,7 @@ export default defineNuxtConfig({
 
   ogImage: {
     enabled: false
-  }
+  },
+
+  compatibilityDate: "2024-09-09"
 });
