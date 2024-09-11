@@ -1,14 +1,7 @@
 <script setup lang="ts">
-const items = [
-  "https://picsum.photos/1920/1080?random=1",
-  "https://picsum.photos/1920/1080?random=2",
-  "https://picsum.photos/1920/1080?random=3",
-  "https://picsum.photos/1920/1080?random=4",
-  "https://picsum.photos/1920/1080?random=5",
-  "https://picsum.photos/1920/1080?random=6",
-];
+import articleBannerImg from '@/assets/images/article-banner.webp'
 
-const { articles, loading } = useArticlesData();
+const { articles } = useArticlesData();
 
 const excerpt = (string: string, indexEnd: number) =>
   string.replaceAll("**", "").substring(0, indexEnd).concat("...");
@@ -16,20 +9,20 @@ const excerpt = (string: string, indexEnd: number) =>
 
 <template>
   <section>
-    <UCarousel
+    <!-- <UCarousel
       v-slot="{ item }"
       :items="articles"
       :ui="{ item: 'basis-full' }"
       class="overflow-hidden rounded-md h-[17.81rem] md:min-h-[18.31] lg:min-h-[33.75rem]"
       arrows
     >
-      <img
-        :src="item.attributes.imagen.data.attributes.url"
-        :alt="item.attributes.imagen.data.attributes.alternativeText"
-        class="w-full object-cover min-h-[17.81rem] md:min-h-[18.31] lg:min-h-[33.75rem]"
-        draggable="false"
-      />
-    </UCarousel>
+  </UCarousel> -->
+    <img
+      :src="articleBannerImg"
+      alt="Dos personas realizando ciclismo"
+      class="w-full object-cover min-h-[17.81rem] md:min-h-[18.31] lg:min-h-[33.75rem] rounded-md"
+      draggable="false"
+    />
 
     <CommonTitle class="my-12 md:my-14 lg:my-16">Artículos</CommonTitle>
 
