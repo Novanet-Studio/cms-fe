@@ -1,32 +1,33 @@
 <script setup lang="ts">
+import faqBannerImg from "@/assets/images/faq-banner.webp"
 import { useQuery } from "@tanstack/vue-query";
 
 const gql = useStrapiGraphQL();
 
-const items = [
-  "https://res.cloudinary.com/novanet-studio/image/upload/v1674752999/ccs-multisport/cms_triatleta_en_cada_disciplina_890ac7a154.webp",
-];
+// const items = [
+//   "https://res.cloudinary.com/novanet-studio/image/upload/v1674752999/ccs-multisport/cms_triatleta_en_cada_disciplina_890ac7a154.webp",
+// ];
 
-const accordionItems = [
-  {
-    label: "Normas del centro deportivo",
-    icon: "i-fa-solid-info-circle",
-    content: "<ol><li>Regla 1</li> <li>Regla 2</li> <li>Regla 3</li></ol>",
-    slot: "rules",
-  },
-  {
-    label: "Normas del centro deportivo",
-    icon: "i-fa-solid-info-circle",
-    content: "<ol><li>Regla 1</li> <li>Regla 2</li> <li>Regla 3</li></ol>",
-    slot: "rules",
-  },
-  {
-    label: "Normas del centro deportivo",
-    icon: "i-fa-solid-info-circle",
-    content: "<ol><li>Regla 1</li> <li>Regla 2</li> <li>Regla 3</li></ol>",
-    slot: "rules",
-  },
-];
+// const accordionItems = [
+//   {
+//     label: "Normas del centro deportivo",
+//     icon: "i-fa-solid-info-circle",
+//     content: "<ol><li>Regla 1</li> <li>Regla 2</li> <li>Regla 3</li></ol>",
+//     slot: "rules",
+//   },
+//   {
+//     label: "Normas del centro deportivo",
+//     icon: "i-fa-solid-info-circle",
+//     content: "<ol><li>Regla 1</li> <li>Regla 2</li> <li>Regla 3</li></ol>",
+//     slot: "rules",
+//   },
+//   {
+//     label: "Normas del centro deportivo",
+//     icon: "i-fa-solid-info-circle",
+//     content: "<ol><li>Regla 1</li> <li>Regla 2</li> <li>Regla 3</li></ol>",
+//     slot: "rules",
+//   },
+// ];
 
 const query = gql<any>(`
     query {
@@ -76,18 +77,18 @@ await suspense();
       }"
     >
       <template #main>
-        <UCarousel
+        <!-- <UCarousel
           v-slot="{ item }"
           :items="items"
           :ui="{ item: 'basis-full' }"
           class="overflow-hidden rounded-t-md md:rounded-l-md md:rounded-tr-none min-h-[17.81rem] md:min-h-[18.31] lg:max-h-[33.75rem]"
         >
-          <img
-            :src="item"
-            class="w-full object-cover min-h-[17.81rem] md:min-h-[18.31] lg:min-h-[33.75rem]"
-            draggable="false"
-          />
-        </UCarousel>
+      </UCarousel> -->
+      <img
+        :src="faqBannerImg"
+        class="w-full object-cover min-h-[17.81rem] md:min-h-[18.31] lg:min-h-[33.75rem] rounded-t-md md:rounded-l-md md:rounded-tr-none"
+        draggable="false"
+      />
       </template>
     </CommonBanner>
 
