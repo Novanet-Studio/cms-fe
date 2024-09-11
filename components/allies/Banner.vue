@@ -1,7 +1,5 @@
 <script setup lang="ts">
-const items = [
-  "https://res.cloudinary.com/novanet-studio/image/upload/v1679055991/ccs-multisport/cms_caracas_multisport_la_florida_4c348f133f.webp",
-];
+import alliesBanner from '@/assets/images/allies-banner.webp'
 </script>
 
 <template>
@@ -17,18 +15,11 @@ const items = [
     }"
   >
     <template #main>
-      <UCarousel
-        v-slot="{ item }"
-        :items="items"
-        :ui="{ item: 'basis-full' }"
-        class="overflow-hidden rounded-t-md md:rounded-l-md md:rounded-tr-none min-h-[17.81rem] max-h-[17.81rem] md:min-h-[18.31] lg:max-h-[540px]"
-      >
-        <img
-          :src="item"
-          class="w-full object-cover object-top min-h-[17.81rem] md:min-h-[18.31] lg:min-h-[540px]"
-          draggable="false"
-        />
-      </UCarousel>
+      <img
+        :src="alliesBanner"
+        class="w-full object-cover object-top rounded-t-md md:rounded-l-md md:rounded-tr-none min-h-[17.81rem] md:min-h-[18.31] lg:min-h-[540px]"
+        draggable="false"
+      />
     </template>
   </CommonBanner>
 </template>

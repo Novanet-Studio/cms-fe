@@ -66,6 +66,7 @@ await suspense();
     :class="{
       'grid-cols-2 place-items-center place-content-center md:grid-cols-4 lg:grid-cols-7 mx-auto lg:grid-rows-2 lg:gap-x-4':
         onlyImages,
+      'lg:grid-cols-2': !onlyImages
     }"
   >
     <div
@@ -89,7 +90,7 @@ await suspense();
         <div
           v-if="ally.attributes?.descripcion"
           v-html="ally.attributes?.descripcion || ''"
-          class="[&>a]:block"
+          class="[&>a]:block [&>a]:font-semibold"
         ></div>
       </div>
     </div>
