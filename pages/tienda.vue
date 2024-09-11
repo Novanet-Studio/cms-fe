@@ -1,7 +1,5 @@
 <script setup lang="ts">
-const items = [
-  "https://res.cloudinary.com/novanet-studio/image/upload/v1679080991/ccs-multisport/cms_tienda_maniquies_exhibicion_ab9a16ab35.webp",
-];
+import storeBannerImg from "@/assets/images/store-banner.webp"
 </script>
 
 <template>
@@ -16,19 +14,19 @@ const items = [
       }"
     >
       <template #main>
-        <UCarousel
+        <!-- <UCarousel
           v-slot="{ item }"
           :items="items"
           :ui="{ item: 'basis-full' }"
           class="overflow-hidden rounded-t-md md:rounded-l-md md:rounded-tr-none min-h-[17.81rem] md:min-h-[18.31] lg:max-h-[33.75rem]"
         >
-          <img
-            class="w-full object-cover min-h-[17.81rem] md:min-h-[18.31] lg:min-h-[33.75rem]"
-            :src="item"
-            alt="image"
-            draggable="false"
-          />
-        </UCarousel>
+      </UCarousel> -->
+      <img
+        class="w-full object-cover rounded-t-md md:rounded-l-md md:rounded-tr-none min-h-[17.81rem] md:min-h-[18.31] lg:min-h-[33.75rem]"
+        :src="storeBannerImg"
+        alt="Una persona nadando"
+        draggable="false"
+      />
       </template>
     </CommonBanner>
   </section>
