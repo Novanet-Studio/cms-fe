@@ -39,12 +39,6 @@ const {
       link: item.attributes.link,
       color: "#A7A9AC",
     }));
-    // return data.empresa.data.attributes.identidad.map((identity) => ({
-    //   title: identity.titulo,
-    //   description: identity.descripcion,
-    //   src: identity.imagen.data.attributes.url,
-    //   color: "#A7A9AC",
-    // }));
   },
   // 15 minutes
   staleTime: 1000 * 60 * 15,
@@ -73,27 +67,39 @@ await suspense();
       :ui="{
         item: 'basis-full lg:basis-1/3',
         container: 'gap-1',
+        default: {
+          prevButton: {
+            color: 'bg-transparent text-black',
+            class: 'rtl:[&_span:first-child]:rotate-180 absolute left-4 top-1/2 transform -translate-y-1/2 rounded-full disabled:!cursor-default',
+            icon: 'fa-angle-left'
+          },
+          nextButton: {
+            color: 'bg-transparent text-black',
+            class: 'rtl:[&_span:last-child]:rotate-180 absolute right-4 top-1/2 transform -translate-y-1/2 rounded-full disabled:!cursor-default',
+            icon: 'fa-angle-right rotate-180'
+          }
+        }
       }"
     >
       <div class="mx-auto py-10">
-        <CommonRoundedCard
-          class="lg:outline-offset-[0.3rem]"
-          :title
-          :src
-          :style="{
-            outlineColor: color,
-          }"
-        >
-          <template #content>
-            <NuxtLink :to="`/profesionales/${link}`">
-              <h4
-                class="font-black text-2xl text-center mt-8 lg:mt-10 lg:text-2xl"
-              >
-                {{ title }}
-              </h4>
-            </NuxtLink>
-          </template>
-        </CommonRoundedCard>
+        <NuxtLink :to="`/profesionales/${link}`">
+          <CommonRoundedCard
+            class="lg:outline-offset-[0.1rem]"
+            :title
+            :src
+            :style="{
+              outlineColor: color,
+            }"
+          >
+            <template #content>
+                <h4
+                  class="font-black text-2xl text-center mt-8 lg:mt-10 lg:text-2xl"
+                >
+                  {{ title }}
+                </h4>
+              </template>
+          </CommonRoundedCard>
+        </NuxtLink>
       </div>
     </UCarousel>
   </section>

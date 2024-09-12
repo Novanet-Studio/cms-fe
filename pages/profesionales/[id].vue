@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import MarkdownIt from "markdown-it";
 import { useQuery } from "@tanstack/vue-query";
+import professionalImg from "@/assets/images/we-are-professionals-2.webp"
 const gql = useStrapiGraphQL();
 
 const markdown = new MarkdownIt();
@@ -67,7 +68,7 @@ await suspense();
       class="overflow-hidden rounded-md h-[17.81rem] md:min-h-[18.31] lg:min-h-[33.75rem]"
     >
       <img
-        src="https://res.cloudinary.com/novanet-studio/image/upload/v1679078540/ccs-multisport/cms_natacion_mujer_nadando_crawl_73586e8d41.webp"
+        :src="professionalImg"
         class="w-full object-cover min-h-[17.81rem] md:min-h-[18.31] lg:min-h-[33.75rem]"
         draggable="false"
       />

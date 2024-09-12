@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import ourPlaceImg from "@/assets/images/our-pool.webp"
+</script>
+
 <template>
   <section class="grid my-16 gap-6 md:my-28 md:grid-cols-2">
     <div
@@ -16,7 +20,7 @@
       </p>
     </div>
     <div class="order-1 md:order-2">
-      <img src="https://placehold.co/753x655" alt="" />
+      <img :src="ourPlaceImg" alt="" />
     </div>
   </section>
 </template>
