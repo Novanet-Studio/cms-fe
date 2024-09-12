@@ -84,7 +84,7 @@ await suspense();
       <div class="mx-auto py-10">
         <NuxtLink :to="`/profesionales/${link}`">
           <CommonRoundedCard
-            class="lg:outline-offset-[0.2rem]"
+            class="lg:outline-offset-[0.025rem]"
             :title
             :src
             :style="{
