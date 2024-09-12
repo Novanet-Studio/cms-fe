@@ -1,16 +1,8 @@
 <script setup lang="ts">
 import { useQuery } from "@tanstack/vue-query";
+import contactBannerImg from "@/assets/images/contact-banner.webp"
 
 const gql = useStrapiGraphQL();
-
-const items = [
-  "https://picsum.photos/1920/1080?random=1",
-  "https://picsum.photos/1920/1080?random=2",
-  "https://picsum.photos/1920/1080?random=3",
-  "https://picsum.photos/1920/1080?random=4",
-  "https://picsum.photos/1920/1080?random=5",
-  "https://picsum.photos/1920/1080?random=6",
-];
 
 const query = gql<any>(`
     query {
@@ -50,20 +42,20 @@ await suspense();
 
 <template>
   <section>
-    <UCarousel
+    <!-- <UCarousel
       v-slot="{ item }"
       :items="response"
       :ui="{ item: 'basis-full' }"
       class="overflow-hidden rounded-md min-h-[17.81rem] md:min-h-[18.31] lg:min-h-[33.75rem]"
       arrows
     >
-      <img
-        :src="item.attributes.url"
-        :alt="item.attributes.alternativeText"
-        class="w-full object-cover min-h-[17.81rem] md:min-h-[18.31] lg:min-h-[33.75rem]"
-        draggable="false"
-      />
-    </UCarousel>
+  </UCarousel> -->
+    <img
+      :src="contactBannerImg"
+      alt="Personas en la piscina de cms"
+      class="w-full object-cover rounded-md min-h-[17.81rem] md:min-h-[18.31] lg:min-h-[33.75rem]"
+      draggable="false"
+    />
 
     <p class="my-8 lg:text-lg">
       Te invitamos a visitar y conocer nuestra sede en la Alta Florida, una

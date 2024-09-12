@@ -96,7 +96,7 @@ await suspense();
       <h3 class="font-black text-3xl">Preguntas frecuentes</h3>
 
       <div
-        class="grid gap-8 md:grid-cols-[1fr_33%] lg:grid-cols-[1fr_25rem] lg:gap-8 mt-6"
+        class="grid gap-8 md:grid-cols-[1fr_33%] lg:grid-cols-[1fr_25rem] lg:gap-12 mt-6"
       >
         <div class="ring-1 ring-offset-8 ring-[#E6E7E8] rounded-md">
           <UAccordion
