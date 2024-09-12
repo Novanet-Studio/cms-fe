@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+import MarkdownIt from "markdown-it";
+
+const markdown = new MarkdownIt();
 const route = useRoute();
 const id = route.params.id as string;
 
@@ -70,16 +73,16 @@ const items = computed(() => {
 
     <div class="mb-8 mt-0">
       <UButton
-          label="Volver"
-          :ui="{
-            base: 'self-start',
-            rounded: 'rounded-full',
-            variant: {
-              solid: 'bg-[#f18a00] font-bold px-8 py-3 hover:bg-[#f18900c7]',
-            },
-          }"
-          @click="() => $router.push('/disciplinas')"
-        />
+        label="Volver"
+        :ui="{
+          base: 'self-start',
+          rounded: 'rounded-full',
+          variant: {
+            solid: 'bg-[#f18a00] font-bold px-8 py-3 hover:bg-[#f18900c7]',
+          },
+        }"
+        @click="() => $router.push('/disciplinas')"
+      />
     </div>
 
     <section class="bg-[#E6E7E8] rounded-2xl grid md:grid-cols-[1fr_40%]">
@@ -90,15 +93,15 @@ const items = computed(() => {
           {{ disciplina?.attributes?.nombre || "Cargando..." }}
         </CommonTitle>
         <div
-          class="md:text-sm"
+          class="md:text-sm leading-snug"
           v-html="
             disciplina?.attributes?.descripcion || `<span>Cargando...</span>`
           "
         />
       </div>
-      <div class="w-full">
+      <div class="w-full lg:!rounded-tr-2xl">
         <img
-          class="w-full h-full rounded-b-2xl max-h-[383px] object-cover"
+          class="w-full h-full rounded-b-2xl max-h-[383px] object-cover lg:!rounded-tr-2xl"
           src="https://placehold.co/1290x2183"
         />
       </div>
@@ -124,7 +127,7 @@ const items = computed(() => {
             :ui="{
               wrapper: 'gap-6',
               container:
-                'bg-gradient-to-r from-[#f3f3f4] to-[#E6E7E8] shadow-sm rounded-lg border border-[#9E9E9E] md:shadow-md',
+                'bg-gradient-to-r from-[#f3f3f4] to-[#E6E7E8] shadow-sm rounded-lg border border-[#9E9E9E] md:shadow-md [&_span]:font-black [&_span]:text-[#001E61]',
               item: {
                 base: 'text-[#231F20] p-6 box',
               },
@@ -135,17 +138,18 @@ const items = computed(() => {
                 v-if="item.label === 'Horarios'"
                 class="[&_ul]:list-disc [&_ul]:list-inside"
               >
-                {{ item.description[0].horarios }}
-                <div v-for="(horario, index) in item.description" :key="index">
-                  <div v-html="horario.horarios"></div>
-                </div>
+              <!-- <pre>{{
+                JSON.stringify(item.description, null, 2) }}</pre> -->
+                <!-- <div v-for="({ horarios }, index) in item.description" :key="index"> -->
+                  <div v-html="item.description[0].horarios"></div>
+                <!-- </div> -->
               </div>
               <div
                 v-if="item.label === 'Planes'"
                 class="[&_ul]:list-disc [&_ul]:list-inside"
               >
-                <div v-for="(plan, index) in item.description" :key="index">
-                  <div v-html="plan.planes"></div>
+                <div v-for="({ planes }, index) in item.description" :key="index">
+                  <div v-html="planes"></div>
                 </div>
               </div>
               <div
@@ -248,9 +252,9 @@ const items = computed(() => {
               v-html="info?.descripcion || `<span>Cargando...</span>`"
             />
           </div>
-          <div class="w-full">
+          <div class="w-full lg:!rounded-tr-2xl">
             <img
-              class="w-full h-full rounded-b-2xl max-h-[383px] object-cover"
+              class="w-full h-full rounded-b-2xl max-h-[383px] object-cover lg:!rounded-tr-2xl"
               src="https://placehold.co/1290x2183"
             />
           </div>
@@ -283,9 +287,10 @@ const items = computed(() => {
                 :ui="{
                   wrapper: 'gap-6',
                   container:
-                    'bg-gradient-to-r from-[#f3f3f4] to-[#E6E7E8] shadow-sm rounded-lg border border-[#9E9E9E] md:shadow-md',
+                    'bg-gradient-to-r from-[#f3f3f4] to-[#E6E7E8] shadow-sm rounded-lg border border-[#9E9E9E] md:shadow-md [&_span]:font-black [&_span]:text-[#001E61]',
                   item: {
-                    base: 'text-[#231F20] p-6 box',
+                    base: 'p-6 box',
+                    color: '!text-[#231F20]',
                   },
                 }"
               >
