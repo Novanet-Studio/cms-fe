@@ -71,12 +71,12 @@ await suspense();
           prevButton: {
             color: 'bg-transparent text-black',
             class: 'rtl:[&_span:first-child]:rotate-180 absolute left-4 top-1/2 transform -translate-y-1/2 rounded-full disabled:!cursor-default',
-            icon: 'fa-angle-left'
+            icon: 'i-fa-angle-left'
           },
           nextButton: {
             color: 'bg-transparent text-black',
             class: 'rtl:[&_span:last-child]:rotate-180 absolute right-4 top-1/2 transform -translate-y-1/2 rounded-full disabled:!cursor-default',
-            icon: 'fa-angle-right rotate-180'
+            icon: 'i-fa-angle-left rotate-180'
           }
         }
       }"
@@ -84,7 +84,7 @@ await suspense();
       <div class="mx-auto py-10">
         <NuxtLink :to="`/profesionales/${link}`">
           <CommonRoundedCard
-            class="lg:outline-offset-[0.1rem]"
+            class="lg:outline-offset-[0.2rem]"
             :title
             :src
             :style="{
