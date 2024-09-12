@@ -51,7 +51,7 @@ await suspense();
   <section class="grid md:grid-cols-2 md:gap-x-10 lg:gap-10 lg:grid-cols-3">
     <CommonRoundedCard
       v-for="{ title, description, src, color } in response"
-      class="lg:outline-offset-[0.1rem]"
+      class="lg:outline-offset-[0.025rem]"
       :title
       :description
       :src
