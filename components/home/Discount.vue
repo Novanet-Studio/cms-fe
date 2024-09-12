@@ -41,6 +41,18 @@ const items = [
       :ui="{
         item: 'basis-full lg:basis-1/3',
         container: 'gap-1',
+        default: {
+          prevButton: {
+            color: 'bg-transparent text-black',
+            class: 'rtl:[&_span:first-child]:rotate-180 absolute left-4 top-1/2 transform -translate-y-1/2 rounded-full disabled:!cursor-default',
+            icon: 'fa-angle-left'
+          },
+          nextButton: {
+            color: 'bg-transparent text-black',
+            class: 'rtl:[&_span:last-child]:rotate-180 absolute right-4 top-1/2 transform -translate-y-1/2 rounded-full disabled:!cursor-default',
+            icon: 'fa-angle-right rotate-180'
+          }
+        }
       }"
     >
       <div class="mx-auto py-10">

@@ -1,15 +1,16 @@
 <script setup lang="ts">
 import { useQuery } from "@tanstack/vue-query";
+import weAreProfessionals from "@/assets/images/we-are-professionals.webp"
 const gql = useStrapiGraphQL();
 
-const items = [
-  "https://picsum.photos/1920/1080?random=1",
-  "https://picsum.photos/1920/1080?random=2",
-  "https://picsum.photos/1920/1080?random=3",
-  "https://picsum.photos/1920/1080?random=4",
-  "https://picsum.photos/1920/1080?random=5",
-  "https://picsum.photos/1920/1080?random=6",
-];
+// const items = [
+//   "https://picsum.photos/1920/1080?random=1",
+//   "https://picsum.photos/1920/1080?random=2",
+//   "https://picsum.photos/1920/1080?random=3",
+//   "https://picsum.photos/1920/1080?random=4",
+//   "https://picsum.photos/1920/1080?random=5",
+//   "https://picsum.photos/1920/1080?random=6",
+// ];
 
 const query = gql<any>(`
     query {
@@ -58,7 +59,7 @@ await suspense();
     >
   </UCarousel> -->
   <img
-    src="https://picsum.photos/1920/1080?random=1"
+    :src="weAreProfessionals"
     class="rounded-md w-full object-cover h-[17.81rem] md:min-h-[18.31] lg:min-h-[33.75rem]"
     draggable="false"
   />
@@ -78,7 +79,7 @@ await suspense();
             solid: 'bg-[#f18a00] font-bold px-8 py-3 hover:bg-[#f18900c7]',
           },
         }"
-        @click="$router.go(-1)"
+        @click="$router.push('/')"
       />
     </div>
 
