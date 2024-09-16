@@ -3,6 +3,7 @@
     <DisciplinesBanner />
     <HomeDisciplines />
     <DisciplinesOurPlace />
+    <DisciplinesDiscount />
     <DisciplinesHowWeWork />
     <DisciplinesRequirements />
   </section>
