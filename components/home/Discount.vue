@@ -57,6 +57,7 @@ const items = [
     >
       <div class="mx-auto py-10">
         <CommonRoundedCard
+          class="md:outline-offset-[1rem]"
           :title
           :description
           :style="{
