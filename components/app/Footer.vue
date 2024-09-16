@@ -12,6 +12,9 @@
         <a href="https://wa.me/message/XTA7RUDHZKT4C1" target="_blank">
           <UIcon name="i-fa-brands-whatsapp" class="text-xl text-[var(--color-primary)] md:text-2xl" />
         </a>
+        <a href="https://www.tiktok.com/CcsMultiSport" target="_blank">
+          <UIcon name="i-fa-brands-tiktok" class="text-xl text-[var(--color-primary)] md:text-2xl" />
+        </a>
       </div>
     </section>
     <section class="flex gap-2 items-center self-start">
