@@ -58,17 +58,23 @@ await suspense();
       arrows
     >
   </UCarousel> -->
-  <img
-    :src="weAreProfessionals"
-    class="rounded-md w-full object-cover h-[17.81rem] md:min-h-[18.31] lg:min-h-[33.75rem]"
-    draggable="false"
-  />
-
-    <div class="flex flex-col gap-4 mt-10">
-      <h2 class="font-black text-3xl text-[var(--color-secondary)]">
+  <div class="flex flex-col md:flex-row bg-[#D9D9D9]">
+    <div class="basis-2/4 p-8 flex flex-col gap-4 md:p-4 md:gap-2 lg:gap-4 lg:p-8">
+      <h2 class="font-black text-2xl lg:text-4xl lg:text-right text-[var(--color-secondary)]">
         {{ data.titulo }}
       </h2>
-      <div v-html="data.descripcion"></div>
+      <div class="text-sm md:text-xs lg:text-xl text-balance md:text-right text-black" v-html="data.descripcion"></div>
+    </div>
+    <div class="basis-2/4">
+      <img
+        :src="weAreProfessionals"
+        class="w-full object-cover h-[17.81rem] md:min-h-[18.31] lg:min-h-[33.75rem]"
+        draggable="false"
+      />
+    </div>
+  </div>
+
+    <div class="flex flex-col gap-4 mt-10">
       <UButton
         label="Volver"
         size="lg"
