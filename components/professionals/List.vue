@@ -50,7 +50,7 @@ await suspense();
 <template>
   <section class="my-20">
     <h3
-      class="font-black text-[40px] text-center mt-[7.75rem] md:text-3xl mb-8 lg:mb-12"
+      class="font-black text-3xl text-center lg:mt-[7.75rem] md:text-[40px] mb-8 lg:mb-12"
     >
       Nuestros profesores
     </h3>
@@ -84,7 +84,7 @@ await suspense();
       <div class="mx-auto py-10">
         <NuxtLink :to="`/profesionales/${link}`">
           <CommonRoundedCard
-            class="outline-offset-0 lg:outline-offset-0"
+            class="outline-offset-0 lg:outline-offset-1"
             :title
             :src
             :style="{
