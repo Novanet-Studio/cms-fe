@@ -71,7 +71,7 @@ await suspense();
   >
     <div
       class="flex gap-4"
-      :class="{ 'flex-col md:flex-row md:gap-8': !onlyImages, 'col-start-1': index === 0 && onlyImages, 'col-start-3': index === 1 && onlyImages, 'col-start-5': index === 2 && onlyImages, 'col-start-7': index === 3 && onlyImages, 'col-start-2': index === 4 && onlyImages, 'col-start-4': index === 5 && onlyImages, 'col-start-6': index === 6 && onlyImages }"
+      :class="{ 'flex-col md:flex-row md:gap-8': !onlyImages, 'lg:col-start-1': index === 0 && onlyImages, 'lg:col-start-3': index === 1 && onlyImages, 'lg:col-start-5': index === 2 && onlyImages, 'lg:col-start-7': index === 3 && onlyImages, 'lg:col-start-2': index === 4 && onlyImages, 'lg:col-start-4': index === 5 && onlyImages, 'lg:col-start-6': index === 6 && onlyImages }"
       v-for="(ally, index) in allies"
       :key="ally.id"
     >
