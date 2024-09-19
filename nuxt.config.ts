@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   ],
 
   ui: {
-    icons: ["fa-solid", "fa-brands"],
+    // icons: ["fa-solid", "fa-brands"],
   },
 
   colorMode: {
