@@ -15,11 +15,13 @@ import alliesBanner from '@/assets/images/allies-banner.webp'
     }"
   >
     <template #main>
-      <img
+      <div class="w-full rounded-t-md md:rounded-l-md md:rounded-tr-none h-[17.81rem] md:min-h-[18.31] lg:min-h-[540px] object-cover object-center bg-cover bg-center" :style="{ backgroundImage: `url(${alliesBanner})` }"></div>
+
+      <!-- <img
         :src="alliesBanner"
         class="w-full object-cover object-top rounded-t-md md:rounded-l-md md:rounded-tr-none min-h-[17.81rem] md:min-h-[18.31] lg:min-h-[540px]"
         draggable="false"
-      />
+      /> -->
     </template>
   </CommonBanner>
 </template>

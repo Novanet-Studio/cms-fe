@@ -3,7 +3,7 @@
     <div class="contacto__group">
       <h2 class="font-black text-sm text-[#231f20] md:text-xl">Ubicación</h2>
       <p class="text-sm text-[#231f20]">
-        Urb. Alta Florida Av. Los Mangos Quinta Caracas Multisport (al frente de
+        Urb. Alta Florida Av. Los Mangos Quinta Ccs Multisport (al frente de
         la Plaza Benito Juárez subiendo a la Cota Mil).
         <a
           class="text-[var(--color-primary)]"

@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   ],
 
   ui: {
-    icons: ["fa-solid", "fa-brands"],
+    // icons: ["fa-solid", "fa-brands"],
   },
 
   colorMode: {
@@ -37,6 +37,7 @@ export default defineNuxtConfig({
 
   site: {
     url: 'https://www.ccsmultisport.com',
+    name: 'Ccs MultiSport'
   },
 
   ogImage: {
