@@ -1,7 +1,7 @@
 export default {
   meta: {
-    title: "Caracas Multi Sport - Sitio web",
-    name: "CCS Multi Sport web",
+    title: "Ccs MultiSport - Sitio web",
+    name: "Ccs MultiSport web",
     author: "Novanet Studio <info@novanet.studio>",
     description:
       "Centro Deportivo que integra los sectores del deporte y la salud. Nuestro objetivo principal es mejorar la calidad de vida de nuestros usuarios mediante la enseñanza y práctica de diversas disciplinas deportivas.",
@@ -9,8 +9,8 @@ export default {
     lang: "es",
   },
   manifest: {
-    name: "Caracas Multi Sport - Sitio web",
-    short_name: "CCS Multi Sport web app ",
+    name: "Ccs MultiSport - Sitio web",
+    short_name: "Ccs MultiSport web app ",
     description:
       "Integramos los sectores del deporte y la salud con el  objetivo principal de mejorar la calidad de vida de nuestros usuarios mediante la enseñanza y práctica de diversas disciplinas deportivas.",
     start_url: "/",

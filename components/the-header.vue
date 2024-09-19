@@ -4,7 +4,7 @@
       <div class="header__logo">
         <nuxt-link to="/" target="_self">
           <img
-            alt="Caracas Sport logo"
+            alt="Ccs MultiSport logo"
             src="~/assets/images/ccs-multisports-logo.svg"
           />
         </nuxt-link>
