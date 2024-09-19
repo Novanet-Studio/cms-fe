@@ -37,6 +37,7 @@ export default defineNuxtConfig({
 
   site: {
     url: 'https://www.ccsmultisport.com',
+    name: 'Ccs MultiSport'
   },
 
   ogImage: {
