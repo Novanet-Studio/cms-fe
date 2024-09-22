@@ -2,7 +2,7 @@
   <footer class="flex justify-between items-center mt-12 mb-4">
     <section>
       <p class="text-[10px] md:text-sm">Derechos reservados 2024</p>
-      <div class="flex gap-2">
+      <div class="flex gap-2 mt-6">
         <a href="https://www.facebook.com/CcsMultiSport" target="_blank">
           <UIcon name="i-fa-brands-facebook" class="text-xl text-[var(--color-primary)] md:text-2xl" />
         </a>

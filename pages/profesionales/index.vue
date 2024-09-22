@@ -1,16 +1,7 @@
 <script setup lang="ts">
 import { useQuery } from "@tanstack/vue-query";
-import weAreProfessionals from "@/assets/images/we-are-professionals.webp"
+import weAreProfessionals from "@/assets/images/cms-profesionales-grupo-de-profesores.webp"
 const gql = useStrapiGraphQL();
-
-// const items = [
-//   "https://picsum.photos/1920/1080?random=1",
-//   "https://picsum.photos/1920/1080?random=2",
-//   "https://picsum.photos/1920/1080?random=3",
-//   "https://picsum.photos/1920/1080?random=4",
-//   "https://picsum.photos/1920/1080?random=5",
-//   "https://picsum.photos/1920/1080?random=6",
-// ];
 
 const query = gql<any>(`
     query {

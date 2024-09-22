@@ -49,22 +49,14 @@ await suspense();
 
 <template>
   <section class="my-20">
-    <h3
-      class="font-black text-3xl text-center lg:mt-[7.75rem] md:text-[40px] mb-8 lg:mb-12"
-    >
+    <h3 class="font-black text-3xl text-center lg:mt-[7.75rem] md:text-[40px] mb-8 lg:mb-12">
       Nuestros profesores
     </h3>
-    <UCarousel
-      v-slot="{ item: { title, src, link, color }, index }"
-      arrows
-      :items
-      :prev-button="{
-        class: '-left-2 lg:-left-12',
-      }"
-      :next-button="{
+    <UCarousel v-slot="{ item: { title, src, link, color }, index }" arrows :items :prev-button="{
+      class: '-left-2 lg:-left-12',
+    }" :next-button="{
         class: '-right-2 lg:-right-12',
-      }"
-      :ui="{
+      }" :ui="{
         item: 'basis-full lg:basis-1/3',
         container: 'gap-1',
         default: {
@@ -79,25 +71,17 @@ await suspense();
             icon: 'i-fa-angle-left rotate-180'
           }
         }
-      }"
-    >
+      }">
       <div class="mx-auto py-10">
         <NuxtLink :to="`/profesionales/${link}`">
-          <CommonRoundedCard
-            class="outline-offset-0 lg:outline-offset-1"
-            :title
-            :src
-            :style="{
-              outlineColor: color,
-            }"
-          >
+          <CommonRoundedCard class="outline-offset-0 lg:outline-offset-1" :title :src :style="{
+            outlineColor: color,
+          }">
             <template #content>
-                <h4
-                  class="font-black text-2xl text-center mt-8 lg:mt-10 lg:text-2xl"
-                >
-                  {{ title }}
-                </h4>
-              </template>
+              <h4 class="font-black text-2xl text-center mt-8 lg:mt-10 lg:text-2xl">
+                {{ title }}
+              </h4>
+            </template>
           </CommonRoundedCard>
         </NuxtLink>
       </div>

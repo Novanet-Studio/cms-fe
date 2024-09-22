@@ -69,7 +69,7 @@ await suspense();
     >
       <img
         :src="professionalImg"
-        class="w-full object-cover min-h-[17.81rem] md:min-h-[18.31] lg:min-h-[33.75rem]"
+        class="w-full object-cover min-h-[17.81rem] md:min-h-[18.31]"
         draggable="false"
       />
     </div>

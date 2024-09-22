@@ -41,6 +41,13 @@ await suspense();
 </script>
 
 <template>
+  <UButton class="mb-6" label="← Ir al inicio" size="lg" variant="outline" :ui="{
+    base: 'self-start',
+    rounded: 'rounded-full',
+    variant: {
+      outline: 'ring-1 font-semibold text-[var(--color-secondary)] hover:bg-[var(--color-secondary)] hover:text-[var(--color-gray-light)]',
+    },
+  }" @click="$router.push('/')" />
   <section>
     <!-- <UCarousel
       v-slot="{ item }"
@@ -50,12 +57,8 @@ await suspense();
       arrows
     >
   </UCarousel> -->
-    <img
-      :src="contactBannerImg"
-      alt="Personas en la piscina de cms"
-      class="w-full object-cover rounded-md min-h-[17.81rem] md:min-h-[18.31] lg:min-h-[33.75rem]"
-      draggable="false"
-    />
+    <img :src="contactBannerImg" alt="Personas en la piscina de cms"
+      class="w-full object-cover rounded-md min-h-[17.81rem] md:min-h-[18.31] lg:min-h-[33.75rem]" draggable="false" />
 
     <p class="my-8 lg:text-lg">
       Te invitamos a visitar y conocer nuestra sede en la Alta Florida, una
@@ -67,9 +70,7 @@ await suspense();
 
     <div class="flex flex-col gap-2">
       <div>
-        <h4
-          class="text-base font-black text-[var(--color-secondary)] md:text-2xl"
-        >
+        <h4 class="text-base font-black text-[var(--color-secondary)] md:text-2xl">
           Horario de atención
         </h4>
         <p>Oficina Administrativa para pagos y formalizar inscripción</p>
@@ -79,7 +80,7 @@ await suspense();
         <thead class="text-left border-b border-neutral-200">
           <tr class="divide-x border-b-2">
             <th class="whitespace-nowrap px-4 py-2 text-xl">Día</th>
-            <th class="whitespace-nowrap px-4 py-2 text-xl">Fecha</th>
+            <th class="whitespace-nowrap px-4 py-2 text-xl">Horario</th>
           </tr>
         </thead>
         <tbody>
@@ -98,48 +99,28 @@ await suspense();
       </table>
     </div>
 
-    <div
-      class="grid gap-8 md:grid-cols-[1fr_33%] lg:grid-cols-[1fr_25rem] lg:gap-8 mt-6"
-    >
-      <div
-        class="ring-1 ring-offset-8 ring-[#E6E7E8] rounded-md my-8 self-start"
-      >
-        <form
-          class="bg-gradient-to-r from-[#f3f3f4] to-[#E6E7E8] shadow-sm rounded-lg border border-[#9E9E9E] p-6"
-        >
+    <div class="grid gap-8 md:grid-cols-[1fr_33%] lg:grid-cols-[1fr_25rem] lg:gap-8 mt-6">
+      <div class="ring-1 ring-offset-8 ring-[#E6E7E8] rounded-md my-8 self-start">
+        <form class="bg-gradient-to-r from-[#f3f3f4] to-[#E6E7E8] shadow-sm rounded-lg border border-[#9E9E9E] p-6">
           <h3 class="font-black text-[#231f20] md:text-xl">
             Envíanos un mensaje
           </h3>
           <div class="flex flex-col gap-4 mt-4">
             <div class="flex flex-col gap-4">
-              <UInput
-                color="white"
-                variant="outline"
-                placeholder="Nombre y apellido *"
-              />
-              <UInput
-                color="white"
-                type="email"
-                variant="outline"
-                placeholder="Email *"
-              />
+              <UInput color="white" variant="outline" placeholder="Nombre y apellido *" />
+              <UInput color="white" type="email" variant="outline" placeholder="Email *" />
             </div>
             <div>
               <UInput color="white" variant="outline" placeholder="Asunto *" />
             </div>
             <UTextarea autoresize placeholder="Mensaje" model-value="" />
-            <UButton
-              label="Enviar"
-              icon="i-fa-solid-paper-plane"
-              size="lg"
-              :ui="{
-                base: 'self-start',
-                rounded: 'rounded-full',
-                variant: {
-                  solid: 'bg-[#001E61] font-bold px-6 hover:bg-[#001f61d8]',
-                },
-              }"
-            />
+            <UButton label="Enviar" icon="i-fa-solid-paper-plane" size="lg" :ui="{
+              base: 'self-start',
+              rounded: 'rounded-full',
+              variant: {
+                solid: 'bg-[#001E61] font-bold px-6 hover:bg-[#001f61d8]',
+              },
+            }" />
           </div>
         </form>
 
