@@ -8,7 +8,7 @@ const id = route.params.id as string;
 const isOpen = ref(false);
 const info = ref({});
 
-const { discipline: disciplina } = useDisciplines({
+const { discipline: disciplina, loading } = useDisciplines({
   link: id,
 });
 
@@ -55,7 +55,14 @@ const items = computed(() => {
 <template>
   <div>
     <section class="w-full h-72 relative mb-8 px-0">
+      <div
+        v-if="loading"
+        class="w-full h-full flex items-center justify-center bg-gray-200"
+      >
+        <UIcon name="i-heroicons-photo" class="w-16 h-16 text-gray-400 animate-pulse" />
+      </div>
       <img
+        v-else
         class="w-full h-full object-cover"
         :src="disciplina?.attributes?.imagen.data.attributes.url"
         :alt="disciplina?.attributes?.imagen.data.attributes.alternativeText"
@@ -102,10 +109,14 @@ const items = computed(() => {
       <div class="w-full lg:!rounded-tr-2xl">
         <div class="w-full aspect-[4/3] rounded-b-2xl md:rounded-l-none lg:!rounded-tr-2xl overflow-hidden">
           <img
+            v-if="disciplina?.attributes?.imagen_secundaria.data.attributes.url"
             class="w-full h-full object-cover"
             :src="disciplina?.attributes?.imagen_secundaria.data.attributes.url"
             :alt="disciplina?.attributes?.imagen_secundaria.data.attributes.alternativeText"
           />
+          <div v-else class="w-full h-full flex items-center justify-center bg-gray-200">
+            <UIcon name="i-heroicons-photo" class="w-16 h-16 text-gray-400" />
+          </div>
         </div>
       </div>
     </section>
@@ -165,7 +176,11 @@ const items = computed(() => {
         </div>
         <div class="w-full mb-12 md:flex-1">
           <div class="w-full aspect-[16/9] relative">
+            <div v-if="loading" class="w-full h-full flex items-center justify-center bg-gray-200">
+              <UIcon name="i-heroicons-photo" class="w-12 h-12 text-gray-400" />
+            </div>
             <img 
+              v-else
               class="w-full h-full object-cover absolute top-0 left-0" 
               :src="disciplina?.attributes?.imagen_acordion?.data?.attributes?.url" 
               :alt="disciplina?.attributes?.imagen_acordion?.data?.attributes?.alternativeText || ''"
@@ -196,10 +211,18 @@ const items = computed(() => {
             }
           "
         >
-          <img
-            class="w-full h-full max-h-[300px] object-cover"
-            :src="item.imagen_portada.data.attributes.url"
-          />
+          <div class="w-full aspect-[4/3] relative">
+            <div v-if="loading" class="w-full h-full flex items-center justify-center bg-gray-200">
+              <UIcon name="i-heroicons-photo" class="w-12 h-12 text-gray-400" />
+            </div>
+            <img
+              v-else
+              class="w-full h-full object-cover absolute inset-0"
+              :src="item.imagen_portada.data.attributes.url"
+              :alt="item.imagen_portada.data.attributes.alternativeText || ''"
+              loading="lazy"
+            />
+          </div>
 
           <div
             class="flex flex-col items-center justify-end absolute bottom-0 left-0 top-0 right-0 px-4 py-2 from-[#001E61] bg-gradient-to-t"
@@ -319,8 +342,14 @@ const items = computed(() => {
               </UAccordion>
             </div>
             <div class="w-full mb-12 md:flex-1">
-              <div class="w-full aspect-[16/9] bg-gray-200">
+              <div class="w-full aspect-[16/9] bg-gray-200 relative">
+                <template v-if="loading">
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <UIcon name="i-heroicons-photo" class="w-16 h-16 text-gray-400 animate-pulse" />
+                  </div>
+                </template>
                 <img 
+                  v-else
                   class="w-full h-full object-cover" 
                   :src="info?.imagen_acordion?.data?.attributes?.url" 
                   loading="lazy" 
