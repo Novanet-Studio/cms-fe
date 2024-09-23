@@ -93,17 +93,20 @@ const items = computed(() => {
           {{ disciplina?.attributes?.nombre || "Cargando..." }}
         </CommonTitle>
         <div
-          class="md:text-sm leading-snug"
+          class="md:text-sm leading-snug max-h-[13.75rem] overflow-y-auto"
           v-html="
             disciplina?.attributes?.descripcion || `<span>Cargando...</span>`
           "
         />
       </div>
       <div class="w-full lg:!rounded-tr-2xl">
-        <img
-          class="w-full h-full rounded-b-2xl max-h-[383px] object-cover lg:!rounded-tr-2xl"
-          src="https://placehold.co/1290x2183"
-        />
+        <div class="w-full aspect-[4/3] rounded-b-2xl md:rounded-l-none lg:!rounded-tr-2xl overflow-hidden">
+          <img
+            class="w-full h-full object-cover"
+            :src="disciplina?.attributes?.imagen_secundaria.data.attributes.url"
+            :alt="disciplina?.attributes?.imagen_secundaria.data.attributes.alternativeText"
+          />
+        </div>
       </div>
     </section>
 
@@ -161,7 +164,14 @@ const items = computed(() => {
           </UAccordion>
         </div>
         <div class="w-full mb-12 md:flex-1">
-          <img class="w-full" src="https://placehold.co/308x198" />
+          <div class="w-full aspect-[16/9] relative">
+            <img 
+              class="w-full h-full object-cover absolute top-0 left-0" 
+              :src="disciplina?.attributes?.imagen_acordion?.data?.attributes?.url" 
+              :alt="disciplina?.attributes?.imagen_acordion?.data?.attributes?.alternativeText || ''"
+              loading="lazy" 
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -188,7 +198,7 @@ const items = computed(() => {
         >
           <img
             class="w-full h-full max-h-[300px] object-cover"
-            src="https://placehold.co/1308x2198"
+            :src="item.imagen_portada.data.attributes.url"
           />
 
           <div
@@ -248,15 +258,21 @@ const items = computed(() => {
               {{ info.titulo || "Cargando..." }}
             </CommonTitle>
             <div
-              class="md:text-sm"
+              class="md:text-sm max-h-[13.75rem] overflow-y-auto"
               v-html="info?.descripcion || `<span>Cargando...</span>`"
             />
           </div>
           <div class="w-full lg:!rounded-tr-2xl">
-            <img
-              class="w-full h-full rounded-b-2xl max-h-[383px] object-cover lg:!rounded-tr-2xl"
-              src="https://placehold.co/1290x2183"
-            />
+            <div class="w-full aspect-[4/3] relative rounded-b-2xl md:rounded-l-none lg:!rounded-tr-2xl overflow-hidden">
+              <img
+                v-if="info?.imagen_principal?.data?.attributes?.url"
+                class="absolute inset-0 w-full h-full object-cover"
+                :src="info?.imagen_principal?.data?.attributes?.url"
+                :alt="info?.imagen_principal?.data?.attributes?.alternativeText || ''"
+                loading="lazy"
+              />
+              <div v-else class="absolute inset-0 bg-gray-200 animate-pulse"></div>
+            </div>
           </div>
         </section>
         <section class="my-10 flex flex-col gap-4 md:my-14 md:gap-6">
@@ -303,7 +319,14 @@ const items = computed(() => {
               </UAccordion>
             </div>
             <div class="w-full mb-12 md:flex-1">
-              <img class="w-full" src="https://placehold.co/308x198" />
+              <div class="w-full aspect-[16/9] bg-gray-200">
+                <img 
+                  class="w-full h-full object-cover" 
+                  :src="info?.imagen_acordion?.data?.attributes?.url" 
+                  loading="lazy" 
+                  alt="Accordion image"
+                />
+              </div>
             </div>
           </div>
         </section>

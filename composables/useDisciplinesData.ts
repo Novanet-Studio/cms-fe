@@ -41,11 +41,53 @@ export const useDisciplines = (
                   }
                 }
 
+                imagen_secundaria {
+                  data {
+                    attributes {
+                      url
+                      alternativeText
+                    }
+                  }
+                }
+
+                imagen_acordion {
+                  data {
+                    attributes {
+                      url
+                      alternativeText
+                    }
+                  }
+                }
+
                 clases {
                   ... on ComponentDisciplinasClases {
                     titulo
                     descripcion
                     icono {
+                      data {
+                        attributes {
+                          url
+                          alternativeText
+                        }
+                      }
+                    }
+                    imagen_portada {
+                      data {
+                        attributes {
+                          url
+                          alternativeText
+                        }
+                      }
+                    }
+                    imagen_principal {
+                      data {
+                        attributes {
+                          url
+                          alternativeText
+                        }
+                      }
+                    }
+                    imagen_acordion {
                       data {
                         attributes {
                           url
