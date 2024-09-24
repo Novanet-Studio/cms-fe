@@ -99,7 +99,27 @@ await suspense();
       <UCarousel
         v-slot="{ item }"
         :items="response?.carousel"
-        :ui="{ item: 'basis-full' }"
+        :prev-button="{
+          class: 'text-white',
+        }"
+        :next-button="{
+          class: 'text-white',
+        }"
+        :ui="{
+          item: 'basis-full',
+          default: {
+            prevButton: {
+              class:
+                'rtl:[&_span:first-child]:rotate-180 absolute left-4 top-1/2 transform -translate-y-1/2 rounded-full disabled:!cursor-default',
+            },
+            nextButton: {
+              class:
+                'rtl:[&_span:last-child]:rotate-180 absolute right-4 top-1/2 transform -translate-y-1/2 rounded-full disabled:!cursor-default',
+              icon: 'i-heroicons-chevron-left-20-solid rotate-180',
+            },
+          },
+        }"
+        arrows
         class="overflow-hidden rounded-b-md h-[17.81rem] md:rounded-bl-none md:min-h-[18.31] lg:min-h-[540px] md:rounded-r-md"
       >
         <img
