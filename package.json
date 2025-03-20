@@ -16,6 +16,7 @@
     "cva": "npm:class-variance-authority@^0.7.0",
     "markdown-it": "^14.1.0",
     "qs": "^6.12.1",
+    "sharp": "^0.33.5",
     "tailwind-merge": "^2.4.0"
   },
   "devDependencies": {

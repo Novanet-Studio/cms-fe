@@ -20,6 +20,14 @@ export default defineNuxtConfig({
     "@nuxt/ui",
   ],
 
+  runtimeConfig: {
+    public: {
+      strapi: {
+        url: process.env.STRAPI_URL || "http://localhost:1337",
+      },
+    },
+  },
+
   ui: {
     // icons: ["fa-solid", "fa-brands"],
   },

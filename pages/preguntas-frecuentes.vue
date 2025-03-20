@@ -51,7 +51,7 @@ const {
   queryFn: () => query,
   select({ data }) {
     console.log("faq", data.preguntas.data);
-    return data.preguntas.data.map((faq) => ({
+    return data.preguntas.data.map((faq: { attributes: { titulo: any; descripcion: any; }; }) => ({
       label: faq.attributes.titulo,
       content: faq.attributes.descripcion,
     }));

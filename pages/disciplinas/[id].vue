@@ -6,7 +6,7 @@ const route = useRoute();
 const id = route.params.id as string;
 
 const isOpen = ref(false);
-const info = ref({});
+const info: any = ref({});
 
 const { discipline: disciplina, loading } = useDisciplines({
   link: id,
@@ -48,8 +48,49 @@ const items = computed(() => {
     });
   }
 
+  console.log($items);
+
   return $items;
 });
+
+/*
+
+YOGA 
+
+[
+    {
+        "label": "Horarios",
+        "description": [
+            {
+                "horarios": "<ul>\n<li>Multinivel Jueves 05:30pm</li>\n<li>Iniciación Lunes 06:00pm</li>\n<li>Iniciación Martes 07:00am</li>\n<li>Iniciación Jueves 07:00am</li>\n</ul>\n"
+            }
+        ],
+        "slot": "rules"
+    },
+    {
+        "label": "Planes",
+        "description": [
+            {
+                "planes": "<p>Cada clase Bs. 929,00</p>\n<br/>\n<i>Nuestras tarifas son en Bs. y están sujetas a un esquema constante de revisión y ajuste. *Podemos recibir sus dólares con un cambio más favorable para ud.*, lo cual se maneja al momento del pago.</i>\n"
+            }
+        ],
+        "slot": "rules"
+    },
+    {
+        "label": "¿Qué necesitas para empezar a hacer Yoga?",
+        "description": "<ul>\n<li>Ropa deportiva cómoda</li>\n<li>Mat para yoga de uso personal (alfombra tipo esterilla)</li>\n<li>Y mucho ENTUSIASMO!</li>\n</ul>\n",
+        "slot": "rules"
+    },
+    {
+        "label": "Requisitos para la inscripción",
+        "description": "Solo debes comunicarte con nosotros para formalizar la inscripción para lo que no se requiere ninguna documentación.",
+        "slot": "rules"
+    }
+]
+
+*/
+
+console.log(items.value);
 </script>
 
 <template>
@@ -59,7 +100,10 @@ const items = computed(() => {
         v-if="loading"
         class="w-full h-full flex items-center justify-center bg-gray-200"
       >
-        <UIcon name="i-heroicons-photo" class="w-16 h-16 text-gray-400 animate-pulse" />
+        <UIcon
+          name="i-heroicons-photo"
+          class="w-16 h-16 text-gray-400 animate-pulse"
+        />
       </div>
       <img
         v-else
@@ -107,14 +151,22 @@ const items = computed(() => {
         />
       </div>
       <div class="w-full lg:!rounded-tr-2xl">
-        <div class="w-full aspect-[4/3] rounded-b-2xl md:rounded-l-none lg:!rounded-tr-2xl overflow-hidden">
+        <div
+          class="w-full aspect-[4/3] rounded-b-2xl md:rounded-l-none lg:!rounded-tr-2xl overflow-hidden"
+        >
           <img
             v-if="disciplina?.attributes?.imagen_secundaria.data.attributes.url"
             class="w-full h-full object-cover"
             :src="disciplina?.attributes?.imagen_secundaria.data.attributes.url"
-            :alt="disciplina?.attributes?.imagen_secundaria.data.attributes.alternativeText"
+            :alt="
+              disciplina?.attributes?.imagen_secundaria.data.attributes
+                .alternativeText
+            "
           />
-          <div v-else class="w-full h-full flex items-center justify-center bg-gray-200">
+          <div
+            v-else
+            class="w-full h-full flex items-center justify-center bg-gray-200"
+          >
             <UIcon name="i-heroicons-photo" class="w-16 h-16 text-gray-400" />
           </div>
         </div>
@@ -152,17 +204,20 @@ const items = computed(() => {
                 v-if="item.label === 'Horarios'"
                 class="[&_ul]:list-disc [&_ul]:list-inside"
               >
-              <!-- <pre>{{
+                <!-- <pre>{{
                 JSON.stringify(item.description, null, 2) }}</pre> -->
                 <!-- <div v-for="({ horarios }, index) in item.description" :key="index"> -->
-                  <div v-html="item.description[0].horarios"></div>
+                <div v-html="item.description[0].horarios"></div>
                 <!-- </div> -->
               </div>
               <div
                 v-if="item.label === 'Planes'"
                 class="[&_ul]:list-disc [&_ul]:list-inside"
               >
-                <div v-for="({ planes }, index) in item.description" :key="index">
+                <div
+                  v-for="({ planes }, index) in item.description"
+                  :key="index"
+                >
                   <div v-html="planes"></div>
                 </div>
               </div>
@@ -176,15 +231,23 @@ const items = computed(() => {
         </div>
         <div class="w-full mb-12 md:flex-1">
           <div class="w-full aspect-[16/9] relative">
-            <div v-if="loading" class="w-full h-full flex items-center justify-center bg-gray-200">
+            <div
+              v-if="loading"
+              class="w-full h-full flex items-center justify-center bg-gray-200"
+            >
               <UIcon name="i-heroicons-photo" class="w-12 h-12 text-gray-400" />
             </div>
-            <img 
+            <img
               v-else
-              class="w-full h-full object-cover absolute top-0 left-0" 
-              :src="disciplina?.attributes?.imagen_acordion?.data?.attributes?.url" 
-              :alt="disciplina?.attributes?.imagen_acordion?.data?.attributes?.alternativeText || ''"
-              loading="lazy" 
+              class="w-full h-full object-cover absolute top-0 left-0"
+              :src="
+                disciplina?.attributes?.imagen_acordion?.data?.attributes?.url
+              "
+              :alt="
+                disciplina?.attributes?.imagen_acordion?.data?.attributes
+                  ?.alternativeText || ''
+              "
+              loading="lazy"
             />
           </div>
         </div>
@@ -203,7 +266,7 @@ const items = computed(() => {
         <div
           v-for="item in disciplina.attributes.clases"
           class="relative w-full"
-          :key="items.titulo"
+          :key="item.titulo"
           @click="
             () => {
               info = item;
@@ -212,14 +275,19 @@ const items = computed(() => {
           "
         >
           <div class="w-full aspect-[4/3] relative">
-            <div v-if="loading" class="w-full h-full flex items-center justify-center bg-gray-200">
+            <div
+              v-if="loading"
+              class="w-full h-full flex items-center justify-center bg-gray-200"
+            >
               <UIcon name="i-heroicons-photo" class="w-12 h-12 text-gray-400" />
             </div>
             <img
               v-else
               class="w-full h-full object-cover absolute inset-0"
-              :src="item.imagen_portada.data.attributes.url"
-              :alt="item.imagen_portada.data.attributes.alternativeText || ''"
+              :src="item?.imagen_portada?.data?.attributes?.url || ''"
+              :alt="
+                item?.imagen_portada?.data?.attributes?.alternativeText || ''
+              "
               loading="lazy"
             />
           </div>
@@ -264,7 +332,6 @@ const items = computed(() => {
             @click="
               () => {
                 isOpen = false;
-                info = {};
               }
             "
           >
@@ -278,7 +345,7 @@ const items = computed(() => {
             <CommonTitle
               class="mb-4 !items-start [&_h3]:text-2xl [&_h3]:text-left [&_h3]:text-balance"
             >
-              {{ info.titulo || "Cargando..." }}
+              {{ info?.titulo || "Cargando..." }}
             </CommonTitle>
             <div
               class="md:text-sm max-h-[13.75rem] overflow-y-auto"
@@ -286,15 +353,23 @@ const items = computed(() => {
             />
           </div>
           <div class="w-full lg:!rounded-tr-2xl">
-            <div class="w-full aspect-[4/3] relative rounded-b-2xl md:rounded-l-none lg:!rounded-tr-2xl overflow-hidden">
+            <div
+              class="w-full aspect-[4/3] relative rounded-b-2xl md:rounded-l-none lg:!rounded-tr-2xl overflow-hidden"
+            >
               <img
                 v-if="info?.imagen_principal?.data?.attributes?.url"
                 class="absolute inset-0 w-full h-full object-cover"
                 :src="info?.imagen_principal?.data?.attributes?.url"
-                :alt="info?.imagen_principal?.data?.attributes?.alternativeText || ''"
+                :alt="
+                  info?.imagen_principal?.data?.attributes?.alternativeText ||
+                  ''
+                "
                 loading="lazy"
               />
-              <div v-else class="absolute inset-0 bg-gray-200 animate-pulse"></div>
+              <div
+                v-else
+                class="absolute inset-0 bg-gray-200 animate-pulse"
+              ></div>
             </div>
           </div>
         </section>
@@ -314,12 +389,12 @@ const items = computed(() => {
                 :items="[
                   {
                     label: 'Horarios',
-                    description: info.horarios,
+                    content: info.horarios,
                     slot: 'rules',
                   },
                   {
                     label: 'Planes',
-                    description: info.planes,
+                    content: info.planes,
                     slot: 'rules',
                   },
                 ]"
@@ -336,7 +411,7 @@ const items = computed(() => {
                 <template #rules="{ item }">
                   <div
                     class="[&_ul]:list-disc [&_ul]:list-inside"
-                    v-html="item.description"
+                    v-html="item.content"
                   />
                 </template>
               </UAccordion>
@@ -344,15 +419,20 @@ const items = computed(() => {
             <div class="w-full mb-12 md:flex-1">
               <div class="w-full aspect-[16/9] bg-gray-200 relative">
                 <template v-if="loading">
-                  <div class="absolute inset-0 flex items-center justify-center">
-                    <UIcon name="i-heroicons-photo" class="w-16 h-16 text-gray-400 animate-pulse" />
+                  <div
+                    class="absolute inset-0 flex items-center justify-center"
+                  >
+                    <UIcon
+                      name="i-heroicons-photo"
+                      class="w-16 h-16 text-gray-400 animate-pulse"
+                    />
                   </div>
                 </template>
-                <img 
+                <img
                   v-else
-                  class="w-full h-full object-cover" 
-                  :src="info?.imagen_acordion?.data?.attributes?.url" 
-                  loading="lazy" 
+                  class="w-full h-full object-cover"
+                  :src="info?.imagen_acordion?.data?.attributes?.url"
+                  loading="lazy"
                   alt="Accordion image"
                 />
               </div>
