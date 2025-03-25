@@ -53,44 +53,6 @@ const items = computed(() => {
   return $items;
 });
 
-/*
-
-YOGA 
-
-[
-    {
-        "label": "Horarios",
-        "description": [
-            {
-                "horarios": "<ul>\n<li>Multinivel Jueves 05:30pm</li>\n<li>Iniciación Lunes 06:00pm</li>\n<li>Iniciación Martes 07:00am</li>\n<li>Iniciación Jueves 07:00am</li>\n</ul>\n"
-            }
-        ],
-        "slot": "rules"
-    },
-    {
-        "label": "Planes",
-        "description": [
-            {
-                "planes": "<p>Cada clase Bs. 929,00</p>\n<br/>\n<i>Nuestras tarifas son en Bs. y están sujetas a un esquema constante de revisión y ajuste. *Podemos recibir sus dólares con un cambio más favorable para ud.*, lo cual se maneja al momento del pago.</i>\n"
-            }
-        ],
-        "slot": "rules"
-    },
-    {
-        "label": "¿Qué necesitas para empezar a hacer Yoga?",
-        "description": "<ul>\n<li>Ropa deportiva cómoda</li>\n<li>Mat para yoga de uso personal (alfombra tipo esterilla)</li>\n<li>Y mucho ENTUSIASMO!</li>\n</ul>\n",
-        "slot": "rules"
-    },
-    {
-        "label": "Requisitos para la inscripción",
-        "description": "Solo debes comunicarte con nosotros para formalizar la inscripción para lo que no se requiere ninguna documentación.",
-        "slot": "rules"
-    }
-]
-
-*/
-
-console.log(items.value);
 </script>
 
 <template>
