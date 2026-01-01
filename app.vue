@@ -1,35 +1,22 @@
-<script setup lang="ts">
-useHead({
-  meta: [
-    { name: "viewport", content: "width=device-width, initial-scale=1" },
-    { key: "theme-color", name: "theme-color", content: "light" },
-  ],
-  link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],
-  htmlAttrs: {
-    lang: "es",
-  },
-});
-</script>
-
 <template>
-  <div class="container">
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
-    <USlideovers />
-  </div>
+  <nuxt-layout>
+    <nuxt-page />
+  </nuxt-layout>
 </template>
 
-<style>
-:root {
-  --color-primary: #f18a00;
-  --color-secondary: #001e61;
-  --color-tertiary: #231f20;
-  --color-gray-mid: #a7a9ac;
-  --color-gray-light: #e6e7e8;
-}
+<script setup>
+import { register } from "swiper/element/bundle";
+register();
+</script>
 
-.router-link-active {
-  @apply font-black border-b border-b-[var(--color-primary)];
+<style>
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.4s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
 }
 </style>
