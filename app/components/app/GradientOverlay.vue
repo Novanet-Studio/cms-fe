@@ -1,0 +1,18 @@
+<template>
+  <div class="tienda__category">
+    <NuxtPicture :src="image" quality=".7" :alt="alternativeText" class="tienda__imagen" />
+    <div class="tienda__overlay">
+      <h3 class="tienda__name">{{ text }}</h3>
+    </div>
+  </div>
+</template>
+
+<script lang="ts" setup>
+type Props = {
+  image: string;
+  alternativeText: string;
+  text: string;
+};
+
+defineProps<Props>();
+</script>

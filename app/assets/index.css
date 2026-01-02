@@ -1,0 +1,915 @@
+@layer base {
+  html {
+    @apply text-base;
+  }
+
+  body {
+    @apply font-sans text-tertiary font-light hyphens-auto;
+    font-kerning: normal;
+    -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+    -ms-font-feature-settings: "kern", "liga", "clig", "calt";
+    -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+    font-feature-settings: "kern", "liga", "clig", "calt";
+    text-rendering: optimizeLegibility;
+  }
+
+  /* nunito-sans-regular - latin */
+  @font-face {
+    font-family: "Nunito Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: url("@/assets/fonts/nunito-sans-v12-latin-regular.eot"); /* IE9 Compat Modes */
+    src: local(""),
+      url("@/assets/fonts/nunito-sans-v12-latin-regular.eot?#iefix")
+        format("embedded-opentype"),
+      /* IE6-IE8 */ url("@/assets/fonts/nunito-sans-v12-latin-regular.woff2")
+        format("woff2"),
+      /* Super Modern Browsers */
+        url("@/assets/fonts/nunito-sans-v12-latin-regular.woff") format("woff"),
+      /* Modern Browsers */
+        url("@/assets/fonts/nunito-sans-v12-latin-regular.ttf")
+        format("truetype"),
+      /* Safari, Android, iOS */
+        url("@/assets/fonts/nunito-sans-v12-latin-regular.svg#NunitoSans")
+        format("svg"); /* Legacy iOS */
+    font-display: swap;
+  }
+
+  /* nunito-sans-900 - latin */
+  @font-face {
+    font-family: "Nunito Sans";
+    font-style: normal;
+    font-weight: 900;
+    src: url("@/assets/fonts/nunito-sans-v12-latin-900.eot"); /* IE9 Compat Modes */
+    src: local(""),
+      url("@/assets/fonts/nunito-sans-v12-latin-900.eot?#iefix")
+        format("embedded-opentype"),
+      /* IE6-IE8 */ url("@/assets/fonts/nunito-sans-v12-latin-900.woff2")
+        format("woff2"),
+      /* Super Modern Browsers */
+        url("@/assets/fonts/nunito-sans-v12-latin-900.woff") format("woff"),
+      /* Modern Browsers */ url("@/assets/fonts/nunito-sans-v12-latin-900.ttf")
+        format("truetype"),
+      /* Safari, Android, iOS */
+        url("@/assets/fonts/nunito-sans-v12-latin-900.svg#NunitoSans")
+        format("svg"); /* Legacy iOS */
+    font-display: swap;
+  }
+
+  .heading {
+    @apply text-tertiary font-black;
+  }
+
+  .heading-dots-left {
+    @apply bg-left-top bg-no-repeat pt-4;
+  }
+
+  .heading-dots-left-small {
+    @apply bg-left-top bg-no-repeat pt-4;
+  }
+
+  .heading-dots-right {
+    @apply bg-no-repeat pt-4;
+  }
+
+  .heading-1 {
+    @apply heading text-3xl 
+    <sm:(text-3xl);
+  }
+
+  .heading-2 {
+    @apply heading text-2xl 
+    <sm:(text-2xl);
+  }
+
+  .heading-3 {
+    @apply heading text-xl 
+    <sm:(text-xl);
+  }
+
+  .heading-4 {
+    @apply heading text-lg 
+    <sm:(text-lg);
+  }
+
+  .heading-5 {
+    @apply heading text-md 
+    <sm:(text-base);
+  }
+}
+
+/* Common classes */
+.button--blue {
+  @apply bg-secondary px-8 py-2 rounded-full text-white;
+}
+
+.button--yellow {
+  @apply bg-primary px-8 py-2 rounded-full text-white;
+}
+
+.button--small {
+  @apply text-sm
+  <sm:(text-xs);
+}
+
+.round-border {
+  @apply border border-mid-gray rounded-xl p-3;
+}
+
+.grid-70-30 {
+  @apply container mx-auto grid grid-cols-[70%_30%] pt-6;
+}
+
+.form__container {
+  @apply p-3 border rounded-xl border-light-gray;
+}
+
+.form {
+  @apply flex w-full flex-wrap  justify-between shadow shadow-xl border rounded-xl border-mid-gray bg-gradient-to-tr from-white to-light-gray 
+  <sm:(px-4 py-5)
+  md:(p-5)
+  xl:(p-10);
+}
+
+.form__a-col {
+  @apply w-full
+  xl:();
+}
+
+.form__b-col {
+  @apply <sm:(w-full) md:(w-[48%]);
+}
+
+.form__input::placeholder,
+.form__textarea::placeholder {
+  @apply text-primary-alt;
+}
+
+.form__input {
+  @apply list-none mb-8 p-4 border border-mid-gray rounded-full    
+  <sm:(w-full)
+  md:(w-full);
+}
+
+.form__textarea {
+  @apply list-none p-4 mr-4 border border-mid-gray rounded-3xl mb-8
+  <sm:(w-full)
+  md:(w-full);
+}
+
+.form__title {
+  @apply heading-2 heading-dots-left mb-8 mb-8 
+  <sm:()
+  md:(w-full);
+}
+
+.row {
+  @apply flex flex-wrap w-full;
+}
+
+/* ./components/the-header.vue */
+.header {
+  @apply w-full border-b border-light-gray shadow-lg bg-white fixed z-50
+  <sm:();
+}
+
+.header__container {
+  @apply md:(flex justify-between py-6 px-4)
+  xl:(container mx-auto p-8);
+}
+
+.header__logo {
+  @apply <sm:(flex justify-between ml-4 py-4);
+}
+
+.header__logo img {
+  @apply <sm:(w-16)
+  md:(w-14)
+  lg:(w-16);
+}
+
+.header__bars {
+  @apply hidden 
+  <sm:(flex self-center text-tertiary mr-4 transition-all);
+}
+
+.header__bars--expanded {
+  @apply <sm:(text-primary );
+}
+
+.header__navigation {
+  @apply flex 
+  <sm:(flex-wrap w-[55%] fixed -right-[55%] bg-white border-light-gray shadow-lg p-4 transition-all z-30) 
+  md:(items-center justify-end)
+  xl:(mr-8);
+}
+
+.header__navigation--expanded {
+  @apply <sm:(right-0);
+}
+
+.header__navigation button {
+  @apply <sm:(mt-1);
+}
+
+.header__link {
+  @apply <sm:(flex w-full py-2)
+  md:(text-xs pr-3)
+  lg:(text-sm pr-4)
+  xl:(px-4);
+}
+
+/* ./layouts/default.vue */
+
+.main {
+  @apply <sm:(pt-[5.625rem]) 
+  @md:(pt-[6.146em])
+  @lg:(pt-[6.595em])
+  xl:(pt-[7.578em]);
+}
+.main > section {
+  @apply <sm:(px-3 pt-4)
+  md:(px-8);
+}
+
+/* ./components/the-footer.vue */
+.footer {
+  @apply flex justify-between container mx-auto py-16 
+  <sm:(mt-4 px-4 py-6)
+  md:(px-8);
+}
+
+.footer__left {
+  @apply w-1/2;
+}
+
+.footer__legal {
+  @apply <sm:(text-[0.8rem])
+  xl:(mb-2);
+}
+
+.footer__icons {
+  @apply flex text-primary text-xs
+  <sm:(pt-3);
+}
+
+.footer__link {
+  @apply mr-3;
+}
+
+.footer__link svg {
+  @apply w-7;
+}
+
+.footer__right {
+  @apply flex
+  <sm:(flex-wrap justify-end w-1/2);
+}
+
+.footer__right p {
+  @apply <sm:(w-full text-[0.8rem] text-right)
+  xl:(mr-2);
+}
+
+.footer__right img {
+  @apply w-22
+  <sm:(w-20);
+}
+
+/* Common components */
+
+.hero {
+  @apply w-full bg-sectionBg bg-no-repeat bg-contain 
+  <sm:(bg-right-top)
+  md:(bg-right);
+}
+
+.hero__container {
+  @apply flex items-center container mx-auto py-10
+  <sm:(flex-wrap);
+}
+
+.hero__info {
+  @apply flex flex-col pt-4 bg-no-repeat text-right 
+  <sm:(w-full bg-top my-12 mx-8) 
+  md:(w-1/2 bg-right-top)
+  xl:(pl-34);
+}
+
+.hero__title {
+  @apply heading-1 hyphens-none
+  <sm:(text-center);
+}
+
+.hero__description {
+  @apply mt-4 hyphens-manual
+  <sm:(text-center);
+}
+
+.hero__images {
+  @apply <sm:(flex justify-center flex-wrap w-full mt-6) 
+  md:(w-1/2 pl-8)
+  lg:(pl-20)
+  xl:(pl-16);
+}
+
+.hero__image-bg {
+  @apply flex flex-col justify-center items-center bg-heroBg bg-no-repeat bg-contain
+  <sm:(w-78 h-78) 
+  md:(w-80 h-80)
+  xl:(w-107 h-107);
+}
+
+.hero__image-fg {
+  @apply rounded-full z-20 absolute 
+  <sm:(w-70 h-70) 
+  md:(w-72 h-72)
+  xl:(w-101 h-101);
+}
+
+.swiper {
+  @apply w-full md:(mb-4);
+}
+
+.swiper-slide {
+  @apply <sm:(absolute max-w-full overflow-hidden);
+}
+
+.blog .swiper-slide img {
+  position: unset;
+  width: 100%;
+  overflow: unset;
+}
+
+.swiper-slide img {
+  @apply <sm:(relative max-w-[150%] -left-[25%] !important);
+}
+
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next {
+  @apply text-primary;
+}
+
+.box {
+  @apply container mx-auto;
+}
+
+.box > div {
+  @apply p-8 my-8 border border-mid-gray rounded-xl;
+}
+
+.box__title {
+  @apply heading-3 text-primary-alt;
+}
+
+.box .horarios {
+  @apply flex pl-0 list-none;
+}
+
+.box .horarios > li {
+  @apply bg-light-gray border border-mid-gray rounded-full mr-10 p-8;
+}
+
+.box--noborder {
+  @apply container mx-auto pt-0 
+  <sm:(px-0);
+}
+
+.dots {
+  @apply my-6 flex justify-center;
+}
+
+.summary {
+  @apply flex items-center
+  xl:(mt-2 mb-2);
+}
+
+.summary-icon-container {
+  @apply flex items-center justify-center bg-primary rounded-full box-border
+  <sm:(w-[15%] h-[2.75rem] py-2)
+  xl:(w-14 h-14);
+}
+
+.summary-icon {
+  @apply <sm:(w-5) xl:(w-6);
+}
+
+.summary-title {
+  @apply heading-3 ml-2 text-secondary
+  <sm:(w-[85%] leading-tight);
+}
+
+.summary-content {
+  @apply w-full hyphens-manual;
+}
+
+.summary-content h3 {
+  @apply heading-3;
+}
+
+.summary-content h4 {
+  @apply heading-4;
+}
+
+.summary-content h3 {
+  @apply heading-4;
+}
+
+.cards__wrapper {
+  @apply flex flex-wrap justify-around content-around 
+  <sm:(mt-4 min-h-112)
+  md:(container mx-auto justify-between min-h-145 px-24)
+  lg:(min-h-110 px-0)
+  xl:(min-h-80 px-16);
+}
+
+.card__outer {
+  @apply flex justify-center items-center border border-mid-gray rounded-2xl 
+  <sm:(w-38 h-50)
+  md:(w-50 h-62) 
+  xl:(w-51 h-64);
+}
+
+.card__inner {
+  @apply flex flex-col items-center justify-around shadow-card rounded-xl bg-gradient-to-br from-light-gray to-white 
+  <sm:(w-34 h-46 p-3)
+  md:(w-45 h-57) 
+  xl:(w-46 h-60 py-4);
+}
+
+.card__elements {
+  @apply flex flex-col items-center justify-center;
+}
+
+.card__icon {
+  @apply bg-primary rounded-full flex items-center justify-center mb-[.875rem]
+  <sm:(w-15 h-15 p-3)
+  md:(w-20 h-20);
+}
+
+.card__title {
+  @apply heading-4 text-center leading-tight text-secondary !important
+  <sm:(text-sm);
+}
+
+.card__text {
+  @apply text-sm text-center hyphens-manual
+  <sm:(text-xs);
+}
+
+.highlight {
+  @apply flex w-full items-center bg-light-gray
+  <sm:(flex-wrap);
+}
+
+.highlight-slide {
+  @apply highlight;
+}
+
+.highlight .highlight__image {
+  @apply flex w-1/2 
+  <sm:(w-full);
+}
+
+.highlight-slide .highlight__image {
+  @apply <sm:(w-full)
+  md:(flex w-[57%]);
+}
+
+.highlight-slide .highlight__image img {
+  @apply w-full;
+}
+
+.highlight__info {
+  @apply flex flex-col w-1/2 
+  <sm:(w-full py-7 items-center)
+  @md:(mr-3 text-base)
+  lg:(mr-10 items-end);
+}
+
+.highlight__title {
+  @apply heading-2 heading-dots-right hyphens-none
+  <sm:(w-full text-center bg-top px-1)
+  xl:(text-right bg-right-top);
+}
+
+.highlight__text {
+  @apply my-4 hyphens-none
+  <sm:(text-center px-6)
+  @md:(text-right pl-3)
+  lg:(pl-24);
+}
+
+.highlight__image img {
+  @apply w-full;
+}
+
+.basic {
+  @apply <sm:(w-1/2 p-4);
+}
+
+.basic--aliados {
+  @apply <sm:(w-full) 
+  md:(w-full flex flex-nowrap gap-1)
+  xl:(flex w-1/2);
+}
+
+.basic--aside {
+  @apply mt-8 mb-8
+  <sm:(w-full mb-0 mt-0);
+}
+
+.basic--aside .basic__title {
+  @apply mt-2;
+}
+
+.basic__logo {
+  @apply round-border;
+}
+
+.aside .basic__logo {
+  @apply md:(w-full);
+}
+
+.basic__logo img {
+  @apply <sm:(w-full)
+  md:(w-full);
+}
+
+.basic__logo--index {
+  @apply xl:(w-36);
+}
+
+.basic__logo--index img {
+  @apply <sm:(w-full);
+}
+
+.basic__logo--aliados {
+  @apply <sm:(w-28)
+  md:(w-1/4 mb-8);
+}
+
+.basic__info {
+  @apply md:(w-[80%] ml-4);
+}
+
+.basic__title,
+.basic__description {
+  @apply w-full hyphens-manual
+  xl:();
+}
+
+.basic__description a {
+  @apply font-bold italic;
+}
+
+.basic__description strong,
+.basic__description a {
+  @apply block;
+}
+
+.basic__title {
+  @apply heading-3 text-secondary
+  <sm:(mt-2);
+}
+
+/* .mensaje:nth-child(odd) {
+  @apply w-full bg-sectionBg bg-right bg-no-repeat bg-contain;
+}
+
+.mensaje:nth-child(even) {
+  @apply w-full bg-sectionBg2 bg-left bg-no-repeat bg-contain;
+}
+ */
+.mensaje__container {
+  @apply flex flex-col items-center container mx-auto  
+  <sm:(py-16)
+  md:(pt-16 pb-8);
+}
+
+.mensaje__title {
+  @apply heading-2 text-center;
+}
+
+.mensaje__description {
+  @apply text-center mb-8 text-lg mt-4;
+}
+
+.disciplinas {
+  @apply w-full bg-sectionBg2 bg-left bg-no-repeat bg-contain;
+}
+
+.disciplinas__container {
+  @apply <sm:(py-4)
+  md:(container mx-auto py-8 )
+  xl:(px-8 py-16);
+}
+
+.disciplinas__title {
+  @apply heading-2 heading-dots-left;
+}
+
+.disciplinas__button {
+  @apply container mx-auto;
+}
+
+.disciplinas__button button {
+  @apply mx-8 mb-6;
+}
+
+.disciplina__header {
+  @apply w-full h-72 relative mb-16 px-0 !important;
+}
+
+.disciplina__cover {
+  @apply w-full h-full object-cover;
+}
+
+.disciplina__icon-container {
+  @apply flex flex-col items-center justify-center absolute bottom-0 left-0 top-0 right-0 px-4 py-2 from-secondary bg-gradient-to-t;
+}
+
+.disciplina__icon-circle {
+  @apply flex items-center justify-center w-36 h-36 bg-primary rounded-full mb-4;
+}
+
+.disciplina__icon-image {
+  @apply w-20;
+}
+
+.disciplina__title {
+  @apply heading-1 text-white;
+}
+
+.aliados {
+  @apply flex flex-col bg-sectionBg2 bg-no-repeat bg-left bg-contain  
+  <sm:(mb-6)
+  xl:(mt-0 pb-6);
+}
+
+.aliados__wrapper {
+  @apply flex justify-between flex-wrap container mx-auto w-full
+  <sm:()
+  md:(px-6 py-8);
+}
+
+.aliados__title {
+  @apply heading-2 heading-dots-left w-full pb-6;
+}
+
+.aliados .basic {
+  @apply mb-2;
+}
+
+.identidad {
+  @apply flex flex-col container mx-auto mt-8;
+}
+
+.identidad__container {
+  @apply;
+}
+
+.identidad__item {
+  @apply flex flex-wrap mb-8;
+}
+
+.identidad__imagen {
+  @apply round-border 
+  <sm:(w-full) xl:(w-1/4);
+}
+
+.identidad__imagen img {
+  @apply w-full;
+}
+
+.identidad__info {
+  @apply xl:(w-3/4 pl-4);
+}
+
+.identidad__title {
+  @apply heading-2 heading-dots-left text-secondary
+  <sm:(mt-4);
+}
+
+.blog {
+  @apply bg-sectionBg bg-no-repeat bg-right
+  <sm:(pt-0)
+  xl:(pt-6);
+}
+
+.blog__wrapper {
+  @apply container mx-auto grid mt-4 gap-6
+  <sm:(grid-cols-1)
+  md:(grid-cols-2);
+}
+
+.blog__title {
+  @apply heading-2 heading-dots-left
+  md:(col-span-full);
+}
+
+.blog-item {
+  @apply flex items-start flex-wrap mb-12;
+}
+
+.blog-item__img-container {
+  @apply round-border
+  <sm:(w-full)
+  xl:(w-2/5);
+}
+
+.blog-item__info {
+  @apply flex flex-col 
+  <sm:(w-full)
+  xl:(w-3/5 pl-3 pr-4);
+}
+
+.blog-item__imagen {
+  @apply object-cover object-center;
+}
+
+.blog-item__imagen img {
+  @apply w-full;
+}
+
+.blog-item__title {
+  @apply heading-3 text-secondary
+  <sm:(mt-4);
+}
+
+.blog-item__boton {
+  @apply w-32 mt-3;
+}
+
+.articulo {
+  @apply <sm:(px-3)
+  xl:(container mx-auto pt-6);
+}
+
+.articulo-grid {
+  @apply mt-6
+  <sm:(px-3)
+  md:(container mx-auto grid grid-cols-[70%_30%]);
+}
+
+.aside {
+  @apply pl-6
+  <sm:(pl-0 mt-8);
+}
+
+.articulo__image img {
+  @apply w-full round-border;
+}
+
+.articulo__title {
+  @apply heading-1 heading-dots-left text-secondary mt-6;
+}
+
+.articulo__description p {
+  @apply mt-4 mb-4;
+}
+
+.faq-grid {
+  @apply grid mt-6
+  md:(container mx-auto grid-cols-[70%_30%] pt-6);
+}
+
+.faq__title {
+  @apply heading-2 heading-dots-left mb-8;
+}
+
+.contacto__grid {
+  @apply pt-6
+  <sm:() 
+  md:(container mx-auto grid grid-cols-[70%_30%]);
+}
+
+.contacto__group {
+  @apply my-4;
+}
+
+.contacto__group p {
+  @apply hyphens-manual;
+}
+
+.contacto__title {
+  @apply heading-2;
+}
+
+.contacto__subtitle {
+  @apply heading-3 heading-dots-left-small;
+}
+
+.contacto__link {
+  @apply mr-3 text-primary;
+}
+
+.contacto__map-icon {
+  @apply leading-6;
+}
+
+.contacto__link svg {
+  @apply text-primary xl:(w-4) <sm:(w-6);
+}
+
+.tienda {
+  @apply container mx-auto
+  <sm:()  
+  xl:(mt-12 py-4);
+}
+
+.tienda__title {
+  @apply heading-2 heading-dots-left;
+}
+
+.tienda__wrapper {
+  @apply flex justify-between
+  <sm:(flex-wrap)
+  xl:(mt-8);
+}
+
+.tienda__category {
+  @apply relative w-full mt-2
+  xl:(w-[33%]);
+}
+
+.tienda__overlay {
+  @apply flex items-end absolute bottom-0 left-0 top-0 right-0 p-2 from-[rgba(35,31,32,0)] bg-gradient-to-t;
+}
+
+.tienda__imagen img {
+  @apply w-full;
+}
+
+.tienda__name {
+  @apply heading heading-3 text-white !important p-4;
+}
+
+.profesionales {
+  @apply w-full bg-sectionBg2 bg-left bg-no-repeat bg-contain;
+}
+
+.profesionales__container {
+  @apply container mx-auto 
+  <sm:(py-4)
+  xl:(px-8 py-16);
+}
+
+.profesionales__title {
+  @apply heading-2;
+}
+
+.profesionales .cards__wrapper {
+  @apply flex-wrap 
+  lg:(justify-start);
+}
+
+.profesionales__item {
+  @apply mb-4
+  <sm:(mt-24)
+  md:(pt-24)
+  xl:(w-1/4 mt-32);
+}
+
+.profesionales .card__outer {
+  @apply h-40 !important;
+}
+
+.profesionales .card__inner {
+  @apply h-36 !important;
+}
+
+.profesionales .card__icon {
+  @apply w-42 h-42 bg-transparent bg-heroBg bg-no-repeat bg-center -mt-24 !important;
+  background-size: 81%;
+}
+
+.profesionales .card__icon img {
+  @apply w-34 h-34 rounded-full flex items-center justify-center;
+}
+
+.perfil {
+  @apply mt-6
+  <sm:(px-3)
+  xl:(container mx-auto grid grid-cols-[30%_70%]);
+}
+
+.perfil__image-wrapper {
+  @apply flex flex-wrap items-center justify-center bg-heroBg bg-no-repeat bg-contain bg-center
+  <sm:(mb-10);
+}
+
+.perfil__image-wrapper img {
+  @apply rounded-full flex items-center justify-center;
+}
+
+.perfil__titulo {
+  @apply w-full heading-2 pb-3 <sm:(text-center);
+}
+
+.perfil__extracto {
+  @apply flex flex-col justify-center text-xl
+  @md:(pt-8)
+  @lg:(pt-8)
+  xl:(pr-36);
+}

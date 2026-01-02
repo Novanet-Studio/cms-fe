@@ -1,24 +1,83 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  ssr: false,
-  devtools: { enabled: true },
-
+  telemetry: false,
   app: {
+    head: {
+      title: "Ccs MultiSport - Sitio web",
+      meta: [
+        { name: "author", content: "Novanet Studio <info@novanet.studio>" },
+        {
+          name: "description",
+          content:
+            "Centro Deportivo que integra los sectores del deporte y la salud. Nuestro objetivo principal es mejorar la calidad de vida de nuestros usuarios mediante la enseñanza y práctica de diversas disciplinas deportivas.",
+        },
+      ],
+    },
     pageTransition: {
-      enterFromClass: "opacity-0",
-      enterActiveClass: "transition duration-300",
-      mode: "out-in"
-    }
+      name: "page",
+      mode: "out-in",
+    },
+  },
+  build: {
+    transpile: [
+      "@fortawesome/vue-fontawesome",
+      "@fortawesome/fontawesome-svg-core",
+      "@fortawesome/free-solid-svg-icons",
+      "@fortawesome/free-brands-svg-icons",
+    ],
   },
 
   modules: [
     "@nuxt/image",
-    "@nuxtjs/google-fonts",
-    "nuxt-gtag",
-    "@nuxtjs/seo",
     "@nuxtjs/strapi",
-    "@nuxt/ui",
+    "nuxt-windicss",
+    "nuxt-gtag",
+    "@vite-pwa/nuxt",
   ],
+
+  pwa: {
+    registerType: "autoUpdate",
+    manifest: {
+      name: "Ccs MultiSport - Sitio web",
+      short_name: "Ccs MultiSport",
+      description:
+        "Integramos los sectores del deporte y la salud con el objetivo principal de mejorar la calidad de vida de nuestros usuarios mediante la enseñanza y práctica de diversas disciplinas deportivas.",
+      theme_color: "#ffffff",
+      background_color: "#ffffff",
+      lang: "es",
+      display: "standalone",
+      orientation: "portrait",
+      start_url: "/",
+      icons: [
+        {
+          src: "pwa-192x192.png",
+          sizes: "192x192",
+          type: "image/png",
+        },
+        {
+          src: "pwa-512x512.png",
+          sizes: "512x512",
+          type: "image/png",
+        },
+        {
+          src: "pwa-512x512.png",
+          sizes: "512x512",
+          type: "image/png",
+          purpose: "any maskable",
+        },
+      ],
+    },
+    workbox: {
+      globPatterns: ["**/*.{js,css,html,png,svg,ico}"],
+      navigateFallback: null,
+    },
+    client: {
+      installPrompt: true,
+    },
+    devOptions: {
+      enabled: true,
+      type: "module",
+    },
+  },
 
   runtimeConfig: {
     public: {
@@ -28,29 +87,60 @@ export default defineNuxtConfig({
     },
   },
 
-  ui: {
-    // icons: ["fa-solid", "fa-brands"],
-  },
-
-  colorMode: {
-    preference: "light",
-    fallback: "light",
-  },
-
-  googleFonts: {
-    families: {
-      "Nunito Sans": [300, 900],
+  vue: {
+    compilerOptions: {
+      isCustomElement: (tag) =>
+        ["swiper-container", "swiper-slide"].includes(tag),
     },
   },
 
-  site: {
-    url: 'https://www.ccsmultisport.com',
-    name: 'Ccs MultiSport'
+  typescript: {
+    strict: true,
+    tsConfig: {
+      compilerOptions: {
+        types: ["project.d.ts"],
+      },
+    },
   },
 
-  ogImage: {
-    enabled: false
+  css: [
+    "~/assets/index.css",
+    "@fortawesome/fontawesome-svg-core/styles.css",
+    "virtual:windi.css",
+    "virtual:windi-devtools",
+  ],
+
+  router: {
+    options: {
+      linkActiveClass: "text-black font-bold",
+    },
   },
 
-  compatibilityDate: "2024-09-09"
+  image: {
+    dir: "/images",
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1920,
+    },
+
+    presets: {
+      slide: {
+        modifiers: {
+          format: "webp",
+          width: 1280,
+          height: 620,
+        },
+      },
+    },
+  },
+
+  gtag: {
+    id: "G-M2VFL7ZD5M",
+  },
+
+  compatibilityDate: "2026-01-01",
 });
