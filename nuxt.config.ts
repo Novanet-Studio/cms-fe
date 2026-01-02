@@ -142,5 +142,13 @@ export default defineNuxtConfig({
     id: "G-M2VFL7ZD5M",
   },
 
+  experimental: {
+    payloadExtraction: false,
+  },
+  
+  nitro: {
+    preset: "netlify",
+  },
+
   compatibilityDate: "2026-01-01",
 });
