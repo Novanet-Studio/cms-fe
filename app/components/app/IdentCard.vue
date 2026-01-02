@@ -1,7 +1,18 @@
+<script lang="ts" setup>
+type Props = {
+  imagen?: string;
+  alternativeText?: string;
+  title?: string;
+  description?: string;
+};
+
+defineProps<Props>();
+</script>
+
 <template>
   <div class="identidad__item">
     <div class="identidad__imagen">
-      <nuxt-picture :src="imagen" :alt="alternativeText" />
+      <NuxtPicture :src="imagen" :alt="alternativeText ?? 'Nuxt image'" />
     </div>
     <div class="identidad__info">
       <h3 class="identidad__title" v-html="title"></h3>
@@ -9,14 +20,3 @@
     </div>
   </div>
 </template>
-
-<script lang="ts" setup>
-type Props = {
-  imagen: string;
-  alternativeText: string;
-  title?: string;
-  description?: string;
-};
-
-defineProps<Props>();
-</script>

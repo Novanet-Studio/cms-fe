@@ -1,11 +1,11 @@
 <template>
-  <transition name="fade" appear>
+  <Transition name="fade" appear>
     <div>
-      <the-header />
+      <AppHeader />
       <main class="main">
         <slot />
       </main>
-      <the-footer />
+      <AppFooter />
     </div>
-  </transition>
+  </Transition>
 </template>

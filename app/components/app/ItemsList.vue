@@ -15,15 +15,12 @@
             <div class="summary-icon-container" v-if="item.icono">
               <img
                 class="summary-icon"
-                :src="item.icono.data.attributes.url"
-                :alt="item.icono.data.attributes.alternativeText"
+                :src="item.icono.url"
+                :alt="item.icono.alternativeText"
               />
             </div>
             <h2 v-if="item.titulo" class="summary-title">
               {{ item.titulo }}
-            </h2>
-            <h2 v-else class="summary-title">
-              {{ item.attributes.titulo }}
             </h2>
           </div>
         </template>
@@ -38,7 +35,7 @@
         <div
           v-else
           class="summary-content"
-          v-html="item.attributes.descripcion"
+          v-html="item.descripcion"
         ></div>
 
         <div
@@ -68,10 +65,6 @@ const accordionListRef = ref();
 
 const state = ref<State>({});
 const openMultipleItems = ref(false);
-
-// watch(state, () => {
-//   console.log(state.value);
-// });
 
 defineProps<Props>();
 </script>

@@ -42,16 +42,16 @@
 
       <div class="form__a-col">
         <textarea
-          class="form__textarea"
+          class="form__textarea resize-none"
           rows="5"
           name="mensaje"
           v-model="message"
-          placeholder="Mensaje" 
+          placeholder="Mensaje"
         />
       </div>
 
       <div class="form__a-col submit">
-        <app-button
+        <AppButton
           class="button--blue button--small"
           prefix="fa"
           iconName="paper-plane"
@@ -61,7 +61,7 @@
           url="/gracias"
         >
           Enviar
-        </app-button>
+        </AppButton>
         <input type="hidden" name="form-name" value="inicio" />
       </div>
     </form>
@@ -69,8 +69,8 @@
 </template>
 
 <script lang="ts" setup>
-import { useForm } from 'vee-validate';
-import * as yup from 'yup';
+import { useForm } from "vee-validate";
+import * as yup from "yup";
 
 type Form = {
   name: string;
@@ -80,10 +80,10 @@ type Form = {
 };
 
 const schema = yup.object({
-  name: yup.string().required('Este campo es requerido'),
-  email: yup.string().email().required('Este campo es requerido'),
-  subject: yup.string().required('Este campo es requerido'),
-  message: yup.string().required('Este campo es requerido'),
+  name: yup.string().required("Este campo es requerido"),
+  email: yup.string().email().required("Este campo es requerido"),
+  subject: yup.string().required("Este campo es requerido"),
+  message: yup.string().required("Este campo es requerido"),
 });
 
 const {
@@ -95,10 +95,10 @@ const {
 });
 
 const [name, email, subject, message] = useFieldModel([
-  'name',
-  'email',
-  'subject',
-  'message',
+  "name",
+  "email",
+  "subject",
+  "message",
 ]);
 
 const mapper = (data: Form) => ({
@@ -110,23 +110,23 @@ const mapper = (data: Form) => ({
 
 const encode = (data: any) =>
   Object.keys(data)
-    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&');
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
 
 const onSubmit = handleSubmit(async (data) => {
   try {
     const mapped = mapper(data);
-    await fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        'form-name': 'contacto',
+        "form-name": "contacto",
         ...mapped,
       }),
     });
   } catch (error: any) {
-    console.log(
-      'Hubo un error al intentar enviar el formulario: ',
+    console.error(
+      "Hubo un error al intentar enviar el formulario: ",
       error.message
     );
   }

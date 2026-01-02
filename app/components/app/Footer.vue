@@ -1,7 +1,13 @@
+<script setup>
+const currentDate = new Date().getFullYear();
+</script>
+
 <template>
   <footer class="footer">
     <div class="footer__left">
-      <p class="footer__legal">Derechos Reservados 2022</p>
+      <p class="footer__legal">
+        © {{ currentDate }}. Todos los derechos reservados.
+      </p>
       <div class="footer__icons">
         <a
           class="footer__link"
@@ -29,7 +35,7 @@
     <div class="footer__right">
       <p>Sitio web realizado por:</p>
       <a href="https://novanet.studio" target="_blank">
-        <img alt="Novanet logo" src="../assets/images/novanet-logo.svg" />
+        <img alt="Novanet logo" src="/images/novanet-logo.svg" />
       </a>
     </div>
   </footer>

@@ -780,8 +780,8 @@
 
 .contacto__grid {
   @apply pt-6
-  <sm:(px-3) 
-  md:(container mx-auto grid grid-cols-[70%_30%] px-8);
+  <sm:() 
+  md:(container mx-auto grid grid-cols-[70%_30%]);
 }
 
 .contacto__group {

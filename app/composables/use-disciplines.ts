@@ -1,110 +1,49 @@
-import type { Ref } from 'vue';
+import {
+  DISCIPLINE_BY_LINK_QUERY,
+  DISCIPLINES_QUERY,
+} from "~/schemas/modules/disciplines";
 
-export const useDisciplines = (
-  params: { link?: string } = {}
-): {
-  disciplines: Ref<Project.DisplicinesStrapi[]>;
-  discipline: Ref<Project.DisplicinesStrapi | null>;
-  loading: Ref<boolean>;
-} => {
-  const disciplines = useState<any>('disciplines', () => []);
-  const loading = useState('loading', () => false);
-  const discipline = useState<Project.DisplicinesStrapi | null>('discipline', () => null);
+export const useDisciplines = () => {
+  const disciplines = useState<any[]>("disciplines", () => []);
+  const loading = useState<boolean>("loadingDisciplines", () => false);
+  const discipline = useState<any | null>("discipline", () => null);
   const graphql = useStrapiGraphQL();
 
-  onMounted(async () => {
+  const getDisciplines = async () => {
     try {
       loading.value = true;
-      const query = await graphql<Project.DisplicinesResponse>(`
-        query {
-          disciplinas(sort: "id:asc") {
-            data {
-              attributes {
-                nombre
-                descripcion
-                link
-                icono {
-                  data {
-                    attributes {
-                      url
-                      alternativeText
-                    }
-                  }
-                }
-
-                imagen {
-                  data {
-                    attributes {
-                      url
-                      alternativeText
-                    }
-                  }
-                }
-
-                clases {
-                  ... on ComponentDisciplinasClases {
-                    titulo
-                    descripcion
-                    icono {
-                      data {
-                        attributes {
-                          url
-                          alternativeText
-                        }
-                      }
-                    }
-                    planes
-                    horarios
-                  }
-                }
-
-                horarios {
-                  ... on ComponentDisciplinasHorarios {
-                    horarios
-                  }
-                }
-
-                planes {
-                  ... on ComponentDisciplinasPlanes {
-                    planes
-                  }
-                }
-
-                informacion_adicional {
-                  titulo
-                  descripcion
-                }
-
-                requisitos {
-                  titulo
-                  descripcion
-                }
-              }
-            }
-          }
-        }
-      `);
-
-      if (params?.link) {
-        query.data.disciplinas.data.forEach((item: any) => {
-          if (item.attributes.link === params.link) {
-            discipline.value = item;
-            return;
-          }
-        });
-      }
-
-      disciplines.value = query.data.disciplinas.data;
+      const response = await graphql<any>(DISCIPLINES_QUERY);
+      disciplines.value = response.data.disciplinas || [];
+      return disciplines.value;
     } catch (error) {
-      console.log(error);
+      console.error("Error fetching disciplines:", error);
+      return [];
     } finally {
       loading.value = false;
     }
-  });
+  };
+
+  const getDisciplineByLink = async (link: string) => {
+    try {
+      loading.value = true;
+      const response = await graphql<any>(DISCIPLINE_BY_LINK_QUERY, { link });
+
+      const found = response.data.disciplinas?.[0] || null;
+      discipline.value = found;
+      return found;
+    } catch (error) {
+      console.error("Error fetching discipline by link:", error);
+      return null;
+    } finally {
+      loading.value = false;
+    }
+  };
 
   return {
     discipline,
     disciplines,
     loading,
+    getDisciplines,
+    getDisciplineByLink,
   };
 };

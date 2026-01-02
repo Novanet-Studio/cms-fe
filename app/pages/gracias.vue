@@ -5,8 +5,8 @@
       <p class="text-center mb-8 text-lg mt-4">
         Te estaremos respondiendo lo más pronto posible.
       </p>
-      <app-button class="button--blue" url="/"
-        >Ir a inicio</app-button
+      <AppButton class="button--blue" url="/"
+        >Ir a inicio</AppButton
       >
     </div>
   </section>

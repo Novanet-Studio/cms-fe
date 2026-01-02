@@ -6,10 +6,10 @@
     <p class="mensaje__description">
       {{ mensaje.descripcion }}
     </p>
-    <app-button v-if="buttonText" class="button--blue">{{
+    <AppButton v-if="buttonText" class="button--blue">{{
       buttonText
-    }}</app-button>
-    <nuxt-picture v-if="image" :src="image" :alt="alt"></nuxt-picture>
+    }}</AppButton>
+    <NuxtPicture v-if="image" :src="image" :alt="alt"></NuxtPicture>
   </div>
 </template>
 

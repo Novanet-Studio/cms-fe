@@ -1,5 +1,18 @@
+<script lang="ts" setup>
+import MarkdownIt from "markdown-it";
+const markdown = new MarkdownIt();
+
+const route = useRoute();
+const id = route.params.id as string;
+const { getProfesionalByLink } = useProfesionals();
+
+const { data: profesor } = await useAsyncData(`profesional-${id}`, () =>
+  getProfesionalByLink(id)
+);
+</script>
+
 <template>
-  <div>
+  <div v-if="profesor">
     <section class="disciplina__header">
       <img
         class="disciplina__cover"
@@ -18,7 +31,7 @@
     </section>
 
     <div class="disciplinas__button">
-      <app-button
+      <AppButton
         class="button--blue"
         prefix="fas"
         iconName="caret-left"
@@ -26,24 +39,22 @@
         url="/profesionales"
       >
         Volver
-      </app-button>
+      </AppButton>
     </div>
 
     <section class="perfil">
       <div class="perfil__image-wrapper">
         <img
-          :src="profesor?.attributes.imagen.data.attributes.url"
-          :alt="profesor?.attributes.imagen.data.attributes.alternativeText"
+          v-if="profesor.imagen?.url"
+          :src="profesor.imagen.url"
+          :alt="profesor.imagen.alternativeText"
           class="perfil__image"
         />
       </div>
       <div>
-        <h1
-          class="perfil__titulo"
-          v-html="profesor?.attributes.nombre_apellido"
-        ></h1>
+        <h1 class="perfil__titulo" v-html="profesor.nombre_apellido"></h1>
         <div
-          v-html="profesor?.attributes.extracto || `<span>Cargando...</span>`"
+          v-html="profesor.extracto || `<span>Cargando...</span>`"
           class="perfil__extracto"
         ></div>
       </div>
@@ -52,29 +63,13 @@
     <section class="box">
       <div>
         <h3 class="box__title">Resumen curricular</h3>
-        <div v-if="profesor?.attributes.bio">
-          <p
-            v-html="
-              markdown.render(profesor?.attributes.bio) ||
-              `<span>Cargando...</span>`
-            "
-          ></p>
+        <div v-if="profesor.bio">
+          <p v-html="markdown.render(profesor.bio)"></p>
         </div>
       </div>
     </section>
   </div>
 </template>
-
-<script lang="ts" setup>
-import MarkdownIt from "markdown-it";
-const markdown = new MarkdownIt();
-
-const route = useRoute();
-const id = route.params.id as string;
-const { profesional: profesor } = useProfesionals({
-  link: id,
-});
-</script>
 
 <style scoped>
 /* DO NOT REMOVE. FIX BULLETS ISSUE FOR PROFESSIONALS DETAIL PAGE */

@@ -1,10 +1,10 @@
 <template>
-  <transition name="fade" appear>
+  <Transition name="fade" appear>
     <div>
-      <the-header />
+      <AppHeader />
       <main class="main">
         <section class="articulo">
-          <app-button
+          <AppButton
             class="button--yellow button--small"
             prefix="fas"
             iconName="caret-left"
@@ -12,37 +12,14 @@
             url="/blog"
           >
             Volver al blog
-          </app-button>
+          </AppButton>
           <div class="articulo-grid">
             <slot />
-            <the-aside />
+            <AppAside />
           </div>
         </section>
       </main>
-      <the-footer />
+      <AppFooter />
     </div>
-  </transition>
+  </Transition>
 </template>
-
-<script lang="ts" setup>
-const storeItems = [
-  {
-    image:
-      "https://res.cloudinary.com/novanet-studio/image/upload/v1669823173/ccs-multisport/cms_tienda_caballeros_d004a62d61.webp",
-    text: "Caballeros",
-    alternativeText: "Hombre con gorro y lentes nadando en aguas abiertas",
-  },
-  {
-    image:
-      "https://res.cloudinary.com/novanet-studio/image/upload/v1669823172/ccs-multisport/cms_tienda_damas_8a5caff429.webp",
-    text: "Damas",
-    alternativeText: "Mujer con gorro y lentes nadando en piscimna",
-  },
-  {
-    image:
-      "https://res.cloudinary.com/novanet-studio/image/upload/v1669823173/ccs-multisport/cms_tienda_ninos_3af6013c20.webp",
-    text: "Niños",
-    alternativeText: "Niño posando al borde de piscina con lentes en la frente",
-  },
-];
-</script>

@@ -1,3 +1,14 @@
+<script lang="ts" setup>
+type Props = {
+  titulo?: string;
+  descripcion?: string;
+  url?: string;
+  alternativeText?: string;
+};
+
+defineProps<Props>();
+</script>
+
 <template>
   <section class="hero">
     <div class="hero__container">
@@ -18,14 +29,3 @@
     </div>
   </section>
 </template>
-
-<script lang="ts" setup>
-type Props = {
-  titulo: string;
-  descripcion: string;
-  url: string;
-  alternativeText: string;
-};
-
-defineProps<Props>();
-</script>

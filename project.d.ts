@@ -1,88 +1,151 @@
-// This .d.ts file must contain the project type declaration
-declare namespace Project {
+declare namespace CMS {
+  interface Response<T = any> {
+    data?: T;
+  }
+
   interface Image {
-    id: string;
-    data: {
-      attributes: {
-        url: string;
-        alternativeText: string;
-      };
+    id?: string;
+    documentId?: string;
+    url?: string;
+    alternativeText?: string;
+  }
+
+  interface ItemList {
+    titulo?: string;
+    descripcion?: string;
+  }
+
+  interface SingleTypeIndex {
+    inicio?: SingleTypeIndex_Inicio;
+    carruseles?: Carrusel[];
+    disciplinas?: Discipline[];
+    empresa?: SingleTypeEmpresa;
+    aliados?: Ally[];
+  }
+
+  interface SingleTypeIndex_Inicio {
+    principal?: {
+      titulo?: string;
+      descripcion?: string;
+      imagen?: Image;
+    };
+    mensaje?: {
+      titulo?: string;
+      descripcion?: string;
     };
   }
 
-  interface Schedule {
-    horarios: string[];
+  interface SingleTypeEmpresa {
+    principal?: {
+      titulo?: string;
+      descripcion?: string;
+      imagen?: Image;
+    };
+    identidad?: {
+      titulo?: string;
+      descripcion?: string;
+      imagen?: Image;
+    }[];
+    profesionales?: {
+      titulo?: string;
+      descripcion?: string;
+      imagen?: Image;
+    };
+    trabajo?: ItemList[];
   }
 
-  interface Plans {
-    planes: string[];
+  interface SingleTypeRequisito {
+    requisitos?: ItemList[];
+  }
+
+  interface SingleTypeNorma {
+    normas?: ItemList[];
+  }
+
+  interface SingleTypeDescuento {
+    descuentos?: ItemList[];
+  }
+
+  interface Carrusel {
+    id?: string;
+    documentId?: string;
+    imagenes?: Image[];
   }
 
   interface Discipline {
-    nombre: string;
-    descripcion: string;
-    clases?: string[];
-    horarios?: Schedule[];
-    icono: Image;
-    imagen: Image;
-    link: string;
-    planes: Plans[];
-  }
-
-  interface DisplicinesStrapi {
-    id: string;
-    attributes: Discipline;
-  }
-
-  interface DisplicinesResponse {
-    id: string;
-    data: {
-      disciplinas: {
-        data: DisplicinesStrapi[];
-      };
-    };
+    id?: string;
+    documentId?: string;
+    nombre?: string;
+    descripcion?: string;
+    link?: string;
+    icono?: Image;
+    imagen?: Image;
+    clases?: {
+      titulo?: string;
+      descripcion?: string;
+      icono?: Image;
+      planes?: string;
+      horarios?: string;
+    }[];
+    horarios?: { horarios?: string }[];
+    planes?: { planes?: string }[];
+    informacion_adicional?: ItemList;
+    requisitos?: ItemList;
   }
 
   interface Article {
-    nombre: string;
-    descripcion: string;
-    imagen: Image;
-    slug: string;
-  }
-
-  interface ArticlesStrapi {
-    id: string;
-    attributes: Article;
-  }
-
-  interface ArticlesResponse {
-    id: string;
-    data: {
-      articulos: {
-        data: ArticlesStrapi[];
-      };
-    };
+    id?: string;
+    documentId?: string;
+    titulo?: string;
+    descripcion?: string;
+    imagen?: Image;
+    slug?: string;
+    createdAt?: string;
   }
 
   interface Profesional {
-    nombre_apellido: string;
-    extracto: string;
-    bio: string;
-    imagen: Image;
-    link: string;
+    id?: string;
+    documentId?: string;
+    nombre_apellido?: string;
+    extracto?: string;
+    bio?: string;
+    imagen?: Image;
+    link?: string;
   }
 
-  interface ProfesionalsStrapi {
-    id: string;
-    attributes: Profesional;
-  }
-
-  interface ProfesionalsResponse {
-    id: string;
-    data: {
-      profesionales: {
-        data: ProfesionalesStrapi[];
+  interface Ally {
+      id?: string;
+      documentId?: string;
+      nombre?: string;
+      descripcion?: string;
+      descripcion_interna?: string;
+      link?: string;
+      handle?: string;
+      icono_rrss?: string;
+      imagen?: Image;
+      imagen_info?: Image;
+      telefonos?: { numero?: string }[];
+      servicios?: {
+        titulo?: string;
+        descripcion?: string;
+        servicio?: {
+          titulo?: string;
+          icono?: Image;
+        }[];
       };
-    };
+      personal?: {
+        profesionales?: {
+          titulo?: string;
+          descripcion?: string;
+          imagen?: Image;
+        }[];
+      };
+  }
+
+  interface Question {
+    id?: string;
+    documentId?: string;
+    titulo?: string;
+    descripcion?: string;
   }
 }

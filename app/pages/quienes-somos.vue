@@ -1,16 +1,50 @@
+<script lang="ts" setup>
+import { ABOUT_US_QUERY } from "~/schemas/about-us-page";
+
+const graphql = useStrapiGraphQL();
+
+const { data } = await useAsyncData("quienes-somos", async () => {
+  try {
+    const query = await graphql<any>(ABOUT_US_QUERY);
+
+    return {
+      principal: query.data.empresa?.principal || null,
+      identidad: query.data.empresa?.identidad || [],
+      profesionales: query.data.empresa?.profesionales || null,
+      trabajo: query.data.empresa?.trabajo || [],
+      requisitos: query.data.requisito?.requisitos || [],
+      normas: query.data.norma?.normas || [],
+    };
+  } catch (err) {
+    console.error(err);
+
+    return {
+      principal: null,
+      identidad: [],
+      profesionales: null,
+      trabajo: [],
+      requisitos: [],
+      normas: [],
+    };
+  }
+});
+</script>
+
 <template>
   <div>
-    <hero
-      :titulo="principal.titulo"
-      :descripcion="principal.descripcion"
-      :url="principal.imagen.data.attributes.url"
-      :alternativeText="principal.imagen.data.attributes.alternativeText"
+    <AppHero
+      v-if="data?.principal"
+      :titulo="data.principal.titulo"
+      :descripcion="data.principal.descripcion"
+      :url="data.principal.imagen?.url"
+      :alternativeText="data.principal.imagen?.alternativeText"
     />
 
-    <highlight
+    <AppHighlight
+      v-if="data?.profesionales"
       estilo="highlight"
-      :title="profesionales.titulo"
-      :description="profesionales.descripcion"
+      :title="data.profesionales.titulo"
+      :description="data.profesionales.descripcion"
       image="https://res.cloudinary.com/novanet-studio/image/upload/v1679063407/ccs-multisport/cms_collage_8_coaches_3f5d08b048.webp"
       alt="Nadadora con lentes puestos mirando hacia la derecha"
       buttonText="Ver profesores"
@@ -18,10 +52,10 @@
     />
 
     <section class="identidad">
-      <identidad-card
-        v-for="(item, index) in identidad"
-        :imagen="item.imagen.data.attributes.url"
-        :alternativeText="item.imagen.data.attributes.alternativeText"
+      <AppIdentCard
+        v-for="(item, index) in data?.identidad"
+        :imagen="item.imagen?.url"
+        :alternativeText="item.imagen?.alternativeText"
         :title="item.titulo"
         :description="item.descripcion"
         :key="index"
@@ -30,131 +64,16 @@
 
     <div class="dots"></div>
 
-    <div v-if="trabajo?.length >= 1">
-      <items-list :items="trabajo" :defaultOpened="false" />
+    <div v-if="data?.trabajo?.length >= 1">
+      <AppItemsList :items="data!.trabajo" :defaultOpened="false" />
     </div>
 
-    <div v-if="requisitos?.length >= 0">
-      <items-list :items="requisitos" :defaultOpened="false" />
+    <div v-if="data?.requisitos?.length >= 0">
+      <AppItemsList :items="data!.requisitos" :defaultOpened="false" />
     </div>
 
-    <div v-if="normas?.length >= 0">
-      <items-list :items="normas" :defaultOpened="false" />
+    <div v-if="data?.normas?.length >= 0">
+      <AppItemsList :items="data!.normas" :defaultOpened="false" />
     </div>
   </div>
 </template>
-
-<script lang="ts" setup>
-const config = useAppConfig();
-
-useHead({
-  titleTemplate() {
-    return config.pwaManifest.name;
-  },
-  title() {
-    return config.pwaManifest.short_name;
-  },
-});
-
-const principal = ref();
-const identidad = ref();
-const profesionales = ref();
-const trabajo = ref();
-const requisitos = ref();
-const normas = ref();
-
-const graphql = useStrapiGraphQL();
-
-try {
-  const query = await graphql<any>(`
-    query {
-      empresa {
-        data {
-          attributes {
-            principal {
-              titulo
-              descripcion
-              imagen {
-                data {
-                  attributes {
-                    url
-                    alternativeText
-                  }
-                }
-              }
-            }
-
-            identidad {
-              titulo
-              descripcion
-              imagen {
-                data {
-                  attributes {
-                    url
-                    alternativeText
-                  }
-                }
-              }
-            }
-
-            profesionales {
-              titulo
-              descripcion
-              imagen {
-                data {
-                  attributes {
-                    url
-                    alternativeText
-                  }
-                }
-              }
-            }
-
-            trabajo {
-              titulo
-              descripcion
-            }
-          }
-        }
-      }
-
-      requisito {
-        data {
-          attributes {
-            requisitos {
-              titulo
-              descripcion
-            }
-          }
-        }
-      }
-
-      norma {
-        data {
-          attributes {
-            normas {
-              titulo
-              descripcion
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  principal.value = query.data.empresa.data.attributes.principal;
-  identidad.value = query.data.empresa.data.attributes.identidad;
-  profesionales.value = query.data.empresa.data.attributes.profesionales;
-  trabajo.value = query.data.empresa.data.attributes.trabajo;
-  requisitos.value = query.data.requisito.data.attributes.requisitos;
-  normas.value = query.data.norma.data.attributes.normas;
-} catch (err) {
-  principal.value = [];
-  identidad.value = [];
-  profesionales.value = [];
-  trabajo.value = [];
-  requisitos.value = [];
-  normas.value = [];
-  console.log(err);
-}
-</script>

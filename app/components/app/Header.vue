@@ -5,7 +5,7 @@
         <nuxt-link to="/" target="_self">
           <img
             alt="Ccs MultiSport logo"
-            src="~/assets/images/ccs-multisports-logo.svg"
+            src="/images/ccs-multisports-logo.svg"
           />
         </nuxt-link>
         <div
@@ -48,7 +48,7 @@
           >Preguntas frecuentes</nuxt-link
         >
         <nuxt-link class="header__link" to="/contacto">Contacto</nuxt-link>
-        <app-button
+        <AppButton
           class="button--blue button--small"
           prefix="fas"
           iconName="right-to-bracket"
@@ -56,7 +56,7 @@
           url="/"
         >
           Login
-        </app-button>
+        </AppButton>
       </nav>
     </div>
   </header>

@@ -11,12 +11,6 @@ export default defineNuxtConfig({
             "Centro Deportivo que integra los sectores del deporte y la salud. Nuestro objetivo principal es mejorar la calidad de vida de nuestros usuarios mediante la enseñanza y práctica de diversas disciplinas deportivas.",
         },
       ],
-      script: [
-        {
-          type: "text/javascript",
-          src: "metrics.js",
-        },
-      ],
     },
     pageTransition: {
       name: "page",
@@ -123,7 +117,7 @@ export default defineNuxtConfig({
   },
 
   image: {
-    dir: "assets/images",
+    dir: "/images",
     screens: {
       xs: 320,
       sm: 640,

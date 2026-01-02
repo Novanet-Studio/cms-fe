@@ -1,62 +1,57 @@
-import type { Ref } from 'vue';
+import {
+  ARTICLE_BY_SLUG_QUERY,
+  ARTICLES_QUERY,
+} from "~/schemas/modules/articles";
 
-export const useArticles = (
-  params: { slug?: string } = {}
-): {
-  articles: Ref<Project.ArticlesStrapi[]>;
-  article: Ref<Project.ArticlesStrapi | null>;
-  loading: Ref<boolean>;
-} => {
-  const articles = useState<any>('articles', () => []);
-  const loading = useState<boolean>('loadingArticles', () => false);
-  const article = useState<Project.ArticlesStrapi | null>('article', () => null);
+export const useArticles = () => {
   const graphql = useStrapiGraphQL();
 
-  onMounted(async () => {
+  const articles = useState<any[]>("articles", () => []);
+  const article = useState<any | null>("article", () => null);
+  const loading = useState<boolean>("loadingArticles", () => false);
+
+  const getArticles = async () => {
     try {
       loading.value = true;
-      const query = await graphql<Project.ArticlesResponse>(`
-        query {
-          articulos(sort: "createdAt:desc") {
-            data {
-              attributes {
-                titulo
-                descripcion
-                slug
-                imagen {
-                  data {
-                    attributes {
-                      url
-                      alternativeText
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      `);
 
-      if (params?.slug) {
-        query.data.articulos.data.forEach((item: any) => {
-          if (item.attributes.slug === params.slug) {
-            article.value = item;
-            return;
-          }
-        });
-      }
+      const response = await graphql<any>(ARTICLES_QUERY);
 
-      articles.value = query.data.articulos.data;
+      articles.value = response.data.articulos || [];
+
+      return articles.value;
     } catch (error) {
-      console.log(error);
+      console.error("Error fetching articles:", error);
+
+      return [];
     } finally {
       loading.value = false;
     }
-  });
+  };
+
+  const getArticleBySlug = async (slug: string) => {
+    try {
+      loading.value = true;
+
+      const response = await graphql<any>(ARTICLE_BY_SLUG_QUERY, { slug });
+
+      const found = response.data.articulos?.[0] || null;
+
+      article.value = found;
+      return found;
+    } catch (error) {
+      console.error("Error fetching article by slug:", error);
+
+      return null;
+    } finally {
+      loading.value = false;
+    }
+  };
 
   return {
-    article,
     articles,
+    article,
     loading,
+    getArticles,
+    getArticleBySlug,
   };
 };

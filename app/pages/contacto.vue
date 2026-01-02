@@ -1,6 +1,22 @@
+<script setup lang="ts">
+import { CAROUSEL_QUERY } from "~/schemas/cms";
+
+const graphql = useStrapiGraphQL();
+
+const { data: carrusel } = await useAsyncData("contact-carrusel", async () => {
+  try {
+    const response = await graphql<any>(CAROUSEL_QUERY);
+    return response.data.carrusel?.imagenes || [];
+  } catch (err) {
+    console.error(err);
+    return [];
+  }
+});
+</script>
+
 <template>
   <div>
-    <slider :slides="carrusel" />
+    <AppSlider :slides="carrusel" />
     <section class="box">
       <div class="summary-content">
         <p class="accordion-item">
@@ -27,40 +43,8 @@
       </div>
     </section>
     <div class="contacto__grid">
-      <contact-form />
-      <the-aside />
+      <AppContactForm />
+      <AppAside />
     </div>
   </div>
 </template>
-
-<script setup>
-const carrusel = ref();
-const graphql = useStrapiGraphQL();
-
-try {
-  const query = await graphql(`
-    query {
-      carrusel(id: 3) {
-        data {
-          attributes {
-            imagenes {
-              data {
-                attributes {
-                  url
-                  alternativeText
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  carrusel.value = query.data.carrusel.data.attributes.imagenes.data;
-} catch (err) {
-  carrusel.value = [];
-
-  console.log(err);
-}
-</script>

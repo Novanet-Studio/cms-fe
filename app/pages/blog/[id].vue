@@ -1,38 +1,40 @@
-<template>
-  <div>
-    <article-skeletor v-if="loading" />
-    <section v-else>
-      <template v-if="articulo?.attributes?.imagen.data.attributes.url">
-        <nuxt-picture
-          :src="articulo?.attributes?.imagen.data.attributes.url"
-          :alt="articulo?.attributes?.imagen.data.attributes.alternativeText"
-          class="articulo__image"
-        />
-      </template>
-      <h1 class="articulo__title">
-        {{ articulo?.attributes?.titulo }}
-      </h1>
-      <div
-        class="articulo__description"
-        v-html="markdown.render(articulo?.attributes?.descripcion ?? '')"
-      />
-    </section>
-  </div>
-</template>
-
 <script lang="ts" setup>
 import MarkdownIt from "markdown-it";
+
 const markdown = new MarkdownIt();
+const route = useRoute();
+const { getArticleBySlug } = useArticles();
 
 definePageMeta({
   layout: "articulo",
 });
 
-const route = useRoute();
-const id = route.params.id as string;
-const { article: articulo, loading } = useArticles({
-  slug: id,
-});
-
-loading.value = true;
+const { data: articulo, pending: loading } = await useAsyncData(
+  `article-${route.params.id}`,
+  () => getArticleBySlug(route.params.id as string)
+);
 </script>
+
+<template>
+  <div>
+    <ArticleSkeleton v-if="loading" />
+
+    <section v-else-if="articulo">
+      <h1 class="articulo__title mb-4">
+        {{ articulo.titulo }}
+      </h1>
+      <template v-if="articulo.imagen?.url">
+        <NuxtPicture
+          :src="articulo.imagen.url"
+          :alt="articulo.imagen.alternativeText"
+          class="articulo__image"
+        />
+      </template>
+
+      <div
+        class="articulo__description"
+        v-html="markdown.render(articulo.descripcion ?? '')"
+      />
+    </section>
+  </div>
+</template>

@@ -1,17 +1,42 @@
+<script lang="ts" setup>
+import { EMPRESA_PROF_HEADER_QUERY } from "~/schemas/modules/profesionales";
+
+const { getProfesionals } = useProfesionals();
+const graphql = useStrapiGraphQL();
+
+const { data } = await useAsyncData("profesionales-index", async () => {
+  try {
+    const [profesores, headerData] = await Promise.all([
+      getProfesionals(),
+      graphql<any>(EMPRESA_PROF_HEADER_QUERY),
+    ]);
+
+    return {
+      profesores,
+      empresa: headerData.data.empresa?.profesionales || null,
+    };
+  } catch (err) {
+    console.error(err);
+    return { profesores: [], empresa: null };
+  }
+});
+</script>
+
 <template>
-  <div>
-    <highlight
+  <div v-if="data">
+    <AppHighlight
+      v-if="data.empresa"
       estilo="highlight"
-      :title="empresa.titulo"
-      :description="empresa.descripcion"
+      :title="data.empresa.titulo"
+      :description="data.empresa.descripcion"
       image="https://res.cloudinary.com/novanet-studio/image/upload/v1679081889/ccs-multisport/cms_quienes_somos_bfa5f868d7.webp"
-      :alt="empresa.imagen.data.attributes.alternativeText"
+      :alt="data.empresa.imagen?.alternativeText"
     />
 
     <div class="dots"></div>
 
     <div class="disciplinas__button">
-      <app-button
+      <AppButton
         class="button--blue"
         prefix="fas"
         iconName="caret-left"
@@ -19,7 +44,7 @@
         url="/quienes-somos"
       >
         Volver a la página anterior
-      </app-button>
+      </AppButton>
     </div>
 
     <section class="profesionales">
@@ -27,17 +52,15 @@
         <h2 class="profesionales__title">Nuestros profesores</h2>
         <div class="cards__wrapper">
           <nuxt-link
-            :to="`/profesionales/${profesor.attributes.link}`"
-            v-for="(profesor, index) in profesores"
+            :to="`/profesionales/${profesor.link}`"
+            v-for="(profesor, index) in data.profesores"
             :key="index"
             class="profesionales__item"
           >
-            <card
-              :logo="profesor.attributes.imagen.data.attributes.url"
-              :alternativeText="
-                profesor.attributes.imagen.data.attributes.alternativeText
-              "
-              :title="profesor.attributes.nombre_apellido"
+            <AppCard
+              :logo="profesor.imagen?.url"
+              :alternativeText="profesor.imagen?.alternativeText"
+              :title="profesor.nombre_apellido"
               description=""
             />
           </nuxt-link>
@@ -46,39 +69,3 @@
     </section>
   </div>
 </template>
-
-<script lang="ts" setup>
-const { profesionals: profesores, loading } = useProfesionals();
-const empresa = ref();
-const graphql = useStrapiGraphQL();
-
-try {
-  const query = await graphql<any>(`
-    query {
-      empresa {
-        data {
-          attributes {
-            profesionales {
-              titulo
-              descripcion
-              imagen {
-                data {
-                  attributes {
-                    url
-                    alternativeText
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  empresa.value = query.data.empresa.data.attributes.profesionales;
-} catch (err) {
-  empresa.value = [];
-  console.log(err);
-}
-</script>

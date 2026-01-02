@@ -2,7 +2,7 @@
   <div class="basic" :class="viewClass">
     <div class="basic__logo" :class="logoClass">
       <a :href="to || link" :target="linkTarget ?? ''">
-        <nuxt-picture v-if="logo" :src="logo" :alt="alternativeText" />
+        <NuxtPicture v-if="logo" :src="logo" :alt="alternativeText" />
       </a>
     </div>
     <div class="basic__info">
@@ -18,8 +18,8 @@
 
 <script lang="ts" setup>
 type Props = {
-  logo: string;
-  alternativeText: string;
+  logo?: string;
+  alternativeText?: string;
   title?: string;
   description?: string;
   viewClass?: string;

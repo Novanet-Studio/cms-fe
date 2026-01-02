@@ -1,21 +1,35 @@
+<script lang="ts" setup>
+const { getArticles } = useArticles();
+
+const { data: articulos, pending: loading } = await useAsyncData(
+  "articles-list",
+  () => getArticles()
+);
+
+const excerpt = (string: string, indexEnd: number) => {
+  if (!string) return "";
+  return string.substring(0, indexEnd).concat("...");
+};
+</script>
+
 <template>
   <div>
     <div class="blog swiper">
       <swiper-container
         :autoplay="{ delay: 6000, disableOnInteraction: false }"
-        :slider-per-view="1"
+        :slides-per-view="1"
         :space-between="0"
-        loop
-        navigation
-        :modules="[Autoplay, Navigation, Pagination]"
+        loop="true"
+        navigation="true"
+        pagination="true"
       >
         <swiper-slide v-for="(articulo, index) in articulos" :key="index">
-          <highlight
+          <AppHighlight
             estilo="highlight-slide"
-            :title="articulo.attributes.titulo"
-            :image="articulo.attributes.imagen.data.attributes.url"
-            :alt="articulo.attributes.imagen.data.attributes.alternativeText"
-            :url="`/blog/${articulo.attributes.slug}`"
+            :title="articulo.titulo"
+            :image="articulo.imagen?.url"
+            :alt="articulo.imagen?.alternativeText"
+            :url="`/blog/${articulo.slug}`"
           />
         </swiper-slide>
       </swiper-container>
@@ -24,9 +38,11 @@
     <section class="blog">
       <div class="blog__wrapper">
         <h2 class="blog__title">Artículos</h2>
+
         <template v-if="loading">
-          <article-summary-skeletor v-for="i in 3" />
+          <BlogArticleSummarySkeleton v-for="i in 3" :key="i" />
         </template>
+
         <template v-else>
           <article
             class="blog-item"
@@ -34,23 +50,24 @@
             :key="index"
           >
             <div class="blog-item__img-container">
-              <nuxt-picture
-                :src="post.attributes.imagen.data.attributes.url"
-                :alt="post.attributes.imagen.data.attributes.alternativeText"
+              <NuxtPicture
+                v-if="post.imagen?.url"
+                :src="post.imagen.url"
+                :alt="post.imagen.alternativeText"
                 class="blog-item__imagen"
               />
             </div>
             <div class="blog-item__info">
               <h3 class="blog-item__title">
-                {{ post.attributes.titulo }}
+                {{ post.titulo }}
               </h3>
-              <div v-html="excerpt(post.attributes.descripcion, 90)"></div>
-              <app-button
+              <div v-html="excerpt(post.descripcion, 90)"></div>
+              <AppButton
                 class="button--yellow button--small blog-item__boton"
-                :url="`/blog/${post.attributes.slug}`"
+                :url="`/blog/${post.slug}`"
               >
                 Leer más
-              </app-button>
+              </AppButton>
             </div>
           </article>
         </template>
@@ -58,14 +75,3 @@
     </section>
   </div>
 </template>
-
-<script lang="ts" setup>
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
-
-const { articles: articulos, loading } = useArticles();
-
-const excerpt = (string: string, indexEnd: number) => {
-  const subconcat = string.substring(0, indexEnd).concat("...");
-  return subconcat;
-};
-</script>

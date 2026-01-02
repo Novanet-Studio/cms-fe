@@ -2,7 +2,7 @@
 type Props = {
   link: string;
   handle: string;
-  telefonos: array;
+  telefonos: Array<{ numero: string }>;
   icono: string;
 };
 
@@ -14,8 +14,8 @@ defineProps<Props>();
     <div class="contacto__group">
       <h2 class="contacto__subtitle">Ubicación</h2>
       <p>
-        Urb. Alta Florida Av. Los Mangos Quinta Ccs MultiSport (al frente de
-        la Plaza Benito Juárez subiendo a la Cota Mil).
+        Urb. Alta Florida Av. Los Mangos Quinta Ccs MultiSport (al frente de la
+        Plaza Benito Juárez subiendo a la Cota Mil).
         <a
           class="contacto__link"
           href="https://maps.app.goo.gl/X25KbsffHZEN5Y236"
